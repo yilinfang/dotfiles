@@ -10,4 +10,4 @@
     cm = commit -m
 	st = status
     pl = pull
-    ph = ph
+    ph = push
