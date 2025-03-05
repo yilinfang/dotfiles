@@ -1,3 +1,3 @@
-# dotfile
+# dotfiles
 
 TODO
