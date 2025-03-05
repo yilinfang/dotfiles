@@ -3,8 +3,11 @@
 	email = qzfyl98@outlook.com
 [alias]
     a = add
-	ci = commit
+    c = checkout
+    aa = add -A
+    cb = checkout -b
+    ci = commit
+    cm = commit -m
 	st = status
-    co = checkout
     pl = pull
     ph = ph
