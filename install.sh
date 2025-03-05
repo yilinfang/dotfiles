@@ -8,6 +8,12 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 create_link() {
     source="$1"
     target="$2"
+
+    # Check if source file exists
+    if [ ! -e "$source" ]; then
+        echo "Error: Source file $source not found."
+        return
+    fi
     
     # Check if the target already exists and is not a symlink
     if [ -e "$target" ] && [ ! -L "$target" ]; then
