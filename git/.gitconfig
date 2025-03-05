@@ -1,0 +1,7 @@
+[alias]
+    a = add
+	ci = commit
+	st = status
+    co = checkout
+    pl = pull
+    ph = ph
