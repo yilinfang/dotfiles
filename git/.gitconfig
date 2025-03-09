@@ -2,12 +2,13 @@
 	name = Yilin Fang
 	email = qzfyl98@outlook.com
 [alias]
-    a = add
-    c = checkout
-    aa = add -A
-    cb = checkout -b
-    ci = commit
-    cm = commit -m
-	st = status
-    pl = pull
-    ph = push
+  a = add
+  c = checkout
+  m = merge
+  aa = add -A
+  cb = checkout -b
+  ci = commit
+  cm = commit -m
+  st = status
+  pl = pull
+  ph = push
