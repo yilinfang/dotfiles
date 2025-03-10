@@ -79,11 +79,6 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    extract
-    fzf
-    zoxide
-    kitty 
-    bbedit
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -93,6 +88,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Add WezTerm cli
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+export PATH
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -127,13 +126,6 @@ alias ev="$EDITOR $HOME/.vimrc"
 alias ua="~/Workspace/update-scripts/update-zsh.sh"
 alias ba="~/Workspace/backup-scripts/backup-all.sh"
 
-alias v="vim"
-alias c="code"
-alias t="tmux"
-alias g="git"
-alias lg="lazygit"
-alias batp="bat -p"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -151,3 +143,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# nvim-starter configuration
+if [ -f /Users/leo/.nvim-starter/init.zsh ]; then
+    source /Users/leo/.nvim-starter/init.zsh
+fi
