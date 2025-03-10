@@ -31,6 +31,7 @@ set ruler                 " Show cursor position
 set cursorline            " Highlight current line
 set wrap                  " Wrap long lines
 set linebreak             " Break at word boundaries
+set so=10                 " Set 10 lines to the cursor - when moving vertically using j/k
 
 " Custom minimal status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]\ %=[%l,%c]\ [%p%%]

@@ -44,4 +44,12 @@ create_link "$DOTFILES_DIR/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
 # Vim configuration
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
+# Nvim configuration
+create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+
+# Zsh configuration
+create_link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+
+# kitty configuration
+create_link "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
 echo "Dotfiles installation complete!"
