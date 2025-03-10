@@ -82,6 +82,7 @@ plugins=(
     extract
     fzf
     zoxide
+    kitty 
     bbedit
     zsh-autosuggestions
     zsh-syntax-highlighting
