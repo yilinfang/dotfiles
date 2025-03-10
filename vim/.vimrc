@@ -91,6 +91,19 @@ nnoremap <leader>zo zR
 " Close all folds
 nnoremap <leader>zc zM
 
+" Move a line down with Alt+j
+nnoremap <M-j> :m .+1<CR>==
+
+" Move a line up with Alt+k
+nnoremap <M-k> :m .-2<CR>==
+
+" Move a visual selection down with Alt+j
+vnoremap <M-j> :m '>+1<CR>gv=gv
+
+" Move a visual selection up with Alt+k
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
+
 " Filetype-specific settings
 augroup configgroup
     autocmd!
