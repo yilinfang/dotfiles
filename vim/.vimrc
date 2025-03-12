@@ -68,6 +68,16 @@ nnoremap <leader>q :q<CR>
 " Clear search highlights
 nnoremap <silent> <leader>H :nohlsearch<CR>
 
+" Move the current line up with Option + k
+nnoremap <M-k> :m .-2<CR>==
+" Move the current line down with Option + j
+nnoremap <M-j> :m .+1<CR>==
+" Move selected lines up in visual mode with Option + k
+vnoremap <M-k> :m '<-2<CR>gv=gv
+" Move selected lines down in visual mode with Option + j
+vnoremap <M-j> :m '>+1<CR>gv=gv
+
+
 " Easier window navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j

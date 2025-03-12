@@ -11,6 +11,8 @@ Personal dotfiles including:
 - kitty
 - wezterm
 
+I code with  VIM and VSCode, the neovim settings is mainly for VSCode-neovim plugin.
+
 ## Usage
 
 ```bash
