@@ -5,8 +5,10 @@ Personal dotfiles including:
 - git
 - vim
 - neovim
+- zellij
 - fish
 - starship
+- kitty
 - wezterm
 
 ## Usage

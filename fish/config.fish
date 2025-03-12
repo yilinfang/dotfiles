@@ -38,7 +38,9 @@ alias g="git"
 alias c="code"
 alias t="tmux"
 
+alias ze="zellij"
 alias lg="lazygit"
+
 alias cat="bat -p"
 
 alias ls='eza $eza_params'
@@ -48,7 +50,6 @@ alias llm='eza --all --header --long --sort=modified $eza_params'
 alias la='eza -lbhHigUmuSa'
 alias lx='eza -lbhHigUmuSa@'
 alias lt='eza --tree $eza_params'
-alias tree='eza --tree $eza_params'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
