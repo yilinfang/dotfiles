@@ -8,6 +8,8 @@ Personal dotfiles including:
 4. fish
 5. wezterm
 
+I code with neovim, also check out my [neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
+
 ## Usage
 
 ```bash
