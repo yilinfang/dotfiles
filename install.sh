@@ -48,3 +48,6 @@ create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 
 # Starship configuration
 create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
+
+# Neovim configuration
+create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
