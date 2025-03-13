@@ -3,8 +3,8 @@ if status is-interactive
 end
 
 # Set editor
-set -gx EDITOR nvim
-set -gx VISUAL nvim
+set -gx EDITOR vim
+set -gx VISUAL vim
 
 # Homebrew
 fish_add_path -g /opt/homebrew/bin
