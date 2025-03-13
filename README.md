@@ -11,7 +11,7 @@ Personal dotfiles including:
 - kitty
 - wezterm
 
-I code with VIM and VSCode, the NeoVim configuration is mainly for VSCode-neovim plugin.
+The NeoVim configuration is mainly for VSCode-neovim plugin.
 
 ## Usage
 
