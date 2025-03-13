@@ -4,14 +4,11 @@ Personal dotfiles including:
 
 - git
 - vim
-- neovim
-- zellij
 - fish
 - starship
-- kitty
 - wezterm
 
-I code with VIM and VSCode, the NeoVim configuration is mainly for VSCode-neovim plugin.
+I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
 
 ## Usage
 
