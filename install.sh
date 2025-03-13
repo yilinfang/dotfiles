@@ -40,6 +40,9 @@ create_link "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 # Vim configuration
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
+# Ghostty configuration
+create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+
 # kitty configuration
 create_link "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
 

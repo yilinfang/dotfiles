@@ -8,6 +8,7 @@ Personal dotfiles including:
 - zellij
 - fish
 - starship
+- Ghostty
 - kitty
 - wezterm
 
