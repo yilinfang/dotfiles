@@ -49,6 +49,7 @@ alias la="lsd -a"
 alias lla="lsd -la"
 alias lt="lsd --tree"
 
+alias bc="brew cleanup"
 alias ua="~/Workspace/update-scripts/update-fish.sh"
 alias ba="~/Workspace/backup-scripts/backup-all.sh"
 alias eh="$EDITOR ~/.ssh/config"
