@@ -3,8 +3,8 @@ if status is-interactive
 end
 
 # Set editor
-set -gx EDITOR vim
-set -gx VISUAL vim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 # Homebrew
 fish_add_path -g /opt/homebrew/bin
@@ -14,9 +14,6 @@ fzf --fish | source
 
 # zoxide
 zoxide init fish | source
-
-# Starship
-starship init fish | source
 
 # Yazi
 function y
@@ -28,12 +25,12 @@ function y
     rm -f -- "$tmp"
 end
 
-# Alias
-alias ua="~/Workspace/update-scripts/update-fish.sh"
-alias ba="~/Workspace/backup-scripts/backup-all.sh"
-alias eh="$EDITOR ~/.ssh/config"
+# Starship
+starship init fish | source
 
+# Alias
 alias v="vim"
+alias n="nvim"
 alias g="git"
 alias c="code"
 alias t="tmux"
