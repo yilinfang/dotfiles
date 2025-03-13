@@ -8,6 +8,12 @@ set relativenumber        " Relative line numbers
 set history=1000          " Set the commands to save in the history default number is 20
 set wildmenu              " Display command line's tab complete options as a menu
 filetype plugin indent on " Enable filetype detection
+set list                  " Show invisible characters
+set showcmd                 " Show partial command in status line
+set timeoutlen=500          " Reduce leader key delay (default 1000ms)
+
+set listchars=tab:▸\ ,trail:·,nbsp:␣  " Customize invisibles
+set backspace=indent,eol,start " Allow backspacing over everything
 
 " Tab/Indentation
 set tabstop=4             " Show existing tab as 4 spaces
@@ -31,7 +37,14 @@ set ruler                 " Show cursor position
 set cursorline            " Highlight current line
 set wrap                  " Wrap long lines
 set linebreak             " Break at word boundaries
-set so=10                 " Set 10 lines to the cursor - when moving vertically using j/k
+set title                 " Show filename in terminal title
+set termguicolors         " Enable true colors (if terminal supports it)
+set scrolloff=10          " Keep 10 lines above/below cursor
+set sidescrolloff=5       " Keep 5 columns beside cursor horizontally
+
+" Buffer & Window Management
+set hidden                " Allow switching buffers without saving
+set splitbelow splitright " More natural split placement (below/right)
 
 " Completion
 set completeopt=menu,menuone,noselect
