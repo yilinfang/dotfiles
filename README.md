@@ -16,8 +16,6 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 ```bash
 git clone https://github.com/yilinfang/dotfiles.git
 cd dotfiles
-git fetch --all
-git checkout vsc
 chmod +x intall.sh
 ./install.sh
 ```
