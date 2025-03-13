@@ -1,18 +1,18 @@
-# dotfiles
+# Dotfiles
 
-Personal dotfiles including:
+Personal dotfiles including configurations for:
 
-- fish
-- ghostty
-- git
-- kitty
-- neovim
-- starship
-- vim
-- wezterm
-- zellij
+- Fish
+- Ghostty
+- Git
+- Kitty
+- Neovim
+- Starship
+- Vim
+- WezTerm
+- Zellij
 
-I code with vim and VSCode, the Neovim configuration is mainly for VSCode-neovim plugin.
+I code with VIM and VSCode. The Neovim configuration is primarily for the VSCode-neovim plugin.
 
 ## Usage
 
@@ -21,6 +21,6 @@ git clone https://github.com/yilinfang/dotfiles.git
 cd dotfiles
 git fetch --all
 git checkout vsc
-chmod +x intall.sh
+chmod +x install.sh
 ./install.sh
 ```
