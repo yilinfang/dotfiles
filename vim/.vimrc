@@ -33,6 +33,9 @@ set wrap                  " Wrap long lines
 set linebreak             " Break at word boundaries
 set so=10                 " Set 10 lines to the cursor - when moving vertically using j/k
 
+" Completion
+set completeopt=menu,menuone,noselect
+
 " Custom minimal status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]\ %=[%l,%c]\ [%p%%]
 
@@ -111,4 +114,3 @@ augroup configgroup
     autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
-
