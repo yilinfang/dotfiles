@@ -43,13 +43,15 @@ alias lg="lazygit"
 
 alias cat="bat -p"
 
-alias ls='eza $eza_params'
-alias l='eza --git-ignore $eza_params'
-alias ll='eza --all --header --long $eza_params'
-alias llm='eza --all --header --long --sort=modified $eza_params'
-alias la='eza -lbhHigUmuSa'
-alias lx='eza -lbhHigUmuSa@'
-alias lt='eza --tree $eza_params'
+alias ls="lsd"
+alias ll="lsd -l"
+alias la="lsd -a"
+alias lla="lsd -la"
+alias lt="lsd --tree"
+
+alias ua="~/Workspace/update-scripts/update-fish.sh"
+alias ba="~/Workspace/backup-scripts/backup-all.sh"
+alias eh="$EDITOR ~/.ssh/config"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
