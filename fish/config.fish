@@ -5,6 +5,9 @@ end
 # Homebrew
 fish_add_path -g /opt/homebrew/bin
 
+# WezTerm CLI
+fish_add_path -g /Applications/WezTerm.app/Contents/MacOS
+
 # Starship
 starship init fish | source
 
