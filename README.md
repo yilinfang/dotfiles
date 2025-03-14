@@ -7,9 +7,15 @@ Personal dotfiles including:
 - fish
 - starship
 - wezterm
-- zellij
 
 I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
+
+## Requirements
+
+- fish
+- lsd
+- starship
+- zoxide
 
 ## Usage
 
