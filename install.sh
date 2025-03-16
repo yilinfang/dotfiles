@@ -41,7 +41,7 @@ create_link "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
 # ZSH configuration
-create_link "$DOTEFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+create_link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
 # Fish configuration
 create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
