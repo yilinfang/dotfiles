@@ -9,8 +9,8 @@ export VISUAL="vim"
 # PATH
 
 # Alias
-alias eh="$EDITOR ~/.ssh/config"
-alias ez="$EDITOR ~/.zshrc"
+alias eh="vim ~/.ssh/config"
+alias ez="vim ~/.zshrc"
 alias ua="~/Workspace/update-scripts/update-zsh.sh"
 
 alias ls="lsd"
