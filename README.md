@@ -4,7 +4,6 @@ Personal dotfiles including:
 
 - Git
 - Vim
-- Fish
 - Starship
 - Alacritty
 
@@ -12,10 +11,10 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 
 ## Requirements
 
-- Fish
 - LSD
 - Starship
 - Zoxide
+- Zsh
 
 ## Usage
 
