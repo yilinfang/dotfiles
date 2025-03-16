@@ -1,45 +1,36 @@
-# -----------------------------------------------------------------------------
-# TokyoNight Alacritty Colors
-# Theme: Tokyo Night
-# Upstream: https://github.com/folke/tokyonight.nvim/raw/main/extras/alacritty/tokyonight_night.toml
-# -----------------------------------------------------------------------------
+# iTerm Tango Dark
+# https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/refs/heads/master/alacritty/Builtin%20Tango%20Light.toml
 
-# Default colors
-[colors.primary]
-background = '#1a1b26'
-foreground = '#c0caf5'
+# Colors (Builtin Tango Dark)
 
-#[colors.cursor]
-#cursor = '#c0caf5'
-#text = '#1a1b26'
-
-# Normal colors
-[colors.normal]
-black = '#15161e'
-red = '#f7768e'
-green = '#9ece6a'
-yellow = '#e0af68'
-blue = '#7aa2f7'
-magenta = '#bb9af7'
-cyan = '#7dcfff'
-white = '#a9b1d6'
-
-# Bright colors
 [colors.bright]
-black = '#414868'
-red = '#ff899d'
-green = '#9fe044'
-yellow = '#faba4a'
-blue = '#8db0ff'
-magenta = '#c7a9ff'
-cyan = '#a4daff'
-white = '#c0caf5'
+black = '#555753'
+blue = '#729fcf'
+cyan = '#34e2e2'
+green = '#8ae234'
+magenta = '#ad7fa8'
+red = '#ef2929'
+white = '#eeeeec'
+yellow = '#fce94f'
 
-# Indexed Colors
-[[colors.indexed_colors]]
-index = 16
-color = '#ff9e64'
+[colors.cursor]
+cursor = '#ffffff'
+text = '#000000'
 
-[[colors.indexed_colors]]
-index = 17
-color = '#db4b4b'
+[colors.normal]
+black = '#000000'
+blue = '#3465a4'
+cyan = '#06989a'
+green = '#4e9a06'
+magenta = '#75507b'
+red = '#cc0000'
+white = '#d3d7cf'
+yellow = '#c4a000'
+
+[colors.primary]
+background = '#000000'
+foreground = '#ffffff'
+
+[colors.selection]
+background = '#b5d5ff'
+text = '#000000'
