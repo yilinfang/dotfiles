@@ -2,20 +2,20 @@
 
 Personal dotfiles including:
 
-- git
-- vim
-- fish
-- starship
-- wezterm
+- Git
+- Vim
+- Fish
+- Starship
+- Alacritty
 
 I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
 
 ## Requirements
 
-- fish
-- lsd
-- starship
-- zoxide
+- Fish
+- LSD
+- Starship
+- Zoxide
 
 ## Usage
 

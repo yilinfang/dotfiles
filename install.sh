@@ -43,6 +43,9 @@ create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 # WezTerm configuration
 create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
 
+# Alacritty configuration
+create_link "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
+
 # Fish configuration
 create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 
