@@ -15,6 +15,8 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 - Starship
 - Zoxide
 - Zsh
+- Zsh-autosuggestions
+- Zsh-syntax-highlighting
 
 ## Usage
 
