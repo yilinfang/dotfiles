@@ -17,7 +17,6 @@ alias ba="~/Workspace/backup-scripts/backup-all.sh"
 alias eh="vim ~/.ssh/config"
 
 # Eza
-# Modified from https://github.com/basecamp/omakub/blob/master/defaults/bash/aliases
 alias ls='eza --color=always --icons=always --group-directories-first'
 alias l='ls'
 alias la='ls -a'
@@ -37,7 +36,6 @@ function update_terminal_info
     # Run the command with the provided server argument
     infocmp -x | ssh $argv -- tic -x -
 end
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
