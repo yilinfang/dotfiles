@@ -20,7 +20,7 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 - Zsh-syntax-highlighting (for Zsh)
 - Starship
 - Zoxide
-- Eza
+- Lsd
 
 ## Usage
 
