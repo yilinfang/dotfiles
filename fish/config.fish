@@ -16,12 +16,15 @@ alias ua="~/Workspace/update-scripts/update-fish.sh"
 alias ba="~/Workspace/backup-scripts/backup-all.sh"
 alias eh="vim ~/.ssh/config"
 
-alias ls="lsd"
-alias l="ls"
-alias la="lsd -a"
-alias ll="lsd -l"
-alias lla="lsd -la"
-alias lt="lsd --tree"
+# Eza
+# Modified from https://github.com/basecamp/omakub/blob/master/defaults/bash/aliases
+alias ls='eza --color=always --icons=always --group-directories-first'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -lh --total-size'
+alias lla='ll -a'
+alias lt='ls -lT --level=2 --total-size --git'
+alias lta='lt -a'
 
 # Functions
 function update_terminal_info
