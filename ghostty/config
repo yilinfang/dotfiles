@@ -1,0 +1,15 @@
+# Window
+window-padding-balance = true
+window-width = 120
+window-height = 30
+quit-after-last-window-closed = true
+
+# Font
+font-family = "VictorMono Nerd Font"
+font-size = 15
+
+# Theme
+theme = iTerm2 Tango Dark
+
+# MacOS
+macos-option-as-alt = true

@@ -17,10 +17,24 @@ alias ba="~/Workspace/backup-scripts/backup-all.sh"
 alias eh="vim ~/.ssh/config"
 
 alias ls="lsd"
-alias ll="lsd -l"
+alias l="ls"
 alias la="lsd -a"
+alias ll="lsd -l"
 alias lla="lsd -la"
 alias lt="lsd --tree"
+
+# Functions
+function update_terminal_info
+    # Check if a server argument is provided
+    if test -z "$argv"
+        echo "Usage: update_terminal_info <server>"
+        return 1
+    end
+
+    # Run the command with the provided server argument
+    infocmp -x | ssh $argv -- tic -x -
+end
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

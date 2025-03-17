@@ -49,6 +49,9 @@ create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 # Alacritty configuration
 create_link "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
 
+# Ghostty configuration
+create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+
 # WezTerm configuration
 create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
 
