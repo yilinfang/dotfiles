@@ -21,7 +21,7 @@ alias eh="vim ~/.ssh/config"
 alias ls='eza --color=always --icons=always --group-directories-first'
 alias l='ls'
 alias la='ls -a'
-alias ll='ls -lh --total-size'
+alias ll='ls -l --total-size'
 alias lla='ll -a'
 alias lt='ls -lT --level=2 --total-size --git'
 alias lta='lt -a'
