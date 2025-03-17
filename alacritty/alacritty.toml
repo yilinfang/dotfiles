@@ -11,5 +11,12 @@ italic = { family = "VictorMono Nerd Font", style = "Italic" }
 bold_italic = { family = "VictorMono Nerd Font", style = "Bold Italic" }
 size = 15.0
 
+[keyboard]
+bindings = [
+  # MacOS
+  { key = "Tab", mods = "Control", action = "SelectNextTab" },
+  { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
+]
+
 [general]
 import = ["colors.toml"]
