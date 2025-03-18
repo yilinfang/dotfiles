@@ -1,16 +1,15 @@
-# Theme
-theme = iTerm2 Tango Dark
+# Window
+window-padding-balance = true
+window-width = 120
+window-height = 30
+quit-after-last-window-closed = true
 
 # Font
-font-size = 15.0
 font-family = "VictorMono Nerd Font"
-font-family = "Noto Color Emoji"
-font-family = "Symbols Nerd Font Mono"
+font-size = 15
 
-
-# Window
-
-quit-after-last-window-closed = true
+# Theme
+theme = iTerm2 Tango Dark
 
 # MacOS
 macos-option-as-alt = true

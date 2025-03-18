@@ -2,17 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Set editor
-set -gx EDITOR vim
-set -gx VISUAL vim
-
 # Homebrew
 fish_add_path -g /opt/homebrew/bin
 
-# fzf
-fzf --fish | source
-
-# zoxide
+# Zoxide
 zoxide init fish | source
 
 # Yazi
@@ -35,21 +28,17 @@ alias g="git"
 alias c="code"
 alias t="tmux"
 
-alias ze="zellij"
-alias lg="lazygit"
+# Functions
+function update_terminal_info
+    # Check if a server argument is provided
+    if test -z "$argv"
+        echo "Usage: update_terminal_info <server>"
+        return 1
+    end
 
-alias cat="bat -p"
-
-alias ls="lsd"
-alias ll="lsd -l"
-alias la="lsd -a"
-alias lla="lsd -la"
-alias lt="lsd --tree"
-
-alias bc="brew cleanup"
-alias ua="~/Workspace/update-scripts/update-fish.sh"
-alias ba="~/Workspace/backup-scripts/backup-all.sh"
-alias eh="$EDITOR ~/.ssh/config"
+    # Run the command with the provided server argument
+    infocmp -x | ssh $argv -- tic -x -
+end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -63,3 +52,8 @@ else
     end
 end
 # <<< conda initialize <<<
+
+# nvim-starter configuration
+if test -f /Users/leo/.nvim-starter/init.fish
+    source /Users/leo/.nvim-starter/init.fish
+end

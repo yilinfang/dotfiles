@@ -40,23 +40,20 @@ create_link "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 # Vim configuration
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
-# Ghostty configuration
-create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
-
-# kitty configuration
-create_link "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
-
-# WezTerm configuration
-create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
+# ZSH configuration
+create_link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
 # Fish configuration
 create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 
+# Alacritty configuration
+create_link "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
+
+# Ghostty configuration
+create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+
+# WezTerm configuration
+create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
+
 # Starship configuration
 create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
-
-# Neovim configuration
-create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
-
-# Zellij configuration
-create_link "$DOTFILES_DIR/zellij" "$HOME/.config/zellij"
