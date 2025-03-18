@@ -8,6 +8,7 @@ Personal dotfiles including configurations for:
 - Git
 - Neovim
 - Starship
+- Tmux
 - Vim
 - WezTerm
 - Yazi
@@ -18,24 +19,19 @@ I code with _VIM_ and _VSCode_. The Neovim configuration is primarily for the _V
 
 ## Tools for Recommendation
 
-- Alacritty
 - Bat
 - Bottom
 - Delta
-- Difftastic
 - Fd
 - Fish
 - Fzf
-- Ghostty
 - Lazygit
 - Lsd
 - Neovim
 - Ripgrep
 - Sad
 - Starship
-- WezTerm
 - Yazi
-- Zellij
 - Zoxide
 - Zsh-autosuggestions (Zsh only)
 - Zsh-syntax-highlighting (Zsh only)

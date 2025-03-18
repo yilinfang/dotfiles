@@ -7,7 +7,7 @@ config.color_scheme = "iTerm2 Tango Dark"
 
 config.font_size = 15.0
 config.font = wezterm.font_with_fallback({
-	"VictorMono Nerd Font",
+	"Victor Mono",
 	"Noto Color Emoji",
 	"Symbols Nerd Font Mono",
 })
