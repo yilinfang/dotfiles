@@ -2,25 +2,25 @@
 
 Personal dotfiles including:
 
-- Git
-- Vim
+- Alacritty (deprecated)
 - Fish
-- Zsh (deprecated)
-- Starship
-- Alacritty
 - Ghostty (deprecated)
-- WezTerm (deprecated)
+- Git
+- Starship
+- Vim
+- WezTerm
+- Zsh (deprecated)
 
 I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
 
-## Tools
+## Tools for recommendation
 
 - Fish
-- Zsh-autosuggestions (for Zsh)
-- Zsh-syntax-highlighting (for Zsh)
+- Lsd
 - Starship
 - Zoxide
-- Lsd
+- Zsh-autosuggestions (for Zsh)
+- Zsh-syntax-highlighting (for Zsh)
 
 ## Usage
 

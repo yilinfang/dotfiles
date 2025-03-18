@@ -25,7 +25,7 @@ config.window_padding = {
 	left = 15,
 	right = 20,
 	top = 15,
-	bottom = 0,
+	bottom = 5,
 }
 
 config.keys = {
