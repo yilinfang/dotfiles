@@ -9,7 +9,7 @@ Personal dotfiles including configurations for:
 - Neovim
 - Starship
 - Vim
-- WezTerm (deprecated)
+- WezTerm
 - Yazi
 - Zellij
 - Zsh (deprecated)
@@ -33,6 +33,7 @@ I code with _VIM_ and _VSCode_. The Neovim configuration is primarily for the _V
 - Ripgrep
 - Sad
 - Starship
+- WezTerm
 - Yazi
 - Zellij
 - Zoxide
