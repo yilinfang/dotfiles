@@ -2,17 +2,42 @@
 
 Personal dotfiles including configurations for:
 
+- Alacritty
 - Fish
 - Ghostty
 - Git
-- Kitty
 - Neovim
 - Starship
 - Vim
-- WezTerm
+- WezTerm (deprecated)
+- Yazi
 - Zellij
+- Zsh (deprecated)
 
-I code with VIM and VSCode. The Neovim configuration is primarily for the VSCode-neovim plugin.
+I code with _VIM_ and _VSCode_. The Neovim configuration is primarily for the _VSCode Neovim_ plugin.
+
+## Tools for Recommendation
+
+- Alacritty
+- Bat
+- Bottom
+- Delta
+- Difftastic
+- Fd
+- Fish
+- Fzf
+- Ghostty
+- Lazygit
+- Lsd
+- Neovim
+- Ripgrep
+- Sad
+- Starship
+- Yazi
+- Zellij
+- Zoxide
+- Zsh-autosuggestions (Zsh only)
+- Zsh-syntax-highlighting (Zsh only)
 
 ## Usage
 

@@ -46,6 +46,9 @@ create_link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 # Fish configuration
 create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 
+# Neovim configuration
+create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+
 # Alacritty configuration
 create_link "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
 
@@ -57,3 +60,9 @@ create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
 
 # Starship configuration
 create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
+
+# Yazi configuration
+create_link "$DOTFILES_DIR/yazi" "$HOME/.config/yazi"
+
+# Zellij configuration
+create_link "$DOTFILES_DIR/zellij" "$HOME/.config/zellij"

@@ -1,7 +1,5 @@
 *.bak
 tmp/
 
-tmux/
-
 # MacOS
 .DS_Store

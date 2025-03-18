@@ -2,8 +2,15 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# Environment Variables
+set -gx EDITOR vim
+set -gx VISUAL vim
+
 # Homebrew
 fish_add_path -g /opt/homebrew/bin
+
+# Fzf
+fzf --fish | source
 
 # Zoxide
 zoxide init fish | source
@@ -27,6 +34,18 @@ alias n="nvim"
 alias g="git"
 alias c="code"
 alias t="tmux"
+alias lg="lazygit"
+alias ze="zellij"
+alias batp="bat -p"
+
+## Lsd
+alias ls='lsd --color=always --icon=always --group-directories-first'
+alias l='ls'
+alias la='ls -A'
+alias ll='ls -l --total-size'
+alias lla='ll -A'
+alias lt='ls -l --tree --depth=2 --total-size --git'
+alias lta='lt -a'
 
 # Functions
 function update_terminal_info
@@ -52,8 +71,3 @@ else
     end
 end
 # <<< conda initialize <<<
-
-# nvim-starter configuration
-if test -f /Users/leo/.nvim-starter/init.fish
-    source /Users/leo/.nvim-starter/init.fish
-end
