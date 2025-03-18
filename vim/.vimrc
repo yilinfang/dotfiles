@@ -4,7 +4,7 @@ syntax on                 " Enable syntax highlighting
 set nocompatible          " Use Vim Settings, rathar than Vi settings
 set autoread              " Read file when modified outside Vim
 set number                " Show line numbers
-"set relativenumber        " Relative line numbers
+set relativenumber        " Relative line numbers
 set history=1000          " Set the commands to save in the history default number is 20
 set wildmenu              " Display command line's tab complete options as a menu
 filetype plugin indent on " Enable filetype detection
