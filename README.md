@@ -2,9 +2,9 @@
 
 Personal dotfiles including:
 
-- Alacritty (deprecated)
+- Alacritty
 - Fish
-- Ghostty (deprecated)
+- Ghostty
 - Git
 - Starship
 - Vim
@@ -18,7 +18,6 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 - Fish
 - Lsd
 - Starship
-- WezTerm
 - Zoxide
 - Zsh-autosuggestions (for Zsh)
 - Zsh-syntax-highlighting (for Zsh)
