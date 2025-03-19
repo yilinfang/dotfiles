@@ -27,6 +27,3 @@ create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # Yazi configuration
 bash "$DOTFILES_DIR/yazi/install.sh"
-
-# Zellij configuration
-bash "$DOTFILES_DIR/zellij/install.sh"

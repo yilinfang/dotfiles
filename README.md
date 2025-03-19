@@ -11,7 +11,7 @@ Personal dotfiles including configurations for:
 - Vim
 - WezTerm
 - Yazi
-- Zellij
+- Zellij (deprecated)
 - Zsh (deprecated)
 
 ## Tools for Recommendation
