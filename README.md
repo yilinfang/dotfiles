@@ -2,9 +2,9 @@
 
 Personal dotfiles including:
 
-- Alacritty (deprecated)
+- Alacritty
 - Fish
-- Ghostty (deprecated)
+- Ghostty
 - Git
 - Starship
 - Vim
