@@ -16,20 +16,8 @@ create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 # Tmux configuration
 bash "$DOTFILES_DIR/tmux/install.sh"
 
-# ZSH configuration
-create_link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-
 # Fish configuration
 create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
-
-# Neovim configuration
-create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
-
-# Alacritty configuration
-create_link "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
-
-# Ghostty configuration
-create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 
 # WezTerm configuration
 create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"

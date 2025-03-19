@@ -17,11 +17,11 @@ zoxide init fish | source
 
 # Yazi
 function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
     rm -f -- "$tmp"
 end
 
@@ -30,13 +30,10 @@ starship init fish | source
 
 # Alias
 alias v="vim"
-alias n="nvim"
 alias g="git"
 alias c="code"
 alias t="tmux"
 alias lg="lazygit"
-alias ze="zellij"
-alias batp="bat -p"
 
 ## Lsd
 alias ls='lsd --color=always --icon=always --group-directories-first'

@@ -2,11 +2,10 @@
 
 Personal dotfiles including configurations for:
 
-- Alacritty
+- Alacrittly (deprecated)
 - Fish
-- Ghostty
+- Ghostty (deprecated)
 - Git
-- Neovim
 - Starship
 - Tmux
 - Vim
@@ -14,8 +13,6 @@ Personal dotfiles including configurations for:
 - Yazi
 - Zellij
 - Zsh (deprecated)
-
-I code with _VIM_ and _VSCode_. The Neovim configuration is primarily for the _VSCode Neovim_ plugin.
 
 ## Tools for Recommendation
 
@@ -27,10 +24,10 @@ I code with _VIM_ and _VSCode_. The Neovim configuration is primarily for the _V
 - Fzf
 - Lazygit
 - Lsd
-- Neovim
 - Ripgrep
 - Sad
 - Starship
+- WezTerm
 - Yazi
 - Zoxide
 - Zsh-autosuggestions (Zsh only)
