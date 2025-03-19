@@ -22,10 +22,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = 15,
-	right = 20,
-	top = 15,
-	bottom = 5,
+	left = "10px",
+	right = "10px",
+	top = "10px",
+	bottom = "0",
 }
 
 config.keys = {
