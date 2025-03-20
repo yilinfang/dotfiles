@@ -11,7 +11,7 @@ font-family = "Noto Color Emoji"
 font-size = 15
 
 # Theme
-theme = tokyonight
+theme = iTerm2 Tango Dark
 
 # MacOS
 ## Fix alt+arrow
