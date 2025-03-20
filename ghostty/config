@@ -9,7 +9,7 @@ font-family = "VictorMono Nerd Font"
 font-size = 15
 
 # Theme
-theme = iTerm2 Tango Dark
+theme = tokyonight
 
 # MacOS
 ## Fix alt+arrow
