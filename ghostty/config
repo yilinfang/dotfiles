@@ -12,4 +12,9 @@ font-size = 15
 theme = iTerm2 Tango Dark
 
 # MacOS
+## Fix alt+arrow
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = alt+up=unbind
+keybind = alt+down=unbind
 macos-option-as-alt = true
