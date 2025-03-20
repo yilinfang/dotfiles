@@ -17,7 +17,7 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 
 - Fish
 - Ghostty
-- Lsd
+- Eza
 - Starship
 - Zoxide
 - Zsh-autosuggestions (for Zsh)
