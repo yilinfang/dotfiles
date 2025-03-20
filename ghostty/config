@@ -6,7 +6,7 @@ quit-after-last-window-closed = true
 
 # Font
 font-family = ""
-font-family = "Maple Mono NF CN"
+font-family = "VictorMono Nerd Font"
 font-family = "Noto Color Emoji"
 font-size = 15
 
@@ -14,7 +14,7 @@ font-size = 15
 theme = tokyonight
 
 # MacOS
-# Fix alt+arrow
+## Fix alt+arrow
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = alt+f=esc:f
