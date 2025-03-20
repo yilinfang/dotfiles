@@ -5,7 +5,9 @@ window-height = 30
 quit-after-last-window-closed = true
 
 # Font
-font-family = "VictorMono Nerd Font"
+font-family = ""
+font-family = "Maple Mono NF CN"
+font-family = "Noto Color Emoji"
 font-size = 15
 
 # Theme
