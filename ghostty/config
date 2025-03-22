@@ -6,8 +6,12 @@ quit-after-last-window-closed = true
 
 # Font
 font-family = ""
-font-family = "VictorMono Nerd Font"
+font-family = "JetBrains Mono"
+font-family-bold = "JetBrains Mono"
+font-family-italic = "Maple Mono"
+font-family-bold-italic = "Maple Mono"
 font-family = "Noto Color Emoji"
+font-family = "Symbols Nerd Font Mono"
 font-size = 15
 
 # Theme
