@@ -1,8 +1,8 @@
-
-window-padding-balance = true
+# Window
 window-width = 100
 window-height = 30
-quit-after-last-window-closed = true
+window-padding-balance = true
+window-padding-color = extend
 
 # Font
 font-family = ""
@@ -19,10 +19,10 @@ font-size = 15
 theme = iTerm2 Tango Dark
 
 # MacOS
+quit-after-last-window-closed = true
 ## Fix alt+arrow
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = alt+f=esc:f
 keybind = alt+b=esc:b
 macos-option-as-alt = true
-
