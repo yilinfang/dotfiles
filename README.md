@@ -15,9 +15,11 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 
 ## Tools for recommendation
 
+- Eza
 - Fish
 - Ghostty
-- Eza
+- JetBrains Mono
+- Maple Mono
 - Starship
 - Zoxide
 - Zsh-autosuggestions (for Zsh)

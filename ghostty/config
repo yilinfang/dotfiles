@@ -10,9 +10,9 @@ font-family = JetBrains Mono
 font-family-bold = JetBrains Mono
 font-family-italic = Maple Mono
 font-family-bold-italic = Maple Mono
-font-family = Maple Mono NF CN
-font-family = Noto Color Emoji
-font-family = Symbols Nerd Font Mono
+font-family = Maple Mono NF CN # CJK and symbols
+font-family = Noto Color Emoji # Emojis
+font-family = Symbols Nerd Font Mono # Fall back of symbols
 font-size = 15
 
 # Theme
