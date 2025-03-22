@@ -11,7 +11,7 @@ font-family = Noto Color Emoji
 font-size = 15
 
 # Theme
-theme = iTerm2 Tango Dark
+theme = tokyonight
 
 # MacOS
 ## Fix alt+arrow
@@ -20,3 +20,4 @@ keybind = alt+right=unbind
 keybind = alt+f=esc:f
 keybind = alt+b=esc:b
 macos-option-as-alt = true
+
