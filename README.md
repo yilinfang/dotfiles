@@ -31,7 +31,6 @@ I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim
 - Ripgrep
 - Sad
 - Starship
-- WezTerm
 - Yazi
 - Zellij
 - Zoxide
