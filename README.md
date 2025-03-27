@@ -8,7 +8,7 @@ Personal dotfiles including configurations for:
 - Git
 - Neovim
 - Starship
-- Tmux
+- Tmux (deprecated)
 - Vim
 - WezTerm (deprecated)
 - Yazi
