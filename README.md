@@ -4,11 +4,11 @@ Personal dotfiles including:
 
 - Alacritty (deprecated)
 - Fish
-- Ghostty
+- Ghostty (deprecated)
 - Git
 - Starship
 - Vim
-- WezTerm (deprecated)
+- WezTerm
 - Zsh (deprecated)
 
 I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
@@ -17,9 +17,6 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 
 - Eza
 - Fish
-- Ghostty
-- JetBrains Mono
-- Maple Mono
 - Starship
 - Zoxide
 - Zsh-autosuggestions (for Zsh)
