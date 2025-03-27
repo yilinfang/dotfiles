@@ -12,7 +12,7 @@ font-family = Symbols Nerd Font Mono # Fall back of symbols
 font-size = 14
 
 # Theme
-theme = iTerm2 Tango Dark
+theme = catppuccin-mocha
 
 # MacOS
 quit-after-last-window-closed = true
