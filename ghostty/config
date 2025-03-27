@@ -1,15 +1,28 @@
 # Window
-window-padding-balance = true
-window-width = 120
+window-width = 100
 window-height = 30
-quit-after-last-window-closed = true
+window-padding-balance = true
+window-padding-color = extend
 
 # Font
-font-family = "VictorMono Nerd Font"
+font-family = ""
+font-family = JetBrains Mono
+font-family-bold = JetBrains Mono
+font-family-italic = Maple Mono
+font-family-bold-italic = Maple Mono
+font-family = Maple Mono NF CN # CJK and symbols
+font-family = Noto Color Emoji # Emojis
+font-family = Symbols Nerd Font Mono # Fall back of symbols
 font-size = 15
 
 # Theme
 theme = iTerm2 Tango Dark
 
 # MacOS
-macos-option-as-alt = true
+quit-after-last-window-closed = true
+## Fix alt+arrow
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = alt+f=esc:f
+keybind = alt+b=esc:b
+macos-option-as-alt = left

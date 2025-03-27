@@ -6,26 +6,56 @@ config.front_end = "WebGpu"
 config.color_scheme = "iTerm2 Tango Dark"
 
 config.font_size = 15.0
+config.line_height = 1.0
 config.font = wezterm.font_with_fallback({
-	"Victor Mono",
+	"Jetbrains Mono",
+	"Maple Mono NF CN",
 	"Noto Color Emoji",
-	"Symbols Nerd Font Mono",
 })
+
+config.font_rules = {
+	{
+		italic = true,
+		intensity = "Bold",
+		font = wezterm.font({
+			family = "Maple Mono NF CN",
+			weight = "Bold",
+			style = "Italic",
+		}),
+	},
+	{
+		italic = true,
+		intensity = "Half",
+		font = wezterm.font({
+			family = "Maple Mono NF CN",
+			weight = "DemiBold",
+			style = "Italic",
+		}),
+	},
+	{
+		italic = true,
+		intensity = "Normal",
+		font = wezterm.font({
+			family = "Maple Mono NF CN",
+			style = "Italic",
+		}),
+	},
+}
 
 config.initial_rows = 30
 config.initial_cols = 120
 
-config.enable_scroll_bar = true
+config.enable_scroll_bar = false
 
 config.window_frame = {
 	font_size = 14.0,
 }
 
 config.window_padding = {
-	left = 15,
-	right = 20,
-	top = 15,
-	bottom = 0,
+	left = "10",
+	right = "10",
+	top = "10",
+	bottom = "10",
 }
 
 config.keys = {
