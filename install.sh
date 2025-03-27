@@ -46,8 +46,8 @@ create_link "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 # Starship configuration
 create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 
-# # WezTerm configuration
-# create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
+# WezTerm configuration
+create_link "$DOTFILES_DIR/wezterm" "$HOME/.config/wezterm"
 
 # Ghostty configuration
 create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
