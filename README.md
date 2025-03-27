@@ -4,15 +4,18 @@ Personal dotfiles including configurations for:
 
 - Alacrittly (deprecated)
 - Fish
-- Ghostty (deprecated)
+- Ghostty
 - Git
+- Neovim
 - Starship
 - Tmux
 - Vim
-- WezTerm
+- WezTerm (deprecated)
 - Yazi
 - Zellij (deprecated)
 - Zsh (deprecated)
+
+I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim extension.
 
 ## Tools for Recommendation
 
@@ -21,6 +24,7 @@ Personal dotfiles including configurations for:
 - Delta
 - Fd
 - Fish
+- Fw
 - Fzf
 - Lazygit
 - Lsd

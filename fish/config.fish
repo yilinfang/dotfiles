@@ -35,15 +35,14 @@ alias c="code"
 alias t="tmux"
 alias lg="lazygit"
 
-# Eza
-alias ls='eza --color=always --icons=always --group-directories-first'
+# Lsd
+alias ls='lsd --color=always --icon=always --group-directories-first'
 alias l='ls'
-alias la='ls -a'
+alias la='ls -A'
 alias ll='ls -l --total-size'
 alias lla='ll -A'
-alias lt='ls -l --tree --depth=2 --total-size --git'
+alias lt='ls -l --tree --level=2 --total-size --git'
 alias lta='lt -A'
-alias lta='lt -a'
 
 # Functions
 function update_terminal_info
