@@ -12,7 +12,7 @@ Personal dotfiles including configurations for:
 - Vim
 - WezTerm (deprecated)
 - Yazi
-- Zellij (deprecated)
+- Zellij
 - Zsh (deprecated)
 
 I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim extension.
@@ -33,6 +33,7 @@ I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim
 - Starship
 - WezTerm
 - Yazi
+- Zellij
 - Zoxide
 - Zsh-autosuggestions (Zsh only)
 - Zsh-syntax-highlighting (Zsh only)

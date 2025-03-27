@@ -20,7 +20,7 @@ create_link "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 
 # Starship configuration
-create_link "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
+create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # Tmux configuration
 bash "$DOTFILES_DIR/tmux/install.sh"
@@ -29,4 +29,7 @@ bash "$DOTFILES_DIR/tmux/install.sh"
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
 # Yazi configuration
-create_link "$DOTFILES_DIR/yazi" "$HOME/.config/yazi"
+bash "$DOTFILES_DIR/yazi/install.sh"
+
+# Zellij configuration
+bash "$DOTFILES_DIR/zellij/install.sh"

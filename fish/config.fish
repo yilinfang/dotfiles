@@ -34,6 +34,7 @@ alias g="git"
 alias c="code"
 alias t="tmux"
 alias lg="lazygit"
+alias ze="zellij"
 
 # Lsd
 alias ls='lsd --color=always --icon=always --group-directories-first'
