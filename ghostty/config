@@ -25,4 +25,4 @@ keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = alt+f=esc:f
 keybind = alt+b=esc:b
-macos-option-as-alt = true
+macos-option-as-alt = left
