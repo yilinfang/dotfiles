@@ -72,7 +72,7 @@ nnoremap <leader>u <C-u>
 nnoremap <leader>d <C-d>
 
 " Select ALL
-nnoremap <leader>ca ggVG
+nnoremap <leader>sa ggVG
 
 " Copy to System Clipboard +
 xnoremap <leader>cs "+y
