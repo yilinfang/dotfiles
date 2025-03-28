@@ -17,11 +17,12 @@ Personal dotfiles including configurations for:
 
 I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim extension.
 
-## Tools for Recommendation
+## Tools I use
 
 - Bat
 - Bottom
 - Delta
+- Difftastic
 - Fd
 - Fish
 - Fw
