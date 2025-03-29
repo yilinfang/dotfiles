@@ -36,14 +36,14 @@ alias t="tmux"
 alias lg="lazygit"
 alias ze="zellij"
 
-# Lsd
-alias ls='lsd --color=always --icon=always --group-directories-first'
+# Eza
+alias ls='eza --color=always --icons=always --group-directories-first'
 alias l='ls'
-alias la='ls -A'
+alias la='ls -a'
 alias ll='ls -l --total-size'
-alias lla='ll -A'
+alias lla='ll -a'
 alias lt='ls -l --tree --level=2 --total-size --git'
-alias lta='lt -A'
+alias lta='lt -a'
 
 # Functions
 function update_terminal_info

@@ -23,12 +23,12 @@ I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim
 - Bottom
 - Delta
 - Difftastic
+- Eza
 - Fd
 - Fish
 - Fw
 - Fzf
 - Lazygit
-- Lsd
 - Ripgrep
 - Sad
 - Starship
