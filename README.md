@@ -15,8 +15,8 @@ I code with Neovim, also checkout my [Neovim configuration](https://github.com/y
 
 ## Tools for recommendation
 
+- Eza
 - Fish
-- Lsd
 - Starship
 - Zoxide
 - Zsh-autosuggestions (for Zsh)
