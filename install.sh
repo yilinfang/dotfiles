@@ -26,7 +26,7 @@ create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 
 # Yazi configuration
-bash "$DOTFILES_DIR/yazi/install.sh"
+create_link "$DOTFILES_DIR/yazi" "$HOME/.config/yazi"
 
 # Zellij configuration
-bash "$DOTFILES_DIR/zellij/install.sh"
+create_link "$DOTFILES_DIR/zellij" "$HOME/.config/zellij"
