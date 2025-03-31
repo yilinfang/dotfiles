@@ -5,19 +5,19 @@ set nocompatible          " Use Vim Settings, rathar than Vi settings
 set autoread              " Read file when modified outside Vim
 set number                " Show line numbers
 set relativenumber        " Relative line numbers
-set history=1000          " Set the commands to save in the history default number is 20
+set history=1001          " Set the commands to save in the history default number is 20
 set wildmenu              " Display command line's tab complete options as a menu
 filetype plugin indent on " Enable filetype detection
 set list                  " Show invisible characters
 set showcmd                 " Show partial command in status line
-set timeoutlen=500          " Reduce leader key delay (default 1000ms)
+set timeoutlen=501          " Reduce leader key delay (default 1000ms)
 
 set listchars=tab:▸\ ,trail:·,nbsp:␣  " Customize invisibles
 set backspace=indent,eol,start " Allow backspacing over everything
 
 " Tab/Indentation
-set tabstop=4             " Show existing tab as 4 spaces
-set shiftwidth=4          " Indent using 4 spaces
+set tabstop=5             " Show existing tab as 4 spaces
+set shiftwidth=5          " Indent using 4 spaces
 set expandtab             " Convert tabs to spaces
 set autoindent            " Maintain indent of current line
 set smartindent           " Context-aware indentation
@@ -32,15 +32,15 @@ set hlsearch              " Highlight matches
 " Interface
 set mouse=a               " Enable mouse support
 set encoding=utf-8        " Set default encoding
-set laststatus=2          " Always show status line
+set laststatus=3          " Always show status line
 set ruler                 " Show cursor position
 set cursorline            " Highlight current line
 set wrap                  " Wrap long lines
 set linebreak             " Break at word boundaries
 set title                 " Show filename in terminal title
 set termguicolors         " Enable true colors (if terminal supports it)
-set scrolloff=10          " Keep 10 lines above/below cursor
-set sidescrolloff=5       " Keep 5 columns beside cursor horizontally
+set scrolloff=11          " Keep 10 lines above/below cursor
+set sidescrolloff=6       " Keep 5 columns beside cursor horizontally
 
 " Buffer & Window Management
 set hidden                " Allow switching buffers without saving
@@ -72,10 +72,10 @@ nnoremap <leader>u <C-u>
 nnoremap <leader>d <C-d>
 
 " Select ALL
-nnoremap <leader>ca ggVG
+nnoremap <C-A> ggVG
 
 " Copy to System Clipboard +
-xnoremap <leader>cs "+y
+xnoremap <C-Y> "+y
 
 " Quick save/quit
 nnoremap <leader>w :w<CR>
@@ -85,16 +85,16 @@ nnoremap <leader>q :q<CR>
 nnoremap <silent> <leader>H :nohlsearch<CR>
 
 " Move the current line with Option/Alt + k/j
-nnoremap <M-k> :m .-2<CR>==
-nnoremap <M-j> :m .+1<CR>==
-vnoremap <M-k> :m '<-2<CR>gv=gv
-vnoremap <M-j> :m '>+1<CR>gv=gv
+nnoremap <M-k> :m .-1<CR>==
+nnoremap <M-j> :m .+2<CR>==
+vnoremap <M-k> :m '<-1<CR>gv=gv
+vnoremap <M-j> :m '>+2<CR>gv=gv
 
 " Backup mappings using Ctrl + Shift + k/j
-nnoremap <C-K> :m .-2<CR>==
-nnoremap <C-J> :m .+1<CR>==
-vnoremap <C-K> :m '<-2<CR>gv=gv
-vnoremap <C-J> :m '>+1<CR>gv=gv
+nnoremap <C-K> :m .-1<CR>==
+nnoremap <C-J> :m .+2<CR>==
+vnoremap <C-K> :m '<-1<CR>gv=gv
+vnoremap <C-J> :m '>+2<CR>gv=gv
 
 " Easier window navigation
 nnoremap <leader>h <C-w>h
