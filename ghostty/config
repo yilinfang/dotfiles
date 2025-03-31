@@ -6,7 +6,7 @@ window-padding-color = extend
 
 # Font
 font-family = ""
-font-family = Maple Mono NF CN # CJK and symbols
+font-family = Victor Mono
 font-family = Noto Color Emoji # Emojis
 font-family = Symbols Nerd Font Mono # Fall back of symbols
 font-size = 14
