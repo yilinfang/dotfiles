@@ -75,7 +75,7 @@ nnoremap <leader>d <C-d>
 nnoremap <M-A> ggVG
 
 " Copy to System Clipboard +
-xnoremap <M-Y> "+y
+xnoremap <M-C> "+y
 
 " Quick save/quit
 nnoremap <leader>w :w<CR>
