@@ -72,10 +72,12 @@ nnoremap <leader>u <C-u>
 nnoremap <leader>d <C-d>
 
 " Select ALL
-nnoremap <leader>sa ggVG
+nnoremap <C-A> ggVG
+nnoremap <M-A> ggVG
 
 " Copy to System Clipboard +
-xnoremap <leader>cs "+y
+xnoremap <C-Y> "+y
+xnoremap <M-Y> "+y
 
 " Quick save/quit
 nnoremap <leader>w :w<CR>
@@ -95,6 +97,12 @@ nnoremap <C-K> :m .-2<CR>==
 nnoremap <C-J> :m .+1<CR>==
 vnoremap <C-K> :m '<-2<CR>gv=gv
 vnoremap <C-J> :m '>+1<CR>gv=gv
+
+" Backup mappings using Alt + Shift + k/j
+nnoremap <M-K> :m .-2<CR>==
+nnoremap <M-J> :m .+1<CR>==
+vnoremap <M-K> :m '<-2<CR>gv=gv
+vnoremap <M-J> :m '>+1<CR>gv=gv
 
 " Easier window navigation
 nnoremap <leader>h <C-w>h
