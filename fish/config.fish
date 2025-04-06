@@ -11,11 +11,6 @@ zoxide init fish | source
 # Starship
 starship init fish | source
 
-# Alias
-alias ua="~/Workspace/update-scripts/update-fish.sh"
-alias ba="~/Workspace/backup-scripts/backup-all.sh"
-alias eh="vim ~/.ssh/config"
-
 # Eza
 alias ls='Eza --color=always --icons=always --group-directories-first'
 alias l='ls'
@@ -24,6 +19,9 @@ alias ll='ls -l --total-size'
 alias lla='ll -a'
 alias lt='ls -l --tree --level=2 --total-size --git'
 alias lta='lt -a'
+
+# Alias
+alias eh="vim ~/.ssh/config"
 
 # Functions
 function update_terminal_info
