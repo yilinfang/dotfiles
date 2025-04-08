@@ -11,7 +11,7 @@ Personal dotfiles including:
 - WezTerm (deprecated)
 - Zsh (deprecated)
 
-I code with an Neovim-based PDE ([Personalized Development Environment](https://youtu.be/QMVIJhC9Veg?si=VgJQLBVTIYmNjVSD)), also check my [Neovim configuration](https://github.com/yilinfang/nvim) and [PDE bootstrap scripts](https://github.com/yilinfang/pde-starter) for more details.
+I code with an Neovim-based PDE([Personalized Development Environment](https://youtu.be/QMVIJhC9Veg?si=VgJQLBVTIYmNjVSD)), also check my [Neovim configuration](https://github.com/yilinfang/nvim) and [PDE bootstrap scripts](https://github.com/yilinfang/pde-starter) for more details.
 
 ## Usage
 
