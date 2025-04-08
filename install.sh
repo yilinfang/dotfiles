@@ -23,7 +23,7 @@ create_link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # Tmux configuration
-create_link "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+create_link "$DOTFILES_DIR/tmux" "$HOME/.config/tmux"
 
 # Vim configuration
 create_link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
