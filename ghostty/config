@@ -6,11 +6,12 @@ window-padding-color = extend
 
 # Font
 font-family = ""
-font-family = JetBrains Mono
-font-family-bold = JetBrains Mono
-font-family-italic = Maple Mono
-font-family-bold-italic = Maple Mono
-font-family = Maple Mono CN # CJK
+# font-family = JetBrains Mono
+# font-family-bold = JetBrains Mono
+# font-family-italic = Maple Mono
+# font-family-bold-italic = Maple Mono
+# font-family = Maple Mono CN # CJK
+font-family = JetMaple Mono
 font-family = Noto Color Emoji # Emojis
 font-family = Symbols Nerd Font Mono # Symbols
 font-size = 15

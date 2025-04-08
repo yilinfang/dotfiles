@@ -8,7 +8,7 @@ Personal dotfiles including:
 - Git
 - Starship
 - Vim
-- WezTerm
+- WezTerm (deprecated)
 - Zsh (deprecated)
 
 I code with Neovim, also checkout my [Neovim configuration](https://github.com/yilinfang/nvim) and [bootstrap scripts](https://github.com/yilinfang/nvim-starter).
