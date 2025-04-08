@@ -4,7 +4,15 @@ window-height = 30
 window-padding-balance = true
 window-padding-color = extend
 
-# # Font
+# Theme
+theme = iTerm2 Tango Dark
+
+# Background
+# background-opacity = 0.9
+# background-blur-radius = 20
+# background = #000000
+
+# Font
 # font-family = ""
 # font-family = JetBrains Mono
 # font-family-bold = JetBrains Mono
@@ -21,9 +29,6 @@ font-family = JetMaple Mono
 font-family = Noto Color Emoji # Emojis
 font-family = Symbols Nerd Font Mono # Symbols
 font-size = 15
-
-# Theme
-theme = iTerm2 Tango Dark
 
 # MacOS
 quit-after-last-window-closed = true
