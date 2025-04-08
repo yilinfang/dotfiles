@@ -13,19 +13,12 @@ theme = iTerm2 Tango Dark
 # background = #000000
 
 # Font
-# font-family = ""
-# font-family = JetBrains Mono
-# font-family-bold = JetBrains Mono
-# font-family-italic = Maple Mono
-# font-family-bold-italic = Maple Mono
-# font-family = Maple Mono CN # CJK
-# font-family = Noto Color Emoji # Emojis
-# font-family = Symbols Nerd Font Mono # Symbols
-# font-size = 15
-
-# Font
 font-family = ""
-font-family = JetMaple Mono
+font-family = JetBrains Mono
+font-family-bold = JetBrains Mono
+font-family-italic = Maple Mono
+font-family-bold-italic = Maple Mono
+font-family = Maple Mono CN # CJ
 font-family = Noto Color Emoji # Emojis
 font-family = Symbols Nerd Font Mono # Symbols
 font-size = 15
