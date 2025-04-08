@@ -17,7 +17,7 @@ Personal dotfiles including configurations for:
 
 I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim extension.
 
-## Tools I use
+## Other tools I use
 
 - Bat
 - Bottom
