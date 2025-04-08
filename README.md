@@ -8,11 +8,11 @@ Personal dotfiles including configurations for:
 - Git
 - Neovim
 - Starship
-- Tmux (deprecated)
+- Tmux
 - Vim
 - WezTerm (deprecated)
 - Yazi (deprecated)
-- Zellij
+- Zellij (deprecated)
 - Zsh (deprecated)
 
 I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim extension.
@@ -31,7 +31,6 @@ I code with Vim and VSCode, the Neovim configuration is mainly for VSCode-Neovim
 - Lazygit
 - Ripgrep
 - Starship
-- Zellij
 - Zoxide
 - Zsh-autosuggestions (Zsh only)
 - Zsh-syntax-highlighting (Zsh only)

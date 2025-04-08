@@ -2,7 +2,6 @@
 window-width = 100
 window-height = 30
 window-padding-balance = true
-window-padding-color = extend
 
 # Font
 font-family = ""
