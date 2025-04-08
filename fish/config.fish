@@ -48,7 +48,7 @@ else
 end
 # <<< conda initialize <<<
 
-# nvim-starter configuration
-if test -f /Users/leo/.nvim-starter/init.fish
-    source /Users/leo/.nvim-starter/init.fish
+# pde-starter configuration
+if test -f /Users/leo/.pde/init.fish
+    source /Users/leo/.pde/init.fish
 end
