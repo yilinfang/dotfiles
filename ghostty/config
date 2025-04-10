@@ -2,7 +2,7 @@
 window-width = 100
 window-height = 30
 window-padding-balance = true
-window-padding-color = extend
+# window-padding-color = extend
 
 # Theme
 theme = iTerm2 Tango Dark
