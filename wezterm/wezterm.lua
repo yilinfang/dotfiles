@@ -8,39 +8,39 @@ config.color_scheme = "iTerm2 Tango Dark"
 config.font_size = 15.0
 config.line_height = 1.0
 config.font = wezterm.font_with_fallback({
-	"Jetbrains Mono",
-	"Maple Mono NF CN",
+	"JetMaple Mono",
 	"Noto Color Emoji",
+	"Symbols Nerd Font Mono",
 })
 
-config.font_rules = {
-	{
-		italic = true,
-		intensity = "Bold",
-		font = wezterm.font({
-			family = "Maple Mono NF CN",
-			weight = "Bold",
-			style = "Italic",
-		}),
-	},
-	{
-		italic = true,
-		intensity = "Half",
-		font = wezterm.font({
-			family = "Maple Mono NF CN",
-			weight = "DemiBold",
-			style = "Italic",
-		}),
-	},
-	{
-		italic = true,
-		intensity = "Normal",
-		font = wezterm.font({
-			family = "Maple Mono NF CN",
-			style = "Italic",
-		}),
-	},
-}
+-- config.font_rules = {
+-- 	{
+-- 		italic = true,
+-- 		intensity = "Bold",
+-- 		font = wezterm.font({
+-- 			family = "Maple Mono NF CN",
+-- 			weight = "Bold",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- 	{
+-- 		italic = true,
+-- 		intensity = "Half",
+-- 		font = wezterm.font({
+-- 			family = "Maple Mono NF CN",
+-- 			weight = "DemiBold",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- 	{
+-- 		italic = true,
+-- 		intensity = "Normal",
+-- 		font = wezterm.font({
+-- 			family = "Maple Mono NF CN",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- }
 
 config.initial_rows = 30
 config.initial_cols = 120
@@ -52,10 +52,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = "10",
-	right = "10",
-	top = "10",
-	bottom = "10",
+	left = "0",
+	right = "0",
+	top = "0",
+	bottom = "0",
 }
 
 config.keys = {
