@@ -12,6 +12,7 @@ font-size = 15
 
 # MacOS
 quit-after-last-window-closed = true
+
 ## Fix alt+arrow
 keybind = alt+left=unbind
 keybind = alt+right=unbind
@@ -19,8 +20,8 @@ keybind = alt+f=esc:f
 keybind = alt+b=esc:b
 macos-option-as-alt = left
 
-## Theme
-# Solarzied-osaka from https://github.com/craftzdog/solarized-osaka.nvim/blob/main/extras/ghostty/solarized_osaka_dark
+# Theme
+## Solarzied-osaka from https://github.com/craftzdog/solarized-osaka.nvim/blob/main/extras/ghostty/solarized_osaka_dark
 palette = 0=#001419
 palette = 1=#db302d
 palette = 2=#849900
@@ -44,6 +45,6 @@ cursor-color = #839395
 selection-background = #1a6397
 selection-foreground = #839395
 
-# Transparency
+## Make window transparent
 background-opacity = 0.9
 background-blur-radius = 20
