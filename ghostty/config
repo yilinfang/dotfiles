@@ -21,30 +21,29 @@ keybind = alt+b=esc:b
 macos-option-as-alt = left
 
 # Theme
-# Tokyo Night Night
-# From https://github.com/folke/tokyonight.nvim/blob/main/extras/ghostty/tokyonight_night
-palette = 0=#15161e
-palette = 1=#f7768e
-palette = 2=#9ece6a
-palette = 3=#e0af68
-palette = 4=#7aa2f7
-palette = 5=#bb9af7
-palette = 6=#7dcfff
-palette = 7=#a9b1d6
-palette = 8=#414868
-palette = 9=#ff899d
-palette = 10=#9fe044
-palette = 11=#faba4a
-palette = 12=#8db0ff
-palette = 13=#c7a9ff
-palette = 14=#a4daff
-palette = 15=#c0caf5
+palette = 0=#001419
+palette = 1=#db302d
+palette = 2=#849900
+palette = 3=#b28500
+palette = 4=#268bd3
+palette = 5=#d23681
+palette = 6=#29a298
+palette = 7=#fdf5e2
+palette = 8=#063540
+palette = 9=#f55350
+palette = 10=#b7f900
+palette = 11=#ffbf00
+palette = 12=#46acf5
+palette = 13=#f254a0
+palette = 14=#2aeddd
+palette = 15=#ffffff
 
-background = #1a1b26
-foreground = #c0caf5
-cursor-color = #c0caf5
-selection-background = #283457
-selection-foreground = #c0caf5
-## Make window transparent
+background = #001419
+foreground = #839395
+cursor-color = #839395
+selection-background = #1a6397
+selection-foreground = #839395
+
+# Background settings
 background-opacity = 0.9
 background-blur-radius = 20
