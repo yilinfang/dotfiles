@@ -11,11 +11,6 @@ zoxide init fish | source
 # Starship
 starship init fish | source
 
-# Load solarized osaka colors
-if test -f {$HOME}/.config/fish/conf.d/solarized_osaka_dark.fish
-    source {$HOME}/.config/fish/conf.d/solarized_osaka_dark.fish
-end
-
 # Eza
 alias ls='Eza --color=always --icons=always --group-directories-first'
 alias l='ls'
