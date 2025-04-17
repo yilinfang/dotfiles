@@ -11,14 +11,14 @@ zoxide init fish | source
 # Starship
 starship init fish | source
 
-# Eza
-alias ls='Eza --color=always --icons=always --group-directories-first'
+# Lsd
+alias ls='lsd --color=always --icon=always --group-directories-first'
 alias l='ls'
-alias la='ls -a'
+alias la='ls -A'
 alias ll='ls -l --total-size'
-alias lla='ll -a'
-alias lt='ls -l --tree --level=2 --total-size --git'
-alias lta='lt -a'
+alias lla='ll -A'
+alias lt='ls -l --tree --depth=3 --total-size'
+alias lta='lt -A'
 
 # Alias
 alias eh="vim ~/.ssh/config"
