@@ -8,6 +8,18 @@ fish_add_path -g /opt/homebrew/bin
 # Starship
 starship init fish | source
 
+# Zoxide
+zoxide init fish | source
+
+# Eza
+alias ls='Eza --color=always --icons=always --group-directories-first'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l --total-size'
+alias lla='ll -a'
+alias lt='ls -l --tree --level=2 --total-size --git'
+alias lta='lt -a'
+
 # Alias
 alias eh="vim ~/.ssh/config"
 
