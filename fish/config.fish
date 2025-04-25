@@ -2,8 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Homebrew
-fish_add_path -g /opt/homebrew/bin
+# Homebrew (only on macOS)
+if test (uname) = Darwin
+    fish_add_path -g /opt/homebrew/bin
+end
 
 # Starship
 starship init fish | source
