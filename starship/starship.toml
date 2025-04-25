@@ -49,4 +49,4 @@ ignore_base = false
 
 [python]
 format = "[$virtualenv]($style) "
-style = "cyan"
+style = "green"
