@@ -13,6 +13,13 @@ Personal dotfiles including:
 
 I code with an Neovim-based PDE([Personalized Development Environment](https://youtu.be/QMVIJhC9Veg?si=VgJQLBVTIYmNjVSD)), also check my [Neovim configuration](https://github.com/yilinfang/nvim-ks) and [PDE bootstrap scripts](https://github.com/yilinfang/pde-starter) for more details.
 
+## Requirements
+
+- A Nerd Font
+- eza
+- starship
+- zoxide
+
 ## Usage
 
 ```bash
