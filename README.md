@@ -16,9 +16,11 @@ I code with an Neovim-based PDE([Personalized Development Environment](https://y
 ## Requirements
 
 - A Nerd Font
-- eza
-- starship
-- zoxide
+- Eza
+- Fish
+- Ghostty
+- Starship
+- Zoxide
 
 ## Usage
 
