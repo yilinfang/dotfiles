@@ -8,22 +8,28 @@ if test (uname) = Darwin
 end
 
 # Starship
-starship init fish | source
+if command -v starship >/dev/null
+    starship init fish | source
+end
 
 # Zoxide
-zoxide init fish | source
+if command -v zoxide >/dev/null
+    zoxide init fish | source
+end
 
 # Eza
-alias ls='Eza --color=always --icons=always --group-directories-first'
-alias l='ls'
-alias la='ls -a'
-alias ll='ls -l --total-size'
-alias lla='ll -a'
-alias lt='ls -l --tree --level=2 --total-size --git'
-alias lta='lt -a'
+if command -v eza >/dev/null
+    alias ls='Eza --color=always --icons=always --group-directories-first'
+    alias l='ls'
+    alias la='ls -a'
+    alias ll='ls -l --total-size'
+    alias lla='ll -a'
+    alias lt='ls -l --tree --level=2 --total-size --git'
+    alias lta='lt -a'
+end
 
 # Alias
-alias eh="vim ~/.ssh/config"
+alias eh="vi $HOME/.ssh/config"
 
 # Functions
 function update_terminal_info
