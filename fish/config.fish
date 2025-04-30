@@ -28,9 +28,6 @@ if command -v eza >/dev/null
     alias lta='lt -a'
 end
 
-# Alias
-alias eh="vi $HOME/.ssh/config"
-
 # Functions
 function update_terminal_info
     # Check if a server argument is provided
