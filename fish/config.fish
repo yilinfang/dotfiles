@@ -2,6 +2,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# Set XDG_CONFIG_HOME to "$HOME/.config"
+if test -z "$XDG_CONFIG_HOME"
+    set -gx XDG_CONFIG_HOME "$HOME/.config"
+end
+
 # Homebrew (only on macOS)
 if test (uname) = Darwin
     fish_add_path -g /opt/homebrew/bin
