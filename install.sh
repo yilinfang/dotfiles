@@ -48,3 +48,6 @@ create_link "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # Ghostty configuration
 create_link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+
+# Kitty configuration
+create_link "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"

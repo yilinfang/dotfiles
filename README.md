@@ -6,6 +6,7 @@ Personal dotfiles including:
 - Fish
 - Ghostty
 - Git
+- Kitty
 - Starship
 - Vim
 - WezTerm (deprecated)
