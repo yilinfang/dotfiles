@@ -10,8 +10,8 @@
 	ci = commit
 	cm = commit -m
 	st = status
-	pl = pull
-	ph = push
+	p = pull
+	P = push
 	dl = -c diff.external=difft log -p --ext-diff
 	ds = -c diff.external=difft show --ext-diff
 	dft = -c diff.external=difft diff
