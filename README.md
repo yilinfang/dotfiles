@@ -14,15 +14,12 @@ Personal dotfiles including:
 
 I code with an Neovim-based PDE([Personalized Development Environment](https://youtu.be/QMVIJhC9Veg?si=VgJQLBVTIYmNjVSD)), also check my [Neovim configuration](https://github.com/yilinfang/nvim) and [PDE bootstrap scripts](https://github.com/yilinfang/pde-starter) for more details.
 
-## Requirements
+## Extra Requirements
 
 - A Nerd Font
 - Delta
 - Difftastic
 - Eza
-- Fish
-- Ghostty
-- Starship
 - Zoxide
 
 ## Usage
