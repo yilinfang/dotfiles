@@ -5,10 +5,17 @@ window-padding-balance = true
 window-padding-color = extend
 
 # Font
-font-family = JetMaple Mono
-font-family = Noto Color Emoji # Emojis
-font-family = Symbols Nerd Font Mono # Symbols
+font-family = ""
+font-family = "Maple Mono NF CN"
 font-size = 15
+adjust-underline-position = 2
+## Font Features
+font-feature = calt
+font-feature = cv01
+font-feature = cv02
+font-feature = cv61
+font-feature = ss05
+font-feature = ss08
 
 # MacOS
 quit-after-last-window-closed = true
