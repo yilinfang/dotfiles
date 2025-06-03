@@ -38,4 +38,17 @@ return {
       },
     },
   },
+
+  -- HACK: guess-indent.nvim
+  --  Detect tabstop and shiftwidth automatically
+  {
+    "NMAC427/guess-indent.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("guess-indent").setup({})
+      vim.keymap.set("n", "<leader>G", function()
+        vim.cmd([[GuessIndent]])
+      end, { desc = "[G]uess Indent" })
+    end,
+  },
 }
