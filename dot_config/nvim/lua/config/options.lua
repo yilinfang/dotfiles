@@ -1,7 +1,7 @@
 -- [[ Global options ]]
 -- Set <space> as the leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 
 -- HACK: Exclude patterns for telescope
 -- vim.g.exclude_pattern = {
