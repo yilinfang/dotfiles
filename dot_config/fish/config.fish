@@ -7,6 +7,11 @@ if test -z "$XDG_CONFIG_HOME"
     set -gx XDG_CONFIG_HOME "$HOME/.config"
 end
 
+# Add ~/.bin to PATH if it exists
+if test -d "$HOME/.bin"
+    fish_add_path "$HOME/.bin"
+end
+
 # MacOS specific configuration
 if test (uname) = Darwin
     # Homebrew
