@@ -103,3 +103,7 @@ vim.o.shiftround = true -- Round indent
 vim.o.shiftwidth = 2 -- Size of an indent
 vim.o.smartindent = true -- Smart indenting on new lines
 vim.o.tabstop = 2 -- Number of spaces a <Tab> counts for
+
+-- HACK: Autoread
+-- Automatically reload files changed outside of Neovim
+vim.o.autoread = true
