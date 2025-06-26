@@ -36,6 +36,11 @@ if command -v fzf >/dev/null
     fzf --fish | source
 end
 
+# Initialize zoxide if installed
+if command -v zoxide >/dev/null
+    zoxide init fish | source
+end
+
 # If y is available, initialize yazi
 if command -v yazi >/dev/null; and not command -v y >/dev/null
     function y

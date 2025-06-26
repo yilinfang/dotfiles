@@ -42,8 +42,13 @@ if command -v lazygit &>/dev/null && ! command -v lg &>/dev/null; then
 fi
 
 # Initialize fzf if installed
-if [ -f ~/.fzf.bash ]; then
+if command -v fzf &>/dev/null; then
   eval "$(fzf --bash)"
+fi
+
+# Initialize zoxide if installed
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init bash)"
 fi
 
 # If y is available, initialize yazi
