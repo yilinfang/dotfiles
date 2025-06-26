@@ -7,11 +7,6 @@ if test -z "$XDG_CONFIG_HOME"
     set -gx XDG_CONFIG_HOME "$HOME/.config"
 end
 
-# Add ~/.bin to PATH if it exists
-if test -d "$HOME/.bin"
-    fish_add_path "$HOME/.bin"
-end
-
 # MacOS specific configuration
 if test (uname) = Darwin
     # Homebrew
@@ -22,11 +17,6 @@ if test (uname) = Darwin
     if not contains $ncurses_terminfo $TERMINFO_DIRS
         set -gx TERMINFO_DIRS $ncurses_terminfo $TERMINFO_DIRS
     end
-end
-
-# Add $HOME/.chezmoi/bin to PATH if it exists
-if test -d "$HOME/.chezmoi/bin"
-    fish_add_path "$HOME/.chezmoi/bin"
 end
 
 # Starship
@@ -50,6 +40,11 @@ if command -v eza >/dev/null
     alias lta='lt -a'
 end
 
+# Fzf
+if command -v fzf >/dev/null
+    fzf --fish | source
+end
+
 # Functions
 function update_terminal_info
     # Check if a server argument is provided
@@ -62,7 +57,21 @@ function update_terminal_info
     infocmp -x | ssh $argv -- tic -x -
 end
 
-# pde-starter configuration
-if test -f /Users/leo/.pde/init.fish
-    source /Users/leo/.pde/init.fish
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/leo/miniconda3/bin/conda
+    eval /Users/leo/miniconda3/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f "/Users/leo/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/Users/leo/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH /Users/leo/miniconda3/bin $PATH
+    end
+end
+# <<< conda initialize <<<
+
+/Users/leo/.local/bin/mise activate fish | source
+
+if test -f "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
+    source "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
 end
