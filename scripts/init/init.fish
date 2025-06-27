@@ -6,6 +6,11 @@ if test -d "$HOME/.local/bin"
     fish_add_path -g "$HOME/.local/bin"
 end
 
+# If mise is installed, activate it
+if command -v mise >/dev/null
+    mise activate fish | source
+end
+
 # If nvim is installed, set it as the default editor
 if command -v nvim >/dev/null
     set -gx EDITOR nvim

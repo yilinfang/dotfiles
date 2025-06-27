@@ -24,11 +24,6 @@ if command -v starship >/dev/null
     starship init fish | source
 end
 
-# Zoxide
-if command -v zoxide >/dev/null
-    zoxide init fish | source
-end
-
 # Eza
 if command -v eza >/dev/null
     alias ls='Eza --color=always --icons=always --group-directories-first'
@@ -38,11 +33,6 @@ if command -v eza >/dev/null
     alias lla='ll -a'
     alias lt='ls -l --tree --level=2 --total-size --git'
     alias lta='lt -a'
-end
-
-# Fzf
-if command -v fzf >/dev/null
-    fzf --fish | source
 end
 
 # Functions
@@ -69,8 +59,6 @@ else
     end
 end
 # <<< conda initialize <<<
-
-/Users/leo/.local/bin/mise activate fish | source
 
 if test -f "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
     source "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
