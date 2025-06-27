@@ -48,6 +48,8 @@ return {
         -- or a suggestion from your LSP for this to activate.
         map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 
+        -- HACK: Replace telescope with Snacks.picker
+
         -- Find references for the word under your cursor.
         map("grr", function() Snacks.picker.lsp_references() end, "[G]oto [R]eferences")
 
@@ -62,7 +64,7 @@ return {
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("grD", function() Snacks.picker.lsp_declarations() end, "[G]oto [D]eclaration")
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.

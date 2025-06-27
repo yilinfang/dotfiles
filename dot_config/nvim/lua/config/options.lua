@@ -3,11 +3,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- HACK: Exclude patterns for telescope
--- vim.g.exclude_pattern = {
---   '.git/',
--- }
-
 -- [[ Setting options ]]
 -- Enable linenumbers
 vim.o.number = true
