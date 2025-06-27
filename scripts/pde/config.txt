@@ -1,4 +1,5 @@
 ~/.tmux.conf
+~/.vimrc
 ~/.config/mise
 ~/.config/nvim
 ~/.config/lazygit

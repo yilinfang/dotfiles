@@ -1,0 +1,111 @@
+" Personal VIM Settings by Yilin Fang
+" Basic Settings
+syntax on                 " Enable syntax highlighting
+set nocompatible          " Use Vim Settings, rathar than Vi settings
+set autoread              " Read file when modified outside Vim
+set number                " Show line numbers
+set relativenumber        " Relative line numbers
+set history=1000          " Set the commands to save in the history default number is 20
+set wildmenu              " Display command line's tab complete options as a menu
+filetype plugin indent on " Enable filetype detection
+set list                  " Show invisible characters
+set showcmd               " Show partial command in status line
+set timeoutlen=500        " Reduce leader key delay (default 1000ms)
+set linebreak             " Break lines at word boundaries
+set showbreak=↪\          " Show line breaks with arrow
+set listchars=tab:→\ ,trail:·,extends:>,precedes:<,nbsp:+ " Customize list characters
+set backspace=indent,eol,start " Allow backspacing over everything
+
+" Tab/Indentation
+set tabstop=4             " Show existing tab as 4 spaces
+set shiftwidth=4          " Indent using 4 spaces
+set expandtab             " Convert tabs to spaces
+set autoindent            " Maintain indent of current line
+set smartindent           " Context-aware indentation
+set smarttab              " Smart tab
+
+" Search
+set ignorecase            " Case-insensitive search
+set smartcase             " Case-sensitive when using capitals
+set incsearch             " Show partial matches
+set hlsearch              " Highlight matches
+
+" Interface
+set mouse=a               " Enable mouse support
+set encoding=utf-8        " Set default encoding
+set laststatus=4          " Always show status line
+set ruler                 " Show cursor position
+set cursorline            " Highlight current line
+set wrap                  " Wrap long lines
+set linebreak             " Break at word boundaries
+set title                 " Show filename in terminal title
+set termguicolors         " Enable true colors (if terminal supports it)
+set scrolloff=10          " Keep 10 lines above/below cursor
+set sidescrolloff=5       " Keep 5 columns beside cursor horizontally
+
+" Buffer & Window Management
+set hidden                " Allow switching buffers without saving
+set splitright splitbelow " More natural split placement (right/below)
+
+" Completion
+set completeopt=menu,menuone,noselect
+
+" Custom minimal status line
+set statusline=%F%m%r%h%w\ [%{&ff}/%Y]\ %=[%l,%c]\ [%p%%]
+
+" Backup/swap files
+set nobackup
+set noswapfile
+
+" Visual preferences
+colorscheme darkblue      " Built-in color scheme
+set signcolumn=yes        " Always show sign column
+
+" Key Mappings
+let mapleader = " "       " Set leader key to space
+
+" Select ALL
+nnoremap <M-A> ggVG
+
+" Copy to System Clipboard +
+xnoremap <M-C> "+y
+
+" Clear search highlights
+nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+" Move the current line with Option/Alt + k/j
+nnoremap <M-k> :m .-1<CR>==
+nnoremap <M-j> :m .+2<CR>==
+vnoremap <M-k> :m '<-1<CR>gv=gv
+vnoremap <M-j> :m '>+2<CR>gv=gv
+
+" Easier window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Splits management
+nnoremap <leader>sv :vsplit<CR>
+nnoremap <leader>sh :split<CR>
+nnoremap <leader>sc :close<CR>
+
+" Buffer navigation
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+
+" Toggle fold under cursor
+nnoremap <leader>z za
+" Open all folds
+nnoremap <leader>zo zR
+" Close all folds
+nnoremap <leader>zc zM
+
+" Auto commands
+augroup configgroup
+    autocmd!
+    autocmd FileType text setlocal spell spelllang=en_us " Enable spell check for text files
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable auto comments
+    autocmd VimResized * windo wincmd = " Adjust window size on resize
+augroup END
