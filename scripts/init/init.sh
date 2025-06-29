@@ -1,21 +1,6 @@
 # init.sh
 # This script initializes the Bash shell environment
 
-# Add ~/.local/bin to PATH if it exists and is not already there
-if [ -d "$HOME/.local/bin" ]; then
-  # Use a case statement to avoid substring matching issues and extra processes.
-  # We check for the path surrounded by colons.
-  case ":$PATH:" in
-  *:"$HOME/.local/bin":*)
-    # The path is already in the PATH string. Do nothing.
-    ;;
-  *)
-    # Prepend the path to the PATH string.
-    export PATH="$HOME/.local/bin:$PATH"
-    ;;
-  esac
-fi
-
 # If mise is installed, activate it
 if command -v mise &>/dev/null; then
   eval "$(mise init bash)"

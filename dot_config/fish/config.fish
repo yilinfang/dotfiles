@@ -7,6 +7,11 @@ if test -z "$XDG_CONFIG_HOME"
     set -gx XDG_CONFIG_HOME "$HOME/.config"
 end
 
+# Add ~/.local/bin to PATH if it exists
+if test -d "$HOME/.local/bin"
+    fish_add_path -g "$HOME/.local/bin"
+end
+
 # MacOS specific configuration
 if test (uname) = Darwin
     # Homebrew
@@ -46,19 +51,6 @@ function update_terminal_info
     # Run the command with the provided server argument
     infocmp -x | ssh $argv -- tic -x -
 end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/leo/miniconda3/bin/conda
-    eval /Users/leo/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/Users/leo/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/Users/leo/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH /Users/leo/miniconda3/bin $PATH
-    end
-end
-# <<< conda initialize <<<
 
 if test -f "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
     source "/Users/leo/.chezmoi/dotfiles/scripts/init/init.fish"
