@@ -1,11 +1,6 @@
 # init.zsh
 # This script initializes the Zsh shell environment
 
-# Add ~/.local/bin to the PATH if it exists
-if [[ -d "$HOME/.local/bin" ]]; then
-  path=("$HOME/.local/bin" $path)
-fi
-
 # If mise is installed, activate it
 if command -v mise &> /dev/null; then
     eval "$(mise init zsh)"

@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-# This is the main setup script.
-# It is executed by a chezmoi 'run_after_' script.
-# It configures shell startup files to source init scripts directly
-# from the chezmoi source directory.
-
+# Exit on error, undefined variables, or pipe failures.
 set -euo pipefail
 
 # --- Configuration ---
@@ -37,7 +33,7 @@ end
 EOF
 )
 
-# --- Main Logic (identical to before) ---
+# --- Main Logic ---
 
 add_config() {
   local config_file="$1"

@@ -1,11 +1,6 @@
 # init.fsh
 # This script initializes the Fish shell environment
 
-# Add ~/.local/bin to the PATH if it exists
-if test -d "$HOME/.local/bin"
-    fish_add_path -g "$HOME/.local/bin"
-end
-
 # If mise is installed, activate it
 if command -v mise >/dev/null
     mise activate fish | source
