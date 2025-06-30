@@ -31,6 +31,11 @@ if command -v lazygit >/dev/null; and not command -v lg >/dev/null
     alias lg='lazygit'
 end
 
+# If ze is available, use it for zellij
+if command -v zellij >/dev/null; and not command -v ze >/dev/null
+    alias ze='zellij'
+end
+
 # Initialize fzf if installed
 if command -v fzf >/dev/null
     fzf --fish | source

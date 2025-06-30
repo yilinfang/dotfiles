@@ -4,3 +4,4 @@
 ~/.config/nvim
 ~/.config/lazygit
 ~/.config/yazi
+~/.config/zellij
