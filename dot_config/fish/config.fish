@@ -16,12 +16,6 @@ end
 if test (uname) = Darwin
     # Homebrew
     fish_add_path -g /opt/homebrew/bin
-
-    # HACK: Update terminfo database with Homebrew installed ncurses
-    set -l ncurses_terminfo (brew --prefix ncurses)/share/terminfo
-    if not contains $ncurses_terminfo $TERMINFO_DIRS
-        set -gx TERMINFO_DIRS $ncurses_terminfo $TERMINFO_DIRS
-    end
 end
 
 # Starship
