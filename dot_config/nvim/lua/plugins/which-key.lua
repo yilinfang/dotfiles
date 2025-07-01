@@ -20,6 +20,9 @@ return {
       { "<leader>s", group = "[S]earch" },
       { "<leader>t", group = "[T]oggle" },
       { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+
+      -- HACK: Custom key chains
+      { "<leader>c", group = "[C]opilot" },
     },
 
     -- HACK: Change which-key peset

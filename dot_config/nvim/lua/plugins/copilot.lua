@@ -21,10 +21,30 @@ return {
     panel = { enabled = false },
     filetypes = {
       markdown = true,
+      yaml = true,
+      [""] = false, -- Disable Copilot for unknown filetypes by default
     },
   },
   config = function(_, opts)
     require("copilot").setup(opts)
-    vim.keymap.set("n", "<leader>tc", "<cmd>Copilot toggle<CR>", { desc = "[T]oggle [C]opilot" })
+    -- NOTE: Disable it as if can not disable copilot correctly
+    -- Toogle Copilot
+    -- vim.keymap.set("n", "<leader>tc", "<cmd>Copilot toggle<CR>", { desc = "[T]oggle [C]opilot" })
+
+    local cmd = require "copilot.command"
+
+    -- Disable Copilot
+    vim.keymap.set("n", "<leader>cd", function()
+      cmd.detach() -- NOTE: Try to detach first
+      cmd.disable()
+      vim.notify("Copilot Disabled", vim.log.levels.INFO, { title = "Copilot" })
+    end, { desc = "[C]opilot: [D]isable Copilot" })
+
+    -- Enable Copilot
+    vim.keymap.set("n", "<leader>ce", function()
+      cmd.enable()
+      cmd.attach { force = true } -- HACK: Force attach to the current buffer
+      vim.notify("Copilot Enabled", vim.log.levels.INFO, { title = "Copilot" })
+    end, { desc = "[C]opilot: [E]nable Copilot" })
   end,
 }
