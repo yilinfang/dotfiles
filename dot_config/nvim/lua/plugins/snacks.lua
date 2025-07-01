@@ -19,10 +19,6 @@ return {
           ]],
       },
     },
-    explorer = {
-      enabled = true,
-      replace_netrw = true,
-    },
     image = { -- HACK: Forcefully disable image preview in snacks.nvim.
       enabled = false,
       formats = {},
@@ -30,13 +26,5 @@ return {
     indent = { enable = true },
     quickfile = { enabled = true, exclude = { "latex" } },
     statuscolumn = { enabled = true },
-  },
-  keys = {
-    -- Keymaps for snacks.explorer
-    {
-      "<leader>te",
-      function() Snacks.explorer.open() end,
-      desc = "[T]oggle File [E]xplorer",
-    },
   },
 }
