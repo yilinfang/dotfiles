@@ -21,9 +21,6 @@ return {
         },
       },
     },
-
-    -- HACK: Telescope is used to provide fuzzy finding capabilities for LSP
-    "nvim-telescope/telescope.nvim",
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.

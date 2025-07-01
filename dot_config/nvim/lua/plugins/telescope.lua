@@ -1,6 +1,7 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   "nvim-telescope/telescope.nvim",
-  cmd = "Telescope", -- HACK: Load this plugin when the `:Telescope` command is run instead of VimEnter
+  event = "VeryLazy", -- HACK: Load on VeryLazy instead of VimEnter
+  cmd = { "Telescope" }, -- HACK: Load on command Telescope
   dependencies = {
     "nvim-lua/plenary.nvim",
     { -- If encountering errors, see telescope-fzf-native README for installation instructions
