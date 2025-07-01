@@ -21,6 +21,9 @@ return {
         },
       },
     },
+
+    -- HACK: Telescope is used to provide fuzzy finding capabilities for LSP
+    "nvim-telescope/telescope.nvim",
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.
@@ -48,40 +51,46 @@ return {
         -- or a suggestion from your LSP for this to activate.
         map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 
-        -- HACK: Replace telescope with Snacks.picker
+        -- HACK: Use Vim Commands instead of requiring telescope.builtin
 
         -- Find references for the word under your cursor.
-        map("grr", function() Snacks.picker.lsp_references() end, "[G]oto [R]eferences")
+        map("grr", "<cmd>Telescope lsp_references<CR>", "[G]oto [R]eferences")
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map("gri", function() Snacks.picker.lsp_implementations() end, "[G]oto [I]mplementation")
+        map("gri", "<cmd>Telescope lsp_implementations<CR>", "[G]oto [I]mplementation")
 
         -- Jump to the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
-        map("grd", function() Snacks.picker.lsp_definitions() end, "[G]oto [D]efinition")
+        map("grd", "<cmd>Telescope lsp_definitions<CR>", "[G]oto [D]efinition")
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map("grD", function() Snacks.picker.lsp_declarations() end, "[G]oto [D]eclaration")
+        map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+        -- HACK: Use Vim Commands instead of requiring telescope.builtin
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map("gO", function() Snacks.picker.lsp_symbols { filter = { default = true } } end, "Open Document Symbols")
+        map("gO", "<cmd>Telescope lsp_document_symbols<CR>", "Open Document Symbols")
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map(
-          "gW",
-          function() Snacks.picker.lsp_workspace_symbols { filter = { default = true } } end,
-          "Open Workspace Symbols"
-        )
+        map("gW", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Open Workspace Symbols")
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map("grt", function() Snacks.picker.lsp_type_definitions() end, "[G]oto [T]ype Definition")
+        map("grt", "<cmd>Telescope lsp_type_definitions<CR>", "[G]oto [T]ype Definition")
+
+        -- HACK: Customzied keymaps for LSP
+
+        -- Search for diagnostics in the current buffer.
+        map("gq", "<cmd>Telescope diagnostics bufnr=0<CR>", "[G]oto [Q]uality Issues")
+
+        -- Search for diagnostics in the current workspace.
+        map("gQ", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "[G]oto [Q]uality Issues in Workspace")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client vim.lsp.Client

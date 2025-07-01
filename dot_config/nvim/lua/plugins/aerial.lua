@@ -16,11 +16,6 @@ return {
   config = function(_, opts)
     require("aerial").setup(opts)
     vim.keymap.set("n", "<leader>ta", "<cmd>AerialToggle right<CR>", { desc = "[T]oggle [A]erial" })
-    vim.keymap.set(
-      "n",
-      "<leader>sa",
-      function() require("aerial").snacks_picker() end,
-      { desc = "[S]earch [A]erial Symbols" }
-    )
+    vim.keymap.set("n", "<leader>sa", "<cmd>Telescope aerial<CR>", { desc = "[S]earch [A]erial Symbols" })
   end,
 }

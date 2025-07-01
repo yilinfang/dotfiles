@@ -11,7 +11,9 @@ return {
     vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous Todo Comment" })
 
     -- HACK: Custom keymaps for todo-comments
-    vim.keymap.set("n", "<leader>st", function() Snacks.picker.todo_comments() end, { desc = "[S]earch [T]odos" })
+
+    -- Search for todo-comments
+    vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<CR>", { desc = "[S]earch [T]odos" })
 
     -- HACK: Toggle todo-comments highlighting
     local is_highlight_active = true -- Set the initial state to enabled
