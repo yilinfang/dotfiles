@@ -2,6 +2,5 @@
 ~/.vimrc
 ~/.config/mise
 ~/.config/nvim
-~/.config/lazygit
 ~/.config/yazi
 ~/.config/zellij

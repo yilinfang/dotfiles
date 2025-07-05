@@ -28,18 +28,6 @@ git config --global alias.st status
 git config --global alias.mt mergetool
 git config --global alias.pl pull
 git config --global alias.ph push
-git config --global alias.dl "-c diff.external=difft log -p --ext-diff"
-git config --global alias.ds "-c diff.external=difft show --ext-diff"
-git config --global alias.dft "-c diff.external=difft diff"
-
-# Core
-git config --global core.pager delta
-
-# Interactive
-git config --global interactive.diffFilter "delta --color-only"
-
-# Delta
-git config --global delta.navigate true
 
 # Merge conflict style
 if version_ge "$GIT_VERSION" "2.35.0"; then

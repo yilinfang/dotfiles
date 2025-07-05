@@ -60,14 +60,3 @@ if command -v yazi &> /dev/null && ! command -v y &> /dev/null; then
         fi
     }
 fi
-
-# --- Patch for solarized dark themes ---
-# Set BAT_THEME for bat if it is installed
-if command -v bat &> /dev/null; then
-    export BAT_THEME="Solarized (dark)"
-fi
-# Set DFT_BACKGROUND to light if difft is installed
-if command -v difft &> /dev/null; then
-    export DFT_BACKGROUND=light
-fi
-# --- End of patch for solarized dark themes ---

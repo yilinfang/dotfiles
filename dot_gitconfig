@@ -15,15 +15,6 @@
 	mt = mergetool
 	pl = pull
 	ph = push
-	dl = -c diff.external=difft log -p --ext-diff
-	ds = -c diff.external=difft show --ext-diff
-	dft = -c diff.external=difft diff
-[core]
-	pager = delta
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = true
 [merge]
 	conflictStyle = zdiff3
 	tool = nvim
