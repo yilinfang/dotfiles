@@ -1,0 +1,5 @@
+~/.tmux.conf
+~/.config/bat
+~/.config/mise
+~/.config/nvim
+~/.config/yazi

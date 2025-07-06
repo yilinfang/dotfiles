@@ -1,0 +1,17 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[mgr]
+show_hidden = true
+
+[plugin]
+# Disable some preloaders
+prepend_preloaders = [{ name = "*", run = "noop" }]
+
+# Disable some previewers
+prepend_previewers = [
+  { name = "*/", run = "folder" },
+  # Code
+  { mime = "text/*", run = "code" },
+  # Fallback
+  { name = "*", run = "file" },
+]
