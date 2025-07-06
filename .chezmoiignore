@@ -1,0 +1,25 @@
+# Use source paths relative to `~`
+# For example, to ignore `~/.config/nvim/init.vim`, use `.config/nvim/init.vim`
+
+README.md
+.gitignore
+scripts/
+
+**/.git/
+**/*bak*
+**/tmp/
+
+# MacOS
+**/.DS_Store
+
+# Start of ~/.ssh
+.ssh/*
+!.ssh/config
+!.ssh/hosts
+!.ssh/keys/
+# End of ~/.ssh
+
+# Start of ~/.config/github-copilot
+.config/github-copilot/*
+!.config/github-copilot/apps.json
+# End of ~/.config/github-copilot
