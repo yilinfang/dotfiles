@@ -16,6 +16,11 @@ if command -v nvim >/dev/null
     end
 end
 
+# If rg(ripgrep) is installed and the RIPGREP_CONFIG_PATH is not set, set it
+if command -v rg >/dev/null; and not set -q RIPGREP_CONFIG_PATH
+    set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+end
+
 # If g is available, use if for Git
 if not command -v g >/dev/null
     alias g='git'
