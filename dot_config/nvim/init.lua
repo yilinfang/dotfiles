@@ -16,7 +16,9 @@ if vim.env.SSH_TTY then
     paste = {
       ["+"] = function()
         local content = vim.fn.getreg ""
-        return vim.split(content, "\n") end, ["*"] = function()
+        return vim.split(content, "\n")
+      end,
+      ["*"] = function()
         local content = vim.fn.getreg ""
         return vim.split(content, "\n")
       end,
@@ -27,7 +29,7 @@ end
 -- [[ Imported from yobibyte's configuration]]
 vim.o.undofile = true
 vim.o.laststatus = 0
-vim.keymap.set("n", "<leader>y", function() vim.fn.setreg("+", vim.fn.expand "%:p") end)
+vim.keymap.set("n", "<leader>f", function() vim.fn.setreg("+", vim.fn.expand "%:p") end)
 vim.keymap.set("n", "<leader>c", function()
   vim.ui.input({}, function(c)
     if c and c ~= "" then
@@ -59,8 +61,8 @@ vim.o.tabstop = 4
 vim.o.wrap = false
 
 -- [[ Keymaps ]]
-vim.keymap.set({ "n", "v" }, "<M-S-a>", "<Esc>ggVG", { desc = "Select all text in the current buffer" })
-vim.keymap.set({ "v" }, "<M-S-y>", '"+y', { desc = "Yank selected text to the system clipboard" })
+vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "Yank entire buffer to system clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
