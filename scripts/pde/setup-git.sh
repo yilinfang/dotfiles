@@ -29,6 +29,17 @@ git config --global alias.mt mergetool
 git config --global alias.pl pull
 git config --global alias.ph push
 
+# Difftastic
+git config --global alias.dlog "-c diff.external=difft log -p --ext-diff"
+git config --global alias.dshow "-c diff.external=difft show --ext-diff"
+git config --global alias.ddiff "-c diff.external=difft diff"
+
+# Delta
+git config --global core.pager delta
+git config --global interactive.diffFilter "delta --color-only"
+git config --global delta.navigate true
+git config --global delta.dark true
+
 # Merge conflict style
 if version_ge "$GIT_VERSION" "2.35.0"; then
   git config --global merge.conflictStyle zdiff3

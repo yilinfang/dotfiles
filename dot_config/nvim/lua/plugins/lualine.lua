@@ -1,7 +1,7 @@
 -- lua/plugins/lualine.lua
 -- Lualine.nvim for statusline
 
-if true then return {} end
+if true then return {} end -- NOTE: Disable lualine.nvim for now
 
 return {
   "nvim-lualine/lualine.nvim",

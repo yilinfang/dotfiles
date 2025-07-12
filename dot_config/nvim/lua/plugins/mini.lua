@@ -12,8 +12,6 @@ return {
 
     -- HACK: Other Mini modules
     require("mini.comment").setup()
-    require("mini.files").setup()
-    vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open File [E]xplorer" })
     require("mini.move").setup()
     require("mini.pairs").setup()
     require("mini.statusline").setup()

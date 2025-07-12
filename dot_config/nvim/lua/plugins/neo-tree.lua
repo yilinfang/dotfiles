@@ -1,7 +1,7 @@
 -- lua/plugins/neo-tree.lua
 -- This module configures Neo-tree, a file explorer for Neovim.
 
-if true then return {} end -- disable this plugin
+if true then return {} end -- NOTE: Disable Neo-tree for now
 
 return {
   "nvim-neo-tree/neo-tree.nvim",

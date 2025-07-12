@@ -63,3 +63,12 @@ if command -v yazi >/dev/null; and not command -v y >/dev/null
 
     end
 end
+
+# --- Additional configurations for solarized-dark themes ---
+if command -v bat >/dev/null # Check if bat is installed
+    set -gx BAT_THEME "Solarized (dark)"
+end
+if command -v difft >/dev/null # Check if difft is installed
+    set -gx BAT_THEME "Solarized (dark)"
+    set -gx DFT_BACKGROUND light
+end

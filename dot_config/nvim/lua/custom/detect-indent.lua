@@ -1,4 +1,4 @@
--- lua/detect-indent.lua
+-- lua/custom/detect-indent.lua
 -- Automatic indentation detection
 -- Modified from Darazaki's indent-o-matic (https://github.com/Darazaki/indent-o-matic)
 
@@ -161,11 +161,11 @@ function M.detect()
   if not vim.bo.modifiable then return end
   -- Check filetype exclusions
   for _, excluded_ft in ipairs(filetype_exclude) do
-    if filetype == excluded_ft then return end
+    if vim.bo.filetype == excluded_ft then return end
   end
   -- Check buftype exclusions
   for _, excluded_bt in ipairs(buftype_exclude) do
-    if buftype == excluded_bt then return end
+    if vim.bo.buftype == excluded_bt then return end
   end
 
   -- Figure out the maximum space indentation possible

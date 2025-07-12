@@ -33,7 +33,7 @@ return {
     -- HACK: Customized vimgrep_arguments
     local vimgrep_arguments = {
       "rg",
-      "--no-config", -- Do not follower the user's ripgrep configuration
+      "--no-config", -- Do not follow the user's ripgrep configuration
       "--color=never",
       "--no-heading",
       "--with-filename",

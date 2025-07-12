@@ -1,6 +1,8 @@
 -- lua/plugins/guess-indent.lua
 -- Detect tabstop and shiftwidth automatically
 
+if true then return {} end -- NOTE: Disable guess-indent for now
+
 return {
   "NMAC427/guess-indent.nvim",
   event = { "BufReadPost", "BufNewFile" }, -- HACK: Set the event of guess-indent.nvim to BufReadPost, BufNewFile

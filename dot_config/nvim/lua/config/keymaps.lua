@@ -20,27 +20,25 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- HACK: Map <M-S-a> to select all text in the current buffer
-vim.keymap.set({ "n", "v" }, "<M-S-a>", "<Esc>ggVG", { desc = "Select all text in the current buffer" })
-
--- HACK: Map <M-S-y> to copy the selected text to the system clipboard "+
-vim.keymap.set({ "v" }, "<M-S-y>", '"+y"', { desc = "Yank selected text to the system clipboard" })
-
--- HACK: Toggle spell checking in the current buffer
+-- HACK: [[ Custom keymaps ]]
+vim.keymap.set(
+  "n",
+  "<leader>f",
+  function() vim.fn.setreg("+", vim.fn.expand "%:p") end,
+  { desc = "Copy file path to system clipboard" }
+)
+vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "Yank entire buffer to system clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<leader>ts", function()
   vim.opt_local.spell = not vim.opt_local.spell:get()
   local status = vim.opt_local.spell:get() and "ON" or "OFF"
   print("Spell check: " .. status)
 end, { desc = "[T]oggle [S]pell Check" })
-
--- HACK: Toggle wrap in the current buffer
 vim.keymap.set("n", "<leader>tw", function()
   vim.opt_local.wrap = not vim.opt_local.wrap:get()
   local status = vim.opt_local.wrap:get() and "ON" or "OFF"
   print("Wrap: " .. status)
 end, { desc = "[T]oggle [W]rap" })
-
--- HACK: Toggle relative line numbers in the current buffer
 vim.keymap.set("n", "<leader>tr", function()
   vim.opt_local.relativenumber = not vim.opt_local.relativenumber:get()
   local status = vim.opt_local.relativenumber:get() and "ON" or "OFF"
