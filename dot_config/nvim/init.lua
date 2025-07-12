@@ -1,6 +1,6 @@
 -- Yilin Fang's personal Neovim configuration
--- Vanilla neovim without any plugins.
--- Inspired from yobibyte's neovim configuration (https://github.com/yobibyte/yobitools/blob/main/dotfiles/init.lua)
+-- Vanilla Neovim configuration without external plugins or dependencies
+-- Inspired from yobibyte's Neovim configuration (https://github.com/yobibyte/yobitools/blob/main/dotfiles/init.lua)
 -- Copyright (c) 2025 Yilin Fang
 
 -- [[ Global settings ]]
@@ -26,7 +26,7 @@ if vim.env.SSH_TTY then
   }
 end
 
--- [[ Imported from yobibyte's configuration]]
+-- [[ Imported from yobibyte's configuration ]]
 vim.o.undofile = true
 vim.o.laststatus = 0
 vim.keymap.set("n", "<leader>f", function() vim.fn.setreg("+", vim.fn.expand "%:p") end)
@@ -61,6 +61,7 @@ vim.o.tabstop = 4
 vim.o.wrap = false
 
 -- [[ Keymaps ]]
+vim.keymap.set("n", "<leader>/", "<cmd>noh<cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "Yank entire buffer to system clipboard" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
@@ -79,8 +80,16 @@ vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=g
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- [[ Autocomds ]]
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function() vim.hl.on_yank() end,
+})
 vim.api.nvim_create_autocmd("VimResized", {
   desc = "Automatically resize splits when the window is resized",
   group = vim.api.nvim_create_augroup("resize-splits", { clear = true }),
   command = "windo wincmd = ",
 })
+
+-- [[ Custom modules ]]
+require("detect-indent").setup()
