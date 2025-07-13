@@ -26,11 +26,6 @@ if not command -v g >/dev/null
     alias g='git'
 end
 
-# If t is available, use it for tmux
-if not command -v t >/dev/null
-    alias t='tmux'
-end
-
 # If lg is available, use it for lazygit
 if command -v lazygit >/dev/null; and not command -v lg >/dev/null
     alias lg='lazygit'
