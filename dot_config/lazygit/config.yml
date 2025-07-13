@@ -2,16 +2,3 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-customCommands:
-  - key: "C"
-    command: "git czg"
-    description: "Commit with czg"
-    context: "files"
-    loadingText: "Opening czg"
-    output: terminal
-  - key: "R"
-    command: "bash ~/.config/lazygit/scripts/reword-with-czg.sh {{.SelectedLocalCommit.Sha}}"
-    description: "Reword commit with czg"
-    context: "commits"
-    loadingText: "Opening czg"
-    output: terminal
