@@ -13,7 +13,7 @@ return {
     "MasonLog",
   },
   dependencies = {
-    { "WhoIsSethDaniel/mason-tool-installer.nvim", lazy = true, opts_extend = { "ensure_installed" } },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", lazy = true, opts = {} },
   },
   build = ":MasonUpdate",
   -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
