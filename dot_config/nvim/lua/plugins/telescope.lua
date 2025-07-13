@@ -141,5 +141,8 @@ return {
         prompt_title = "Live Grep (including ignored files)",
       }
     end, { desc = "[S]earch by [G]rep (including ignored files)" })
+
+    -- Search Jumplist
+    vim.keymap.set("n", "<leader>sj", builtin.jumplist, { desc = "[S]earch [J]umplist" })
   end,
 }
