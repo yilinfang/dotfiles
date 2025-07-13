@@ -70,7 +70,9 @@ fi
 if command -v bat &>/dev/null; then # Check if bat is installed
 	export BAT_THEME="Solarized (dark)"
 fi
-if command -v difft &>/dev/null; then # Check if difft is installed
+if command -v delta &>/dev/null; then # Check if delta is installed
 	export BAT_THEME="Solarized (dark)"
+fi
+if command -v difft &>/dev/null; then # Check if difft is installed
 	export DFT_BACKGROUND="light"
 fi

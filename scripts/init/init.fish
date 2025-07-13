@@ -68,7 +68,9 @@ end
 if command -v bat >/dev/null # Check if bat is installed
     set -gx BAT_THEME "Solarized (dark)"
 end
-if command -v difft >/dev/null # Check if difft is installed
+if command -v delta >/dev/null # Check if delta is installed
     set -gx BAT_THEME "Solarized (dark)"
+end
+if command -v difft >/dev/null # Check if difft is installed
     set -gx DFT_BACKGROUND light
 end
