@@ -5,12 +5,20 @@ return {
   "lewis6991/gitsigns.nvim",
   event = { unpack(require("utils.events").LazyFile) }, -- HACK: Set the event of gitsigns.nvim to LazyFile
   opts = {
-    signs = {
-      add = { text = "+" },
-      change = { text = "~" },
-      delete = { text = "_" },
-      topdelete = { text = "‾" },
-      changedelete = { text = "~" },
+    signs = { -- HACK: Custom signs for git changes
+      add = { text = "▎" },
+      change = { text = "▎" },
+      delete = { text = "" },
+      topdelete = { text = "" },
+      changedelete = { text = "▎" },
+      untracked = { text = "▎" },
+    },
+    signs_staged = {
+      add = { text = "▎" },
+      change = { text = "▎" },
+      delete = { text = "" },
+      topdelete = { text = "" },
+      changedelete = { text = "▎" },
     },
     on_attach = function(bufnr) -- HACK: Additional keymaps for gitsigns
       local gitsigns = require "gitsigns"
