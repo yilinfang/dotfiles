@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# scripts/reword-with-czg.sh
+# Helper script for rewording a commit using czg within LazyGit.
+
 set -e
 
 COMMIT_SHA="$1"

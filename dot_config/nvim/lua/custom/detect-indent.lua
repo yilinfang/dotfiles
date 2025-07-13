@@ -1,4 +1,4 @@
--- lua/detect-indent.lua
+-- lua/custom/detect-indent.lua
 -- Automatic indentation detection
 -- Modified from Darazaki's indent-o-matic (https://github.com/Darazaki/indent-o-matic)
 

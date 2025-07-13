@@ -61,3 +61,12 @@ if command -v yazi &>/dev/null && ! command -v y &>/dev/null; then
 		rm -f -- "$tmp"
 	}
 fi
+
+# --- Additional configurations for solarized-dark themes ---
+if command -v bat &>/dev/null; then # Check if bat is installed
+	export BAT_THEME="Solarized (dark)"
+fi
+if command -v difft &>/dev/null; then # Check if difft is installed, set the theme
+	export BAT_THEME="Solarized (dark)"
+	export DFT_BACKGROUND="light"
+fi
