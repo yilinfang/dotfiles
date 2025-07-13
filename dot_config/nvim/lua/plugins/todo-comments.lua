@@ -18,11 +18,11 @@ return {
     vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<CR>", { desc = "[S]earch [T]odos" })
 
     -- Toggle todo-comments quickfix list
-    vim.keymap.set("n", "<leader>tt", "<cmd>TodoQuickFix<CR>", { desc = "[T]oggle [T]odo Comments [Q]uikfix List" })
+    vim.keymap.set("n", "<leader>qt", "<cmd>TodoQuickFix<CR>", { desc = "[Q]uikfix List for [T]odo Comments" })
 
     -- HACK: Toggle todo-comments highlighting
     local is_highlight_active = true -- Set the initial state to enabled
-    vim.keymap.set("n", "<leader>tth", function()
+    vim.keymap.set("n", "<leader>tt", function()
       if is_highlight_active then
         require("todo-comments").disable()
         is_highlight_active = false
@@ -30,6 +30,6 @@ return {
         require("todo-comments").enable()
         is_highlight_active = true
       end
-    end, { desc = "[T]oggle [T]odo Comments [H]ighlight" })
+    end, { desc = "[T]oggle [T]odo Comments Highlight" })
   end,
 }
