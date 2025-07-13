@@ -1,6 +1,5 @@
 ~/.ripgreprc
 ~/.tmux.conf
-~/.config/bat
 ~/.config/lazygit
 ~/.config/mise
 ~/.config/nvim
