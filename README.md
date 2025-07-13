@@ -7,7 +7,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 ### Install tools
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install.sh)
 ```
 
 ### Install dotfiles
