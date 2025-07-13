@@ -3,7 +3,7 @@
 
 # If mise is installed, activate it
 if command -v mise &>/dev/null; then
-	eval "$(mise init zsh)"
+	eval "$(mise activate zsh)"
 fi
 
 # If nvim is installed, set it as the default editor

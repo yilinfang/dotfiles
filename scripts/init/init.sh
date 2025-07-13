@@ -3,7 +3,7 @@
 
 # If mise is installed, activate it
 if command -v mise &>/dev/null; then
-	eval "$(mise init bash)"
+	eval "$(mise activate bash)"
 fi
 
 # If nvim is installed, set it as the default editor
