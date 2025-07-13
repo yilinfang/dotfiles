@@ -94,7 +94,7 @@ while IFS= read -r path || [ -n "$path" ]; do
 	fi
 
 	echo "Applying $path..."
-	chezmoi apply -v -r "$path"
+	chezmoi apply -r "$path"
 done <"$CONFIG_FILE"
 
 # Show backup information

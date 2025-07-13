@@ -37,7 +37,7 @@ while IFS= read -r path || [ -n "$path" ]; do
 	path=$(echo "$path" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
 	echo "Applying $path..."
-	chezmoi apply -v -r "$path"
+	chezmoi apply -r "$path"
 done <"$CONFIG_FILE"
 
 # Finish update
