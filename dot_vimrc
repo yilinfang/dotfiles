@@ -1,0 +1,183 @@
+" ============================================================================
+" Settings imported from Neovim 
+" ============================================================================
+
+" Basic compatibility and features
+set nocompatible
+filetype plugin indent on
+syntax enable
+set encoding=utf-8
+
+" Core editing behavior
+set autoindent
+set autoread
+set background=dark
+set belloff=all
+set hidden
+set history=10000
+set laststatus=2
+set ruler
+set showcmd
+set startofline
+set ttimeout
+set ttimeoutlen=50
+
+" Search
+set hlsearch
+set incsearch
+
+" Formatting
+set smarttab
+set formatoptions=tcqj
+set joinspaces
+
+" Display
+set display=lastline
+set listchars=tab:>\ ,trail:-,nbsp:+
+set fillchars=vert:\|,fold:·
+
+" Completion
+set complete-=i
+set completeopt=menu,popup
+
+" File handling
+set backupdir=~/.vim/backup//,.,/tmp//
+set directory=~/.vim/swap//,.,/tmp//
+set undodir=~/.vim/undo//,.,/tmp//
+set undofile
+
+" Create directories
+if !isdirectory(expand('~/.vim/backup'))
+  call mkdir(expand('~/.vim/backup'), 'p')
+endif
+if !isdirectory(expand('~/.vim/swap'))
+  call mkdir(expand('~/.vim/swap'), 'p')
+endif
+if !isdirectory(expand('~/.vim/undo'))
+  call mkdir(expand('~/.vim/undo'), 'p')
+endif
+
+" Mouse and terminal
+if has('mouse')
+  set mouse=nvi
+  set mousemodel=popup_setpos
+endif
+if has('termguicolors')
+  set termguicolors
+endif
+
+" Navigation and interface
+set sidescroll=1
+set tabpagemax=50
+set tags=./tags;,tags
+set path=.,,
+set sessionoptions+=unix,slash
+set sessionoptions-=options
+set shortmess+=c
+set shortmess+=F
+set viewoptions+=unix,slash
+set viewoptions-=options
+set wildoptions=pum,tagfile
+set switchbuf=uselast
+set nrformats=bin,hex
+
+" Grep configuration
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+else
+  set grepprg=grep\ -n\ -H\ -I\ $*
+endif
+
+" Default mappings
+nnoremap Y y$
+nnoremap <C-L> :nohlsearch<CR><C-L>
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+xnoremap Q :normal @q<CR>
+xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+nnoremap gO :echo "Outline not available"<CR>
+nnoremap <C-S> :update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
+" Bracket navigation
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+nnoremap ]Q :clast<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+nnoremap ]L :llast<CR>
+nnoremap [L :lfirst<CR>
+nnoremap ]t :tnext<CR>
+nnoremap [t :tprevious<CR>
+nnoremap ]T :tlast<CR>
+nnoremap [T :tfirst<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
+nnoremap ]B :blast<CR>
+nnoremap [B :bfirst<CR>
+nnoremap ]<Space> o<Esc>
+nnoremap [<Space> O<Esc>
+
+" Helper function for visual search
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+" ============================================================================
+" Custom Settings
+" ============================================================================
+
+" Set leader key
+let mapleader = " "
+
+try
+  colorscheme retrobox
+catch
+  " Fallback to default
+endtry
+
+" Enable line numbers
+set number
+set relativenumber
+
+" Command line completion
+set wildmenu
+set wildmode=longest:full,full
+
+" Bracket matching
+set showmatch
+
+" Smart case searching
+set ignorecase
+set smartcase
+
+" Split behavior
+set splitbelow
+set splitright
+
+" ============================================================================
+" Custom Keymaps
+" ============================================================================
+
+" Clear search highlighting with Escape
+nnoremap <Esc> :nohlsearch<CR>
+
+" Split navigation with Ctrl+hjkl
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+
+" Copy file path to system clipboard
+nnoremap <leader>f :let @+ = expand('%:p')<CR>
+
+" Yank entire buffer to system clipboard
+nnoremap <leader>y :%y+<CR>
+
+" Yank selection to system clipboard
+vnoremap <leader>y "+y
