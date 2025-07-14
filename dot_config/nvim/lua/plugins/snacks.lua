@@ -27,5 +27,6 @@ return {
     },
     indent = { enable = true },
     quickfile = { enabled = true, exclude = { "latex" } },
+    statuscolumn = { enabled = true },
   },
 }

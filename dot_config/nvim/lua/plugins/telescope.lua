@@ -142,7 +142,10 @@ return {
       }
     end, { desc = "[S]earch by [G]rep (including ignored files)" })
 
-    -- Search Jumplist
+    -- Search jumplist
     vim.keymap.set("n", "<leader>sj", builtin.jumplist, { desc = "[S]earch [J]umplist" })
+
+    -- Search marks
+    vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "[S]earch [M]arks" })
   end,
 }
