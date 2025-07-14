@@ -2,8 +2,8 @@
 
 # Function to compare versions
 version_ge() {
-  # Returns 0 if $1 >= $2
-  [ "$(printf '%s\n' "$2" "$1" | sort -V | head -n1)" = "$2" ]
+	# Returns 0 if $1 >= $2
+	[ "$(printf '%s\n' "$2" "$1" | sort -V | head -n1)" = "$2" ]
 }
 
 # Get Git version
@@ -42,10 +42,10 @@ git config --global delta.dark true
 
 # Merge conflict style
 if version_ge "$GIT_VERSION" "2.35.0"; then
-  git config --global merge.conflictStyle zdiff3
+	git config --global merge.conflictStyle zdiff3
 else
-  git config --global merge.conflictStyle diff3
-  echo "Warning: zdiff3 conflict style is not supported in Git versions older than 2.35.0. Using diff3 instead."
+	git config --global merge.conflictStyle diff3
+	echo "Warning: zdiff3 conflict style is not supported in Git versions older than 2.35.0. Using diff3 instead."
 fi
 
 # Merge tool
