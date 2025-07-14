@@ -2,7 +2,6 @@
 ~/.tmux.conf
 ~/.vimrc
 ~/.config/lazygit
-~/.config/mise
 ~/.config/nvim
 ~/.config/yazi
 ~/.config/zellij

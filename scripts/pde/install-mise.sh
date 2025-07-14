@@ -5,19 +5,19 @@ set -e
 
 # --- Default Configuration ---
 INSTALL_DIR="${HOME}/.local/bin"
-CHEZMOI_VERSION_SPEC="latest"
+MISE_VERSION_SPEC="latest"
 
 # --- Help and Usage Function ---
 usage() {
 	cat <<EOF
 Usage: $(basename "$0") [options]
 
-This script installs chezmoi.
+This script installs mise.
 
 Options:
   -d, --install-dir <path>  Set the installation directory.
                             (Default: ${HOME}/.local/bin)
-  -v, --version <v>         Set the version of chezmoi to install.
+  -v, --version <v>         Set the version of mise to install.
                             (Default: latest)
   -h, --help                Show this help message.
 EOF
@@ -39,7 +39,7 @@ while [ "$#" -gt 0 ]; do
 			echo "Error: --version requires a non-empty argument." >&2
 			exit 1
 		fi
-		CHEZMOI_VERSION_SPEC="$2"
+		MISE_VERSION_SPEC="$2"
 		shift 2
 		;;
 	-h | --help)
@@ -57,24 +57,24 @@ done
 # --- Display Configuration ---
 echo "--- Configuration ---"
 echo "Installation Directory: ${INSTALL_DIR}"
-echo "chezmoi Version Spec:   ${CHEZMOI_VERSION_SPEC}"
+echo "mise Version Spec:      ${MISE_VERSION_SPEC}"
 echo "---------------------"
 
 # --- Version Resolution ---
-if [ "${CHEZMOI_VERSION_SPEC}" = "latest" ]; then
-	echo "Querying GitHub API for the latest chezmoi version..."
-	CHEZMOI_VERSION=$(curl -sSL "https://api.github.com/repos/twpayne/chezmoi/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-	if [ -z "$CHEZMOI_VERSION" ]; then
-		echo "Error: Could not determine latest chezmoi version. GitHub API limit may have been reached." >&2
+if [ "${MISE_VERSION_SPEC}" = "latest" ]; then
+	echo "Querying GitHub API for the latest mise version..."
+	MISE_VERSION=$(curl -sSL "https://api.github.com/repos/jdx/mise/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+	if [ -z "$MISE_VERSION" ]; then
+		echo "Error: Could not determine latest mise version. GitHub API limit may have been reached." >&2
 		exit 1
 	fi
 else
-	CHEZMOI_VERSION="${CHEZMOI_VERSION_SPEC}"
+	MISE_VERSION="${MISE_VERSION_SPEC}"
 fi
 
 echo
 echo "--- Installation Plan ---"
-echo "Installing chezmoi version: ${CHEZMOI_VERSION}"
+echo "Installing mise version: ${MISE_VERSION}"
 echo "-------------------------"
 echo
 
@@ -84,10 +84,10 @@ mkdir -p "${INSTALL_DIR}"
 # --- Platform Detection ---
 case "$(uname -s)" in
 Linux)
-	CHEZMOI_OS='linux'
+	MISE_OS='linux'
 	;;
 Darwin)
-	CHEZMOI_OS='darwin'
+	MISE_OS='macos'
 	;;
 *)
 	echo "Unsupported OS: $(uname -s)" >&2
@@ -97,10 +97,10 @@ esac
 
 case "$(uname -m)" in
 x86_64)
-	CHEZMOI_ARCH='amd64'
+	MISE_ARCH='x64'
 	;;
 arm64 | aarch64)
-	CHEZMOI_ARCH='arm64'
+	MISE_ARCH='arm64'
 	;;
 *)
 	echo "Unsupported architecture: $(uname -m)" >&2
@@ -113,29 +113,29 @@ TMP_DIR=$(mktemp -d)
 trap 'rm -rf -- "$TMP_DIR"' EXIT
 cd "${TMP_DIR}"
 
-# --- Install chezmoi ---
-echo "Downloading chezmoi v${CHEZMOI_VERSION}..."
-CHEZMOI_FILENAME="chezmoi_${CHEZMOI_VERSION}_${CHEZMOI_OS}_${CHEZMOI_ARCH}.tar.gz"
-CHEZMOI_URL="https://github.com/twpayne/chezmoi/releases/download/v${CHEZMOI_VERSION}/${CHEZMOI_FILENAME}"
+# --- Install mise ---
+echo "Downloading mise v${MISE_VERSION}..."
+MISE_FILENAME="mise-v${MISE_VERSION}-${MISE_OS}-${MISE_ARCH}.tar.gz"
+MISE_URL="https://github.com/jdx/mise/releases/download/v${MISE_VERSION}/${MISE_FILENAME}"
 
-curl -fsSL -o "${CHEZMOI_FILENAME}" "${CHEZMOI_URL}"
-echo "Extracting and locating chezmoi binary..."
-tar -xzf "${CHEZMOI_FILENAME}"
+curl -fsSL -o "${MISE_FILENAME}" "${MISE_URL}"
+echo "Extracting and locating mise binary..."
+tar -xzf "${MISE_FILENAME}"
 
-CHEZMOI_PATH=$(find . -type f -name chezmoi)
-if [ ! -f "$CHEZMOI_PATH" ]; then
-	echo "Error: Could not find 'chezmoi' binary in the downloaded archive." >&2
+MISE_PATH=$(find . -type f -name mise)
+if [ ! -f "$MISE_PATH" ]; then
+	echo "Error: Could not find 'mise' binary in the downloaded archive." >&2
 	exit 1
 fi
 
-mv "$CHEZMOI_PATH" "${INSTALL_DIR}/chezmoi"
-chmod +x "${INSTALL_DIR}/chezmoi"
-echo "chezmoi v${CHEZMOI_VERSION} installed successfully."
+mv "$MISE_PATH" "${INSTALL_DIR}/mise"
+chmod +x "${INSTALL_DIR}/mise"
+echo "mise v${MISE_VERSION} installed successfully."
 echo
 
 # --- Verification ---
 echo "Verifying installation..."
-"${INSTALL_DIR}/chezmoi" --version
+"${INSTALL_DIR}/mise" --version
 echo
 
 # --- PATH Configuration ---
@@ -143,7 +143,7 @@ echo
 add_to_config_if_missing() {
 	local config_file="$1"
 	local line_to_add="$2"
-	local comment="# Added by chezmoi installation script on $(date)"
+	local comment="# Added by mise installation script on $(date)"
 
 	# Ensure the directory for the config file exists, especially for fish.
 	mkdir -p "$(dirname "${config_file}")"
@@ -198,11 +198,11 @@ case ":$PATH:" in
 			;;
 		esac
 	else
-		echo "Skipping PATH modification. Please add '${INSTALL_DIR}' to your PATH manually to use chezmoi."
+		echo "Skipping PATH modification. Please add '${INSTALL_DIR}' to your PATH manually to use mise."
 	fi
 	;;
 esac
 
 # --- Final Instructions ---
-echo "chezmoi installation complete."
+echo "mise installation complete."
 echo "Ensure '${INSTALL_DIR}' is in your PATH."

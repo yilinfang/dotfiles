@@ -10,6 +10,8 @@ rm -rf ~/.local/share/chezmoi
 chezmoi init yilinfang -S ~/.chezmoi/dotfiles
 chezmoi cd
 cd scripts/pde
+bash ./install-mise.sh
+bash ./install-tools-with-mise.sh
 bash ./setup-shell.sh
 bash ./setup-config.sh
 # Update
