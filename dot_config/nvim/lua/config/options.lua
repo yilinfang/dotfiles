@@ -106,3 +106,6 @@ vim.o.tabstop = 8 -- Number of spaces a <Tab> counts for
 -- HACK: Autoread
 -- Automatically reload files changed outside of Neovim
 vim.o.autoread = true
+
+-- HACK: Remove '~' at the end of the file
+vim.opt.fillchars = { eob = " " }

@@ -1,8 +1,6 @@
 -- lua/plugins/lualine.lua
 -- Lualine.nvim for statusline
 
-if true then return {} end -- NOTE: Disable lualine.nvim for now
-
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -11,14 +9,13 @@ return {
     require("lualine").setup {
       options = {
         theme = "solarized-osaka",
-        always_show_tabline = false,
         disabled_filetypes = { statusline = { "snacks_dashboard" } },
       },
       sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = {
-          { "filename", path = 1 }, -- Relative path
+          { "filename", path = 3 }, -- Aboslute path with tilde
           {
             "diff",
             source = function() -- Use gitsigns.nvim for diff
@@ -41,7 +38,11 @@ return {
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
-      extensions = { "lazy", "mason", "quickfix", "neo-tree", "aerial" },
+      extensions = { "lazy", "man", "mason", "quickfix", "oil", "toggleterm" },
+      -- Disable some sections
+      tabline = {},
+      winbar = {},
+      inactive_winbar = {},
     }
   end,
 }
