@@ -17,6 +17,8 @@ return {
     keymaps = {
       ["<C-c>"] = false,
       ["q"] = { "actions.close", mode = "n" },
+      ["h"] = { "actions.parent", mode = "n" },
+      ["l"] = { "actions.select", mode = "n" },
     },
   },
   keys = {
