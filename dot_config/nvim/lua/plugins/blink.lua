@@ -24,17 +24,13 @@ return {
       },
     },
     opts = {},
-    specs = {
-      -- HACK: Add LuaSnip snippets for blink.cmp
-      { "Saghen/blink.cmp", optional = true, opts = { snippets = { preset = "luasnip" } } },
-    },
   },
 
   {
     "Saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" }, -- HACK: Load on insert mode or command line enter
     version = "1.*",
-    opts_extend = { "sources.default", "cmdline.sources", "term.sources" }, -- HACK: make sources for blink.cmp extendable
+    -- opts_extend = { "sources.default", "cmdline.sources", "term.sources" }, -- HACK: make sources for blink.cmp extendable
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
@@ -54,7 +50,14 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" }, -- HACK: Default sources for blink.cmp
+        default = { "lsp", "path", "snippets", "buffer", "lazydev" }, -- HACK: Default sources for blink.cmp
+        providers = {
+          lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+        },
+      },
+
+      snippets = {
+        preset = "luasnip",
       },
 
       -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
