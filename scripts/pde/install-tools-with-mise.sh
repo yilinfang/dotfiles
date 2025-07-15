@@ -17,7 +17,7 @@ mise use -g fd
 mise use -g fzf
 mise use -g lazygit
 mise use -g neovim@0.11.2
-mise use -g node@lts
+mise use -g node
 mise use -g "npm:czg"
 mise use -g ripgrep
 mise use -g yazi
