@@ -48,13 +48,7 @@ fi
 
 # If y is available, initialize yazi
 if command -v yazi &>/dev/null && ! command -v y &>/dev/null; then
-	function y() {
-		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-		yazi "$@" --cwd-file="$tmp"
-		IFS= read -r -d '' cwd <"$tmp"
-		[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-		rm -f -- "$tmp"
-	}
+	alias y='yazi'
 fi
 
 # --- Additional configurations for solarized-dark themes ---

@@ -48,17 +48,7 @@ fi
 
 # If y is available, initialize yazi
 if command -v yazi &>/dev/null && ! command -v y &>/dev/null; then
-	function y() {
-		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-		yazi "$@" --cwd-file="$tmp"
-		if [[ -f "$tmp" ]]; then
-			local cwd="$(cat -- "$tmp")"
-			rm -f -- "$tmp"
-			if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
-				cd -- "$cwd"
-			fi
-		fi
-	}
+	alias y='yazi'
 fi
 
 # --- Additional configurations for solarized-dark themes ---
