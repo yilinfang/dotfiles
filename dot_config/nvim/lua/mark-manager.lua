@@ -1,4 +1,4 @@
--- lua/custom/mark-manager.lua
+-- lua/mark-manager.lua
 -- Manage marks in Neovim
 
 local M = {}

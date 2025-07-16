@@ -11,8 +11,6 @@ fi
 
 # Install essential tools using mise
 mise use -g bat
-mise use -g delta
-mise use -g difftastic
 mise use -g fd
 mise use -g fzf
 mise use -g lazygit

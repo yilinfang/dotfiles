@@ -1,6 +1,7 @@
 ~/.ripgreprc
 ~/.tmux.conf
 ~/.vimrc
+~/.config/bat
 ~/.config/lazygit
 ~/.config/nvim
 ~/.config/yazi

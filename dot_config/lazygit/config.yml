@@ -1,7 +1,4 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
 customCommands:
   - key: "Z"
     command: "git czg"
