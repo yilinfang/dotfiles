@@ -16,9 +16,10 @@ if command -v nvim &>/dev/null; then
 	fi
 fi
 
-# If rg(ripgrep) is installed and the RIPGREP_CONFIG_PATH is not set, set it
-if command -v rg &>/dev/null && [ -z "${RIPGREP_CONFIG_PATH:-}" ]; then
+# If rg is installed
+if command -v rg &>/dev/null; then
 	export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+	alias rgv='rg --vimgrep'
 fi
 
 # If g is available, use if for Git
@@ -39,6 +40,11 @@ fi
 # Initialize fzf if installed
 if command -v fzf &>/dev/null; then
 	source <(fzf --zsh)
+	if command -v fd &>/dev/null; then
+		export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --unrestricted --follow --exclude .git'
+		export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+		export FZF_ALT_C_COMMAND='fd --type dir --strip-cwd-prefix --unrestricted --follow --exclude .git'
+	fi
 fi
 
 # Initialize zoxide if installed

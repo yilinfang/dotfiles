@@ -1,0 +1,22 @@
+[tools]
+bat = "latest"
+fd = "latest"
+fzf = "latest"
+jq = "latest"
+lazygit = "latest"
+neovim = "0.11.3"
+node = "latest"
+ripgrep = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+taplo = "latest"
+uv = "latest"
+yazi = "latest"
+zellij = "0.42.2"
+zoxide = "latest"
+python = "latest"
+delta = "latest"
+difftastic = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = []

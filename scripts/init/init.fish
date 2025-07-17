@@ -1,4 +1,4 @@
-# init.fsh
+# init.fish
 # This script initializes the Fish shell environment
 
 # If mise is installed, activate it
@@ -16,9 +16,10 @@ if command -v nvim >/dev/null
     end
 end
 
-# If rg(ripgrep) is installed and the RIPGREP_CONFIG_PATH is not set, set it
-if command -v rg >/dev/null; and not set -q RIPGREP_CONFIG_PATH
+# If rg is installed
+if command -v rg >/dev/null
     set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+    alias rgv='rg --vimgrep'
 end
 
 # If g is available, use if for Git
@@ -39,6 +40,11 @@ end
 # Initialize fzf if installed
 if command -v fzf >/dev/null
     fzf --fish | source
+    if command -v fd >/dev/null
+        set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --unrestricted --follow --exclude .git'
+        set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+        set -gx FZF_ALT_C_COMMAND 'fd --type dir --strip-cwd-prefix --unrestricted --follow --exclude .git'
+    end
 end
 
 # Initialize zoxide if installed
