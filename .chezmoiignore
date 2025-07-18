@@ -4,6 +4,7 @@
 README.md
 .gitignore
 scripts/
+nvim-packages/
 
 **/.git/
 **/*bak*

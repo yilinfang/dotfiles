@@ -1,6 +1,5 @@
 -- Yilin Fang's personal Neovim configuration
--- Vanilla Neovim configuration without external plugins or dependencies
--- Inspired from yobibyte's Neovim configuration (https://github.com/yobibyte/yobitools/blob/main/dotfiles/init.lua)
+-- A minimal setup for Neovim, inspired from yobibyte's Neovim configuration (https://github.com/yobibyte/yobitools/blob/main/dotfiles/init.lua)
 -- Copyright (c) 2025 Yilin Fang
 
 -- [[ Global settings ]]
@@ -29,7 +28,7 @@ end
 -- [[ Imported from yobibyte's configuration ]]
 vim.o.undofile = true
 vim.o.laststatus = 0
-vim.keymap.set("n", "<leader>f", function() vim.fn.setreg("+", vim.fn.expand "%:p") end)
+vim.keymap.set("n", "<leader>F", function() vim.fn.setreg("+", vim.fn.expand "%:p") end)
 vim.keymap.set("n", "<leader>c", function()
   vim.ui.input({}, function(c)
     if c and c ~= "" then
@@ -45,9 +44,12 @@ end)
 vim.cmd "colorscheme retrobox"
 vim.o.autoindent = true
 vim.o.breakindent = true
+vim.o.completeopt = "menu,menuone,noselect"
 vim.o.copyindent = true
 vim.o.ignorecase = true
 vim.o.linebreak = true
+vim.o.list = true
+vim.o.listchars = "tab:▸ ,trail:·,nbsp:␣,extends:❯,precedes:❮"
 vim.o.preserveindent = true
 vim.o.scrolloff = 10
 vim.o.signcolumn = "no"
@@ -61,6 +63,12 @@ vim.o.tabstop = 8
 vim.o.wrap = false
 
 -- [[ Keymaps ]]
+vim.keymap.set(
+  "n",
+  "<leader>f",
+  function() vim.fn.setreg("+", vim.fn.expand "%") end,
+  { desc = "Copy relative file path to clipboard" }
+)
 vim.keymap.set("n", "<leader>/", "<cmd>noh<cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "Yank entire buffer to system clipboard" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
@@ -91,6 +99,9 @@ vim.api.nvim_create_autocmd("VimResized", {
   command = "windo wincmd = ",
 })
 
+-- [[ Plugins ]]
+require "plugins"
+
 -- [[ Custom modules ]]
-require("detect-indent").setup()
+-- require("detect-indent").setup() -- NOTE: Disabled for now, use vim-sleuth instead
 require("mark-manager").setup()
