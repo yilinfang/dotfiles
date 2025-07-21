@@ -1,0 +1,11 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+customCommands:
+  - key: "Z"
+    command: "git czg"
+    description: "Commit with czg"
+    context: "files"
+    loadingText: "Opening czg"
+    output: terminal
