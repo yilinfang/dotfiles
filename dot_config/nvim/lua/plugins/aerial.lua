@@ -10,6 +10,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
+    backends = { "lsp", "treesitter", "markdown", "man" }, -- HACK: Make the LSP default backend
     layout = {
       max_width = { 40, 0.4 }, -- Maximum width of the aerial window
       min_width = { 20, 0.2 }, -- Minimum width of the aerial window
