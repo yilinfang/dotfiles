@@ -7,12 +7,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     default_file_explorer = false, -- Use neo-tree as the default file explorer
-    columns = {
-      "permissions",
-      "size",
-      "mtime",
-      "icon",
-    },
+    columns = {}, -- Disable additional columns
     watch_for_changes = true,
     keymaps = {
       ["<C-c>"] = false,
