@@ -116,12 +116,12 @@ function M.setup(options)
     preferences = {} -- NOTE: Use the default options
   end
 
-  -- HACK: Register the DetectIndent command
+  -- NOTE: Register the DetectIndent command
   vim.api.nvim_create_user_command("DetectIndent", function() M.detect() end, {
     desc = "Detect and apply indentation for current buffer",
   })
 
-  -- HACK: Set up autocommands for automatic detection
+  -- NOTE: Set up autocommands for automatic detection
   local augroup = vim.api.nvim_create_augroup("DetectIndent", { clear = true })
   vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     group = augroup,
@@ -130,6 +130,7 @@ function M.setup(options)
     end,
     desc = "Automatically detect indentation when opening files",
   })
+  -- HACK: Detect indentation when saving new files
   vim.api.nvim_create_autocmd({ "BufNewFile" }, {
     group = augroup,
     callback = function()
