@@ -39,8 +39,3 @@ vim.keymap.set("n", "<leader>tw", function()
   local status = vim.opt_local.wrap:get() and "ON" or "OFF"
   print("Wrap: " .. status)
 end, { desc = "[T]oggle [W]rap" })
-vim.keymap.set("n", "<leader>tr", function()
-  vim.opt_local.relativenumber = not vim.opt_local.relativenumber:get()
-  local status = vim.opt_local.relativenumber:get() and "ON" or "OFF"
-  print("Relative line numbers: " .. status)
-end, { desc = "[T]oggle [R]elative Line Numbers" })
