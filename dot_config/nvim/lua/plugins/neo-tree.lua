@@ -11,6 +11,7 @@ return {
   },
   lazy = false, -- neo-tree will load itself lazily
   opts = {
+    enable_diagnostics = false, -- disable diagnostics in the file explorer
     filesystem = {
       follow_current_file = { enabled = true }, -- follow the current file
       filtered_items = {
