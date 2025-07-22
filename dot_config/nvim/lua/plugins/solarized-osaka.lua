@@ -1,6 +1,8 @@
 -- lua/plugins/solarized-osaka.lua
 -- HACK: Set colorscheme to solarized-osaka.nvim
 
+if true then return {} end -- Disabled for now
+
 return {
   "craftzdog/solarized-osaka.nvim",
   lazy = false,

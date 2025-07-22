@@ -5,12 +5,13 @@ font-size = 16
 adjust-underline-position = 2
 
 # Theme
-theme = "Solarized Dark - Patched"
+# theme = "Solarized Dark - Patched"
+theme = "Everforest Dark - Hard"
 
 # Background
-background = #031219
-background-opacity = 0.9
-background-blur = true
+# background = #031219
+# background-opacity = 0.9
+# background-blur = true
 
 # Window
 window-width = 100
