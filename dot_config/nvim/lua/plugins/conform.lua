@@ -16,12 +16,13 @@ return {
       mode = "", -- NOTE: "" is required by conform.nvim to make it able to automatically format the buffer or selection
       desc = "Conform: [F]ormat Buffer/Selection",
     },
-    {
-      "grF",
-      function() require("conform").format { formatters = { "injected" }, timeout_ms = 3000 } end,
-      mode = "n",
-      desc = "Conform: [F]ormat Injected Langs",
-    },
+    -- NOTE: Temporarily disabled
+    -- {
+    --   "grF",
+    --   function() require("conform").format { formatters = { "injected" }, timeout_ms = 3000 } end,
+    --   mode = "n",
+    --   desc = "Conform: [F]ormat Injected Langs",
+    -- },
   },
   opts = {
     notify_on_error = false,
