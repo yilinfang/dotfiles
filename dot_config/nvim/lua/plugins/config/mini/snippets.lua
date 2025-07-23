@@ -1,8 +1,6 @@
 -- lua/plugins/mini/snippets.lua
 -- Configuration for mini.snippets
 
-if true then return end -- Disabled for now
-
 local snippets_ok, snippets = pcall(require, "mini.snippets")
 if snippets_ok then
   -- Load friendly-snippets

@@ -4,7 +4,7 @@
 local pick_ok, pick = pcall(require, "mini.pick")
 if pick_ok then
   pick.setup {}
-  vim.ui.selcet = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
+  vim.ui.select = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
   -- [[ Buitlin pickers ]]
   -- Map <leader><leader> to serach buffers
   vim.keymap.set("n", "<leader><leader>", "<cmd>Pick buffers<cr>", { desc = "[' '] Search Buffers" })
