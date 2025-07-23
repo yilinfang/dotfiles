@@ -2,6 +2,7 @@
 ~/.tmux.conf
 ~/.vimrc
 ~/.config/bat
+~/.config/fd
 ~/.config/lazygit
 ~/.config/nvim
 ~/.config/yazi
