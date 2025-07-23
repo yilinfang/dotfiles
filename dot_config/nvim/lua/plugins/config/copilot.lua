@@ -1,7 +1,51 @@
 -- lua/plugins/config/copilot.lua
 -- Configuration for copilot.vim
 
-vim.b.copilot_enabled = false -- Disable copilot by default
+local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
+  or {
+    "netrw",
+    "tutor",
+    "man",
+    "qf",
+    "", -- Unknown filetype
+  }
+
+local copilot_disabled_buftypes = vim.g.copilot_disabled_buftypes
+  or {
+    "help",
+    "nofile",
+    "terminal",
+    "prompt",
+    "quickfix",
+    "acwrite",
+  }
+
+local function should_enable_copilot()
+  local bo = vim.bo
+  local ft = bo.filetype
+  local bt = bo.buftype
+  -- Disable copilot if current buffer is not modifiable
+  if not bo.modifiable then return false end
+  -- Disable copilot for specific filetypes
+  if vim.tbl_contains(copilot_disabled_filetypes, ft) then return false end
+  -- Disable copilot for specific buftypes
+  if vim.tbl_contains(copilot_disabled_buftypes, bt) then return false end
+  -- Enable copilot for all other cases
+  return true
+end
+
+-- Create an autocmd to eable copilot when entering a buffer
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("EnableCopilot", { clear = true }),
+  callback = function()
+    if should_enable_copilot() then
+      vim.b.copilot_enabled = true
+    else
+      vim.b.copilot_enabled = false
+    end
+  end,
+})
 vim.g.copilot_not_tab_map = true -- Disable tab mapping for copilot
 
 -- [[ Key Mappings ]]
