@@ -19,6 +19,4 @@ bash ./update-config.sh
 # Optional
 bash ./setup-git.sh
 bash ./build-tmux-linux.sh
-mise use -g lua-language-server taplo shfmt shellcheck stylua jq
-npm install -g prettier pyright bash-language-server
 ```
