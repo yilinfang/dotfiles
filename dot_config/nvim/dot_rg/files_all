@@ -1,0 +1,9 @@
+--no-config
+--color=never
+--files
+--hidden
+--follow
+--no-ignore-vcs
+
+--glob=!**/.git/*
+--glob=!**/.DS_Store

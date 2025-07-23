@@ -1,0 +1,11 @@
+--color=never
+--no-heading
+--with-filename
+--line-number
+--column
+--smart-case
+--hidden
+--follow
+
+--glob=!**/.git/*
+--glob=!**/.DS_Store
