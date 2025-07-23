@@ -11,7 +11,7 @@ chezmoi init yilinfang -S ~/.chezmoi/dotfiles
 chezmoi cd
 cd scripts/pde
 bash ./install-mise.sh
-bash ./install-tools-with-mise.sh
+bash ./install-tools.sh
 bash ./setup-shell.sh
 bash ./setup-config.sh
 # Update
@@ -19,4 +19,6 @@ bash ./update-config.sh
 # Optional
 bash ./setup-git.sh
 bash ./build-tmux-linux.sh
+mise use -g lua-language-server taplo shfmt shellcheck stylua jq
+npm install -g prettier pyright bash-language-server
 ```
