@@ -47,3 +47,17 @@ vim.o.relativenumber = true
 vim.opt.fillchars = { eob = " " }
 vim.o.autoread = true
 vim.o.completeopt = "menuone,noselect,fuzzy"
+vim.o.shiftround = true
+vim.o.shiftwidth = 8
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.softtabstop = 8
+vim.o.tabstop = 8
+vim.o.autoindent = true
+vim.o.breakindent = true
+vim.o.copyindent = true
+vim.o.preserveindent = true
+vim.o.expandtab = false
+
+-- sign column settings
+vim.o.signcolumn = "yes"

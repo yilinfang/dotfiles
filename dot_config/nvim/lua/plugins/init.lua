@@ -9,5 +9,6 @@ require "plugins.config.lsps" -- Load specific LSP configurations
 require "plugins.config.conform" -- Load Conform configuration
 require "plugins.config.mini" -- Load mini.nvim configuration
 require "plugins.config.copilot" -- Load copilot configuration
+require "plugins.config.statuscol" -- Load statuscol configuration
 
 require "plugins.custom" -- Load custom plugin configurations
