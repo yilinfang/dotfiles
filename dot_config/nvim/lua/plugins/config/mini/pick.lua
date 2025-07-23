@@ -6,24 +6,15 @@ if pick_ok then
   pick.setup {}
   vim.ui.select = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
   -- [[ Buitlin pickers ]]
-  -- Map <leader><leader> to serach buffers
   vim.keymap.set("n", "<leader><leader>", "<cmd>Pick buffers<cr>", { desc = "[' '] Search Buffers" })
-  -- Map <leader>sh to search help tags
   vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "[S]earch [H]elp" })
-  -- Map <leader>sr to resume last search
   vim.keymap.set("n", "<leader>sr", "<cmd>Pick resume<cr>", { desc = "[S]earch [R]esume" })
-  -- Map <leader>sd to search diagnostics
   vim.keymap.set("n", "<leader>sd", "<cmd>Pick diagnostic<cr>", { desc = "[S]earch [D]iagnostic" })
-  -- Map <leader>sk to search keymaps
   vim.keymap.set("n", "<leader>sk", "<cmd>Pick keymaps<cr>", { desc = "[S]earch [K]eymaps" })
-  -- Map <leader>st to search treesitter symbols
   vim.keymap.set("n", "<leader>st", "<cmd>Pick treesitter<cr>", { desc = "[S]earch [T]reesitter Nodes" })
-  -- Map <leader>s. to search old files
   vim.keymap.set("n", "<leader>s.", "<cmd>Pick oldfiles<cr>", { desc = "[S]earch Old Files (['.'] for repeat)" })
-  -- Map <leader>sm to search marks
   vim.keymap.set("n", "<leader>sm", "<cmd>Pick marks<cr>", { desc = "[S]earch [M]arks" })
-  -- Map <leader>sh to search hipatterns
-  vim.keymap.set("n", "<leader>sh", "<cmd>Pick hipatterns<cr>", { desc = "[S]earch [H]ipatterns" })
+  vim.keymap.set("n", "<leader>sH", "<cmd>Pick hipatterns<cr>", { desc = "[S]earch [H]ipatterns" })
   -- [[ LSP pickers ]]
   -- NOTE: Only available when LSP is attached
   --  It will override some of the default LSP keymaps
@@ -39,28 +30,28 @@ if pick_ok then
         mode = mode or "n"
         vim.keymap.del(mode, keys, { buffer = event.buf })
       end
-      unmap "grr"
-      unmap "grd"
-      unmap "gri"
-      unmap "grD"
-      unmap "gO"
-      unmap "gW"
-      unmap "grt"
       local extra_ok, extra = pcall(require, "mini.extra")
       if extra_ok then
         -- Fuzzy find all references under cursor
+        unmap "grr"
         map("grr", function() extra.pickers.lsp { scope = "references" } end, "[G]oto [R]eferences")
         -- Jump to the implementation of the word under cursor
+        unmap "gri"
         map("gri", function() extra.pickers.lsp { scope = "implementation" } end, "[G]oto [I]mplementation")
         -- Jump to the definition of the word under cursor
+        unmap "grd"
         map("grd", function() extra.pickers.lsp { scope = "definition" } end, "[G]oto [D]efinition")
         -- Jump to the declaration of the word under cursor
+        unmap "grD"
         map("grD", function() extra.pickers.lsp { scope = "declaration" } end, "[G]oto [D]eclaration")
         -- Fuzzy find all the symbols in current document
+        unmap "gO"
         map("gO", function() extra.pickers.lsp { scope = "document_symbol" } end, "Open Document Symbols")
         -- Fuzzy find all the symbols in current workspace
+        unmap "gW"
         map("gW", function() extra.pickers.lsp { scope = "workspace_symbol" } end, "Open Workspace Symbols")
         -- Jump to the type definition of the word under cursor
+        unmap "grt"
         map("grt", function() extra.pickers.lsp { scope = "type_definition" } end, "[G]oto [T]ype Definition")
       else
         vim.notify("mini.extra not found, LSP pickers will not work.", vim.log.levels.WARN)
