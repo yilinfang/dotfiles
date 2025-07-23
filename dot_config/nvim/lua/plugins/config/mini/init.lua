@@ -86,6 +86,9 @@ else
   vim.notify("mini.statusline not found", vim.log.levels.WARN)
 end
 
+-- [[ mini.hipatterns ]]
+require "plugins.config.mini.hipatterns"
+
 -- [[ mini.files ]]
 require "plugins.config.mini.files"
 

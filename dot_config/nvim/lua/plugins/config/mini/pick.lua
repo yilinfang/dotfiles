@@ -4,7 +4,7 @@
 local pick_ok, pick = pcall(require, "mini.pick")
 if pick_ok then
   pick.setup {}
-
+  vim.ui.selcet = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
   -- [[ Buitlin pickers ]]
   -- Map <leader><leader> to serach buffers
   vim.keymap.set("n", "<leader><leader>", "<cmd>Pick buffers<cr>", { desc = "[' '] Search Buffers" })
@@ -22,7 +22,8 @@ if pick_ok then
   vim.keymap.set("n", "<leader>s.", "<cmd>Pick oldfiles<cr>", { desc = "[S]earch Old Files (['.'] for repeat)" })
   -- Map <leader>sm to search marks
   vim.keymap.set("n", "<leader>sm", "<cmd>Pick marks<cr>", { desc = "[S]earch [M]arks" })
-
+  -- Map <leader>sh to search hipatterns
+  vim.keymap.set("n", "<leader>sh", "<cmd>Pick hipatterns<cr>", { desc = "[S]earch [H]ipatterns" })
   -- [[ LSP pickers ]]
   -- NOTE: Only available when LSP is attached
   --  It will override some of the default LSP keymaps
