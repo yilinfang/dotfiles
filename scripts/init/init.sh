@@ -61,8 +61,3 @@ fi
 if command -v yazi &>/dev/null && ! command -v y &>/dev/null; then
 	alias y='yazi'
 fi
-
-# --- Additional configurations for solarized-dark themes ---
-if command -v difft &>/dev/null; then # Check if difft is installed
-	export DFT_BACKGROUND="light"
-fi

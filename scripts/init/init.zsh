@@ -24,7 +24,7 @@ fi
 
 # If bat or delta is installed, set BAT_THEME
 if command -v bat &>/dev/null || command -v delta &>/dev/null; then
-    export BAT_THEME="ansi"
+	export BAT_THEME="ansi"
 fi
 
 # If g is available, use if for Git
@@ -60,9 +60,4 @@ fi
 # If y is available, initialize yazi
 if command -v yazi &>/dev/null && ! command -v y &>/dev/null; then
 	alias y='yazi'
-fi
-
-# --- Additional configurations for solarized-dark themes ---
-if command -v difft &>/dev/null; then # Check if difft is installed
-	export DFT_BACKGROUND="light"
 fi
