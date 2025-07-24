@@ -27,7 +27,7 @@ end
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = "yes:1" -- Only show sign with highest priority
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.splitright = true
@@ -43,7 +43,7 @@ vim.o.linebreak = true
 vim.o.showmode = false
 vim.o.mouse = "a"
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.opt.fillchars = { eob = " " }
 vim.o.autoread = true
 vim.o.completeopt = "menuone,noselect,fuzzy"
@@ -58,6 +58,3 @@ vim.o.breakindent = true
 vim.o.copyindent = true
 vim.o.preserveindent = true
 vim.o.expandtab = false
-
--- sign column settings
-vim.o.signcolumn = "yes"

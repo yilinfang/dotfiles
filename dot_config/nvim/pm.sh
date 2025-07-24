@@ -198,7 +198,6 @@ install() {
 	install_plug "github.com/rafamadriz/friendly-snippets" "default" "opt"
 	install_plug "github.com/folke/lazydev.nvim" "default" "opt"
 	install_plug "github.com/github/copilot.vim" "default" "start"
-	install_plug "github.com/luukvbaal/statuscol.nvim" "default" "start"
 	echo "Plugin installation complete!"
 
 	# Create lock file (but don't fail if no plugins to freeze)
