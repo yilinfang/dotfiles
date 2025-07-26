@@ -46,13 +46,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end,
 })
-vim.g.copilot_not_tab_map = true -- Disable tab mapping for copilot
 
 -- [[ Key Mappings ]]
-vim.keymap.set("i", "<M-y>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
 vim.keymap.set("i", "<M-d>", "<Plug>(copilot-dismiss)")
 vim.keymap.set("i", "<M-n>", "<Plug>(copilot-next)")
 vim.keymap.set("i", "<M-p>", "<Plug>(copilot-previous)")
