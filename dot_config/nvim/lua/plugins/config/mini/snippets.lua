@@ -3,8 +3,6 @@
 
 local snippets_ok, snippets = pcall(require, "mini.snippets")
 if snippets_ok then
-  -- Load friendly-snippets
-  vim.cmd "packadd! friendly-snippets"
   snippets.setup {
     snippets = {
       snippets.gen_loader.from_lang(),

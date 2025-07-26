@@ -191,12 +191,13 @@ install() {
 	# NOTE: Install plugins here
 	install_plug "github.com/nvim-treesitter/nvim-treesitter" "master" "start"
 	install_plug "github.com/neovim/nvim-lspconfig" "default" "start"
+	install_plug "github.com/mfussenegger/nvim-lint" "default" "start"
 	install_plug "github.com/sainnhe/everforest" "default" "start"
 	install_plug "github.com/tpope/vim-sleuth" "default" "start"
 	install_plug "github.com/stevearc/conform.nvim" "default" "start"
 	install_plug "github.com/echasnovski/mini.nvim" "default" "start"
-	install_plug "github.com/rafamadriz/friendly-snippets" "default" "opt"
-	install_plug "github.com/folke/lazydev.nvim" "default" "opt"
+	install_plug "github.com/rafamadriz/friendly-snippets" "default" "start"
+	install_plug "github.com/folke/lazydev.nvim" "default" "start"
 	install_plug "github.com/github/copilot.vim" "default" "start"
 	echo "Plugin installation complete!"
 

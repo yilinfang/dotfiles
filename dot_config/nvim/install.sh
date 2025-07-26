@@ -31,6 +31,7 @@ else
 	npm install -g prettier
 	npm install -g pyright
 	npm install -g bash-language-server
+	npm install -g markdownlint-cli2
 fi
 
 # =====================================================================
