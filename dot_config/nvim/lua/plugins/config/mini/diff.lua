@@ -7,8 +7,8 @@ if diff_ok then
     view = {
       style = "sign",
       signs = {
-        add = "▎",
-        change = "▎",
+        add = "┃",
+        change = "┃",
         delete = "",
       },
     },
