@@ -48,6 +48,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- [[ Key Mappings ]]
+vim.keymap.set("i", "<M-y>", 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true
 vim.keymap.set("i", "<M-d>", "<Plug>(copilot-dismiss)")
 vim.keymap.set("i", "<M-n>", "<Plug>(copilot-next)")
 vim.keymap.set("i", "<M-p>", "<Plug>(copilot-previous)")
