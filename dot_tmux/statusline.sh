@@ -8,7 +8,7 @@ FG_DEFAULT="color2"
 BG_DEFAULT="color0"
 # Group Highlight 1
 FG_HIGHLIGHT_1="color0"
-BG_HIGHLIGHT_1="color7"
+BG_HIGHLIGHT_1="color1"
 # Group Highlight 2
 FG_HIGHLIGHT_2="color0"
 BG_HIGHLIGHT_2="color2"
