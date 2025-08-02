@@ -33,7 +33,7 @@ if not command -v g >/dev/null
 end
 
 # If t is available, use it for tmux
-if command -v t >/dev/null
+if not command -v t >/dev/null
     alias t='tmux'
 end
 
