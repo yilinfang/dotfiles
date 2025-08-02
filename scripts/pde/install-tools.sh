@@ -22,7 +22,6 @@ mise use -g ripgrep
 mise use -g sd
 mise use -g starship
 mise use -g yazi
-mise use -g zellij@0.42.2
 mise use -g zoxide
 
 # Check if the npm is available

@@ -32,14 +32,14 @@ if ! command -v g &>/dev/null; then
 	alias g='git'
 fi
 
+# If t is available, use it for tmux
+if command -v t &>/dev/null; then
+	alias t='tmux'
+fi
+
 # If lg is available, use it for lazygit
 if command -v lazygit &>/dev/null && ! command -v lg &>/dev/null; then
 	alias lg='lazygit'
-fi
-
-# If ze is available, use it for zellij
-if command -v zellij &>/dev/null && ! command -v ze &>/dev/null; then
-	alias ze='zellij'
 fi
 
 # Initialize fzf if installed

@@ -1,8 +1,9 @@
 ~/.ripgreprc
+~/.tmux
+~/.tmux.conf
 ~/.config/bat
 ~/.config/fd
 ~/.config/lazygit
 ~/.config/nvim
 ~/.config/starship.toml
 ~/.config/yazi
-~/.config/zellij

@@ -20,7 +20,6 @@ stylua = "latest"
 taplo = "latest"
 uv = "latest"
 yazi = "latest"
-zellij = "0.42.2"
 zoxide = "latest"
 
 [settings]
