@@ -1,0 +1,67 @@
+# Customized Pure Prompt preset of Starship
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$conda\
+$python\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[conda]
+format = "[$environment]($style) "
+style = "green"
+ignore_base = false
+
+[directory]
+style = "blue"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "red"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "red"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style) "
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[hostname]
+ssh_symbol = ''
+format = 'on [$ssh_symbol$hostname]($style) '
+
+[python]
+format = "[$virtualenv]($style) "
+style = "cyan"
+# HACK: Only show the module when there is a virtualenv
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[username]
+format = '[$user]($style) '

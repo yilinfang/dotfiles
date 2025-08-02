@@ -1,0 +1,27 @@
+# Font
+font-family = ""
+font-family = "PlemolSC Console NF"
+font-size = 16
+adjust-underline-position = 2
+
+# Theme
+theme = everforest-dark-hard-fixed
+
+# Window
+window-width = 100
+window-height = 30
+window-padding-balance = true
+window-padding-color = extend
+
+# Fix alt+arrow
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = alt+f=esc:f
+keybind = alt+b=esc:b
+macos-option-as-alt = true
+
+# Misc
+copy-on-select = clipboard
+
+# MacOS
+quit-after-last-window-closed = true
