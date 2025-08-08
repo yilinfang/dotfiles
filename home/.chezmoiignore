@@ -28,8 +28,6 @@
 
 {{ if .work }}
 # Ignored in work environment(PDE)
-.config/fish/
-.config/fish/**
 .config/ghostty/
 .config/ghostty/**
 .config/kitty/
@@ -40,8 +38,6 @@
 .config/mise/**
 .config/nvim-vsc/
 .config/nvim-vsc/**
-.config/zellij/
-.config/zellij/**
 .config/starship.toml
 .gitconfig
 .hammerspoon/
