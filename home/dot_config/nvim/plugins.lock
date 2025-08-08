@@ -1,0 +1,12 @@
+github.com/stevearc/conform.nvim:master:973f3cb73887d510321653044791d7937c7ec0fa:start
+github.com/github/copilot.vim:release:51f80c0ed4f70d1c7e8c0ff11a792a9d84502c03:start
+github.com/sainnhe/everforest:master:4132e797f6ce555de53825b6ef3df0b618456703:start
+github.com/rafamadriz/friendly-snippets:main:572f5660cf05f8cd8834e096d7b4c921ba18e175:start
+github.com/lewis6991/gitsigns.nvim:main:736f51d2bb684c06f39a2032f064d7244f549981:start
+github.com/folke/lazydev.nvim:main:2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c:start
+github.com/echasnovski/mini.nvim:main:4035ef97407a6661ae9ff913ff980e271a658502:start
+github.com/mfussenegger/nvim-lint:master:7ef127aaede2a4d5ad8df8321e2eb4e567f29594:start
+github.com/neovim/nvim-lspconfig:master:9141be4c1332afc83bdf1b0278dbb030f75ff8e3:start
+github.com/nvim-treesitter/nvim-treesitter:master:42fc28ba918343ebfd5565147a42a26580579482:start
+github.com/tpope/vim-fugitive:master:61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4:start
+github.com/tpope/vim-sleuth:master:be69bff86754b1aa5adcbb527d7fcd1635a84080:start

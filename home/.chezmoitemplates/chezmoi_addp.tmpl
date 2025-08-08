@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Add a encrypted personal file to chezmoi, encrypted with a personal key.
+
+set -euo pipefail
+
+# Define the path to the personal key
+PERSONAL_KEY_PATH="{{- .personal_pub_key_path -}}"
+
+exec chezmoi add --encrypt --age-recipient-file "$PERSONAL_KEY_PATH" "$@"

@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# This script is used to renew the keys used by Age.
+
+set -euo pipefail
+
+# Check if age-keygen is available
+if ! command -v age-keygen &>/dev/null; then
+	echo "age-keygen could not be found. Please install Age."
+	exit 1
+fi
+
+# Define key file paths
+KEY1="{{- .shared_key_path -}}"
+KEY1_PUB="{{- .shared_pub_key_path -}}"
+{{ if not .work -}}
+KEY2="{{- .personal_key_path -}}"
+KEY2_PUB="{{- .personal_pub_key_path -}}"
+{{- end }}
+
+# Function to generate a new key pair and print one-liner command
+generate_key_pair() {
+	local key_file="$1"
+	local pub_file="$2"
+	local key_type="$3"
+
+	# Create directory if it doesn't exist
+	mkdir -p "$(dirname "$key_file")"
+	mkdir -p "$(dirname "$pub_file")"
+
+	# Delete existing key files if they exist
+	if [[ -f "$key_file" ]]; then
+		echo "Deleting existing key file: $key_file"
+		rm -f "$key_file"
+	fi
+	if [[ -f "$pub_file" ]]; then
+		echo "Deleting existing public key file: $pub_file"
+		rm -f "$pub_file"
+	fi
+
+	# Generate the keys
+	echo "Generating new $key_type key pair..."
+	age-keygen -o "$key_file"
+	chmod 600 "$key_file"
+	age-keygen -y "$key_file" >"$pub_file"
+	chmod 644 "$pub_file"
+
+	# Convert absolute paths to relative paths with ~ for portability
+	local portable_key_file="${key_file/#$HOME/~}"
+	local portable_pub_file="${pub_file/#$HOME/~}"
+
+	echo "New $key_type key pair generated:"
+	echo "  Private key: $key_file"
+	echo "  Public key: $pub_file"
+	echo "  To use these keys on a new machine, run:"
+	echo "# Create private key"
+	echo "mkdir -p $(dirname "$portable_key_file") && cat > $portable_key_file << 'EOF'"
+	cat "$key_file"
+	echo "EOF"
+	echo "chmod 600 $portable_key_file"
+	echo "# Create public key"
+	echo "mkdir -p $(dirname "$portable_pub_file") && cat > $portable_pub_file << 'EOF'"
+	cat "$pub_file"
+	echo "EOF"
+	echo "chmod 644 $portable_pub_file"
+	echo ""
+}
+
+# Generate new key pairs
+generate_key_pair "$KEY1" "$KEY1_PUB" "shared"
+{{ if not .work -}}
+generate_key_pair "$KEY2" "$KEY2_PUB" "personal"
+{{- end }}

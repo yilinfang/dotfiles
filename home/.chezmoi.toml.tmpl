@@ -1,0 +1,46 @@
+sourceDir = "~/.chezmoi/dotfiles"
+
+encryption = "age"
+[age]
+{{- if env "IS_PDE" }}
+identity = "~/.age/key1.txt"
+# No need to set the real recipients, use chezmoi_adde instead
+{{- else }}
+identities = [
+  "~/.age/key1.txt",
+  "~/.age/key2.txt",
+]
+# No need to set the real recipients, use chezmoi_adde or chezmoi_addp instead
+{{- end }}
+recipientsFile = "dummy-recipient"
+
+[edit]
+command = "nvim"
+# HACK: Temporary fix for chezmoi edit bug with encrypted files
+#  Set -M to prevent user from editing files
+args = ["-M"]
+apply = false
+watch = false
+
+[status]
+exclude = ["scripts"]
+
+[diff]
+exclude = ["scripts"]
+pager = "delta"
+
+[merge]
+command = "nvim"
+args = [
+  "-d",
+  {{ printf "%q" "{{ .Destination }}" }},
+  {{ printf "%q" "{{ .Source }}" }},
+  {{ printf "%q" "{{ .Target }}" }}
+]
+
+[data]
+{{- if env "IS_PDE" }}
+work = true
+{{- else }}
+work = false
+{{- end }}
