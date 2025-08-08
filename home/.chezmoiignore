@@ -13,6 +13,7 @@
 # Depercated configs
 .config/fish/
 .config/fish/**
+.config/starship.toml
 .config/zellij/
 .config/zellij/**
 
@@ -38,7 +39,6 @@
 .config/mise/**
 .config/nvim-vsc/
 .config/nvim-vsc/**
-.config/starship.toml
 .gitconfig
 .hammerspoon/
 .hammerspoon/**
