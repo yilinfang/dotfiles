@@ -5,10 +5,10 @@ local mods = {"cmd", "alt", "shift", "ctrl"}  -- Change this line to modify all 
 local appShortcuts = {
     -- Key, Application
     {"F", "Finder"},
-    {"E", "Vivaldi"},
+    {"E", "Brave Browser"},
     {"P", "Bitwarden"},
     {"W", "WeChat"},
-    {"N", "Joplin"},
+--    {"N", "Joplin"},
 --    {"C", "Visual Studio Code"},
 --    {"A", "Antinote"},
 --    {"M", "Monica"},
@@ -20,7 +20,7 @@ local linkShortcuts = {
 --   {"D", "DeepSeek", "https://chat.deepseek.com/"},
     {"N", "Notion", "https://www.notion.so/"},
     {"M", "Monica", "https://monica.im/"},
-    {"G", "Gemini", "https://gemini.google.com/"},
+--    {"G", "Gemini", "https://gemini.google.com/"},
 }
 
 -- Function to display notification and open an application
