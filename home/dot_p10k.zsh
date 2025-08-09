@@ -38,7 +38,7 @@
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
   # Prompt colors.
-  local grey='242'
+  local grey='8' # Use '8' instead of '242' to improve readability
   local red='1'
   local yellow='3'
   local blue='4'
