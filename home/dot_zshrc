@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -119,21 +126,6 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-# Powerlevel10k
-P10K_INSTALL_PATH="$ZSH_CUSTOM/themes/powerlevel10k"
-# Install powerlevel10k if not already installed
-if [ ! -d "$P10K_INSTALL_PATH" ]; then
-    echo "Installing powerlevel10k theme..."
-    if git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_INSTALL_PATH"; then
-        echo "powerlevel10k installed successfully"
-    else
-        echo "Failed to install powerlevel10k"
-    fi
-fi
-source "$P10K_INSTALL_PATH/powerlevel10k.zsh-theme"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Eza
 if command -v eza &>/dev/null; then
     alias ls='eza --color=always --icons=always --group-directories-first'
@@ -189,3 +181,18 @@ update_terminal_info() {
 if [ -f "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh" ]; then
     source "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh"
 fi
+
+# Powerlevel10k
+P10K_INSTALL_PATH="$ZSH_CUSTOM/themes/powerlevel10k"
+# Install powerlevel10k if not already installed
+if [ ! -d "$P10K_INSTALL_PATH" ]; then
+    echo "Installing powerlevel10k theme..."
+    if git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_INSTALL_PATH"; then
+        echo "powerlevel10k installed successfully"
+    else
+        echo "Failed to install powerlevel10k"
+    fi
+fi
+source "$P10K_INSTALL_PATH/powerlevel10k.zsh-theme"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
