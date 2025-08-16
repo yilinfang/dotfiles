@@ -1,0 +1,51 @@
+# Use source paths relative to `~`
+# For example, to ignore `~/.config/nvim/init.vim`, use `.config/nvim/init.vim`
+
+**/*bak*
+**/.git/
+**/.git/**
+**/tmp/
+**/tmp/**
+
+# Sensitive files
+.config/chezmoi/
+.config/chezmoi/**
+.age/
+.age/**
+
+# Depercated configs
+.config/fish/
+.config/fish/**
+.config/starship.toml
+.config/zellij/
+.config/zellij/**
+
+# MacOS
+**/.DS_Store
+
+# Start of ~/.ssh
+.ssh/*
+!.ssh/config
+!.ssh/hosts
+!.ssh/keys/**
+# End of ~/.ssh
+
+{{ if .work }}
+# Ignored in work environment(PDE)
+.config/ghostty/
+.config/ghostty/**
+.config/kitty/
+.config/kitty/**
+.config/mise/
+.config/mise/**
+.config/nvim-vsc/
+.config/nvim-vsc/**
+.gitconfig
+.p10k.zsh
+.secrets/
+.secrets/**
+.ssh/
+.ssh/**
+.zprofile
+.zshrc
+{{ end }}

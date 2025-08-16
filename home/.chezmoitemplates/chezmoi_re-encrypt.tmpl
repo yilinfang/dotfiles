@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script is used to re-encrypt the encrypted files managed by chezmoi.
+
+set -euo pipefail
+
+PREFIX="$HOME"
+
+{{ range .shared_files }}
+FILE_PATH="$PREFIX/{{- . -}}"
+echo "Re-encrypting shared file: $FILE_PATH"
+chezmoi forget "$FILE_PATH" --force
+chezmoi_adde "$FILE_PATH"
+{{ end }}
+
+{{ if not .work -}}
+{{ range .personal_files }}
+FILE_PATH="$PREFIX/{{- . -}}"
+echo "Re-encrypting personal file: $FILE_PATH"
+chezmoi forget "$FILE_PATH" --force
+chezmoi_addp "$FILE_PATH"
+{{ end }}
+{{ end }}

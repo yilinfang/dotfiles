@@ -1,0 +1,33 @@
+[tools]
+bat = "latest"
+delta = "latest"
+difftastic = { version = "latest", exe = "difft" }
+fd = "latest"
+fzf = "latest"
+jq = "latest"
+lazygit = "latest"
+lua-language-server = "latest"
+neovim = "0.11.3"
+node = "latest"
+"npm:@bitwarden/cli" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"npm:bash-language-server" = "latest"
+"npm:czg" = "latest"
+"npm:markdownlint-cli2" = "latest"
+"npm:prettier" = "latest"
+"npm:pyright" = "latest"
+"npm:tree-sitter-cli" = "latest"
+ripgrep = "latest"
+ruff = "latest"
+sd = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+stylua = "latest"
+taplo = "latest"
+uv = "latest"
+yazi = "latest"
+zoxide = "latest"
+
+[settings]
+disable_backends = ["asdf"]
+idiomatic_version_file_enable_tools = []

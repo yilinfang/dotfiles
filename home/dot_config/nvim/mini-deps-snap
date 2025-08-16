@@ -1,0 +1,14 @@
+return {
+  ["conform.nvim"] = "973f3cb73887d510321653044791d7937c7ec0fa",
+  ["copilot.vim"] = "f3d66c148aa60ad04c0a21d3e0a776459de09eb2",
+  everforest = "4132e797f6ce555de53825b6ef3df0b618456703",
+  ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
+  ["gitsigns.nvim"] = "6e3c66548035e50db7bd8e360a29aec6620c3641",
+  ["lazydev.nvim"] = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
+  ["mini.nvim"] = "9909241424d305ef8f64d0d4697b45b59d1238ea",
+  ["nvim-lint"] = "7ef127aaede2a4d5ad8df8321e2eb4e567f29594",
+  ["nvim-lspconfig"] = "b0caeef0d835fbe19df6ad71dbc4345eaaea649c",
+  ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
+  ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
+}
