@@ -64,8 +64,8 @@ vim.keymap.set("i", "<M-l>", "<Plug>(copilot-accept-line)")
 vim.keymap.set("n", "<leader>tc", function()
   vim.b.copilot_enabled = not vim.b.copilot_enabled
   if vim.b.copilot_enabled then
-    vim.notify("Copilot enabled", vim.log.levels.INFO)
+    vim.notify("Copilot: enabled", vim.log.levels.INFO)
   else
-    vim.notify("Copilot disabled", vim.log.levels.INFO)
+    vim.notify("Copilot: disabled", vim.log.levels.INFO)
   end
 end, { desc = "Toggle Copilot" })
