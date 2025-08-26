@@ -1,3 +1,0 @@
---no-ignore-vcs
---glob=!**/.git/*
---glob=!**/.DS_Store

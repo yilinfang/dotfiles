@@ -59,7 +59,7 @@ if rg_default_cmd ~= "" then -- If `rg` is available
   opts.grep.cmd = rg_default_cmd
     .. "--color=never --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e "
   -- NOTE: Modify `$XDG_CONFIG_HOME/nvim/.rg/grep` to customize the ripgrep configuration
-  opts.grep.RIPGREP_CONFIG_PATH = vim.fn.stdpath "config" .. "/.rg/grep"
+  opts.grep.RIPGREP_CONFIG_PATH = vim.fn.stdpath "config" .. "/.ripgreprc"
   opts.grep.hidden = true
   opts.grep.follow = false
   opts.grep.no_ignore = false
