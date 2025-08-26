@@ -10,25 +10,19 @@ if ! command -v mise &>/dev/null; then
 	echo "mise is not installed. Please install it first."
 else
 	mise use -g lua-language-server
+	mise use -g ruff
 	mise use -g shellcheck
 	mise use -g shfmt
 	mise use -g stylua
 	mise use -g taplo
 
-	# Check if node is available
-	if ! command -v node &>/dev/null; then
-		echo "Node.js is not installed. Please install it first."
+	# Check if npm is available
+	if ! command -v npm &>/dev/null; then
+		echo "npm is not installed. Skipping npm packages."
 	else
 		mise use -g npm:bash-language-server
 		mise use -g npm:prettier
 		mise use -g npm:pyright
 		mise use -g npm:tree-sitter-cli
-	fi
-
-	# Check if uvx or pipx is available
-	if ! command -v uvx &>/dev/null && ! command -v pipx &>/dev/null; then
-		echo "Neither uvx nor pipx is installed. Please install one of them first."
-	else
-		mise use -g pipx:ruff
 	fi
 fi
