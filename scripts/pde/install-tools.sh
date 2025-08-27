@@ -26,3 +26,7 @@ mise use -g zoxide
 # Install node and essential npm packages
 mise use -g node
 mise use -g npm:czg
+
+# Install python, pipx and essential pypi packages
+mise use -g python
+mise use -g pipx

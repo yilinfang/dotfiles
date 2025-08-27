@@ -10,7 +10,6 @@ if ! command -v mise &>/dev/null; then
 	echo "mise is not installed. Please install it first."
 else
 	mise use -g lua-language-server
-	mise use -g ruff
 	mise use -g shellcheck
 	mise use -g shfmt
 	mise use -g stylua
@@ -24,5 +23,12 @@ else
 		mise use -g npm:prettier
 		mise use -g npm:pyright
 		mise use -g npm:tree-sitter-cli
+	fi
+
+	# Check if pipx or uvx is available
+	if ! command -v pipx &>/dev/null && ! command -v uvx &>/dev/null; then
+		echo "pipx or uvx is not installed. Skipping python packages."
+	else
+		mise use -g pipx:ruff
 	fi
 fi
