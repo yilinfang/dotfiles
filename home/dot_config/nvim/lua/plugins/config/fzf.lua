@@ -124,14 +124,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Jump to the definition of the word under cursor
     map("grd", "<cmd>FzfLua lsp_definitions<cr>", "[G]oto [D]efinition")
     -- Jump to the declaration of the word under cursor
-    map("grD", "<cmd>FzfLua lsp_declaration<cr>", "[G]oto [D]eclaration")
+    map("grD", "<cmd>FzfLua lsp_declarations<cr>", "[G]oto [D]eclaration")
     -- Jump to the type definition of the word under cursor
     map("grt", "<cmd>FzfLua lsp_typedefs<cr>", "[G]oto [T]ype Definition")
     -- Fuzzy find All Code Actions
     map("gra", "<cmd>FzfLua lsp_code_actions<cr>", "[G]oto Code [A]ctions")
     -- Fuzzy find all the symbols in current document
-    map("gO", "<cmd>FzfLua lsp_document_diagnostics<cr>", "Open Document Symbols")
+    map("gO", "<cmd>FzfLua lsp_document_symbols<cr>", "Open Document Symbols")
     -- Fuzzy find all the symbols in current workspace
-    map("gW", "<cmd>FzfLua lsp_live_workspace_diagnostics<cr>", "Open Workspace Symbols")
+    map("gW", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", "Open Workspace Symbols")
   end,
 })
