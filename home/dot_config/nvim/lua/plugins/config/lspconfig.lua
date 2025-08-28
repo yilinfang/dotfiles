@@ -138,14 +138,7 @@ if vim.fn.executable "lua-language-server" == 1 then
           version = "LuaJIT",
         },
         workspace = {
-          checkThirdParty = false, -- Disable third-party checks
-          library = {
-            vim.env.VIMRUNTIME,
-            "${3rd}/luv/library",
-            -- Plugins managed by `mini.deps`
-            vim.fn.stdpath "data" .. "/site/pack/deps/start/",
-            vim.fn.stdpath "data" .. "/site/pack/deps/opt/",
-          },
+          checkThirdParty = false,
         },
       },
     },

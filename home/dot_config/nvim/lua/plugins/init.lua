@@ -36,6 +36,7 @@ now(function() add { source = "github/copilot.vim" } end)
 now(function() add { source = "rafamadriz/friendly-snippets" } end)
 now(function() add { source = "ibhagwan/fzf-lua" } end)
 now(function() add { source = "lewis6991/gitsigns.nvim" } end)
+now(function() add { source = "folke/lazydev.nvim" } end)
 now(function() add { source = "neovim/nvim-lspconfig" } end)
 now(function()
   add {
@@ -91,6 +92,9 @@ now(function() require "plugins.config.treesitter" end)
 -- Setup and configure LSP
 now(function() require "plugins.config.lspconfig" end)
 
+-- Setup `lazydev.nvim`
+now(function() require "plugins.config.lazydev" end)
+
 -- Setup `confrom.nvim`
 now(function() require "plugins.config.conform" end)
 
@@ -105,9 +109,7 @@ now(function() require "plugins.config.mini.snippets" end)
 -- NOTE: `mini.snippets` needs to be loaded before `mini.completion`
 now(function() require "plugins.config.mini.completion" end)
 
--- Setup `mini.pick`
--- NOTE: Put `mini.pick` at the end since it will override some keymaps
--- now(function() require "plugins.config.mini.pick" end)
+-- Setup `fzf-lua`
 now(function() require "plugins.config.fzf" end)
 
 -- Setup custom plugins
