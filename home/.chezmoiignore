@@ -17,6 +17,8 @@
 .config/fish/
 .config/fish/**
 .config/starship.toml
+.config/zellij/
+.config/zellij/**
 
 # MacOS
 **/.DS_Store

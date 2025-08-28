@@ -25,7 +25,6 @@ shfmt = "latest"
 stylua = "latest"
 taplo = "latest"
 yazi = "latest"
-zellij = "latest"
 zoxide = "latest"
 
 [settings]
