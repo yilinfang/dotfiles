@@ -36,7 +36,6 @@ now(function() add { source = "github/copilot.vim" } end)
 now(function() add { source = "rafamadriz/friendly-snippets" } end)
 now(function() add { source = "ibhagwan/fzf-lua" } end)
 now(function() add { source = "lewis6991/gitsigns.nvim" } end)
-now(function() add { source = "folke/lazydev.nvim" } end)
 now(function() add { source = "neovim/nvim-lspconfig" } end)
 now(function()
   add {
@@ -91,9 +90,6 @@ now(function() require "plugins.config.treesitter" end)
 
 -- Setup and configure LSP
 now(function() require "plugins.config.lspconfig" end)
-
--- Setup `lazydev.nvim`
-now(function() require "plugins.config.lazydev" end)
 
 -- Setup `confrom.nvim`
 now(function() require "plugins.config.conform" end)

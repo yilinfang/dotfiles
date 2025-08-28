@@ -1,5 +1,6 @@
 -- lua/plugins/config/lazydev.lua
 -- Configuration for `lazydev.nvim`
+-- NOTE: Deprecated in favor of `lua_ls` configuration
 
 local lazydev = require "lazydev"
 lazydev.setup {

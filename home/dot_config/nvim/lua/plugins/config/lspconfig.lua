@@ -137,8 +137,13 @@ if vim.fn.executable "lua-language-server" == 1 then
         runtime = {
           version = "LuaJIT",
         },
+        telemetry = { enable = false },
         workspace = {
           checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME,
+            "${3rd}/luv/library",
+          },
         },
       },
     },
