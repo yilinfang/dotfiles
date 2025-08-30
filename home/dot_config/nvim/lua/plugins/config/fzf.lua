@@ -5,7 +5,6 @@ local fzf = require "fzf-lua"
 
 -- [[ Setup `fzf-lua` ]]
 local opts = {
-  "border-fused",
   previewers = {
     builtin = {
       -- HACK: Disable image previewer
