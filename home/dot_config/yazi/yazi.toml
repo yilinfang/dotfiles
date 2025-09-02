@@ -6,7 +6,6 @@ show_hidden = true
 [plugin]
 # Disable some preloaders
 prepend_preloaders = [{ name = "*", run = "noop" }]
-
 # Disable some previewers
 prepend_previewers = [
   { name = "*/", run = "folder" },
