@@ -29,7 +29,7 @@ hipatterns.setup(opts)
 -- HACK: Search patterns with `fzf-lua`
 vim.keymap.set(
   "n",
-  "<leader>sp",
+  "<leader>sh",
   [[<cmd>FzfLua grep search=\bFIXME|TODO|HACK|NOTE\b no_esc=true winopts.title="\ Hipatterns\ " prompt=">\ "<cr>]],
-  { desc = "[S]earch Hi[p]atterns" }
+  { desc = "[S]earch [H]ipatterns" }
 )

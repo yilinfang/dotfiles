@@ -60,14 +60,11 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>FzfLua global<cr>", { desc = "[' '
 vim.keymap.set("n", "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", { desc = "['/'] Grep Current Buffer" })
 vim.keymap.set("n", "<leader>sf", "<cmd>FzfLua files<cr>", { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>sg", "<cmd>FzfLua live_grep<cr>", { desc = "[S]earch [G]rep" })
-vim.keymap.set("n", "<leader>sh", "<cmd>FzfLua helptags<cr>", { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua resume<cr>", { desc = "[S]earch [R]esume" })
-vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<cr>", { desc = "[S]earch [K]eymaps" })
-vim.keymap.set("n", "<leader>st", "<cmd>FzfLua treesitter<cr>", { desc = "[S]earch [T]reesitter Nodes" })
 vim.keymap.set("n", "<leader>s.", "<cmd>FzfLua oldfiles<cr>", { desc = "[S]earch Old Files (['.'] for repeat)" })
 vim.keymap.set("n", "<leader>sm", "<cmd>FzfLua marks<cr>", { desc = "[S]earch [M]arks" })
 vim.keymap.set("n", "<leader>sj", "<cmd>FzfLua jumps<cr>", { desc = "[S]earch [J]umplist" })
-vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua builtin<cr>", { desc = "[S]earch Picker[s]" })
+vim.keymap.set("n", "<leader>sp", "<cmd>FzfLua builtin<cr>", { desc = "[S]earch Builtin [P]ickers" })
 vim.keymap.set(
   "i",
   "<C-t>",

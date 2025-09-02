@@ -1,21 +1,22 @@
 -- lua/plugins/custom/treesitter.lua
 -- Configuration for `nvim-treesitter`
+-- TODO: Switch to `main` branch once it is stable
 
 local tsc = require "nvim-treesitter.configs"
-local ensure_installed = {
-  "bash",
-  "css",
-  "diff",
-  "html",
-  "markdown_inline",
-  "javascript",
-  "json",
-  "python",
-  "query",
-  "regex",
-  "toml",
-  "yaml",
-}
+-- local ensure_installed = {
+--   "bash",
+--   "css",
+--   "diff",
+--   "html",
+--   "markdown_inline",
+--   "javascript",
+--   "json",
+--   "python",
+--   "query",
+--   "regex",
+--   "toml",
+--   "yaml",
+-- }
 local disabled = {
   "c",
   "cpp",
@@ -37,7 +38,7 @@ ignore_install = vim.list_extend(ignore_install, {
 
 ---@diagnostic disable-next-line: missing-fields
 tsc.setup {
-  ensure_installed = ensure_installed,
+  ensure_installed = {},
   ignore_install = ignore_install,
   sync_install = false,
   auto_install = true,
