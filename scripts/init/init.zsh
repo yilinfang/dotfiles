@@ -47,6 +47,11 @@ if command -v lazygit &>/dev/null && ! command -v lg &>/dev/null; then
 	alias lg='lazygit'
 fi
 
+# If zj is available, use it for zellij
+if command -v zellij &>/dev/null && ! command -v zj &>/dev/null; then
+	alias zj='zellij'
+fi
+
 # Initialize fzf if installed
 if command -v fzf &>/dev/null; then
 	source <(fzf --zsh)
