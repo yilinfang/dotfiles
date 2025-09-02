@@ -29,16 +29,37 @@ end
 -- Setup `mini.deps` to manage dependencies
 minideps.setup { path = { package = path_package } }
 
+-- [[ Add plugins ]]
+local add = minideps.add
+-- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`
+add {
+  source = "saghen/blink.cmp",
+  checkout = vim.g.blink_cmp_version or "v1.6.0",
+}
+add { source = "stevearc/conform.nvim" }
+add { source = "github/copilot.vim" }
+add { source = "rafamadriz/friendly-snippets" } -- Needed by `mini.snippets` and `blink.cmp`
+add { source = "ibhagwan/fzf-lua" }
+add { source = "lewis6991/gitsigns.nvim" }
+add { source = "neovim/nvim-lspconfig" }
+add {
+  source = "nvim-treesitter/nvim-treesitter",
+  -- Use 'master' while monitoring updates in 'main'
+  checkout = "master",
+  monitor = "main",
+  -- Perform action after every checkout
+  hooks = { post_checkout = function() vim.cmd "TSUpdate" end },
+}
+add { source = "tpope/vim-fugitive" }
+add { source = "bluz71/vim-moonfly-colors" }
+add { source = "tpope/vim-sleuth" }
+
 -- [[ Setup plugins ]]
 -- NOTE: Be careful with the order of setting up plugins!!!
-local add = minideps.add
-
 -- Setup colorscheme in the very beginning
-add { source = "bluz71/vim-moonfly-colors" }
 require "plugins.config.moonfly"
 
 -- Setup mini.icons before other plugins to ensure icons are available
--- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`
 require "plugins.config.mini.icons"
 
 -- Setup `mini.extras` before other mini plugins to ensure extra features are available
@@ -60,57 +81,32 @@ require "plugins.config.mini.tabline"
 require "plugins.config.mini.trailspace"
 
 -- Setup `nvim-treesitter`
-add {
-  source = "nvim-treesitter/nvim-treesitter",
-  -- Use 'master' while monitoring updates in 'main'
-  checkout = "master",
-  monitor = "main",
-  -- Perform action after every checkout
-  hooks = { post_checkout = function() vim.cmd "TSUpdate" end },
-}
 require "plugins.config.treesitter"
 
 -- Setup and configure LSP
-add { source = "neovim/nvim-lspconfig" }
 require "plugins.config.lspconfig"
 
 -- Setup `confrom.nvim`
-add { source = "stevearc/conform.nvim" }
 require "plugins.config.conform"
 
--- Setup `vim-sleuth`
-add { source = "tpope/vim-sleuth" }
-
--- Setup `vim-fugitive`
-add { source = "tpope/vim-fugitive" }
-
 -- Setup `copilot.vim`
-add { source = "github/copilot.vim" }
 require "plugins.config.copilot"
 
 -- Setup `gitsigns.nvim`
-add { source = "lewis6991/gitsigns.nvim" }
 require "plugins.config.gitsigns"
 
 -- Setup `mini.statusline`
--- NOTE: `gitsigns.nvim` are needed
+-- NOTE: `gitsigns.nvim` needs ot be setup before `mini.statusline`
 require "plugins.config.mini.statusline"
 
 -- Setup `mini.snippets`
--- NOTE: `friendly-snippets` is needed
-add { source = "rafamadriz/friendly-snippets" }
 require "plugins.config.mini.snippets"
 
 -- Setup `blink.cmp`
--- NOTE: `mini.snippets` is needed
-add {
-  source = "saghen/blink.cmp",
-  checkout = vim.g.blink_cmp_version or "v1.6.0",
-}
+-- NOTE: `mini.snippets` needs to be setup before `blink.cmp`
 require "plugins.config.blink"
 
 -- Setup `fzf-lua`
-add { source = "ibhagwan/fzf-lua" }
 require "plugins.config.fzf"
 
 -- Setup custom plugins
