@@ -2,7 +2,7 @@
 # Create splits in a tmux window in a horizontal layout
 
 tmux split-window -v
-tmux split-window -h -t 1
-tmux split-window -h -t 1
-tmux split-window -h -t 3
-tmux select-pane -t 0
+tmux split-window -h -b -t 1
+tmux split-window -h -b -t 2
+tmux split-window -h -b -t 1
+tmux select-pane -t 0 # Focus back to the first pane
