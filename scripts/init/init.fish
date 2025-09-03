@@ -47,10 +47,10 @@ if command -v lazygit >/dev/null; and not command -v lg >/dev/null
     alias lg='lazygit'
 end
 
-# If zj is available, use it for zellij
-if command -v zellij >/dev/null; and not command -v zj >/dev/null
-    alias zj='zellij'
-end
+# # If zj is available, use it for zellij
+# if command -v zellij >/dev/null; and not command -v zj >/dev/null
+#     alias zj='zellij'
+# end
 
 # Initialize fzf if installed
 if command -v fzf >/dev/null

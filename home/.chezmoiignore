@@ -13,11 +13,6 @@
 .age/
 .age/**
 
-# Depercated configs
-.config/fish/
-.config/fish/**
-.config/starship.toml
-
 # MacOS
 **/.DS_Store
 
@@ -25,6 +20,8 @@
 # Ignored in work environment(PDE)
 .config/alacritty/
 .config/alacritty/**
+.config/fish/
+.config/fish/**
 .config/ghostty/
 .config/ghostty/**
 .config/kitty/
@@ -33,6 +30,9 @@
 .config/mise/**
 .config/nvim-vsc/
 .config/nvim-vsc/**
+.config/zellij/
+.config/zellij/**
+.config/starship.toml
 .gitconfig
 .p10k.zsh
 .zprofile
