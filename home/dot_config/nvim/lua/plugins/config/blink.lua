@@ -14,7 +14,7 @@ local opts = {
   },
   completion = {
     list = {
-      selection = { preselect = true, auto_insert = false }, -- NOTE: Use `cancel` keymap to close the menu and undo the preview
+      selection = { preselect = true, auto_insert = false },
     },
     documentation = {
       auto_show = true,
@@ -30,7 +30,8 @@ local opts = {
     providers = {
       path = {
         opts = {
-          show_hidden_files_by_default = true, -- Show hidden files (dotfiles) in path completions
+          -- Show hidden files (dotfiles) in path completions
+          show_hidden_files_by_default = true,
         },
       },
     },
@@ -44,13 +45,16 @@ local opts = {
       ["<C-\\>"] = { "show", "fallback" },
     },
     completion = {
-      menu = { auto_show = true },
+      list = {
+        selection = { preselect = false, auto_insert = true },
+      },
+      menu = { auto_show = true }, -- Auto show menu
       ghost_text = {
         enabled = false, -- Disable ghost text
       },
     },
   },
-  term = { enabled = true }, -- Disable terminal completion
+  term = { enabled = false }, -- Disable terminal completion
 }
 blink.setup(opts)
 
