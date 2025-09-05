@@ -8,10 +8,12 @@
 **/tmp/**
 
 # Sensitive files
-.config/chezmoi/
-.config/chezmoi/**
 .age/
 .age/**
+.config/chezmoi/
+.config/chezmoi/**
+.config/github-copilot/
+.config/github-copilot/**
 
 # MacOS
 **/.DS_Store
@@ -28,8 +30,6 @@
 .config/kitty/**
 .config/mise/
 .config/mise/**
-.config/nvim-vsc/
-.config/nvim-vsc/**
 .config/zellij/
 .config/zellij/**
 .config/starship.toml
