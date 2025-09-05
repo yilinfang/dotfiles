@@ -1,24 +1,68 @@
 -- lua/plugins/custom/statuscolumn.lua
--- A customized, pretty, vscode-like status column for Neovim
+-- Customized statuscolumn
 
 local M = {}
+
+local function get_mark(bufnr, lnum)
+  -- Get all marks for the current buffer
+  local marks = vim.fn.getmarklist(bufnr)
+  local global_marks = vim.fn.getmarklist()
+
+  -- Check buffer-local marks (a-z)
+  for _, mark in ipairs(marks) do
+    if mark.pos[2] == lnum and mark.mark:match "^'[a-z]$" then
+      return mark.mark:sub(2, 2) -- Return just the letter
+    end
+  end
+
+  -- Check global marks (A-Z, 0-9)
+  for _, mark in ipairs(global_marks) do
+    if mark.pos[1] == bufnr and mark.pos[2] == lnum and mark.mark:match "^'[A-Z]$" then
+      return mark.mark:sub(2, 2) -- Return just the letter/number
+    end
+  end
+
+  return nil -- No mark found
+end
 
 local function statuscolumn()
   local nu = vim.wo.number
   local rnu = vim.wo.relativenumber
-  local lnum
+  local bufnr = vim.api.nvim_get_current_buf()
+  local lnum_actual = vim.v.lnum
+
+  -- First column: marks
+  local mark_col = " "
+  if vim.v.virtnum == 0 then -- Only show marks on real lines
+    local mark = get_mark(bufnr, lnum_actual)
+    if mark then
+      -- Check if StatusColumnMark highlight group exists
+      local highlight = ""
+      if vim.fn.hlID "StatusColumnMark" == 0 then
+        highlight = "%#LineNr#" -- Fallback highlight group
+      else
+        highlight = "%#StatusColumnMark#"
+      end
+      mark_col = highlight .. mark
+    end
+  end
+
+  -- Line numbers
+  local lnum_display
   if vim.v.virtnum == 0 then
     if rnu and nu and vim.v.relnum == 0 then
-      lnum = vim.v.lnum
+      lnum_display = vim.v.lnum
     elseif rnu then
-      lnum = vim.v.relnum
+      lnum_display = vim.v.relnum
     else
-      lnum = vim.v.lnum
+      lnum_display = vim.v.lnum
     end
   else
-    lnum = ""
+    lnum_display = ""
   end
-  return "  " .. "%=" .. lnum .. "%s"
+
+  -- Format: [mark] [space] [right-aligned line number] [signs via %s]
+  return mark_col .. " " .. "%=" .. lnum_display .. "%s"
 end
 
 function M.setup()

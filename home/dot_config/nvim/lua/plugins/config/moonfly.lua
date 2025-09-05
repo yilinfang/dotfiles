@@ -20,6 +20,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
     -- HACK: Fix colors for `copilot.vim`
     set_hl(0, "CopilotSuggestion", { fg = palette.grey58 })
+
+    -- HACK: Fix colors for ./lua/plugins/custom/statuscolumn.lua
+    set_hl(0, "StatusColumnMark", { fg = palette.blue })
   end,
 })
 
