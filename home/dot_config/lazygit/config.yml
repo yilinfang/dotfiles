@@ -3,7 +3,7 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 customCommands:
-  - key: "Z"
+  - key: "<c-g>"
     command: "git czg"
     description: "Commit with czg"
     context: "files"
