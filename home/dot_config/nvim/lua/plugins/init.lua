@@ -113,5 +113,9 @@ require "plugins.config.conform"
 add { source = "github/copilot.vim" }
 require "plugins.config.copilot"
 
+-- Setup `grug-far.nvim`
+add { source = "MagicDuck/grug-far.nvim" }
+require "plugins.config.grug-far"
+
 -- Setup custom plugins
 require "plugins.custom"
