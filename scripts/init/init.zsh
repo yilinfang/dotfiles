@@ -2,7 +2,9 @@
 # This script initializes the Zsh shell environment
 
 # Add $HOME/.local/bin to PATH if not already present
-path=($HOME/.local/bin $path) # Automatically deduplicates
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
 
 # If mise is installed, activate it
 if command -v mise &>/dev/null; then
