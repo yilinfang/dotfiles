@@ -8,11 +8,11 @@ grug_far.setup(opts)
 -- Keymaps for `grug-far.nvim`
 vim.keymap.set(
   { "n", "v" },
-  "<leader>cg",
+  "<leader>g",
   function()
     grug_far.open {
       transient = true,
     }
   end,
-  { desc = "Grug Far" }
+  { desc = "[G]rug Far" }
 )
