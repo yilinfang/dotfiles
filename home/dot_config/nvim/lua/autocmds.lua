@@ -19,6 +19,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Automatically enable wrap for quickfix window
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "Enable wrap for quickfix window",
+  group = vim.api.nvim_create_augroup("quickfix-wrap", { clear = true }),
+  pattern = "qf",
+  callback = function() vim.opt_local.wrap = true end,
+})
+
 -- HACK: Automatically resize splits when the window is resize
 --  It will resize all splits to have equal height and width,
 --  but not preserve the current size of splits.
