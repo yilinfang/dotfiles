@@ -20,9 +20,9 @@ function M.delete_line_marks()
     if mark.pos[2] == lnum and mark.mark:match "^'[a-z]$" then table.insert(marks_to_delete, mark.mark:sub(2, 2)) end
   end
 
-  -- Check global marks (A-Z, 0-9)
+  -- Check global marks (A-Z)
   for _, mark in ipairs(global_marks) do
-    if mark.pos[1] == bufnr and mark.pos[2] == lnum and mark.mark:match "^'[A-Z0-9]$" then
+    if mark.pos[1] == bufnr and mark.pos[2] == lnum and mark.mark:match "^'[A-Z]$" then
       table.insert(marks_to_delete, mark.mark:sub(2, 2))
     end
   end
@@ -42,20 +42,22 @@ end
 -- Not includes global marks (A-Z)
 function M.delete_buffer_marks() vim.cmd "delm!" end
 
--- Delete all marks
+-- Delete all marks for current buffer
 -- Includes global marks (A-Z)
-function M.delete_all_marks() vim.cmd "delm! | delm A-Z" end
+function M.delete_buffer_all_marks() vim.cmd "delm! | delm A-Z" end
 
 function M.setup()
   -- Register the commands
-  vim.api.nvim_create_user_command("DeleteMarks", function() M.delete_line_marks() end, {
-    desc = "Remove marks in the current line",
+  vim.api.nvim_create_user_command("DeleteLineMarks", function() M.delete_line_marks() end, {
+    desc = "Remove marks in the current line (including global marks)",
   })
+
   vim.api.nvim_create_user_command("DeleteBufferMarks", function() M.delete_buffer_marks() end, {
-    desc = "Remove marks in the current buffer",
+    desc = "Remove marks in the current buffer (excluding global marks)",
   })
-  vim.api.nvim_create_user_command("DeleteAllMarks", function() M.delete_all_marks() end, {
-    desc = "Remove all marks",
+
+  vim.api.nvim_create_user_command("DeleteBufferAllMarks", function() M.delete_buffer_all_marks() end, {
+    desc = "Remove all marks in the current buffer (including global marks)",
   })
 end
 
