@@ -36,7 +36,7 @@ else
 fi
 
 # Install node and essential npm packages
-mise use -g node
+mise use -g node@lts
 mise use -g npm:czg
 
 # Install python, pipx and essential pypi packages
