@@ -18,7 +18,6 @@ local tsc = require "nvim-treesitter.configs"
 --   "yaml",
 -- }
 local disabled = {
-  "c",
   "cpp",
   "csv",
   "dockerfile",
@@ -29,9 +28,10 @@ local disabled = {
 local ignore_install = vim.deepcopy(disabled)
 ignore_install = vim.list_extend(ignore_install, {
   -- Do not install following parsers as they are built-in in Neovim
+  "c",
   "lua",
   "markdown",
-  "vim",
+  "query",
   "vimscript",
   "vimdoc",
 })
