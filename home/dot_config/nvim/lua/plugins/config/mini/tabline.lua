@@ -1,5 +1,6 @@
 -- lua/plugins/config/mini/tabline.lua
 -- Configuration for `mini.tabline`
+-- NOTE: Deprecated
 
 local tabline = require "mini.tabline"
 local opts = {
