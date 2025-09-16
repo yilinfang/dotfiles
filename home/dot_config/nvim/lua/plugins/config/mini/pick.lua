@@ -5,7 +5,8 @@
 
 local pick = require "mini.pick"
 pick.setup {}
-vim.ui.select = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
+-- NOTE: No need to set `vim.ui.select` here, as `mini.pick` will do it automatically when loaded
+-- vim.ui.select = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
 -- [[ Buitlin pickers ]]
 vim.keymap.set("n", "<leader><leader>", "<cmd>Pick buffers<cr>", { desc = "[' '] Search Buffers" })
 vim.keymap.set("n", "<leader>/", "<cmd>Pick buf_lines scope='current'<cr>", { desc = "[/] Grep in Current Buffer" })
