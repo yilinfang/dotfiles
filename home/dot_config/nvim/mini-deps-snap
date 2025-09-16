@@ -3,13 +3,13 @@ return {
   ["conform.nvim"] = "b4aab989db276993ea5dcb78872be494ce546521",
   ["copilot.vim"] = "dfe0a3a1c256167d181488a73ec6ccab8d8931a9",
   ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
-  ["fzf-lua"] = "ad5e33a6f4ecd1ac9d1d5a81d1a72353ca24da5d",
+  ["fzf-lua"] = "1a8b4246538f2b9c3c3debb460262f549fd7b428",
   ["gitsigns.nvim"] = "f780609807eca1f783a36a8a31c30a48fbe150c5",
   ["grug-far.nvim"] = "50d9ee2b5a19634670441948e7e4afaa042f1059",
-  ["mini.nvim"] = "d12b7c1b4dccc5245a3d2b7bc73da6dd910af2c0",
-  ["nvim-lspconfig"] = "d89f4891f0720cd2598e4bdd60010d8784b2ac8a",
+  ["mini.nvim"] = "48b924e4f3b37f62246873d237a4a89704d88948",
+  ["nvim-lspconfig"] = "d9879110d0422a566fa01d732556f4d5515e1738",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
-  ["vim-moonfly-colors"] = "21d24c3e2b31386f14fadd8c114c5d0673b878c2",
+  ["vim-moonfly-colors"] = "2a3cade7d47a3f0b13bfe50926e645b8c2a2432f",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
 }
