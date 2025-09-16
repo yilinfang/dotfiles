@@ -79,7 +79,7 @@ require "plugins.config.mini.snippets"
 -- NOTE: `mini.snippets` needs to be setup before `blink.cmp`
 add {
   source = "saghen/blink.cmp",
-  checkout = vim.g.blink_cmp_version or "v1.6.0",
+  checkout = vim.g.blink_cmp_version or "v1.7.0",
 }
 require "plugins.config.blink"
 
