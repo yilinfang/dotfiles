@@ -104,6 +104,10 @@ add { source = "tpope/vim-fugitive" }
 -- Setup `vim-sleuth`
 add { source = "tpope/vim-sleuth" }
 
+-- Setup `nvim-lint`
+add { source = "mfussenegger/nvim-lint" }
+require "plugins.config.lint"
+
 -- Setup `confrom.nvim`
 add { source = "stevearc/conform.nvim" }
 require "plugins.config.conform"
