@@ -8,7 +8,7 @@ local linters_by_ft = {}
 if vim.fn.executable "zsh" == 1 then linters_by_ft.zsh = { "zsh" } end
 lint.linters_by_ft = linters_by_ft
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
   callback = function()
     if vim.bo.modifiable then lint.try_lint() end
