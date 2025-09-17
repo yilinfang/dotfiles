@@ -14,6 +14,8 @@
 # Ignored in work environment(PDE)
 .config/ghostty/
 .config/ghostty/**
+.config/kitty/
+.config/kitty/**
 .config/mise/
 .config/mise/**
 .gitconfig
