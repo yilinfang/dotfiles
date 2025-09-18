@@ -30,22 +30,20 @@ end
 conform.setup {
   formatters_by_ft = formatters_by_ft,
   notify_on_error = false,
-  -- NOTE: Disable automatic formatting on save.
-  format_on_save = nil,
-  -- format_on_save = function(bufnr)
-  --   -- Disable `format_on_save lsp_fallback` for languages that don't
-  --   -- have a well standardized coding style. You can add additional
-  --   -- languages here or re-enable it for the disabled ones.
-  --   local disable_filetypes = { c = true, cpp = true }
-  --   if disable_filetypes[vim.bo[bufnr].filetype] then
-  --     return nil
-  --   else
-  --     return {
-  --       timeout_ms = 500,
-  --       lsp_format = "fallback",
-  --     }
-  --   end
-  -- end,
+  format_on_save = function(bufnr)
+    -- HACK: Disable if vim.b.conform_disable_format_on_save is set
+    if vim.b[bufnr].conform_disable_format_on_save then return nil end
+
+    -- Disable `format_on_save lsp_fallback` for languages that don't
+    -- have a well standardized coding style. You can add additional
+    -- languages here or re-enable it for the disabled ones.
+    local disable_filetypes = { c = true, cpp = true }
+    if disable_filetypes[vim.bo[bufnr].filetype] then return nil end
+    return {
+      timeout_ms = 500,
+      lsp_format = "fallback",
+    }
+  end,
 }
 vim.keymap.set(
   "n",
@@ -59,3 +57,15 @@ vim.keymap.set(
   function() conform.format { async = true, lsp_format = "fallback" } end,
   { desc = "Conform: [F]ormat Selection" }
 )
+
+-- HACK: Toggle format on save
+vim.keymap.set("n", "<leader>tf", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  if vim.b[bufnr].conform_disable_format_on_save then
+    vim.b[bufnr].conform_disable_format_on_save = nil
+    vim.notify("Conform: format on save enabled", vim.log.levels.INFO)
+  else
+    vim.b[bufnr].conform_disable_format_on_save = true
+    vim.notify("Conform: format on save disabled", vim.log.levels.INFO)
+  end
+end, { desc = "[T]oggle Conform [F]ormat on Save" })
