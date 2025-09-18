@@ -8,6 +8,11 @@ local opts = {
   "default", -- Use default profile
   winopts = {
     backdrop = 100, -- Disable backdrop dimming
+    preview = {
+      winopts = {
+        number = false, -- Disbale line numbers in preview window
+      },
+    },
   },
   files = {
     hidden = true,
