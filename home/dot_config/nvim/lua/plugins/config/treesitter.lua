@@ -32,8 +32,9 @@ ignore_install = vim.list_extend(ignore_install, {
   "lua",
   "markdown",
   "query",
-  "vimscript",
+  "vim",
   "vimdoc",
+  "vimscript",
 })
 
 ---@diagnostic disable-next-line: missing-fields
