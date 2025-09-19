@@ -1,12 +1,11 @@
-#!/usr/env/bin bash
+#!/usr/bin/env bash
 
 # This script generates a single, statically-linked tmux executable in the
 # ~/.local/bin. All source code, intermediate files, and compiled
 # libraries are stored in a temporary directory that is automatically
 # removed when the script finishes.
 
-# Exit immediately if a command exits with a non-zero status.
-set -e
+set -euo pipefail
 
 # If in MacOS, notify and exit
 if [[ "$(uname)" == "Darwin" ]]; then
