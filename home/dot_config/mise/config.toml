@@ -25,7 +25,6 @@ shfmt = "latest"
 starship = "latest"
 stylua = "latest"
 taplo = "latest"
-uv = "latest"
 yazi = "latest"
 zoxide = "latest"
 
