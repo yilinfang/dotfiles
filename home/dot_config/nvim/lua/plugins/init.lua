@@ -54,6 +54,7 @@ require "plugins.config.mini.move"
 require "plugins.config.mini.pairs"
 require "plugins.config.mini.splitjoin"
 require "plugins.config.mini.surround"
+require "plugins.config.mini.tabline"
 require "plugins.config.mini.trailspace"
 
 -- Setup `gitsigns.nvim`
