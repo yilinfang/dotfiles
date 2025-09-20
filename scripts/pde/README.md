@@ -8,7 +8,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/head
 rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi
-# Make sure the keys are set up before applying the dotfiles
 IS_PDE=true chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 chezmoi cd
 cd scripts/pde
