@@ -16,7 +16,7 @@ mise use -g difftastic
 mise use -g fd
 mise use -g fzf
 mise use -g lazygit
-mise use -g neovim@0.11.3
+mise use -g neovim@0.11.4
 mise use -g ripgrep
 mise use -g sd
 mise use -g starship
