@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 })
 
 -- [[ Keymaps ]]
-vim.keymap.set("n", "<leader><leader>", "<cmd>FzfLua global<cr>", { desc = "[' '] Open Global Picker" })
+vim.keymap.set("n", "<leader><Space>", "<cmd>FzfLua global<cr>", { desc = "[' '] Open Global Picker" })
 vim.keymap.set("n", "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", { desc = "['/'] Grep Current Buffer" })
 vim.keymap.set("n", "<leader>sb", "<cmd>FzfLua buffers<cr>", { desc = "[S]earch [B]uffers" })
 vim.keymap.set("n", "<leader>sf", "<cmd>FzfLua files<cr>", { desc = "[S]earch [F]iles" })
