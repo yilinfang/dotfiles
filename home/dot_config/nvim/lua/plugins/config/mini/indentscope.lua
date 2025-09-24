@@ -2,7 +2,7 @@
 -- Configuration for `mini.indentscope`
 
 -- NOTE: Do not show indent guides
--- We only use `mini.indentscope`'s selection feature
+-- We only use textobject feature
 vim.g.miniindentscope_disable = true
 
 local indentscope = require "mini.indentscope"
