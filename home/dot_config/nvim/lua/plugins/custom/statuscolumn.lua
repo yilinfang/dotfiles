@@ -43,7 +43,7 @@ local function statuscolumn()
       else
         highlight = "%#StatusColumnMark#"
       end
-      mark_col = highlight .. mark
+      mark_col = highlight .. mark .. "%*"
     end
   end
 
