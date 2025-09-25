@@ -1,5 +1,6 @@
 -- lua/plugins/config/moonfly.lua
 -- Configuration for `moonfly` colorscheme
+-- NOTE: Deprecated
 
 vim.g.moonflyCursorColor = true
 vim.g.moonflyItalics = true
