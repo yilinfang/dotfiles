@@ -6,5 +6,9 @@
 vim.g.miniindentscope_disable = true
 
 local indentscope = require "mini.indentscope"
-local opts = {}
+local opts = {
+  draw = {
+    animation = indentscope.gen_animation.none(),
+  },
+}
 indentscope.setup(opts)
