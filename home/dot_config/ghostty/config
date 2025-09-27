@@ -1,8 +1,9 @@
 # Font
 font-family = ""
-font-family = "PlemolSC Console NF"
+font-family = "Sarasa Fixed SC"
+font-family = "Symbols Nerd Font"
 font-size = 16
-adjust-underline-position = 2
+adjust-underline-position = 3
 
 # Theme
 theme = kanagawa-dragon
