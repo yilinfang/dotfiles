@@ -10,6 +10,7 @@ local opts = {
     backdrop = 100, -- Disable backdrop dimming
     preview = {
       winopts = {
+        default = "bat", -- Use `bat` as default previewer
         number = false, -- Disbale line numbers in preview window
       },
     },
@@ -32,6 +33,7 @@ local opts = {
   },
   previewers = {
     builtin = {
+      treesitter = { enabled = false }, -- HACK: Disable treesitter since we use `bat` for previewing
       -- HACK: Disable image previewer
       extensions = nil,
       snacks_image = { enabled = false },
