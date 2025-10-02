@@ -44,16 +44,6 @@ if command -v lazygit >/dev/null
     alias lg='lazygit'
 end
 
-# Use l for eza
-if command -v eza >/dev/null
-    alias l='eza --color=always --icons=always --group-directories-first'
-    alias la='l -a'
-    alias ll='l -l --total-size'
-    alias lla='ll -a'
-    alias lt='l -l --tree --level=2 --total-size --git'
-    alias lta='lt -a'
-end
-
 # Use y for yazi
 if command -v yazi >/dev/null
     function y
@@ -83,11 +73,6 @@ if command -v fzf >/dev/null
         set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
         set -gx FZF_ALT_C_COMMAND "$fd_command --type dir --strip-cwd-prefix --no-ignore-vcs --hidden"
     end
-end
-
-# Initialize starship if installed
-if command -v starship >/dev/null
-    starship init fish | source
 end
 
 # Initialize zoxide if installed

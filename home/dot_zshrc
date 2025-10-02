@@ -113,6 +113,16 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+# Replace ls with eza
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza --color=always --icons=always --group-directories-first'
+    alias la='ls -a'
+    alias ll='ls -l --total-size'
+    alias lla='ll -a'
+    alias lt='ls -l --tree --level=2 --total-size --git'
+    alias lta='lt -a'
+fi
+
 # nvim-test
 alias nvim-test='NVIM_APPNAME=nvim-test nvim'
 
@@ -161,6 +171,11 @@ update_terminal_info() {
 # Tweak colors for zsh-syntax-highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+
+# Initalize starship if installed
+if command -v starship &>/dev/null; then
+    eval "$(starship init zsh)"
+fi
 
 if [ -f "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh" ]; then
     source "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh"

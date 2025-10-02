@@ -19,21 +19,8 @@ mise use -g lazygit
 mise use -g neovim@0.11.4
 mise use -g ripgrep
 mise use -g sd
-mise use -g starship
 mise use -g yazi
 mise use -g zoxide
-
-# HACK: Install eza with mise if not in MacOS
-#  That's because eza does not provide a precompiled binary for MacOS
-if [[ "$(uname)" != "Darwin" ]]; then
-	mise use -g eza
-else
-	if ! command -v eza &>/dev/null; then
-		echo "eza is not installed. Please install eza with Homebrew:"
-		echo "  brew install eza"
-		exit 1
-	fi
-fi
 
 # Install node and essential npm packages
 mise use -g node@lts
