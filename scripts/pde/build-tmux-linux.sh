@@ -58,7 +58,7 @@ echo "--- Libevent installation complete ---"
 # --- ncurses ---
 echo "--- Compiling ncurses ${NCURSES_VERSION} ---"
 cd "${SRC_DIR}"
-wget -qO- "https://ftp.gnu.org/pub/gnu/ncurses/ncurses-${NCURSES_VERSION}.tar.gz" | tar -xzf -
+wget -qO- "https://invisible-island.net/archives/ncurses/ncurses-${NCURSES_VERSION}.tar.gz" | tar -xzf -
 cd "ncurses-${NCURSES_VERSION}"
 ./configure --prefix="$LOCAL_INSTALL_DIR" --with-pkg-config-libdir="$LOCAL_INSTALL_DIR/lib/pkgconfig" >/dev/null
 make -j$(nproc) -s
