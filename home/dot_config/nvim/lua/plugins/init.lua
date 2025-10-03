@@ -70,19 +70,14 @@ add { source = "neovim/nvim-lspconfig" }
 require "plugins.config.lspconfig"
 
 -- Setup `friendly-snippets`
--- NOTE: Needed by `mini.snippets` and `blink.cmp`
+-- NOTE: Needed by `mini.snippets`
 add { source = "rafamadriz/friendly-snippets" }
 
 -- Setup `mini.snippets`
 require "plugins.config.mini.snippets"
 
--- Setup `blink.cmp`
--- NOTE: `mini.snippets` needs to be setup before `blink.cmp`
-add {
-  source = "saghen/blink.cmp",
-  checkout = vim.g.blink_cmp_version or "v1.7.0",
-}
-require "plugins.config.blink"
+-- Setup `mini.completion`
+require "plugins.config.mini.completion"
 
 -- Setup `fzf-lua`
 add { source = "ibhagwan/fzf-lua" }
