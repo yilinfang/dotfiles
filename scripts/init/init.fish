@@ -29,16 +29,6 @@ if command -v bat >/dev/null or command -v delta >/dev/null
     set -gx BAT_THEME ansi
 end
 
-# Use g for git
-if command -v git >/dev/null
-    alias g='git'
-end
-
-# Use t for tmux
-if command -v tmux >/dev/null
-    alias t='tmux'
-end
-
 # Use lg for lazygit
 if command -v lazygit >/dev/null
     alias lg='lazygit'

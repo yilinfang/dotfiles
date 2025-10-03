@@ -31,16 +31,6 @@ if command -v bat &>/dev/null || command -v delta &>/dev/null; then
 	export BAT_THEME="ansi"
 fi
 
-# Use g for git
-if command -v git &>/dev/null; then
-	alias g='git'
-fi
-
-# Use t for tmux
-if command -v tmux &>/dev/null; then
-	alias t='tmux'
-fi
-
 # Use lg for lazygit
 if command -v lazygit &>/dev/null; then
 	alias lg='lazygit'
