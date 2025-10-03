@@ -20,6 +20,7 @@ mise use -g neovim@0.11.4
 mise use -g ripgrep
 mise use -g sd
 mise use -g yazi
+mise use -g zellij@0.43.1
 mise use -g zoxide
 
 # Install node and essential npm packages

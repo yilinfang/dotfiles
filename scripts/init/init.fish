@@ -34,6 +34,11 @@ if command -v lazygit >/dev/null
     alias lg='lazygit'
 end
 
+# Use zj for zellij
+if command -v zellij >/dev/null
+    alias zj='zellij'
+end
+
 # Use y for yazi
 if command -v yazi >/dev/null
     function y
