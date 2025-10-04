@@ -1,9 +1,9 @@
 # Font
 font-family = ""
-font-family = "Sarasa Fixed SC"
+font-family = "Maple Mono CN"
+font-feature = "+calt, +zero, +cv01, +cv02, +cv05, +cv06, +ss05"
 font-family = "Symbols Nerd Font"
-font-size = 15
-adjust-underline-position = 3
+font-size = 14
 
 # Theme
 theme = kanagawa-dragon
