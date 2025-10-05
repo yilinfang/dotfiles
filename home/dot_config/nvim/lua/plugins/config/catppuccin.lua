@@ -1,6 +1,5 @@
 -- lua/plugins/config/catppuccin.lua
 -- Configuration for theme Catppuccin
--- NOTE: Deprecated
 
 local catppuccin = require "catppuccin"
 local opts = {

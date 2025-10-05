@@ -13,7 +13,8 @@ font-size = 15
 adjust-underline-position = 4
 
 # Theme
-theme = kanagawa-dragon
+# theme = kanagawa-dragon
+theme = moonfly
 
 # Window
 window-width = 100

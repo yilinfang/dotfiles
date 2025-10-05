@@ -1,6 +1,5 @@
 -- lua/plugins/config/everforest.lua
 -- Configuration for the Everforest colorscheme
--- NOTE: Deprecated
 
 vim.g.everforest_background = "hard" -- "soft", "medium", or "hard"
 vim.g.everforest_enable_italic = true
