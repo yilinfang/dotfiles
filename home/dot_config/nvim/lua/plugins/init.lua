@@ -96,11 +96,9 @@ add {
 }
 require "plugins.config.treesitter"
 
--- Setup `vim-fugitive`
-add { source = "tpope/vim-fugitive" }
-
--- Setup `vim-sleuth`
-add { source = "tpope/vim-sleuth" }
+-- Setup `aerial.nvim`
+add { source = "stevearc/aerial.nvim" }
+require "plugins.config.aerial"
 
 -- Setup `nvim-lint`
 add { source = "mfussenegger/nvim-lint" }
@@ -110,13 +108,19 @@ require "plugins.config.lint"
 add { source = "stevearc/conform.nvim" }
 require "plugins.config.conform"
 
--- Setup `copilot.vim`
-add { source = "github/copilot.vim" }
-require "plugins.config.copilot"
-
 -- Setup `grug-far.nvim`
 add { source = "MagicDuck/grug-far.nvim" }
 require "plugins.config.grug-far"
+
+-- Setup `vim-fugitive`
+add { source = "tpope/vim-fugitive" }
+
+-- Setup `vim-sleuth`
+add { source = "tpope/vim-sleuth" }
+
+-- Setup `copilot.vim`
+add { source = "github/copilot.vim" }
+require "plugins.config.copilot"
 
 -- Setup custom plugins
 require "plugins.custom"
