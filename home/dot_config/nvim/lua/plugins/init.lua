@@ -114,9 +114,9 @@ add {
 }
 require "plugins.config.treesitter"
 
--- -- Setup `aerial.nvim`
--- add { source = "stevearc/aerial.nvim" }
--- require "plugins.config.aerial"
+-- Setup `aerial.nvim`
+add { source = "stevearc/aerial.nvim" }
+require "plugins.config.aerial"
 
 -- Setup `nvim-lint`
 add { source = "mfussenegger/nvim-lint" }

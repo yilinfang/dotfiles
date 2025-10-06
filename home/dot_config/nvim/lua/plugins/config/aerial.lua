@@ -1,6 +1,5 @@
 -- lua/plugins/config/aerial.lua
 -- Configuration for `aerial.nvim`
--- NOTE: Deprecated
 
 local aerial = require "aerial"
 local opts = {
@@ -12,6 +11,8 @@ local opts = {
     win_opts = {
       signcolumn = "yes",
     },
+    default_direction = "prefer_left",
+    placement = "edge",
     resize_to_content = false,
   },
   show_guides = true,
