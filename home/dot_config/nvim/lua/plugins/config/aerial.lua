@@ -12,7 +12,6 @@ local opts = {
       signcolumn = "yes",
     },
     resize_to_content = false,
-    preserve_equality = true,
   },
   show_guides = true,
   guides = {
