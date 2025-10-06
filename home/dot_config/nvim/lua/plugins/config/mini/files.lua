@@ -1,5 +1,6 @@
 -- lua/plugins/config/mini/files.lua
 -- Configuration for `mini.files`
+-- NOTE: Deprecated
 
 local files = require "mini.files"
 local opts = {
@@ -13,8 +14,9 @@ local opts = {
   },
 }
 files.setup(opts)
--- Map <leader>e to open `mini.files`
-vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open File [E]xplorer" })
+
+-- Keymap to open the file explorer
+vim.keymap.set("n", "<leader>f", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open Mini [F]iles" })
 
 -- HACK: Create an autocommand group to set bookmarks when the explorer is opened
 -- From: https://github.com/echasnovski/nvim/blob/8d89ed1136e60e68bb9ac0b0565071225376a92e/plugin/20_mini.lua#L242
