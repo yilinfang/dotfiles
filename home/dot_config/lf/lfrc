@@ -1,3 +1,6 @@
+# Configuration file of lf
+# MODIFIED FROM (thanks MariaSolOs!) https://github.com/MariaSolOs/dotfiles/blob/main/.config/lf/lfrc
+
 # Show hidden files.
 set hidden
 
@@ -8,7 +11,6 @@ set info size
 set previewer ~/.config/lf/pv.sh
 
 # Synchronous opening.
-# CODE MODIFIED FROM (thanks MariaSolOs!) https://github.com/MariaSolOs/dotfiles/blob/main/.config/lf/lfrc
 cmd open ${{
 
 case $(file -Lb --mime-type -- "$f") in
@@ -24,3 +26,44 @@ text/* | inode/x-empty | application/json | application/xml | application/javasc
 esac
 
 }}
+
+# Remove mappings I don't use.
+map i
+
+# Remove the default move after toggling.
+map <space> toggle
+
+# Also use tab for toggling selection.
+map <tab> toggle
+
+# Clear the files in the copy/cut buffer.
+map <esc> clear
+
+# Copy/add to the cut buffer.
+map c cut
+
+# Backtick for going to a bookmark.
+map ` mark-load
+
+# Also use enter for opening files.
+map <enter> open
+
+# File creation.
+map a push %touch<space>
+cmd mkdir %mkdir -p "$@"
+map A push %mkdir<space>
+
+# Delete.
+map d delete
+
+#HACK: Yank selected file path to a temporary file
+# and open it in the defualt editor.
+cmd yank-path ${{
+
+tmpfile=$(mktemp)
+trap "rm -f '$tmpfile'" EXIT
+printf '%s' "$fx" > "$tmpfile"
+$EDITOR "$tmpfile"
+
+}}
+map Y yank-path
