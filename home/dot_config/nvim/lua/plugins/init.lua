@@ -49,7 +49,7 @@ require "plugins.config.mini.extra"
 -- Setup other useful `mini.nvim` modules
 require "plugins.config.mini.ai"
 require "plugins.config.mini.comment"
-require "plugins.config.mini.files"
+-- require "plugins.config.mini.files"
 require "plugins.config.mini.hipatterns"
 require "plugins.config.mini.indentscope"
 require "plugins.config.mini.move"
@@ -78,8 +78,26 @@ add { source = "rafamadriz/friendly-snippets" }
 -- Setup `mini.snippets`
 require "plugins.config.mini.snippets"
 
--- Setup `mini.completion`
-require "plugins.config.mini.completion"
+-- -- Setup `mini.completion`
+-- require "plugins.config.mini.completion"
+
+-- Setup `blink.cmp`
+add {
+  source = "saghen/blink.cmp",
+  checkout = vim.g.BLINK_CMP_VERSION or "v1.7.0",
+}
+require "plugins.config.blink"
+
+-- Setup `neo-tree.nvim`
+add {
+  source = "nvim-neo-tree/neo-tree.nvim",
+  checkout = vim.g.NEO_TREE_VERSION or "3.36.1",
+  depends = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+}
+require "plugins.config.neo-tree"
 
 -- Setup `fzf-lua`
 add { source = "ibhagwan/fzf-lua" }

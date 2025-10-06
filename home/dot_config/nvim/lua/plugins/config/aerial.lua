@@ -6,10 +6,10 @@ local opts = {
   backends = { "lsp", "treesitter", "markdown", "man" },
   layout = {
     max_width = { 80, 0.4 },
+    width = 40,
     min_width = 10,
     win_opts = {
       signcolumn = "yes",
-      statuscolumn = " ",
     },
     resize_to_content = false,
     preserve_equality = true,

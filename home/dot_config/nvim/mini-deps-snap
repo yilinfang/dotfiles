@@ -1,5 +1,6 @@
 return {
   ["aerial.nvim"] = "5e687b5a14004fa2dd9eccbee042b96869fe1557",
+  ["blink.cmp"] = "327fff91fe6af358e990be7be1ec8b78037d2138",
   ["conform.nvim"] = "9d859cbfbde7a1bd1770e7c97aef30ec5a237a71",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
   ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
@@ -7,9 +8,12 @@ return {
   ["gitsigns.nvim"] = "1ee5c1fd068c81f9dd06483e639c2aa4587dc197",
   ["grug-far.nvim"] = "48f9afb684de1c191af7bed96bc1db85ba33f6a4",
   ["mini.nvim"] = "61a5d44a8f31370710e6a998c5a8ee7e61c7e576",
+  ["neo-tree.nvim"] = "9130e58424ad95bf2dd8b40afbb8cf04d648638c",
+  ["nui.nvim"] = "de740991c12411b663994b2860f1a4fd0937c130",
   ["nvim-lint"] = "335a6044be16d7701001059cba9baa36fbeef422",
   ["nvim-lspconfig"] = "e688b486fe9291f151eae7e5c0b5a5c4ef980847",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  ["plenary.nvim"] = "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
   ["vim-moonfly-colors"] = "78b47337cd6099c903909e5e71c6b57ddd574025",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"

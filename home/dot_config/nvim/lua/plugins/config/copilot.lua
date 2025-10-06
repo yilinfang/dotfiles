@@ -6,6 +6,7 @@ local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
     "fzf",
     "help",
     "netrw",
+    "NvimTree",
     "tutor",
     "man",
     "qf",
