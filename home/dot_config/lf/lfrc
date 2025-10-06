@@ -13,11 +13,7 @@ cmd open ${{
 
 case $(file -Lb --mime-type -- $f) in
 text/*)
-    if command -v nvim >/dev/null 2>&1; then
-        nvim -- $fx
-    else
-        vi -- $fx
-    fi
+    $EDITOR -- $fx
     ;;
 *)
     for f in $fx; do
