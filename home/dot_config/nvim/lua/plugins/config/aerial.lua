@@ -1,5 +1,6 @@
 -- lua/plugins/config/aerial.lua
 -- Configuration for `aerial.nvim`
+-- NOTE: Deprecated
 
 local aerial = require "aerial"
 local opts = {
