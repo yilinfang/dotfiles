@@ -24,3 +24,4 @@ local opts = {
 aerial.setup(opts)
 
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle [A]erial" })
+vim.keymap.set("n", "<leader>sa", function() aerial.fzf_lua_picker() end, { desc = "[S]earch [A]erial symbols" })
