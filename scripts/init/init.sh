@@ -26,6 +26,11 @@ if command -v rg &>/dev/null; then
 	alias rgs='rg --smart-case --max-columns=150 --max-columns-preview'
 fi
 
+# If bat is installed
+if command -v bat &>/dev/null; then
+	alias bcat='bat --color=always --paging=never --style=plain'
+fi
+
 # If bat or delta is installed, set BAT_THEME
 if command -v bat &>/dev/null || command -v delta &>/dev/null; then
 	export BAT_THEME="ansi"

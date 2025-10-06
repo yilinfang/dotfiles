@@ -24,6 +24,11 @@ if command -v rg >/dev/null
     alias rgs='rg --smart-case --max-columns=150 --max-columns-preview'
 end
 
+# If bat is installed
+if command -v bat >/dev/null
+    alias bcat='bat --color=always --paging=never --style=plain'
+end
+
 # If bat or delta is installed, set BAT_THEME
 if command -v bat >/dev/null or command -v delta >/dev/null
     set -gx BAT_THEME ansi
