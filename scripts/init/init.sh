@@ -23,7 +23,7 @@ fi
 if command -v rg &>/dev/null; then
 	export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 	alias rgv='rg --vimgrep'
-	alias rgs='rg --smart-case --max-columns=150 --max-columns-preview'
+	alias brg='rg --smart-case --max-columns=150 --max-columns-preview'
 fi
 
 # If bat is installed
