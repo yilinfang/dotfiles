@@ -49,22 +49,22 @@ if command -v lazygit >/dev/null
     alias lg='lazygit'
 end
 
-# Use zj for zellij
-if command -v zellij >/dev/null
-    alias zj='zellij'
-end
+# # Use zj for zellij
+# if command -v zellij >/dev/null
+#     alias zj='zellij'
+# end
 
-# Use y for yazi
-if command -v yazi >/dev/null
-    function y
-        set tmp (mktemp -t "yazi-cwd.XXXXXX")
-        yazi $argv --cwd-file="$tmp"
-        if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-            builtin cd -- "$cwd"
-        end
-        rm -f -- "$tmp"
-    end
-end
+# # Use y for yazi
+# if command -v yazi >/dev/null
+#     function y
+#         set tmp (mktemp -t "yazi-cwd.XXXXXX")
+#         yazi $argv --cwd-file="$tmp"
+#         if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+#             builtin cd -- "$cwd"
+#         end
+#         rm -f -- "$tmp"
+#     end
+# end
 
 # Initialize fzf if installed
 if command -v fzf >/dev/null
