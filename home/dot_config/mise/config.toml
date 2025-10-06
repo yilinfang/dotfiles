@@ -23,7 +23,7 @@ shellcheck = "latest"
 shfmt = "latest"
 stylua = "latest"
 taplo = "latest"
-yazi = "latest"
+"ubi:gokcehan/lf" = "latest"
 zoxide = "latest"
 
 [settings]

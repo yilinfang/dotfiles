@@ -1,0 +1,30 @@
+# Show hidden files.
+set hidden
+
+# Show the size of files.
+set info size
+
+# Set the custom previewer script.
+set previewer ~/.config/lf/pv.sh
+
+# Synchronous opening.
+# CODE MODIFIED FROM (thanks MariaSolOs!) https://github.com/MariaSolOs/dotfiles/blob/main/.config/lf/lfrc
+cmd open ${{
+
+case $(file -Lb --mime-type -- $f) in
+text/*)
+    if [ -n "$EDITOR" ]; then
+        $EDITOR -- $fx
+    else
+        vi -- $fx
+    fi
+    ;;
+*)
+    for f in $fx; do
+        xdg-open -- "$f" >/dev/null 2>/dev/null &
+    done
+    ;;
+esac
+
+}}
+
