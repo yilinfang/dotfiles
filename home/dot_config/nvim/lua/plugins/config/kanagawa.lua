@@ -3,9 +3,9 @@
 
 local kanagawa = require "kanagawa"
 local opts = {
-  theme = "dragon",
+  theme = "wave",
   background = {
-    dark = "dragon",
+    dark = "wave",
     light = "lotus",
   },
 }
