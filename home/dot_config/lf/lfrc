@@ -7,6 +7,9 @@ set hidden
 # Show the size of files.
 set info size
 
+# Show the number of items inside directories.
+set dircounts
+
 # Set the custom previewer script.
 set previewer ~/.config/lf/pv.sh
 
