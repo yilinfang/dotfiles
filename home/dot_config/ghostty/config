@@ -14,7 +14,8 @@ adjust-underline-position = 4
 
 # Theme
 # theme = kanagawa-dragon
-theme = moonfly
+# theme = moonfly
+theme = kanagawa-wave
 
 # Window
 window-width = 100
