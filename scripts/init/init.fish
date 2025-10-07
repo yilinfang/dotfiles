@@ -1,5 +1,6 @@
 # init.fish
 # This script initializes the Fish shell environment
+# NOTE: Deprecated
 
 # Add $HOME/.local/bin to PATH if not already present
 fish_add_path -g $HOME/.local/bin # Automatically deduplicates
