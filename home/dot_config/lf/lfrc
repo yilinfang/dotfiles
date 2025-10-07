@@ -40,7 +40,7 @@ map <tab> toggle
 map <esc> clear
 
 # Copy/add to the cut buffer.
-map c cut
+map x cut
 
 # Backtick for going to a bookmark.
 map ` mark-load
