@@ -91,3 +91,13 @@ $EDITOR "$tmpfile"
 
 }}
 map Y yank-path
+
+# Change to initial directory when starting if uppon quitting.
+cmd quit-to-old-pwd ${{
+    if [ -n "$LF_OLD_PWD" ] && [ -d "$LF_OLD_PWD" ]; then
+        lf -remote "send $id :cd \"$LF_OLD_PWD\"; quit"
+    else
+        lf -remote "send $id :quit"
+    fi
+}}
+map Q quit-to-old-pwd

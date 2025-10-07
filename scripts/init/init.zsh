@@ -70,8 +70,14 @@ fi
 # Create wrapper for lf
 if command -v lf &>/dev/null; then
 	function lf() {
-		LF_OLD_PWD="$PWD" \
-			command lf "$@"
+		local last_dir
+		last_dir=$(
+			LF_OLD_PWD="$PWD" \
+				command lf -print-last-dir "$@"
+		)
+		if [ -n "$last_dir" ] && [ -d "$last_dir" ]; then
+			builtin cd -- "$last_dir" || return
+		fi
 	}
 fi
 
