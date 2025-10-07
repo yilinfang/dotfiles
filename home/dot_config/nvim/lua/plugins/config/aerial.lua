@@ -9,7 +9,9 @@ local opts = {
     width = 40,
     min_width = 10,
     win_opts = {
-      signcolumn = "yes",
+      -- NOTE: Disable signcolumn and statuscolumn in aerial window
+      signcolumn = "auto",
+      statuscolumn = "",
     },
     default_direction = "prefer_right",
     placement = "edge",

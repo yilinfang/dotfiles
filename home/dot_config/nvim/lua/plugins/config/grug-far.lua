@@ -5,6 +5,17 @@ local grug_far = require "grug-far"
 local opts = {}
 grug_far.setup(opts)
 
+-- Disable signcolumn and statuscolumn in grug-far window
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("grugfar_signcolumn", { clear = true }),
+  pattern = "grug-far",
+  callback = function()
+    vim.opt_local.signcolumn = "auto"
+    vim.opt_local.statuscolumn = ""
+  end,
+  desc = "Disable signcolumn in grug-far window",
+})
+
 -- Keymaps for `grug-far.nvim`
 vim.keymap.set(
   { "n", "v" },

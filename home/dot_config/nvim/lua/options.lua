@@ -3,7 +3,7 @@
 
 -- Leadey key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Disable some providers
 vim.g.loaded_node_provider = 0

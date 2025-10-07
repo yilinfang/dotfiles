@@ -5,7 +5,6 @@ local neo_tree = require "neo-tree"
 local opts = {
   enable_diagnostics = false,
   hide_root_node = true,
-  retain_hidden_root_indent = true,
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
@@ -32,6 +31,15 @@ local opts = {
       },
       ["O"] = "none",
       ["P"] = { "toggle_preview", config = { use_float = false } },
+    },
+  },
+  event_handlers = {
+    {
+      event = "neo_tree_buffer_enter",
+      handler = function()
+        vim.wo.signcolumn = "no"
+        vim.wo.statuscolumn = ""
+      end,
     },
   },
 }
