@@ -67,6 +67,14 @@ fi
 # 	}
 # fi
 
+# Create wrapper for lf
+if command -v lf &>/dev/null; then
+	function lf() {
+		LF_OLD_PWD="$PWD" \
+			command lf "$@"
+	}
+fi
+
 # Initialize fzf if installed
 if command -v fzf &>/dev/null; then
 	source <(fzf --zsh)

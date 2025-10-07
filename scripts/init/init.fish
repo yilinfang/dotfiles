@@ -66,6 +66,13 @@ end
 #     end
 # end
 
+# Create wrapper for lf
+if command -v lf >/dev/null
+    function lf
+        env LF_OLD_PWD=(pwd) command lf $argv
+    end
+end
+
 # Initialize fzf if installed
 if command -v fzf >/dev/null
     fzf --fish | source

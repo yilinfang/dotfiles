@@ -16,19 +16,45 @@ set previewer ~/.config/lf/pv.sh
 # Synchronous opening.
 cmd open ${{
 
-case $(file -Lb --mime-type -- "$f") in
+case $(file -Lb --mime-type -- $f) in
 text/* | inode/x-empty | application/json | application/xml | application/javascript | \
-    application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
-    $EDITOR -- "$fx"
-    ;;
+	application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
+	"$EDITOR" -- $fx
 *)
-    for f in "$fx"; do
-        xdg-open -- "$f" >/dev/null 2>/dev/null &
-    done
-    ;;
+	for f in $fx; do
+		xdg-open -- $f >/dev/null 2>/dev/null &
+	done
+	;;
 esac
 
 }}
+
+# Also use enter for opening files.
+map <enter> open
+
+# Synchronous opening with initial directory preserved.
+# NOTE: Openning files with $EDITOR while preserving the initial directory when starting lf.
+#  $LF_OLD_PWD needs to be set before stariting lf, e.g. `LF_OLD_PWD="$PWD" lf`.
+cmd open-from-old_pwd ${{
+
+case $(file -Lb --mime-type -- $f) in
+text/* | inode/x-empty | application/json | application/xml | application/javascript | \
+	application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
+	if [ -n "$LF_OLD_PWD" ] && [ -d "$LF_OLD_PWD" ]; then
+		cd "$LF_OLD_PWD" && "$EDITOR" -- $fx
+	else
+		"$EDITOR" -- $fx
+	fi
+	;;
+*)
+	for f in $fx; do
+		xdg-open -- $f >/dev/null 2>/dev/null &
+	done
+	;;
+esac
+
+}}
+map E open-from-old_pwd
 
 # Remove mappings I don't use.
 map i
@@ -39,17 +65,11 @@ map <space> toggle
 # Also use tab for toggling selection.
 map <tab> toggle
 
-# Clear the files in the copy/cut buffer.
-map <esc> clear
-
 # Copy/add to the cut buffer.
 map x cut
 
 # Backtick for going to a bookmark.
 map ` mark-load
-
-# Also use enter for opening files.
-map <enter> open
 
 # File creation.
 map a push %touch<space>
