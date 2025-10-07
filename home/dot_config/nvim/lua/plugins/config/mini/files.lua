@@ -1,5 +1,6 @@
 -- lua/plugins/config/mini/files.lua
 -- Configuration for `mini.files`
+-- NOTE: Deprecated
 
 local files = require "mini.files"
 local opts = {

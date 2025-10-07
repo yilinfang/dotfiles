@@ -1,5 +1,6 @@
 -- lua/plugins/mini/completion.lua
 -- Configuration for `mini.completion`
+-- NOTE: Deprecated
 
 local completion = require "mini.completion"
 local opts = {

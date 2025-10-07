@@ -1,13 +1,11 @@
 -- lua/plugins/config/neo-tree.lua
 -- Configuration for `neo-tree.nvim`
--- NOTE: Deprecated
 
 local neo_tree = require "neo-tree"
 local opts = {
-  sources = { "filesystem", "buffers", "git_status" },
   enable_diagnostics = false,
   hide_root_node = true,
-  open_files_do_not_replace_types = { "terminal", "qf" },
+  retain_hidden_root_indent = true,
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
@@ -24,7 +22,7 @@ local opts = {
       ["l"] = "open",
       ["h"] = "close_node",
       ["<space>"] = "none",
-      ["C"] = {
+      ["Y"] = {
         function(state)
           local node = state.tree:get_node()
           local path = node:get_id()

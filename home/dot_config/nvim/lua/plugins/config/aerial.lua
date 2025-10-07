@@ -11,7 +11,7 @@ local opts = {
     win_opts = {
       signcolumn = "yes",
     },
-    default_direction = "prefer_left",
+    default_direction = "prefer_right",
     placement = "edge",
     resize_to_content = false,
   },
