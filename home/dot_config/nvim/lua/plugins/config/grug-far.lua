@@ -1,5 +1,6 @@
 -- lua/plugins/config/grug-far.lua
 -- Configuration for `grug-far.nvim`
+-- NOTE: Deprecated
 
 local grug_far = require "grug-far"
 local opts = {}
