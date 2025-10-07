@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+# Exit on error and treat unset variables as errors
+set -eu
 
 file="$1"
 

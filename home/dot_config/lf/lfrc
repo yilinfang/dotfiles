@@ -1,6 +1,12 @@
 # Configuration file of lf
 # MODIFIED FROM (thanks MariaSolOs!) https://github.com/MariaSolOs/dotfiles/blob/main/.config/lf/lfrc
 
+# Set interpreter for shell commands.
+set shell sh
+
+# Safer shell options.
+set shellopts '-eu'
+
 # Show hidden files.
 set hidden
 
@@ -36,16 +42,15 @@ map <enter> open
 # Synchronous opening with initial directory preserved.
 # NOTE: Openning files with $EDITOR while preserving the initial directory when starting lf.
 #  $LF_OLD_PWD needs to be set before stariting lf, e.g. `LF_OLD_PWD="$PWD" lf`.
-cmd open-from-old_pwd ${{
+cmd open-from-old-pwd ${{
 
+if [ -n "$LF_OLD_PWD" ] && [ -d "$LF_OLD_PWD" ]; then
+	cd "$LF_OLD_PWD"
+fi
 case $(file -Lb --mime-type -- $f) in
 text/* | inode/x-empty | application/json | application/xml | application/javascript | \
 	application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
-	if [ -n "$LF_OLD_PWD" ] && [ -d "$LF_OLD_PWD" ]; then
-		cd "$LF_OLD_PWD" && "$EDITOR" -- $fx
-	else
-		"$EDITOR" -- $fx
-	fi
+	"$EDITOR" -- $fx
 	;;
 *)
 	for f in $fx; do
@@ -55,7 +60,7 @@ text/* | inode/x-empty | application/json | application/xml | application/javasc
 esac
 
 }}
-map E open-from-old_pwd
+map E open-from-old-pwd
 
 # Remove mappings I don't use.
 map i
