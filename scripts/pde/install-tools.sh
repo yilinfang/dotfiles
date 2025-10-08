@@ -21,10 +21,11 @@ mise use -g ripgrep
 mise use -g ubi:gokcehan/lf
 mise use -g zoxide
 
-# Install node and essential npm packages
-mise use -g node@lts
-mise use -g npm:czg
-
-# Install python, pipx and essential pypi packages
-mise use -g python
-mise use -g pipx
+# Install essential npm packages
+# Check if npm is available
+if command -v npm &>/dev/null; then
+	mise use -g npm:czg
+else
+	echo "Node is not installed. You can install Node with mise:"
+	echo "  mise use -g node"
+fi
