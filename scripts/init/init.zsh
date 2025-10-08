@@ -9,7 +9,9 @@ fi
 # If mise is installed, activate it
 if command -v mise &>/dev/null; then
 	eval "$(mise activate zsh)"
-	export MISE_PIPX_UVX=false # Use pipx instead of uvx by default
+	export MISE_DISABLE_BACKENDS=asdf # Disable some backends (comma separated)
+	export MISE_PIPX_UVX=false        # Use pipx instead of uvx by default
+	export MISE_PYTHON_COMPILE=false  # Always download pre-compiled python binaries
 fi
 
 # If nvim is installed, set it as the default editor
