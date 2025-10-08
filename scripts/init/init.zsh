@@ -10,7 +10,6 @@ fi
 if command -v mise &>/dev/null; then
 	eval "$(mise activate zsh)"
 	export MISE_DISABLE_BACKENDS=asdf # Disable some backends (comma separated)
-	export MISE_PIPX_UVX=false        # Use pipx instead of uvx by default
 	export MISE_PYTHON_COMPILE=false  # Always download pre-compiled python binaries
 fi
 
