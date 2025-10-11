@@ -17,7 +17,7 @@ set info size
 set dircounts
 
 # Set the custom previewer.
-set previewer ~/.config/lf/previewer
+set previewer ~/.lf/previewer
 
 # Synchronous opening.
 cmd open ${{
