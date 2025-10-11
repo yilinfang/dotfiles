@@ -1,7 +1,7 @@
 -- lua/keymaps.lua
 -- Basic keymaps for Neovim
 
-vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
+vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 vim.keymap.set("n", "<leader>x", vim.diagnostic.setloclist, { desc = "Open Diagnostic Quickfi[x] List" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
