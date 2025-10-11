@@ -4,7 +4,6 @@
 local indentscope = require "mini.indentscope"
 local opts = {
   draw = {
-    delay = 0,
     animation = indentscope.gen_animation.none(),
   },
   options = { try_as_border = true },
