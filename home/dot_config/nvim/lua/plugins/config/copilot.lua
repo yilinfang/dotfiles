@@ -19,7 +19,6 @@ local copilot_disabled_buftypes = vim.g.copilot_disabled_buftypes
   or {
     "help",
     "nofile",
-    "terminal",
     "prompt",
     "quickfix",
     "acwrite",
@@ -50,6 +49,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
       vim.b.copilot_enabled = false
     end
   end,
+})
+
+-- Disable Copilot in terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("disable-copilot-term-open", { clear = true }),
+  callback = function() vim.b.copilot_enabled = false end,
 })
 
 -- Set keymaps
