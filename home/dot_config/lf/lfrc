@@ -22,17 +22,19 @@ set previewer ~/.lf/previewer
 # Synchronous opening.
 cmd open ${{
 
-case $(file -Lb --mime-type -- $f) in
-text/* | inode/x-empty | application/json | application/xml | application/javascript | \
-	application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
-	"$EDITOR" -- $fx
-	;;
-*)
-	for f in $fx; do
-		xdg-open -- $f >/dev/null 2>/dev/null &
-	done
-	;;
-esac
+# case $(file -Lb --mime-type -- $f) in
+# text/* | inode/x-empty | application/json | application/xml | application/javascript | \
+# 	application/x-yaml | application/toml | application/x-sh | application/x-shellscript)
+# 	"$EDITOR" -- $fx
+# 	;;
+# *)
+# 	for f in $fx; do
+# 		xdg-open -- $f >/dev/null 2>/dev/null &
+# 	done
+# 	;;
+# esac
+
+"$EDITOR" -- $fx
 
 }}
 
