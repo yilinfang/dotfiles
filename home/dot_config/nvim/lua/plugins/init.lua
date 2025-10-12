@@ -78,15 +78,15 @@ add { source = "rafamadriz/friendly-snippets" }
 -- Setup `mini.snippets`
 require "plugins.config.mini.snippets"
 
--- Setup `mini.completion`
-require "plugins.config.mini.completion"
+-- -- Setup `mini.completion`
+-- require "plugins.config.mini.completion"
 
--- -- Setup `blink.cmp`
--- add {
---   source = "saghen/blink.cmp",
---   checkout = vim.g.BLINK_CMP_VERSION or "v1.7.0",
--- }
--- require "plugins.config.blink"
+-- Setup `blink.cmp`
+add {
+  source = "saghen/blink.cmp",
+  checkout = vim.g.BLINK_CMP_VERSION or "v1.7.0",
+}
+require "plugins.config.blink"
 
 -- -- Setup `neo-tree.nvim`
 -- add {

@@ -1,6 +1,5 @@
 -- lua/plugins/config/blink.lua
 -- Configuration for `blink.cmp`
--- NOTE: Deprecated
 
 local blink = require "blink.cmp"
 local opts = {
@@ -11,7 +10,7 @@ local opts = {
     ["<C-\\>"] = { "show", "show_documentation", "hide_documentation" },
   },
   appearance = {
-    nerd_font_variant = "normal", -- "normal" or "mono" depending on your font
+    nerd_font_variant = "mono", -- "normal" or "mono" depending on your font
   },
   completion = {
     list = {
