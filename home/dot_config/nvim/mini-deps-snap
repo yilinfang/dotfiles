@@ -5,7 +5,7 @@ return {
   ["fzf-lua"] = "db3ccffe79480543d8e0f7b0cac0d9b220f9486e",
   ["gitsigns.nvim"] = "1ee5c1fd068c81f9dd06483e639c2aa4587dc197",
   ["kanagawa.nvim"] = "27f1e119f3a7e6d11d435a59e3262e6affda1f83",
-  ["mini.nvim"] = "5e1dd6e3d5f758eccf6c51461559da785dba688c",
+  ["mini.nvim"] = "6a224ddd28b4b21a488d6d87e1c2643a029caaa4",
   ["nvim-lint"] = "9da1fb942dd0668d5182f9c8dee801b9c190e2bb",
   ["nvim-lspconfig"] = "ac98db2f9f06a56498ec890a96928774eae412c3",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
