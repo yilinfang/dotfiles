@@ -1,16 +1,14 @@
 # Font
-font-family = ""
-font-family = "Maple Mono CN"
-font-feature = "+calt, +zero, +cv01, +cv02, +cv05, +cv06, +ss05"
-# font-feature = "+calt, +zero, +cv01, +cv02, +ss05"
-font-family = "Symbols Nerd Font Mono"
-font-size = 14
-
 # font-family = ""
-# font-family = "Sarasa Fixed SC"
+# font-family = "Maple Mono CN"
+# font-feature = "+calt, +zero, +cv01, +cv02, +cv05, +cv06, +ss05"
 # font-family = "Symbols Nerd Font Mono"
-# font-size = 15
-# adjust-underline-position = 4
+# font-size = 14
+font-family = ""
+font-family = "Sarasa Fixed SC"
+font-family = "Symbols Nerd Font Mono"
+font-size = 15
+adjust-underline-position = 4
 
 # Theme
 theme = kanagawa-wave
