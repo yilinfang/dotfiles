@@ -1,8 +1,6 @@
--- Yilin Fang's Neovim configuration
--- A minimal setup based on `mini.nvim`
+-- [[
+-- Yilin Fang's Personal Neovim Configuration
 -- Copyright (c) 2025 Yilin Fang
-
-require "options"
-require "keymaps"
-require "autocmds"
-require "plugins"
+--
+-- TODO: Add more description here
+-- ]]
