@@ -5,7 +5,8 @@
 # font-family = "Symbols Nerd Font Mono"
 # font-size = 14
 font-family = ""
-font-family = "Sarasa Fixed SC"
+# font-family = "Sarasa Fixed SC"
+font-family = "Sarasa Term SC"
 font-family = "Symbols Nerd Font Mono"
 font-size = 15
 adjust-underline-position = 4
