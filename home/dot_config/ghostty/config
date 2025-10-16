@@ -31,6 +31,7 @@ macos-option-as-alt = true
 
 # Misc
 copy-on-select = clipboard
+shell-integration-features = ssh-env,ssh-terminfo
 
 # MacOS
 quit-after-last-window-closed = true
