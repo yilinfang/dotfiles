@@ -5,12 +5,12 @@
 # Define colors
 # Group Default
 FG_DEFAULT="#a9b1d6"
-BG_DEFAULT="#292e42"
+BG_DEFAULT="#15161e"
 # Group Highlight 1
 FG_HIGHLIGHT_1="#15161e"
 BG_HIGHLIGHT_1="#7aa2f7"
 # Group Highlight 2
-FG_HIGHLIGHT_2="#a9b1d6"
+FG_HIGHLIGHT_2="#7aa2f7"
 BG_HIGHLIGHT_2="#3b4261"
 
 tmux set -g mode-style "fg=${FG_HIGHLIGHT_1},bg=${BG_HIGHLIGHT_1}"
