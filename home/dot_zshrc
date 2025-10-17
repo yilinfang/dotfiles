@@ -121,6 +121,7 @@ if command -v eza >/dev/null 2>&1; then
     alias lla='ll -a'
     alias lt='ls -l --tree --level=2 --total-size --git'
     alias lta='lt -a'
+    alias l='lla'
 fi
 
 # nvim-test
