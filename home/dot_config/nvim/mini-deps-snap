@@ -2,13 +2,13 @@ return {
   ["conform.nvim"] = "fbcb4fa7f34bfea9be702ffff481a8e336ebf6ed",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
   ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
-  ["fzf-lua"] = "83e4080ae886a42ec48c5c26ce5892ceb557c425",
+  ["fzf-lua"] = "db45bab4f663bd2e27b257a65611796d682bd0bc",
   ["gitsigns.nvim"] = "1ee5c1fd068c81f9dd06483e639c2aa4587dc197",
-  ["kanagawa.nvim"] = "27f1e119f3a7e6d11d435a59e3262e6affda1f83",
-  ["mini.nvim"] = "89eecd8b4c15f8de72dd4b5244534abed8dc086f",
+  ["mini.nvim"] = "8a7cf7eee8d89bd1b83f6d72f7f3b5598e7ae2cb",
   ["nvim-lint"] = "9da1fb942dd0668d5182f9c8dee801b9c190e2bb",
   ["nvim-lspconfig"] = "ac98db2f9f06a56498ec890a96928774eae412c3",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  ["tokyonight.nvim"] = "d14614cbfc63b6037bfccd48bb982d2ad2003352",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
 }
