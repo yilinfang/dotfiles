@@ -69,3 +69,13 @@ vim.keymap.set('n', '<leader>tf', function()
     vim.notify('Conform: format on save disabled', vim.log.levels.INFO)
   end
 end, { desc = '[T]oggle Conform [F]ormat on Save' })
+
+-- HACK: Save without formatting
+vim.keymap.set('n', '<leader>w', function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local original_value = vim.b[bufnr].conform_disable_format_on_save
+  vim.b[bufnr].conform_disable_format_on_save = true
+  vim.cmd.write()
+  vim.b[bufnr].conform_disable_format_on_save = original_value
+  vim.notify('Write buffer without formatting', vim.log.levels.INFO)
+end, { desc = '[W]rite buffer without formatting' })
