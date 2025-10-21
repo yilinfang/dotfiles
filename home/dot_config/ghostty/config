@@ -1,38 +1,45 @@
-# Font
-# font-family = ""
-# font-family = "Maple Mono CN"
-# font-feature = "+calt, +zero, +cv01, +cv02, +cv05, +cv06, +ss05"
-# font-family = "Symbols Nerd Font Mono"
-# font-size = 14
-font-family = ""
-font-family = "Sarasa Fixed SC"
-# font-family = "Sarasa Term SC"
-font-family = "Symbols Nerd Font Mono"
-font-size = 15
-adjust-underline-position = 4
-# font-family = ""
-# # Main font: Input style Iosevka
-# font-family = "Iosevka Term SS18"
-# # Fallback font for icons
-# font-family = "Symbols Nerd Font Mono"
-# # HACK: Variants of fonts are noisy
-# font-style-bold = false
-# font-style-italic = false
-# font-style-bold-italic = false
-# font-size = 15
-# adjust-underline-position = 4
+# ------------------------------------------------------------------------------
+# FONT
+# ------------------------------------------------------------------------------
 
-# Theme
+# JetBrains Mono based Configuration
+font-family = ""
+font-family = "JetBrains Mono"
+font-family = "Symbols Nerd Font Mono"
+font-size = 14
+# HACK: Itallic variants are noisy
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Regular
+font-style-bold-italic = Bold
+font-synthetic-style = bold,no-italic,no-bold-italic
+# HACK: Slightly decrease cell height to reduce gaps between lines
+adjust-cell-height = -10%
+
+# ------------------------------------------------------------------------------
+# THEME
+# ------------------------------------------------------------------------------
+
 # theme = kanagawa-wave
 # theme = kanagawa-dragon
 # theme = moonfly
 theme = tokyonight-night
 
-# Window
-window-width = 100
-window-height = 30
+# ------------------------------------------------------------------------------
+# WINDOW
+# ------------------------------------------------------------------------------
+
+window-width = 90
+window-height = 35
 window-padding-balance = true
 window-padding-color = extend
+
+# ------------------------------------------------------------------------------
+# MISC
+# ------------------------------------------------------------------------------
+
+copy-on-select = clipboard
+shell-integration-features = ssh-env,ssh-terminfo
 
 # Fix alt+arrow
 keybind = alt+left=unbind
@@ -40,10 +47,6 @@ keybind = alt+right=unbind
 keybind = alt+f=esc:f
 keybind = alt+b=esc:b
 macos-option-as-alt = true
-
-# Misc
-copy-on-select = clipboard
-shell-integration-features = ssh-env,ssh-terminfo
 
 # MacOS
 quit-after-last-window-closed = true
