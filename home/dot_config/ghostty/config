@@ -4,19 +4,23 @@
 # font-feature = "+calt, +zero, +cv01, +cv02, +cv05, +cv06, +ss05"
 # font-family = "Symbols Nerd Font Mono"
 # font-size = 14
-# font-family = ""
-# # font-family = "Sarasa Fixed SC"
-# font-family = "Sarasa Term SC"
-# font-family = "Symbols Nerd Font Mono"
-# font-size = 15
-# adjust-underline-position = 4
 font-family = ""
-# Main font: Input style Iosevka
-font-family = "Iosevka Term SS18"
-# Fallback font for icons
+font-family = "Sarasa Fixed SC"
+# font-family = "Sarasa Term SC"
 font-family = "Symbols Nerd Font Mono"
 font-size = 15
 adjust-underline-position = 4
+# font-family = ""
+# # Main font: Input style Iosevka
+# font-family = "Iosevka Term SS18"
+# # Fallback font for icons
+# font-family = "Symbols Nerd Font Mono"
+# # HACK: Variants of fonts are noisy
+# font-style-bold = false
+# font-style-italic = false
+# font-style-bold-italic = false
+# font-size = 15
+# adjust-underline-position = 4
 
 # Theme
 # theme = kanagawa-wave
