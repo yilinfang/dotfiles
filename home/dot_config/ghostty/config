@@ -22,6 +22,7 @@ font-family = "Sarasa Fixed SC"
 font-family = "Symbols Nerd Font Mono"
 font-size = 15
 font-synthetic-style = false
+adjust-cell-height = -5%
 adjust-underline-position = 4
 
 # ------------------------------------------------------------------------------
