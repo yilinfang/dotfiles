@@ -1,14 +1,14 @@
 return {
-  ["conform.nvim"] = "fbcb4fa7f34bfea9be702ffff481a8e336ebf6ed",
+  ["conform.nvim"] = "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
   ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
-  ["fzf-lua"] = "db45bab4f663bd2e27b257a65611796d682bd0bc",
-  ["gitsigns.nvim"] = "1ee5c1fd068c81f9dd06483e639c2aa4587dc197",
-  ["mini.nvim"] = "8a7cf7eee8d89bd1b83f6d72f7f3b5598e7ae2cb",
+  ["fzf-lua"] = "d7497da366b653cd140082bcd8184d7dfa877a23",
+  ["gitsigns.nvim"] = "20ad4419564d6e22b189f6738116b38871082332",
+  ["kanagawa.nvim"] = "aef7f5cec0a40dbe7f3304214850c472e2264b10",
+  ["mini.nvim"] = "64a23d04cce6d600f18d5d1610d319f6efa08958",
   ["nvim-lint"] = "9da1fb942dd0668d5182f9c8dee801b9c190e2bb",
-  ["nvim-lspconfig"] = "ac98db2f9f06a56498ec890a96928774eae412c3",
+  ["nvim-lspconfig"] = "ececa531ecae813422697b5ef627a11cc964c2a7",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
-  ["tokyonight.nvim"] = "d14614cbfc63b6037bfccd48bb982d2ad2003352",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
 }
