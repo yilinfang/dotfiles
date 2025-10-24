@@ -3,6 +3,16 @@
 
 local kanagawa = require('kanagawa')
 local opts = {
+  -- Disable some preset styles
+  commentStyle = { italic = false },
+  statementStyle = { bold = false },
+  overrides = function(colors)
+    return {
+      -- HACK: Disable bold for booleans
+      --  https://github.com/rebelot/kanagawa.nvim/issues/235#issuecomment-2104670214
+      Boolean = { bold = false },
+    }
+  end,
   theme = 'wave',
   background = {
     dark = 'wave',
