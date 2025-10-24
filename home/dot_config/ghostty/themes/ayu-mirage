@@ -1,6 +1,6 @@
 # Personal patched Theme Ayu Mirage for Ghostty
-# Modified from: https://terminalcolors.com/themes/ayu/mirage/
-## name: Ayu Mirage
+# Modified from: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/ghostty/Ayu%20Mirage
+## name: ayu-mirage
 
 palette = 0=#171b24
 palette = 1=#ed8274
@@ -20,7 +20,7 @@ palette = 14=#95e6cb
 palette = 15=#ffffff
 background = #1f2430
 foreground = #cccac2
-cursor-color = #cccac2
-cursor-text = #1f2431
-selection-background = #274364
-selection-foreground = #cccac2
+cursor-color = #ffcc66
+cursor-text = #1f2430
+selection-background = #409fff
+selection-foreground = #1f2430
