@@ -5,10 +5,7 @@ local tokyonight = require('tokyonight')
 local opts = {
   style = 'night',
   styles = {
-    comments = { italic = false },
-    keywords = { italic = false },
-    functions = { italic = false },
-    variables = { italic = false },
+    comments = { italic = false }, -- I don't like italic comments
   },
   plugins = {
     all = true, -- NOTE: Enable all plugins

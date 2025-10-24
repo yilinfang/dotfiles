@@ -28,10 +28,10 @@ adjust-underline-position = 4
 # THEME
 # ------------------------------------------------------------------------------
 
-theme = kanagawa-wave
+# theme = kanagawa-wave
 # theme = kanagawa-dragon
 # theme = moonfly
-# theme = tokyonight-night
+theme = tokyonight-night
 
 # ------------------------------------------------------------------------------
 # WINDOW
