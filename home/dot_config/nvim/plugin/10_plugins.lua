@@ -34,7 +34,7 @@ minideps.setup({ path = { package = path_package } })
 local add = minideps.add
 
 -- Setup colorscheme in the very beginning
-require('plugins.mini-base16')
+-- require('plugins.mini-base16')
 -- require('plugins.mini-hues')
 -- add({ source = 'rebelot/kanagawa.nvim' })
 -- require('plugins.kanagawa')
@@ -42,6 +42,8 @@ require('plugins.mini-base16')
 -- require "plugins.config.moonfly"
 -- add({ source = 'folke/tokyonight.nvim' })
 -- require('plugins.tokyonight')
+add({ source = 'sainnhe/sonokai' })
+require('plugins.sonokai')
 
 -- Setup mini.icons before other plugins to ensure icons are available
 -- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`
