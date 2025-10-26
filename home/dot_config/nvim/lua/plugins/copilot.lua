@@ -58,19 +58,6 @@ vim.api.nvim_create_autocmd('TermOpen', {
   callback = function() vim.b.copilot_enabled = false end,
 })
 
--- Set keymaps
-vim.g.copilot_no_tab_map = true -- NOTE: Disable default tab mapping
-vim.keymap.set('i', '<M-y>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
-vim.keymap.set('i', '<M-d>', '<Plug>(copilot-dismiss)')
-vim.keymap.set('i', '<M-n>', '<Plug>(copilot-next)')
-vim.keymap.set('i', '<M-p>', '<Plug>(copilot-previous)')
-vim.keymap.set('i', '<M-\\>', '<Plug>(copilot-suggest)')
-vim.keymap.set('i', '<M-w>', '<Plug>(copilot-accept-word)')
-vim.keymap.set('i', '<M-l>', '<Plug>(copilot-accept-line)')
-
 -- HACK: Map <leader>tc to toggle copilot
 vim.keymap.set('n', '<leader>tc', function()
   vim.b.copilot_enabled = not vim.b.copilot_enabled
@@ -80,3 +67,17 @@ vim.keymap.set('n', '<leader>tc', function()
     vim.notify('Copilot: disabled', vim.log.levels.INFO)
   end
 end, { desc = 'Toggle Copilot' })
+
+vim.cmd([[
+
+" Modify default keybindings for `copilot.vim`
+imap <silent><script><expr> <M-y> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true " Disable default tab mapping
+imap <M-d> <Plug>(copilot-dismiss)
+imap <M-n> <Plug>(copilot-next)
+imap <M-p> <Plug>(copilot-previous)
+imap <M-\> <Plug>(copilot-suggest)
+imap <M-w> <Plug>(copilot-accept-word)
+imap <M-l> <Plug>(copilot-accept-line)
+
+]])
