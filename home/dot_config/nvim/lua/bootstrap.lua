@@ -1,5 +1,5 @@
 -- lua/bootstrap.lua
--- Entry point for Neovim configuration
+-- Entry point for lua configuration
 
 -- Load configuration modules
 require('config.options')
