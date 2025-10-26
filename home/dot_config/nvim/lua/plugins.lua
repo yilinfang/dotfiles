@@ -1,4 +1,4 @@
--- plugin/10_plugins.lua
+-- lua/plugins.lua
 -- Load all plugins and their configurations
 -- TODO: Replace `mini.deps` with `vim.pack` when it is ready
 

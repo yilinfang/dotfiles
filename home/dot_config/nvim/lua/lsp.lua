@@ -1,4 +1,4 @@
--- plugin/03_lsp.lua
+-- lua/lsp.lua
 -- LSP related configuration
 
 -- [[ Diagnostic ]]

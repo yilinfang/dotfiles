@@ -1,4 +1,4 @@
--- plugin/20_custom.lua
+-- lua/custom.lua
 -- Load custom modules
 
 require('custom.mark-manager').setup()

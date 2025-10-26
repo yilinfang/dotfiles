@@ -11,3 +11,11 @@ Very thanks to:
   - `MiniMax` (https://github.com/nvim-mini/MiniMax)
 
 --]]
+
+-- Load configuration modules
+require('options')
+require('keymaps')
+require('autocmds')
+require('plugins')
+require('custom')
+require('lsp')

@@ -1,4 +1,4 @@
--- plugin/01_keymaps.lua
+-- lua/keymaps.lua
 -- Basic keymaps for Neovim
 
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
