@@ -1,4 +1,4 @@
--- lua/lsp.lua
+-- lua/config/lsp.lua
 -- LSP related configuration
 
 -- [[ Diagnostic ]]

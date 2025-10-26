@@ -1,4 +1,4 @@
--- lua/autocmds.lua
+-- lua/custom/autocmds.lua
 -- Basic autocommands
 
 -- Highlight when yanking (copying) text

@@ -1,4 +1,4 @@
--- lua/options.lua
+-- lua/custom/options.lua
 -- Basic options for Neovim
 
 -- Leadey key
