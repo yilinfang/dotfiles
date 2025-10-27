@@ -40,13 +40,12 @@ function M.delete_line_marks()
   end
 end
 
--- Delete marks for current buffer
+-- Delete local marks for current buffer
 -- Not includes global marks (A-Z)
-function M.delete_buffer_marks() vim.cmd('delm!') end
+function M.delete_local_marks() vim.cmd('delm!') end
 
--- Delete all marks for current buffer
--- Includes global marks (A-Z)
-function M.delete_buffer_all_marks() vim.cmd('delm! | delm A-Z') end
+-- Delete global marks
+function M.delete_global_marks() vim.cmd('delm A-Z') end
 
 function M.setup()
   -- Register the commands
@@ -54,17 +53,13 @@ function M.setup()
     desc = 'Remove marks in the current line (including global marks)',
   })
 
-  vim.api.nvim_create_user_command('DeleteBufferMarks', function() M.delete_buffer_marks() end, {
-    desc = 'Remove marks in the current buffer (excluding global marks)',
+  vim.api.nvim_create_user_command('DeleteLocalMarks', function() M.delete_local_marks() end, {
+    desc = 'Remove local marks in the current buffer (excluding global marks)',
   })
 
-  vim.api.nvim_create_user_command(
-    'DeleteBufferAllMarks',
-    function() M.delete_buffer_all_marks() end,
-    {
-      desc = 'Remove all marks in the current buffer (including global marks)',
-    }
-  )
+  vim.api.nvim_create_user_command('DeleteGlobalMarks', function() M.delete_global_marks() end, {
+    desc = 'Remove all global marks (A-Z)',
+  })
 end
 
 return M
