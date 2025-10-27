@@ -20,6 +20,21 @@ bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/head
 rm -rf ~/.config/chezmoi
 # Remove existing chezmoi data (optional)
 rm -rf ~/.local/share/chezmoi
+rm -rf ~/.chezmoi/dotfiles
 # Install dotfiles
 chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
+```
+
+### Install via mise
+
+```bash
+# Install mise if you don't have it
+curl https://mise.run | sh
+# Remove existing chezmoi config
+rm -rf ~/.config/chezmoi
+# Remove existing chezmoi data (optional)
+rm -rf ~/.local/share/chezmoi
+rm -rf ~/.chezmoi/dotfiles
+# Install dotfiles
+mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 ```

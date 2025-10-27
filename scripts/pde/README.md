@@ -3,17 +3,15 @@
 ## Usage
 
 ```bash
-# Install
-bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install.sh)
+# Install mise if you don't have it
+curl https://mise.run | sh
+# Remove existing chezmoi config
 rm -rf ~/.config/chezmoi
+# Remove existing chezmoi data (optional)
 rm -rf ~/.local/share/chezmoi
-rm -rf ~/.chezmoi
-IS_PDE=true chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
-chezmoi cd
-cd scripts/pde
-bash ./setup-shell.sh
-bash ./install-mise.sh
-bash ./install-tools.sh
+rm -rf ~/.chezmoi/dotfiles
+# Install dotfiles
+IS_PDE=true mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 # Optional
 bash ./setup-git.sh
 bash ./build-git-linux.sh
