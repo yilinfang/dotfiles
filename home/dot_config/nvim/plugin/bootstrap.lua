@@ -1,4 +1,4 @@
--- lua/bootstrap.lua
+-- plugin/bootstrap.lua
 -- Entry point for lua configuration
 
 -- Load configuration modules

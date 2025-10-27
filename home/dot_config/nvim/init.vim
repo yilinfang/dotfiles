@@ -9,9 +9,3 @@
 "   - `LazyVim` (https://www.lazyvim.org/)
 "   - `MiniMax` (https://github.com/nvim-mini/MiniMax)
 " ==============================================================================
-
-" Load viml configuration
-" source $XDG_CONFIG_HOME/nvim/viml/bootstrap.vim
-
-" Load lua configuration
-lua require('bootstrap')
