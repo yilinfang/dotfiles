@@ -2,27 +2,35 @@
 -- Customized statuscolumn
 
 local M = {}
+local mark_cache = {}
 
 local function get_mark(bufnr, lnum)
-  -- Get all marks for the current buffer
-  local marks = vim.fn.getmarklist(bufnr)
-  local global_marks = vim.fn.getmarklist()
+  -- Build cache for entire buffer if not cached
+  if not mark_cache[bufnr] then
+    mark_cache[bufnr] = {}
 
-  -- Check buffer-local marks (a-z)
-  for _, mark in ipairs(marks) do
-    if mark.pos[2] == lnum and mark.mark:match("^'[a-z]$") then
-      return mark.mark:sub(2, 2) -- Return just the letter
+    -- Get all marks for current buffer
+    local marks = vim.fn.getmarklist(bufnr)
+    local global_marks = vim.fn.getmarklist()
+
+    -- Check buffer-local marks (a-z)
+    for _, mark in ipairs(marks) do
+      if mark.mark:match("^'[a-z]$") then
+        local mark_lnum = mark.pos[2]
+        mark_cache[bufnr][mark_lnum] = mark.mark:sub(2, 2)
+      end
+    end
+
+    -- Check global marks (A-Z) - these override local marks if on same line
+    for _, mark in ipairs(global_marks) do
+      if mark.pos[1] == bufnr and mark.mark:match("^'[A-Z]$") then
+        local mark_lnum = mark.pos[2]
+        mark_cache[bufnr][mark_lnum] = mark.mark:sub(2, 2)
+      end
     end
   end
 
-  -- Check global marks (A-Z, 0-9)
-  for _, mark in ipairs(global_marks) do
-    if mark.pos[1] == bufnr and mark.pos[2] == lnum and mark.mark:match("^'[A-Z]$") then
-      return mark.mark:sub(2, 2) -- Return just the letter
-    end
-  end
-
-  return nil -- No mark found
+  return mark_cache[bufnr][lnum]
 end
 
 local function statuscolumn()
@@ -66,6 +74,9 @@ local function statuscolumn()
 end
 
 function M.setup()
+  -- Clear cache every 200ms
+  local timer = assert((vim.uv or vim.loop).new_timer())
+  timer:start(0, 200, function() mark_cache = {} end)
   -- Only show sign with highest priority
   vim.o.signcolumn = 'yes:1'
   -- HACK: Minmal number of columns for line numbers
