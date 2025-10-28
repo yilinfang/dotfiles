@@ -18,7 +18,8 @@
 
 # Sarasa Gothic based Configuration
 font-family = ""
-font-family = "Sarasa Fixed SC"
+# font-family = "Sarasa Fixed SC"
+font-family = "Sarasa Term SC"
 font-family = "Symbols Nerd Font Mono"
 font-size = 15
 font-synthetic-style = false
