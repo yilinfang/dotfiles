@@ -1,5 +1,7 @@
 [tools]
 "npm:@bitwarden/cli" = "latest"
+"npm:@github/copilot" = "latest"
+"npm:@openai/codex" = "latest"
 uv = "latest"
 
 [settings]
