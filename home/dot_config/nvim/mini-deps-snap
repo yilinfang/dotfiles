@@ -1,7 +1,6 @@
 return {
   ["conform.nvim"] = "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
-  edge = "dfb013e84e8b8302d99ed75e664ccb2a05925ad3",
   ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
   ["fzf-lua"] = "a8458b79a957a6e3e217d84106a0fd4b9470ff4c",
   ["gitsigns.nvim"] = "20ad4419564d6e22b189f6738116b38871082332",
@@ -9,6 +8,7 @@ return {
   ["nvim-lint"] = "9da1fb942dd0668d5182f9c8dee801b9c190e2bb",
   ["nvim-lspconfig"] = "87d30189b24caa496b54affd65594a309ac6d929",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  sonokai = "48c809c887ce7b7828f7ea27408fc2ef2179efb5",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
 }

@@ -42,10 +42,10 @@ local add = minideps.add
 -- require "plugins.config.moonfly"
 -- add({ source = 'folke/tokyonight.nvim' })
 -- require('plugins.tokyonight')
--- add({ source = 'sainnhe/sonokai' })
--- require('plugins.sonokai')
-add({ source = 'sainnhe/edge' })
-require('plugins.edge')
+add({ source = 'sainnhe/sonokai' })
+require('plugins.sonokai')
+-- add({ source = 'sainnhe/edge' })
+-- require('plugins.edge')
 
 -- Setup mini.icons before other plugins to ensure icons are available
 -- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`

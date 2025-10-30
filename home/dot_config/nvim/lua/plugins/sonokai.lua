@@ -26,14 +26,14 @@ if has('termguicolors')
   set termguicolors
 endif
 " Configuration for `sonokai` colorscheme
-let g:sonokai_style = 'default' " 'default', 'atlantis', 'andromeda', 'maia', 'shusia' and 'espresso'
+let g:sonokai_style = 'default'
 " I don't like italic font variants
 let g:sonokai_disable_italic_comment = 1
 let g:sonokai_enable_italic = 0
 let g:sonokai_cursor = 'auto'
 let g:sonokai_transparent_background = 0
 let g:sonokai_dim_inactive_windows = 0
-let g:sonokai_menu_selection_background = 'blue'
+let g:sonokai_menu_selection_background = 'green'
 let g:sonokai_spell_foreground = 'none'
 let g:sonokai_show_eob = 1
 let g:sonokai_float_style = 'none'
