@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # install.sh
 # Install dependencies(LSPs, formatters, linters, etc.) with mise
+# NOTE: Deprecated
 
 # Exit on error, undefined variables, or pipe failures
 set -euo pipefail

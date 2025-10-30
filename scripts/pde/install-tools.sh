@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# NOTE: Deprecated
 
 # Exit on error, undefined variable, or failed command in a pipeline
 set -euo pipefail
