@@ -34,7 +34,6 @@ ignore_install = vim.list_extend(ignore_install, {
   'query',
   'vim',
   'vimdoc',
-  'vimscript',
 })
 
 ---@diagnostic disable-next-line: missing-fields
