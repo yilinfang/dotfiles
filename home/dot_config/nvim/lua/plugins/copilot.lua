@@ -7,6 +7,7 @@ local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
     'help',
     'netrw',
     'neo-tree',
+    'minifiles',
     'tutor',
     'man',
     'qf',

@@ -1,6 +1,5 @@
 -- lua/plugins/blink.lua
 -- Configuration for `blink.cmp`
--- NOTE: Deprecated
 
 local blink = require('blink.cmp')
 local opts = {
@@ -25,7 +24,10 @@ local opts = {
       enabled = false, -- Disable ghost text
     },
   },
-  snippets = { preset = 'mini_snippets' },
+  snippets = {
+    -- preset = 'mini_snippets'
+    preset = 'default', -- Use built-in vim.snippet
+  },
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
     providers = {
@@ -33,6 +35,11 @@ local opts = {
         opts = {
           -- Show hidden files (dotfiles) in path completions
           show_hidden_files_by_default = true,
+        },
+      },
+      snippets = {
+        opts = {
+          friendly_snippets = true, -- Enable `friendly-snippets` support
         },
       },
     },

@@ -1,7 +1,7 @@
 -- lua/custom/plugins.lua
 -- Load all plugins and their configurations
 -- TODO: Replace `mini.deps` with `vim.pack` when it is ready
-
+--
 -- [[ Install `mini.deps` with `mini.nvim` ]]
 -- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
 local path_package = vim.fn.stdpath('data') .. '/site/'
@@ -75,22 +75,23 @@ require('plugins.gitsigns')
 -- NOTE: `gitsigns.nvim` needs ot be setup before `mini.statusline`
 require('plugins.mini-statusline')
 
--- Setup `friendly-snippets`
--- NOTE: Needed by `mini.snippets`
-add({ source = 'rafamadriz/friendly-snippets' })
+-- -- Setup `friendly-snippets`
+-- -- NOTE: Needed by `mini.snippets`
+-- add({ source = 'rafamadriz/friendly-snippets' })
+--
+-- -- Setup `mini.snippets`
+-- require('plugins.mini-snippets')
+--
+-- -- Setup `mini.completion`
+-- require('plugins.mini-completion')
 
--- Setup `mini.snippets`
-require('plugins.mini-snippets')
-
--- Setup `mini.completion`
-require('plugins.mini-completion')
-
--- -- Setup `blink.cmp`
--- add({
---   source = 'saghen/blink.cmp',
---   checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
--- })
--- require('plugins.blink')
+-- Setup `blink.cmp`
+add({
+  source = 'saghen/blink.cmp',
+  checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
+  depends = { 'rafamadriz/friendly-snippets' }, -- Needed by `blink.cmp`
+})
+require('plugins.blink')
 
 -- -- Setup `neo-tree.nvim`
 -- add({

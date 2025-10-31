@@ -1,5 +1,6 @@
 -- lua/plugins/mini-completion.lua
 -- Configuration for `mini.completion`
+-- NOTE: Deprecated, use `blink.cmp` instead.
 
 local completion = require('mini.completion')
 local opts = {

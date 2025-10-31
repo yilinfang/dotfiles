@@ -1,6 +1,7 @@
 -- lua/plugins/mini-snippets.lua
 -- Configuration for `mini.snippets`
 -- NOTE: `friendly-snippets` is required.
+-- NOTE: Deprecated, use built-in `vim.snippet` with `blink.cmp` instead.
 
 local snippets = require('mini.snippets')
 local gen_loader = snippets.gen_loader
