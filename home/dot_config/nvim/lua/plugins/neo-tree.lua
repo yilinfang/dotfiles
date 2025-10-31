@@ -1,5 +1,6 @@
 -- lua/plugins/neo-tree.lua
 -- Configuration for `neo-tree.nvim`
+-- NOTE: Deprecated
 
 local neo_tree = require('neo-tree')
 local opts = {

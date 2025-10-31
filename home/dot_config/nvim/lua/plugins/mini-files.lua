@@ -1,6 +1,5 @@
 -- lua/plugins/mini-files.lua
 -- Configuration for `mini.files`
--- NOTE: Deprecated in favor of `neo-tree.nvim`
 
 local files = require('mini.files')
 local opts = {
