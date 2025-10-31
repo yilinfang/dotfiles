@@ -10,6 +10,7 @@ local opts = {
     backdrop = 100, -- Disable backdrop dimming
     preview = {
       default = 'bat', -- Use `bat` as default previewer
+      -- NOTE: Disabled for now since we are using `bat` as default previewer
       -- winopts = {
       --   number = false, -- Disbale line numbers in preview window
       -- },
@@ -28,9 +29,10 @@ local opts = {
     no_ignore = false,
     toggle_ignore_flag = '--no-ignore-vcs', -- Only ignore .gitignore
   },
-  complete_path = {
-    cmd = vim.env.FZF_CTRL_T_COMMAND or 'fd --hidden --no-ignore-vcs', -- Use fzf's ctrl-t command if set
-  },
+  -- NOTE: Disabled for now since it is not working as expected
+  -- complete_path = {
+  --   cmd = vim.env.FZF_CTRL_T_COMMAND or 'fd --hidden --no-ignore-vcs', -- Use fzf's ctrl-t command if set
+  -- },
   previewers = {
     builtin = {
       treesitter = { enabled = false }, -- HACK: Disable treesitter since we use `bat` for previewing
@@ -92,12 +94,13 @@ vim.keymap.set(
   '<cmd>FzfLua builtin<cr>',
   { desc = '[S]earch Builtin [P]ickers' }
 )
-vim.keymap.set(
-  'i',
-  '<C-t>',
-  [[<cmd>FzfLua complete_path winopts.title="\ Path\ "<cr>]],
-  { desc = 'Fuzzy complete path' }
-)
+-- NOTE: Disabled for now since it is not working as expected
+-- vim.keymap.set(
+--   'i',
+--   '<C-t>',
+--   [[<cmd>FzfLua complete_path winopts.title="\ Path\ "<cr>]],
+--   { desc = 'Fuzzy complete path' }
+-- )
 
 -- [[ LSP pickers ]]
 -- NOTE: Only available when LSP is attached
