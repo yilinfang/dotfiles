@@ -1,11 +1,9 @@
 -- lua/plugins/neo-tree.lua
 -- Configuration for `neo-tree.nvim`
--- NOTE: Deprecated
 
 local neo_tree = require('neo-tree')
 local opts = {
   enable_diagnostics = false,
-  hide_root_node = true,
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },

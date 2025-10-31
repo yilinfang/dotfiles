@@ -57,7 +57,7 @@ require('plugins.mini-extra')
 -- Setup other useful `mini.nvim` modules
 require('plugins.mini-ai')
 require('plugins.mini-comment')
-require('plugins.mini-files')
+-- require('plugins.mini-files')
 require('plugins.mini-hipatterns')
 require('plugins.mini-indentscope')
 require('plugins.mini-move')
@@ -82,26 +82,26 @@ add({ source = 'rafamadriz/friendly-snippets' })
 -- Setup `mini.snippets`
 require('plugins.mini-snippets')
 
--- Setup `mini.completion`
-require('plugins.mini-completion')
+-- -- Setup `mini.completion`
+-- require('plugins.mini-completion')
 
--- -- Setup `blink.cmp`
--- add {
---   source = "saghen/blink.cmp",
---   checkout = vim.g.BLINK_CMP_VERSION or "v1.7.0",
--- }
--- require "plugins.blink"
+-- Setup `blink.cmp`
+add({
+  source = 'saghen/blink.cmp',
+  checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
+})
+require('plugins.blink')
 
--- -- Setup `neo-tree.nvim`
--- add {
---   source = "nvim-neo-tree/neo-tree.nvim",
---   checkout = vim.g.NEO_TREE_VERSION or "3.36.1",
---   depends = {
---     "nvim-lua/plenary.nvim",
---     "MunifTanjim/nui.nvim",
---   },
--- }
--- require "plugins.neo-tree"
+-- Setup `neo-tree.nvim`
+add({
+  source = 'nvim-neo-tree/neo-tree.nvim',
+  checkout = vim.g.NEO_TREE_VERSION or '3.37.3',
+  depends = {
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
+  },
+})
+require('plugins.neo-tree')
 
 -- Setup `fzf-lua`
 add({ source = 'ibhagwan/fzf-lua' })

@@ -3,9 +3,7 @@
 
 local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
   or {
-    'aerial',
     'fzf',
-    'grug-far',
     'help',
     'netrw',
     'neo-tree',

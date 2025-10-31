@@ -4,17 +4,15 @@
 -- -- HACK: Disable drawing indent guides since we only use the textobjects
 -- vim.g.miniindentscope_disable = true
 
--- -- HACK: Create an autocmd to disable indentscope in certain filetypes
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = {
---     "aerial",
---     "fzf",
---     "grug-far",
---     "neo-tree",
---   },
---   group = vim.api.nvim_create_augroup("disable-indentscope-filetype", { clear = true }),
---   callback = function() vim.b.miniindentscope_disable = true end,
--- })
+-- HACK: Create an autocmd to disable indentscope in certain filetypes
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'fzf',
+    'neo-tree',
+  },
+  group = vim.api.nvim_create_augroup('disable-indentscope-filetype', { clear = true }),
+  callback = function() vim.b.miniindentscope_disable = true end,
+})
 
 local indentscope = require('mini.indentscope')
 local opts = {
