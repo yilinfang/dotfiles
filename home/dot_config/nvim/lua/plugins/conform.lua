@@ -31,6 +31,9 @@ conform.setup({
   formatters_by_ft = formatters_by_ft,
   notify_on_error = false,
   format_on_save = function(bufnr)
+    -- HACK: Disable if vim.g.conform_global_disable_format_on_save is set
+    if vim.g.conform_global_disable_format_on_save then return nil end
+
     -- HACK: Disable if vim.b.conform_disable_format_on_save is set
     if vim.b[bufnr].conform_disable_format_on_save then return nil end
 
@@ -60,12 +63,19 @@ vim.keymap.set(
 
 -- HACK: Toggle format on save
 vim.keymap.set('n', '<leader>tf', function()
-  local bufnr = vim.api.nvim_get_current_buf()
-  if vim.b[bufnr].conform_disable_format_on_save then
-    vim.b[bufnr].conform_disable_format_on_save = nil
+  -- local bufnr = vim.api.nvim_get_current_buf()
+  -- if vim.b[bufnr].conform_disable_format_on_save then
+  --   vim.b[bufnr].conform_disable_format_on_save = nil
+  --   vim.notify('Conform: format on save enabled', vim.log.levels.INFO)
+  -- else
+  --   vim.b[bufnr].conform_disable_format_on_save = true
+  --   vim.notify('Conform: format on save disabled', vim.log.levels.INFO)
+  -- end
+  if vim.g.conform_global_disable_format_on_save then
+    vim.g.conform_global_disable_format_on_save = nil
     vim.notify('Conform: format on save enabled', vim.log.levels.INFO)
   else
-    vim.b[bufnr].conform_disable_format_on_save = true
+    vim.g.conform_global_disable_format_on_save = true
     vim.notify('Conform: format on save disabled', vim.log.levels.INFO)
   end
 end, { desc = '[T]oggle Conform [F]ormat on Save' })
