@@ -42,10 +42,10 @@ local add = minideps.add
 -- require "plugins.config.moonfly"
 -- add({ source = 'folke/tokyonight.nvim' })
 -- require('plugins.tokyonight')
-add({ source = 'sainnhe/sonokai' })
-require('plugins.sonokai')
--- add({ source = 'sainnhe/edge' })
--- require('plugins.edge')
+-- add({ source = 'sainnhe/sonokai' })
+-- require('plugins.sonokai')
+add({ source = 'sainnhe/edge' })
+require('plugins.edge')
 
 -- Setup mini.icons before other plugins to ensure icons are available
 -- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`
@@ -56,6 +56,7 @@ require('plugins.mini-extra')
 
 -- Setup other useful `mini.nvim` modules
 require('plugins.mini-ai')
+require('plugins.mini-bufremove')
 require('plugins.mini-comment')
 require('plugins.mini-files')
 require('plugins.mini-hipatterns')
@@ -124,8 +125,8 @@ add({
 require('plugins.treesitter')
 
 -- -- Setup `aerial.nvim`
--- add { source = "stevearc/aerial.nvim" }
--- require "plugins.aerial"
+-- add({ source = 'stevearc/aerial.nvim' })
+-- require('plugins.aerial')
 
 -- Setup `nvim-lint`
 add({ source = 'mfussenegger/nvim-lint' })
