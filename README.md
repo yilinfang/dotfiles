@@ -18,7 +18,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/head
 ```bash
 # Remove existing chezmoi config
 rm -rf ~/.config/chezmoi
-# Remove existing chezmoi data (optional)
+# Remove existing chezmoi data
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Install dotfiles
