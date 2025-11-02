@@ -4,7 +4,7 @@
     "snippets": [
       {
         "language": "all",
-        "path": "all.json"
+        "path": "./all.json"
       }
     ]
   }

@@ -1,20 +1,23 @@
 -- lua/plugins/mini-snippets.lua
 -- Configuration for `mini.snippets`
--- NOTE: `friendly-snippets` is required.
--- NOTE: Deprecated, use built-in `vim.snippet` with `blink.cmp` instead.
 
 local snippets = require('mini.snippets')
 local gen_loader = snippets.gen_loader
-local snippets_path = vim.fn.stdpath('config') .. '/snippets/'
+-- NOTE: Put snippets for `mini.snippets` in a separate folder, since
+--  it does not support vscode-style snippet yet.
+local snippets_path = vim.fn.stdpath('config') .. '/snippets/mini/'
+local lang_patterns = {
+  markdown_inline = { 'markdown.json' },
+}
 local opts = {
   snippets = {
-    -- Load custom snippets
+    -- Load custom global snippets
     gen_loader.from_file(snippets_path .. 'global.json'),
 
-    -- Load snippets based on current language by reading files from
-    -- "snippets/" subdirectories from 'runtimepath' directories.
+    -- Load language-specific snippets, put them in `snippets/` subdirectories
+    -- of your `runtimepath` directories(e.g., in `$XDG_CONFIG_HOME/nvim/snippets/`).
     -- NOTE: `friendly-snippets` will be loaded this way.
-    gen_loader.from_lang(),
+    gen_loader.from_lang({ lang_patterns = lang_patterns }),
   },
 }
 snippets.setup(opts)

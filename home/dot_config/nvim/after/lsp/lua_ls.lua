@@ -5,9 +5,9 @@
 return {
   settings = {
     Lua = {
-      completion = {
-        callSnippet = 'Replace',
-      },
+      -- completion = {
+      --   callSnippet = 'Replace',
+      -- },
       format = { enable = false }, -- Disable formatting since we use `stylua`
       hint = {
         enable = true,
