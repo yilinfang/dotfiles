@@ -77,22 +77,21 @@ require('plugins.gitsigns')
 require('plugins.mini-statusline')
 
 -- -- Setup `friendly-snippets`
--- -- NOTE: Needed by `mini.snippets`
--- add({ source = 'rafamadriz/friendly-snippets' })
---
--- -- Setup `mini.snippets`
--- require('plugins.mini-snippets')
---
--- -- Setup `mini.completion`
--- require('plugins.mini-completion')
+-- NOTE: Needed by `mini.snippets`
+add({ source = 'rafamadriz/friendly-snippets' })
 
--- Setup `blink.cmp`
-add({
-  source = 'saghen/blink.cmp',
-  checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
-  depends = { 'rafamadriz/friendly-snippets' }, -- Needed by `blink.cmp`
-})
-require('plugins.blink')
+-- Setup `mini.snippets`
+require('plugins.mini-snippets')
+
+-- Setup `mini.completion`
+require('plugins.mini-completion')
+
+-- -- Setup `blink.cmp`
+-- add({
+--   source = 'saghen/blink.cmp',
+--   checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
+-- })
+-- require('plugins.blink')
 
 -- -- Setup `neo-tree.nvim`
 -- add({

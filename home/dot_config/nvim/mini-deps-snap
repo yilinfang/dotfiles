@@ -1,5 +1,4 @@
 return {
-  ["blink.cmp"] = "327fff91fe6af358e990be7be1ec8b78037d2138",
   ["conform.nvim"] = "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
   edge = "dfb013e84e8b8302d99ed75e664ccb2a05925ad3",
