@@ -1,8 +1,7 @@
 return {
-  ["conform.nvim"] = "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081",
+  ["conform.nvim"] = "26c02e1155a4980900bdccabca4516f4c712aae9",
   ["copilot.vim"] = "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
   edge = "dfb013e84e8b8302d99ed75e664ccb2a05925ad3",
-  ["friendly-snippets"] = "572f5660cf05f8cd8834e096d7b4c921ba18e175",
   ["fzf-lua"] = "a8458b79a957a6e3e217d84106a0fd4b9470ff4c",
   ["gitsigns.nvim"] = "20ad4419564d6e22b189f6738116b38871082332",
   ["mini.nvim"] = "429e5f9dc9cd59bf76cd98b687300f0a384a7f52",

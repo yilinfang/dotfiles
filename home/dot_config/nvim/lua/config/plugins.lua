@@ -77,8 +77,8 @@ require('plugins.gitsigns')
 require('plugins.mini-statusline')
 
 -- -- Setup `friendly-snippets`
--- NOTE: Needed by `mini.snippets`
-add({ source = 'rafamadriz/friendly-snippets' })
+-- -- NOTE: Needed by `mini.snippets`
+-- add({ source = 'rafamadriz/friendly-snippets' })
 
 -- Setup `mini.snippets`
 require('plugins.mini-snippets')

@@ -3,11 +3,10 @@
 
 local snippets = require('mini.snippets')
 local gen_loader = snippets.gen_loader
--- NOTE: Put snippets for `mini.snippets` in a separate folder, since
---  it does not support vscode-style snippet yet.
-local snippets_path = vim.fn.stdpath('config') .. '/snippets/mini/'
+local snippets_path = vim.fn.stdpath('config') .. '/snippets/'
 local lang_patterns = {
-  markdown_inline = { 'markdown.json' },
+  -- NOTE: Add language patterns as needed
+  -- markdown_inline = { 'markdown.json' },
 }
 local opts = {
   snippets = {
