@@ -18,5 +18,27 @@ local opts = {
     -- NOTE: `friendly-snippets` will be loaded this way.
     gen_loader.from_lang({ lang_patterns = lang_patterns }),
   },
+  mappings = {
+    -- NOTE: Disable default mapping for expanding snippets since I don't like
+    -- the default behavior.
+    expand = '',
+  },
 }
 snippets.setup(opts)
+
+-- -- NOTE: Start LSP server for snippets so that they show up in `mini.completion`
+-- snippets.start_lsp_server()
+
+-- HACK: Remapping snippet expansion to Ctrl+j with custom behavior
+vim.keymap.set('i', '<C-j>', function()
+  snippets.expand({
+    match = function(s)
+      return snippets.default_match(s, {
+        -- NOTE: Only insert the snippet if there's an exact match
+        pattern_exact_boundary = '.?',
+        pattern_fuzzy = '',
+      })
+    end,
+    select = false,
+  })
+end, { desc = 'Match and force expand the best match (if any)' })
