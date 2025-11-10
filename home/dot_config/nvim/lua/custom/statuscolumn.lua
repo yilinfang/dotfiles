@@ -76,7 +76,17 @@ end
 function M.setup()
   -- Clear cache every 200ms
   local timer = assert((vim.uv or vim.loop).new_timer())
-  timer:start(0, 200, function() mark_cache = {} end)
+  timer:start(0, 500, function() mark_cache = {} end)
+  vim.api.nvim_create_autocmd('VimLeavePre', {
+    desc = 'Clear StatusColumn Timer on Exit',
+    group = vim.api.nvim_create_augroup('ClearStatusColumnTimer', { clear = true }),
+    callback = function()
+      if timer and not timer:is_closing() then
+        timer:stop()
+        timer:close()
+      end
+    end,
+  })
   -- Only show sign with highest priority
   vim.o.signcolumn = 'yes:1'
   -- HACK: Minmal number of columns for line numbers
