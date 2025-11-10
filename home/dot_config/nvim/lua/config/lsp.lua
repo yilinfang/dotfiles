@@ -2,13 +2,15 @@
 -- LSP related configuration
 
 -- [[ Diagnostic ]]
--- Modified from https://github.com/echasnovski/nvim/blob/bbe5bb3d53592e8d96052e8650ad2bc023060fe5/plugin/10_options.lua#L146
+-- Modified from (Thanks echasnovski!): https://github.com/nvim-mini/MiniMax/blob/main/configs/nvim-0.11/plugin/10_options.lua
 local diagnostic_opts = {
   -- Define how diagnostic entries should be shown
   signs = false, -- NOTE: Disable signs like vscode
   underline = { severity = { min = 'HINT', max = 'ERROR' } },
   virtual_lines = false, -- Disable virtual_lines
-  virtual_text = { severity = { min = 'HINT', max = 'ERROR' } },
+  virtual_text = {
+    severity = { min = 'ERROR', max = 'ERROR' },
+  },
 
   -- Don't update diagnostics when typing
   update_in_insert = false,
