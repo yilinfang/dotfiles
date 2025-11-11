@@ -2,3 +2,7 @@
 --glob=!**/.git/*
 --glob=!**/node_modules/*
 --glob=!**/.DS_Store
+--glob=!**/.venv/*
+--glob=!**/__pycache__/*
+--glob=!**/.mypy_cache/*
+--glob=!**/.ruff_cache/*
