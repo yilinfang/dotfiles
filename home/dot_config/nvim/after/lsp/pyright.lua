@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP: Disable hover capability from Ruff',
 })
 
-return {
+local M = {
   settings = {
     pyright = {
       disableOrganizeImports = true, -- Using `Ruff`'s import organizer
@@ -29,3 +29,8 @@ return {
     },
   },
 }
+
+-- HACK: Disable `pyright`'s analysis if `mypy` is available
+if vim.fn.executable('mypy') == 1 then M.settings.python.analysis.ignore = { '*' } end
+
+return M

@@ -7,6 +7,7 @@ local lint = require('lint')
 local linters_by_ft = {}
 if vim.fn.executable('zsh') == 1 then linters_by_ft.zsh = { 'zsh' } end
 if vim.fn.executable('fish') == 1 then linters_by_ft.fish = { 'fish' } end
+if vim.fn.executable('mypy') == 1 then linters_by_ft.python = { 'mypy' } end
 lint.linters_by_ft = linters_by_ft
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
