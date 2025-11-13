@@ -4,6 +4,3 @@ jq = "latest"
 "npm:@github/copilot" = "latest"
 "npm:@openai/codex" = "latest"
 uv = "latest"
-
-[settings]
-pipx.uvx = true
