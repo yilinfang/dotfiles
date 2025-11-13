@@ -20,3 +20,20 @@ bash scripts/pde/setup-git.sh
 bash scripts/pde/build-git-linux.sh
 bash scripts/pde/build-tmux-linux.sh
 ```
+
+### Via make
+
+### Install via make
+
+```bash
+# Remove existing chezmoi config
+rm -rf ~/.config/chezmoi
+# Remove existing chezmoi data
+rm -rf ~/.local/share/chezmoi
+rm -rf ~/.chezmoi/dotfiles
+# Download dotfiles via git
+git clone https://github.com/yilinfang/dotfiles.git ~/.chezmoi/dotfiles
+# Install dotfiles
+cd ~/.chezmoi/dotfiles
+make pde_install
+```
