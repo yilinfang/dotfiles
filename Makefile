@@ -4,7 +4,7 @@ MISE_INSTALL_CMD := curl https://mise.run | sh
 CHEZMOI := ${MISE_BIN} exec chezmoi age -- chezmoi
 CHEZMOI_DOTFILES_DIR := ${HOME}/.chezmoi/dotfiles
 
-.PHONY: install pde_install clean ensure_mise
+.PHONY: ensure_mise install pde_install
 
 ensure_mise:
 	@if [ ! -f "${MISE_BIN}" ]; then \
@@ -34,10 +34,15 @@ pde_install: ensure_mise
 	bash scripts/pde/setup-shell.sh
 	bash scripts/pde/setup-git.sh
 
-clean:
-	@echo "Removing all dotfiles managed by Chezmoi..."
-	${CHEZMOI} managed --path-style=absolute | while read -r f; do \
-		echo "Deleting $$f"; \
-		rm -rf "$$f"; \
-	done
-	@echo "Some scripts located in ~/.local/bin may need to be removed manually."
+# clean:
+# 	@echo "Removing all dotfiles managed by Chezmoi..."
+# 	${CHEZMOI} managed --path-style=absolute | while read -r f; do \
+# 		if [ -f "$$f" ]; then \
+# 			echo "Deleting file: $$f"; \
+# 			rm -f "$$f"; \
+# 		elif [ -d "$$f" ]; then \
+# 			echo "Deleting directory (if empty): $$f"; \
+# 			rmdir "$$f" 2>/dev/null || true; \
+# 		fi; \
+# 	done
+# 	@echo "Some scripts located in ~/.local/bin may need to be removed manually."
