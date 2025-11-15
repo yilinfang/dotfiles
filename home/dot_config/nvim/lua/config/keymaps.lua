@@ -1,6 +1,7 @@
 -- lua/custom/keymaps.lua
 -- Basic keymaps for Neovim
 
+vim.keymap.set('i', '<C-[>', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
 vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
 vim.keymap.set(
