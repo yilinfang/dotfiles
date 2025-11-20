@@ -1,0 +1,66 @@
+# ------------------------------------------------------------------------------
+# FONT
+# ------------------------------------------------------------------------------
+
+# # JetBrains Mono based Configuration
+# font-family = ""
+# font-family = "JetBrains Mono"
+# font-family = "Symbols Nerd Font Mono"
+# font-size = 14
+# # HACK: Itallic variants are noisy
+# font-style = Regular
+# font-style-bold = Bold
+# font-style-italic = Regular
+# font-style-bold-italic = Bold
+# font-synthetic-style = bold,no-italic,no-bold-italic
+# # HACK: Slightly decrease cell height to reduce gaps between lines
+# adjust-cell-height = -10%
+
+# Sarasa Gothic based Configuration
+font-family = ""
+# font-family = "Sarasa Fixed SC"
+font-family = "Sarasa Term SC"
+font-family = "Symbols Nerd Font Mono"
+font-size = 15
+font-synthetic-style = false
+adjust-underline-position = 4
+
+# ------------------------------------------------------------------------------
+# THEME
+# ------------------------------------------------------------------------------
+
+# theme = kanagawa-wave
+# theme = kanagawa-dragon
+# theme = moonfly
+# theme = tokyonight-night
+# theme = ayu-mirage
+# theme = sonokai
+theme = edge
+
+# ------------------------------------------------------------------------------
+# WINDOW
+# ------------------------------------------------------------------------------
+
+# window-width = 90
+# window-height = 35
+window-width = 100
+window-height = 30
+window-padding-balance = true
+window-padding-color = extend
+
+# ------------------------------------------------------------------------------
+# MISC
+# ------------------------------------------------------------------------------
+
+copy-on-select = clipboard
+shell-integration-features = ssh-env,ssh-terminfo
+
+# Fix alt+arrow
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = alt+f=esc:f
+keybind = alt+b=esc:b
+macos-option-as-alt = true
+
+# MacOS
+quit-after-last-window-closed = true
