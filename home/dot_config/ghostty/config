@@ -16,12 +16,21 @@
 # # HACK: Slightly decrease cell height to reduce gaps between lines
 # adjust-cell-height = -10%
 
-# Sarasa Gothic based Configuration
+# # Sarasa Gothic based Configuration
+# font-family = ""
+# # font-family = "Sarasa Fixed SC"
+# font-family = "Sarasa Term SC"
+# font-family = "Symbols Nerd Font Mono"
+# font-size = 15
+# font-synthetic-style = false
+# adjust-underline-position = 4
+
+# Maple Mono based Configuration
 font-family = ""
-# font-family = "Sarasa Fixed SC"
-font-family = "Sarasa Term SC"
+font-family = "Maple Mono CN"
+font-feature = +calt, +zero, +cv01
 font-family = "Symbols Nerd Font Mono"
-font-size = 15
+font-size = 14
 font-synthetic-style = false
 adjust-underline-position = 4
 
