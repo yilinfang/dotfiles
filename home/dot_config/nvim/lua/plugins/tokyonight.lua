@@ -4,9 +4,9 @@
 local tokyonight = require('tokyonight')
 local opts = {
   style = 'night',
-  styles = {
-    comments = { italic = false }, -- I don't like italic comments
-  },
+  -- styles = {
+  --   comments = { italic = false }, -- I don't like italic comments
+  -- },
   plugins = {
     all = true, -- NOTE: Enable all plugins
     auto = false, -- NOTE: We are not using `lazy.nvim`
