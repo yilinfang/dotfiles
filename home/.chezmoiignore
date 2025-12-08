@@ -10,6 +10,9 @@
 # MacOS
 **/.DS_Store
 
+# Neovim
+.config/nvim/vim.log
+
 {{ if .work }}
 # Ignored in work environment(PDE)
 .config/ghostty/
