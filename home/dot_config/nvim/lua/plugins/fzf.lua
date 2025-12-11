@@ -9,10 +9,10 @@ local opts = {
   winopts = {
     backdrop = 100, -- Disable backdrop dimming
     preview = {
-      default = 'bat', -- Use `bat` as default previewer
-      -- winopts = {
-      --   number = false, -- Disbale line numbers in preview window
-      -- },
+      -- default = 'bat', -- Use `bat` as default previewer
+      winopts = {
+        number = false, -- Disbale line numbers in preview window
+      },
     },
   },
   files = {
