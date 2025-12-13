@@ -4,7 +4,7 @@ return {
   edge = "b7dfb8e3c42a9393b68e284eac9b7a5973f24fe1",
   ["fzf-lua"] = "bd69cbae60eeb4589fbd285cb112265530fe1a5e",
   ["gitsigns.nvim"] = "5813e4878748805f1518cee7abb50fd7205a3a48",
-  ["mini.nvim"] = "007f5d2ffc03413228fa1e0fcc58da4491ee9d4c",
+  ["mini.nvim"] = "6bd3a01aaf7d248aea1b78aacdd5d44bffa002c1",
   ["nvim-lint"] = "ae64d6466ed92b68353122d920e314ff2c8dd0a8",
   ["nvim-lspconfig"] = "0044d0987ef7e624d04141d0f90d0481fd3c3663",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
