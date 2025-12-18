@@ -1,6 +1,5 @@
 -- lua/plugins/treesitter.lua
 -- Configuration for `nvim-treesitter`
--- TODO: Switch to `main` branch once it is stable
 
 local ensure_installled = {
   'bash',
@@ -28,8 +27,21 @@ local disabled = {
 
 local ts = require('nvim-treesitter')
 
+local function check_cli_health()
+  if vim.fn.executable('tree-sitter') == 0 then return false end
+  -- Try running it; if glibc is too old, this will return a non-zero shell_error
+  local output = vim.fn.system('tree-sitter --version')
+  return vim.v.shell_error == 0
+end
+
+local cli_functional = check_cli_health()
+
+local function safe_install(langs)
+  if cli_functional then pcall(ts.install, langs) end
+end
+
 -- Install essential parsers (async, no-op if already installed)
-ts.install(ensure_installled)
+safe_install(ensure_installled)
 
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('DownloadAndEnableTreesitter', { clear = true }),
@@ -42,7 +54,7 @@ vim.api.nvim_create_autocmd('FileType', {
     -- Enable treesitter highlighting
     pcall(vim.treesitter.start, buf, lang)
     -- Install missing parsers (async, no-op if already installed)
-    ts.install({ lang })
+    safe_install({ lang })
   end,
 })
 
