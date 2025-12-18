@@ -4,10 +4,10 @@ return {
   edge = "b7dfb8e3c42a9393b68e284eac9b7a5973f24fe1",
   ["fzf-lua"] = "9d579feab4d3035627150e5e9b6e8fbf5e814ef6",
   ["gitsigns.nvim"] = "5813e4878748805f1518cee7abb50fd7205a3a48",
-  ["mini.nvim"] = "6bd3a01aaf7d248aea1b78aacdd5d44bffa002c1",
+  ["mini.nvim"] = "a995fe9cd4193fb492b5df69175a351a74b3d36b",
   ["nvim-lint"] = "c47b71d146a0b638f46672e6704c322369385df6",
   ["nvim-lspconfig"] = "c4f67bf85b01a57e3c130352c0a0e453ab8cd5b9",
-  ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  ["nvim-treesitter"] = "4fc09bee78e91bf4ba471cdab4bf9dfa37fde51c",
   ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
   ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
 }
