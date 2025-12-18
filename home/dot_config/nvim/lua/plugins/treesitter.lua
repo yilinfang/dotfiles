@@ -30,14 +30,25 @@ local ts = require('nvim-treesitter')
 local function check_cli_health()
   if vim.fn.executable('tree-sitter') == 0 then return false end
   -- Try running it; if glibc is too old, this will return a non-zero shell_error
-  local output = vim.fn.system('tree-sitter --version')
+  local _ = vim.fn.system('tree-sitter --version')
   return vim.v.shell_error == 0
 end
 
-local cli_functional = check_cli_health()
+local isnt_installed = function(lang)
+  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
+end
 
 local function safe_install(langs)
-  if cli_functional then pcall(ts.install, langs) end
+  if not check_cli_health() then
+    vim.notify(
+      'tree-sitter-cli not found or not working properly, skipping treesitter parser installation.',
+      vim.log.levels.WARN,
+      { title = 'nvim-treesitter' }
+    )
+    return
+  end
+  local to_install = vim.tbl_filter(isnt_installed, langs)
+  if #to_install > 0 then pcall(ts.install, to_install) end
 end
 
 -- Install essential parsers (async, no-op if already installed)
