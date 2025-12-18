@@ -1,5 +1,6 @@
 -- lua/plugins/copilot.lua
 -- Configuration for `copilot.vim`
+-- NOTE: Deprecated in favor of `copilot.lua`
 
 local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
   or {

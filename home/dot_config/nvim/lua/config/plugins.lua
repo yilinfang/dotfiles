@@ -139,12 +139,16 @@ require('plugins.conform')
 -- add { source = "MagicDuck/grug-far.nvim" }
 -- require "plugins.grug-far"
 
+-- Setup `copilot.lua`
+add({ source = 'zbirenbaum/copilot.lua' })
+require('plugins.copilot-lua')
+
 -- Setup `vim-fugitive`
 add({ source = 'tpope/vim-fugitive' })
 
 -- Setup `vim-sleuth`
 add({ source = 'tpope/vim-sleuth' })
 
--- Setup `copilot.vim`
-add({ source = 'github/copilot.vim' })
-require('plugins.copilot')
+-- -- Setup `copilot.vim`
+-- add({ source = 'github/copilot.vim' })
+-- require('plugins.copilot')
