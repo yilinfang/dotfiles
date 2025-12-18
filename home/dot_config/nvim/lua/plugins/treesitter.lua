@@ -38,15 +38,17 @@ local isnt_installed = function(lang)
   return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
 end
 
+-- Check CLI health once
+local cli_funcional = check_cli_health()
+if not cli_funcional then
+  vim.notify_once(
+    'tree-sitter CLI not found or not working properly, skipping treesitter parser installation.',
+    vim.log.levels.WARN
+  )
+end
+
 local function safe_install(langs)
-  if not check_cli_health() then
-    vim.notify(
-      'tree-sitter-cli not found or not working properly, skipping treesitter parser installation.',
-      vim.log.levels.WARN,
-      { title = 'nvim-treesitter' }
-    )
-    return
-  end
+  if not cli_funcional then return end
   local to_install = vim.tbl_filter(isnt_installed, langs)
   if #to_install > 0 then pcall(ts.install, to_install) end
 end
