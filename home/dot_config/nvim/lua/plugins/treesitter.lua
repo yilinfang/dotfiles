@@ -59,24 +59,21 @@ local isnt_installed = function(lang)
 end
 
 -- Build a set to cache available parsers
-local available_parsers = nil
+local available_parsers = {}
 local function build_available_parsers()
-  local ap = {}
+  local apl = {}
   -- Get both stable (1) and unstable (2) parsers,
   --  unmaintained (3) and unsupported (4) parsers are ignored
-  vim.list_extend(ap, ts.get_available(1))
-  vim.list_extend(ap, ts.get_available(2))
-  local s = {}
-  for _, v in ipairs(ap) do
-    s[v] = true
+  vim.list_extend(apl, ts.get_available(1))
+  vim.list_extend(apl, ts.get_available(2))
+  for _, v in ipairs(apl) do
+    available_parsers[v] = true
   end
-  available_parsers = s
 end
+-- Build available parsers once
+build_available_parsers()
 
-local function is_available(lang)
-  if not available_parsers then build_available_parsers() end
-  return available_parsers ~= nil and available_parsers[lang] == true
-end
+local function is_available(lang) return available_parsers[lang] == true end
 
 local function safe_install(langs)
   if not cli_functional then return end
@@ -90,7 +87,6 @@ end
 -- -- Install essential parsers (async, no-op if already installed)
 -- safe_install(ensure_installed)
 
-local ts_start = function(ev) vim.treesitter.start(ev.buf) end
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('DownloadAndEnableTreesitter', { clear = true }),
   pattern = '*',
@@ -101,8 +97,9 @@ vim.api.nvim_create_autocmd('FileType', {
     local lang = vim.treesitter.language.get_lang(ft) or ft
     if not lang or lang == '' then return end
     -- If parser is already installed, start treesitter
+    local bufnr = ev.buf
     if not isnt_installed(lang) then
-      ts_start(ev)
+      vim.treesitter.start(bufnr, lang)
       return
     end
     -- Otherwise, try to install the parser safely
@@ -110,7 +107,9 @@ vim.api.nvim_create_autocmd('FileType', {
     -- After a delay (5 seconds), check if installation succeeded and start treesitter
     -- You can also use `:e(dit)` to reload the buffer when installation is done
     vim.defer_fn(function()
-      if not isnt_installed(lang) then ts_start(ev) end
+      if vim.api.nvim_buf_is_valid(bufnr) and not isnt_installed(lang) then
+        vim.treesitter.start(bufnr, lang)
+      end
     end, 5000)
   end,
 })
