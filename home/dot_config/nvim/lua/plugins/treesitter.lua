@@ -58,16 +58,25 @@ local isnt_installed = function(lang)
   return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
 end
 
--- Get list of all available parsers, only stable and unstable are considered
--- Unmaintained (3) or unsupported (4) parsers are ignored
-local available_parsers = {}
-available_parsers = vim.list_extend(available_parsers, ts.get_available(1))
-available_parsers = vim.list_extend(available_parsers, ts.get_available(2))
+-- Build a set to cache available parsers
+local available_parsers = nil
+local function build_available_parsers()
+  local ap = {}
+  -- Get both stable (1) and unstable (2) parsers,
+  --  unmaintained (3) and unsupported (4) parsers are ignored
+  vim.list_extend(ap, ts.get_available(1))
+  vim.list_extend(ap, ts.get_available(2))
+  local s = {}
+  for _, v in ipairs(ap) do
+    s[v] = true
+  end
+  available_parsers = s
+end
 
-local is_available = function(lang) return vim.tbl_contains(available_parsers, lang) == true end
-
--- NOTE: No checking for parsers and cli here, must be ensured before calling this
-local function install_parser_and_wait(langs, time) ts.install(langs):wait(time or 300000) end
+local function is_available(lang)
+  if not available_parsers then build_available_parsers() end
+  return available_parsers ~= nil and available_parsers[lang] == true
+end
 
 local function safe_install(langs)
   if not cli_functional then return end
@@ -75,7 +84,7 @@ local function safe_install(langs)
     function(lang) return isnt_installed(lang) and is_available(lang) end,
     langs
   )
-  if #to_install > 0 then install_parser_and_wait(to_install) end
+  if #to_install > 0 then ts.install(to_install) end
 end
 
 -- Install essential parsers (async, no-op if already installed)
@@ -87,14 +96,18 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
   callback = function(ev)
     local ft = ev.match
+    -- Skip disabled filetypes
     if vim.tbl_contains(disabled_filetype, ft) then return end
     local lang = vim.treesitter.language.get_lang(ft) or ft
+    if not lang or lang == '' then return end
+    -- If parser is already installed, start treesitter
     if not isnt_installed(lang) then
       ts_start(ev)
-    elseif cli_functional and is_available(lang) then
-      -- Call installation function instead of safe_install to avoid redundant checks
-      install_parser_and_wait({ lang })
-      ts_start(ev)
+      return
     end
+    -- Otherwise, try to install the parser safely
+    -- NOTE: The treesitter highlight will be enabled when the file is opened next time
+    --  Or you can use `:e(dit)` to reload the buffer after installation is done
+    safe_install({ lang })
   end,
 })
