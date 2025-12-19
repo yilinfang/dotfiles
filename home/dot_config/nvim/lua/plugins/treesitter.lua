@@ -91,7 +91,7 @@ vim.api.nvim_create_autocmd('FileType', {
     local lang = vim.treesitter.language.get_lang(ft) or ft
     if not isnt_installed(lang) then
       ts_start(ev)
-    elseif is_available(lang) then
+    elseif cli_funcional and is_available(lang) then
       -- Call installation function instead of safe_install to avoid redundant checks
       install_parser_and_wait({ lang })
       ts_start(ev)
