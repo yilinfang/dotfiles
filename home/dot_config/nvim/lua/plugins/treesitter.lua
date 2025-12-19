@@ -46,8 +46,8 @@ local function check_cli_health()
 end
 
 -- Check CLI health once
-local cli_funcional = check_cli_health()
-if not cli_funcional then
+local cli_functional = check_cli_health()
+if not cli_functional then
   vim.notify_once(
     'tree-sitter CLI not found or not working properly, skipping treesitter parser installation.',
     vim.log.levels.WARN
@@ -70,7 +70,7 @@ local is_available = function(lang) return vim.tbl_contains(available_parsers, l
 local function install_parser_and_wait(langs, time) ts.install(langs):wait(time or 300000) end
 
 local function safe_install(langs)
-  if not cli_funcional then return end
+  if not cli_functional then return end
   local to_install = vim.tbl_filter(
     function(lang) return isnt_installed(lang) and is_available(lang) end,
     langs
@@ -91,7 +91,7 @@ vim.api.nvim_create_autocmd('FileType', {
     local lang = vim.treesitter.language.get_lang(ft) or ft
     if not isnt_installed(lang) then
       ts_start(ev)
-    elseif cli_funcional and is_available(lang) then
+    elseif cli_functional and is_available(lang) then
       -- Call installation function instead of safe_install to avoid redundant checks
       install_parser_and_wait({ lang })
       ts_start(ev)
