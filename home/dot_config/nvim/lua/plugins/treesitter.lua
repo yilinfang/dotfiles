@@ -1,7 +1,7 @@
 -- lua/plugins/treesitter.lua
 -- Configuration for `nvim-treesitter`
 
-local ensure_installled = {
+local ensure_installed = {
   'bash',
   'css',
   'diff',
@@ -53,20 +53,20 @@ available_parsers = vim.list_extend(available_parsers, ts.get_available(2))
 
 local is_available = function(lang) return vim.tbl_contains(available_parsers, lang) == true end
 
+-- NOTE: No checking for parsers and cli here, must be ensured before calling this
+local function install_parser_and_wait(langs, time) ts.install(langs):wait(time or 300000) end
+
 local function safe_install(langs)
   if not cli_funcional then return end
   local to_install = vim.tbl_filter(
     function(lang) return isnt_installed(lang) and is_available(lang) end,
     langs
   )
-  if #to_install > 0 then
-    -- NOTE: ts.install runs asynchronously, wait up to 5 minutes for installation to complete
-    ts.install(to_install):wait(300000)
-  end
+  if #to_install > 0 then install_parser_and_wait(to_install) end
 end
 
 -- Install essential parsers (async, no-op if already installed)
-safe_install(ensure_installled)
+safe_install(ensure_installed)
 
 local ts_start = function(ev) vim.treesitter.start(ev.buf) end
 vim.api.nvim_create_autocmd('FileType', {
@@ -76,10 +76,11 @@ vim.api.nvim_create_autocmd('FileType', {
     local ft = ev.match
     if vim.tbl_contains(disabled_filetype, ft) then return end
     local lang = vim.treesitter.language.get_lang(ft) or ft
-    if not is_available(lang) then return end
-    -- Install missing parsers (async, no-op if already installed)
-    safe_install({ lang })
-    -- Enable treesitter highlighting
-    ts_start(ev)
+    if not isnt_installed(lang) then
+      ts_start(ev)
+    elseif is_available(lang) then
+      install_parser_and_wait({ lang })
+      ts_start(ev)
+    end
   end,
 })
