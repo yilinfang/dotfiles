@@ -2,14 +2,32 @@
 -- Configuration for `nvim-treesitter`
 
 local ensure_installed = {
-  'c',
-  'cpp',
   'bash',
+  'c',
+  'diff',
+  'html',
+  'javascript',
+  'jsdoc',
   'json',
+  'json5',
+  'jsonc',
+  'lua',
+  'luadoc',
+  'luap',
+  'markdown',
+  'markdown_inline',
+  'ninja',
+  'printf',
   'python',
   'query',
   'regex',
+  'rst',
   'toml',
+  'tsx',
+  'typescript',
+  'vim',
+  'vimdoc',
+  'xml',
 }
 
 local disabled_filetype = {
@@ -17,7 +35,6 @@ local disabled_filetype = {
   'dockerfile',
   'gitignore',
   'tmux',
-  'yaml',
 }
 
 local ts = require('nvim-treesitter')
@@ -75,6 +92,7 @@ vim.api.nvim_create_autocmd('FileType', {
     if not isnt_installed(lang) then
       ts_start(ev)
     elseif is_available(lang) then
+      -- Call installation function instead of safe_install to avoid redundant checks
       install_parser_and_wait({ lang })
       ts_start(ev)
     end
