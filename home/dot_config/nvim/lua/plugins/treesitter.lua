@@ -16,12 +16,10 @@ local ensure_installled = {
   'yaml',
 }
 
-local disabled = {
-  'cpp',
+local disabled_filetype = {
   'csv',
   'dockerfile',
   'gitignore',
-  'rust',
   'tmux',
 }
 
@@ -34,10 +32,6 @@ local function check_cli_health()
   return vim.v.shell_error == 0
 end
 
-local isnt_installed = function(lang)
-  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
-end
-
 -- Check CLI health once
 local cli_funcional = check_cli_health()
 if not cli_funcional then
@@ -47,9 +41,24 @@ if not cli_funcional then
   )
 end
 
+local isnt_installed = function(lang)
+  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
+end
+
+-- Get list of all available parsers, only stable and unstable are considered
+-- Unmaintained (3) or unsupported (4) parsers are ignored
+local available_parsers = {}
+available_parsers = vim.list_extend(available_parsers, ts.get_available(1))
+available_parsers = vim.list_extend(available_parsers, ts.get_available(2))
+
+local is_available = function(lang) return vim.tbl_contains(available_parsers, lang) == true end
+
 local function safe_install(langs)
   if not cli_funcional then return end
-  local to_install = vim.tbl_filter(isnt_installed, langs)
+  local to_install = vim.tbl_filter(
+    function(lang) return isnt_installed(lang) and is_available(lang) end,
+    langs
+  )
   if #to_install > 0 then
     -- NOTE: ts.install runs asynchronously, wait up to 5 minutes for installation to complete
     ts.install(to_install):wait(300000)
@@ -59,17 +68,18 @@ end
 -- Install essential parsers (async, no-op if already installed)
 safe_install(ensure_installled)
 
+local ts_start = function(ev) vim.treesitter.start(ev.buf) end
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('DownloadAndEnableTreesitter', { clear = true }),
   pattern = '*',
   callback = function(ev)
     local ft = ev.match
-    if vim.tbl_contains(disabled, ft) then return end
-    local lang = vim.treesitter.language.get_lang(ev.match) or ev.match
-    local buf = ev.buf
-    -- Enable treesitter highlighting
-    vim.treesitter.start(buf, lang)
+    if vim.tbl_contains(disabled_filetype, ft) then return end
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+    if not is_available(lang) then return end
     -- Install missing parsers (async, no-op if already installed)
     safe_install({ lang })
+    -- Enable treesitter highlighting
+    ts_start(ev)
   end,
 })
