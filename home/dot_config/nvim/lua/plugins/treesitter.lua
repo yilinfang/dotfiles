@@ -50,7 +50,10 @@ end
 local function safe_install(langs)
   if not cli_funcional then return end
   local to_install = vim.tbl_filter(isnt_installed, langs)
-  if #to_install > 0 then pcall(ts.install, to_install) end
+  if #to_install > 0 then
+    -- NOTE: ts.install runs asynchronously, wait up to 5 minutes for installation to complete
+    ts.install(to_install):wait(300000)
+  end
 end
 
 -- Install essential parsers (async, no-op if already installed)
@@ -65,7 +68,7 @@ vim.api.nvim_create_autocmd('FileType', {
     local lang = vim.treesitter.language.get_lang(ev.match) or ev.match
     local buf = ev.buf
     -- Enable treesitter highlighting
-    pcall(vim.treesitter.start, buf, lang)
+    vim.treesitter.start(buf, lang)
     -- Install missing parsers (async, no-op if already installed)
     safe_install({ lang })
   end,
