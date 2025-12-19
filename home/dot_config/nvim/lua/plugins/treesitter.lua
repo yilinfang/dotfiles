@@ -2,18 +2,14 @@
 -- Configuration for `nvim-treesitter`
 
 local ensure_installed = {
+  'c',
+  'cpp',
   'bash',
-  'css',
-  'diff',
-  'html',
-  'markdown_inline',
-  'javascript',
   'json',
   'python',
   'query',
   'regex',
   'toml',
-  'yaml',
 }
 
 local disabled_filetype = {
@@ -21,13 +17,13 @@ local disabled_filetype = {
   'dockerfile',
   'gitignore',
   'tmux',
+  'yaml',
 }
 
 local ts = require('nvim-treesitter')
 
 local function check_cli_health()
   if vim.fn.executable('tree-sitter') == 0 then return false end
-  -- Try running it; if glibc is too old, this will return a non-zero shell_error
   local _ = vim.fn.system('tree-sitter --version')
   return vim.v.shell_error == 0
 end
