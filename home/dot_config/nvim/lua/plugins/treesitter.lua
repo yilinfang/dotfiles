@@ -1,34 +1,34 @@
 -- lua/plugins/treesitter.lua
 -- Configuration for `nvim-treesitter`
 
-local ensure_installed = {
-  'bash',
-  'c',
-  'diff',
-  'html',
-  'javascript',
-  'jsdoc',
-  'json',
-  'json5',
-  'jsonc',
-  'lua',
-  'luadoc',
-  'luap',
-  'markdown',
-  'markdown_inline',
-  'ninja',
-  'printf',
-  'python',
-  'query',
-  'regex',
-  'rst',
-  'toml',
-  'tsx',
-  'typescript',
-  'vim',
-  'vimdoc',
-  'xml',
-}
+-- local ensure_installed = {
+--   'bash',
+--   'c',
+--   'diff',
+--   'html',
+--   'javascript',
+--   'jsdoc',
+--   'json',
+--   'json5',
+--   'jsonc',
+--   'lua',
+--   'luadoc',
+--   'luap',
+--   'markdown',
+--   'markdown_inline',
+--   'ninja',
+--   'printf',
+--   'python',
+--   'query',
+--   'regex',
+--   'rst',
+--   'toml',
+--   'tsx',
+--   'typescript',
+--   'vim',
+--   'vimdoc',
+--   'xml',
+-- }
 
 local disabled_filetype = {
   'csv',
@@ -87,8 +87,8 @@ local function safe_install(langs)
   if #to_install > 0 then ts.install(to_install) end
 end
 
--- Install essential parsers (async, no-op if already installed)
-safe_install(ensure_installed)
+-- -- Install essential parsers (async, no-op if already installed)
+-- safe_install(ensure_installed)
 
 local ts_start = function(ev) vim.treesitter.start(ev.buf) end
 vim.api.nvim_create_autocmd('FileType', {
@@ -106,8 +106,11 @@ vim.api.nvim_create_autocmd('FileType', {
       return
     end
     -- Otherwise, try to install the parser safely
-    -- NOTE: The treesitter highlight will be enabled when the file is opened next time
-    --  Or you can use `:e(dit)` to reload the buffer after installation is done
     safe_install({ lang })
+    -- After a delay (5 seconds), check if installation succeeded and start treesitter
+    -- You can also use `:e(dit)` to reload the buffer when installation is done
+    vim.defer_fn(function()
+      if not isnt_installed(lang) then ts_start(ev) end
+    end, 5000)
   end,
 })
