@@ -1,5 +1,7 @@
 -- lua/plugins/treesitter.lua
 -- Configuration for `nvim-treesitter`
+-- NOTE: Disabled for now until treeistter support is not experimental in Neovim
+if true then return {} end
 
 -- local ensure_installed = {
 --   'bash',

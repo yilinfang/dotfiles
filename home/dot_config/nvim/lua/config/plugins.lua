@@ -112,13 +112,14 @@ require('plugins.fzf')
 -- Useful preset configurations for LSP servers
 add({ source = 'neovim/nvim-lspconfig' })
 
--- Setup `nvim-treesitter`
-add({
-  source = 'nvim-treesitter/nvim-treesitter',
-  -- Perform action after every checkout
-  hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-})
-require('plugins.treesitter')
+-- NOTE: Disable treesitter until it is not experienmental in Neovim
+-- -- Setup `nvim-treesitter`
+-- add({
+--   source = 'nvim-treesitter/nvim-treesitter',
+--   -- Perform action after every checkout
+--   hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+-- })
+-- require('plugins.treesitter')
 
 -- -- Setup `aerial.nvim`
 -- add({ source = 'stevearc/aerial.nvim' })
@@ -140,12 +141,12 @@ require('plugins.conform')
 add({ source = 'zbirenbaum/copilot.lua' })
 require('plugins.copilot-lua')
 
+-- -- Setup `copilot.vim`
+-- add({ source = 'github/copilot.vim' })
+-- require('plugins.copilot')
+
 -- Setup `vim-fugitive`
 add({ source = 'tpope/vim-fugitive' })
 
 -- Setup `vim-sleuth`
 add({ source = 'tpope/vim-sleuth' })
-
--- -- Setup `copilot.vim`
--- add({ source = 'github/copilot.vim' })
--- require('plugins.copilot')
