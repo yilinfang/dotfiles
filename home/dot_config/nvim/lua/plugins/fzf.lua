@@ -34,7 +34,7 @@ local opts = {
   -- },
   previewers = {
     builtin = {
-      treesitter = { enabled = false }, -- HACK: Disable treesitter since we use `bat` for previewing
+      treesitter = { enabled = false }, -- HACK: Disable treesitter since it is buggy
       -- HACK: Disable image previewer
       extensions = nil,
       snacks_image = { enabled = false },
