@@ -3,15 +3,15 @@
 
 -- vim.keymap.set('i', '<C-[>', '<Esc>', { desc = 'Exit insert mode' })
 -- vim.keymap.set('n', '<C-q>', '<C-v>', { desc = 'Enter visual block mode' })
-vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
-vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
+-- vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
+-- vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
 vim.keymap.set(
   'n',
   '<leader>x',
   vim.diagnostic.setloclist,
   { desc = 'Open Diagnostic Quickfi[x] List' }
 )
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 -- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 -- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
