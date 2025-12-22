@@ -12,7 +12,8 @@ Very thanks to:
 
 --]]
 
--- {{{OPTIONS
+-- OPTIONS {{{
+
 -- Leadey key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
@@ -82,9 +83,11 @@ vim.o.shiftwidth = 8
 vim.o.smartindent = true
 vim.o.softtabstop = 8
 vim.o.tabstop = 8
+
 -- }}}
 
--- {{{KEYMAPS
+-- KEYMAPS {{{
+
 -- vim.keymap.set('i', '<C-[>', '<Esc>', { desc = 'Exit insert mode' })
 -- vim.keymap.set('n', '<C-q>', '<C-v>', { desc = 'Enter visual block mode' })
 vim.keymap.set(
@@ -155,9 +158,11 @@ vim.keymap.set(
   "v:count == 0 ? 'gk' : 'k'",
   { desc = 'Up', expr = true, silent = true }
 )
+
 -- }}}
 
--- {{{AUTOCMDS
+-- AUTOCMDS {{{
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -192,9 +197,11 @@ vim.api.nvim_create_autocmd('VimResized', {
   group = vim.api.nvim_create_augroup('resize-splits', { clear = true }),
   command = 'windo wincmd = ',
 })
+
 -- }}}
 
--- {{{LSP CONFIGURATION
+-- LSP CONFIGURATIONS {{{
+
 -- [[ Diagnostic ]]
 -- Modified from (Thanks echasnovski!): https://github.com/nvim-mini/MiniMax/blob/main/configs/nvim-0.11/plugin/10_options.lua
 local diagnostic_opts = {
@@ -351,9 +358,11 @@ if vim.fn.executable('pyright') == 1 then vim.lsp.enable('pyright') end
 if vim.fn.executable('bash-language-server') == 1 then
   vim.lsp.enable('bashls')
 end
+
 -- }}}
 
--- {{{PLUGIN CONFIGURATIONS
+-- BOOTSTRAP & SETUP PLUGINS {{{
+
 -- TODO: Replace `mini.deps` with `vim.pack` when it is ready
 -- [[ Install `mini.deps` with `mini.nvim` ]]
 -- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
@@ -503,12 +512,15 @@ add({ source = 'tpope/vim-fugitive' })
 
 -- Setup `vim-sleuth`
 add({ source = 'tpope/vim-sleuth' })
+
 -- }}}
 
--- {{{USER PLUGINS
+-- USER MODULES {{{
+
 -- Load my own plugins
 require('user.mark-manager').setup()
 require('user.statuscolumn').setup()
+
 -- }}}
 
 -- vim:set fdm=marker fmr={{{,}}}:
