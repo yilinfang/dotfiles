@@ -75,42 +75,17 @@ vim.keymap.set(
   '<cmd>FzfLua buffers<cr>',
   { desc = 'Open Buffer Manager' }
 )
-vim.keymap.set(
-  'n',
-  '<leader>.',
-  '<cmd>FzfLua resume<cr>',
-  { desc = "[' '] Resume Last Search" }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sf',
-  '<cmd>FzfLua files<cr>',
-  { desc = '[S]earch [F]iles' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sg',
-  '<cmd>FzfLua live_grep<cr>',
-  { desc = '[S]earch [G]rep' }
-)
+vim.keymap.set('n', '<leader>.', '<cmd>FzfLua resume<cr>', { desc = "[' '] Resume Last Search" })
+vim.keymap.set('n', '<leader>sf', '<cmd>FzfLua files<cr>', { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sg', '<cmd>FzfLua live_grep<cr>', { desc = '[S]earch [G]rep' })
 vim.keymap.set(
   'n',
   '<leader>s.',
   '<cmd>FzfLua oldfiles<cr>',
   { desc = "[S]earch Old Files (['.'] for repeat)" }
 )
-vim.keymap.set(
-  'n',
-  '<leader>sm',
-  '<cmd>FzfLua marks<cr>',
-  { desc = '[S]earch [M]arks' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sj',
-  '<cmd>FzfLua jumps<cr>',
-  { desc = '[S]earch [J]umplist' }
-)
+vim.keymap.set('n', '<leader>sm', '<cmd>FzfLua marks<cr>', { desc = '[S]earch [M]arks' })
+vim.keymap.set('n', '<leader>sj', '<cmd>FzfLua jumps<cr>', { desc = '[S]earch [J]umplist' })
 vim.keymap.set(
   'n',
   '<leader>sp',
@@ -133,18 +108,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
-      vim.keymap.set(
-        mode,
-        keys,
-        func,
-        { buffer = event.buf, desc = 'LSP: ' .. desc }
-      )
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
-    map(
-      '<leader>sd',
-      '<cmd>FzfLua lsp_document_diagnostics<cr>',
-      '[S]earch [D]iagnostics'
-    )
+    map('<leader>sd', '<cmd>FzfLua lsp_document_diagnostics<cr>', '[S]earch [D]iagnostics')
     map(
       '<leader>sD',
       '<cmd>FzfLua lsp_workspace_diagnostics<cr>',
@@ -165,10 +131,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Fuzzy find all the symbols in current document
     map('gO', '<cmd>FzfLua lsp_document_symbols<cr>', 'Open Document Symbols')
     -- Fuzzy find all the symbols in current workspace
-    map(
-      'gW',
-      '<cmd>FzfLua lsp_live_workspace_symbols<cr>',
-      'Open Workspace Symbols'
-    )
+    map('gW', '<cmd>FzfLua lsp_live_workspace_symbols<cr>', 'Open Workspace Symbols')
   end,
 })

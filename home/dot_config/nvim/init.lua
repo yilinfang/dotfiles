@@ -90,12 +90,7 @@ vim.o.tabstop = 8
 
 -- vim.keymap.set('i', '<C-[>', '<Esc>', { desc = 'Exit insert mode' })
 -- vim.keymap.set('n', '<C-q>', '<C-v>', { desc = 'Enter visual block mode' })
-vim.keymap.set(
-  'n',
-  '<leader>/',
-  '<cmd>nohlsearch<CR>',
-  { desc = 'Clear search highlighting' }
-)
+vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
 -- vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
 vim.keymap.set(
   'n',
@@ -109,12 +104,7 @@ vim.keymap.set(
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', 'gt', '<cmd>bnext<cr>', { desc = 'Go to next buffer' })
-vim.keymap.set(
-  'n',
-  'gT',
-  '<cmd>bprevious<cr>',
-  { desc = 'Go to previous buffer' }
-)
+vim.keymap.set('n', 'gT', '<cmd>bprevious<cr>', { desc = 'Go to previous buffer' })
 vim.keymap.set(
   'n',
   '<leader>f',
@@ -127,12 +117,7 @@ vim.keymap.set(
   '<cmd>%y+<cr>',
   { desc = 'Yank entire buffer to system clipboard' }
 )
-vim.keymap.set(
-  'v',
-  '<leader>y',
-  '"+y',
-  { desc = 'Yank selection to system clipboard' }
-)
+vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
 vim.keymap.set('n', '<leader>ts', function()
   vim.opt_local.spell = not vim.opt_local.spell:get()
   local status = vim.opt_local.spell:get() and 'ON' or 'OFF'
@@ -226,12 +211,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
-      vim.keymap.set(
-        mode,
-        keys,
-        func,
-        { buffer = event.buf, desc = 'LSP: ' .. desc }
-      )
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
     -- Rename the variable under your cursor.
@@ -278,15 +258,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if
       client
-      and client:supports_method(
-        vim.lsp.protocol.Methods.textDocument_documentHighlight,
-        event.buf
-      )
+      and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
     then
-      local highlight_augroup = vim.api.nvim_create_augroup(
-        'kickstart-lsp-highlight',
-        { clear = false }
-      )
+      local highlight_augroup =
+        vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,
@@ -300,10 +275,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
 
       vim.api.nvim_create_autocmd('LspDetach', {
-        group = vim.api.nvim_create_augroup(
-          'kickstart-lsp-detach',
-          { clear = true }
-        ),
+        group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
         callback = function(event2)
           vim.lsp.buf.clear_references()
           vim.api.nvim_clear_autocmds({
@@ -319,18 +291,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --
     -- This may be unwanted, since they displace some of your code
     if
-      client
-      and client:supports_method(
-        vim.lsp.protocol.Methods.textDocument_inlayHint,
-        event.buf
-      )
+      client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf)
     then
       map(
         '<leader>th',
         function()
-          vim.lsp.inlay_hint.enable(
-            not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf })
-          )
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
         end,
         '[T]oggle Inlay [H]ints'
       )
@@ -344,9 +310,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- to make sure they overrides the settings from `nvim-lspconfig`
 
 -- If `lua-language-server` is installed, enable it
-if vim.fn.executable('lua-language-server') == 1 then
-  vim.lsp.enable('lua_ls')
-end
+if vim.fn.executable('lua-language-server') == 1 then vim.lsp.enable('lua_ls') end
 
 -- If `ruff` is installed, enable it
 if vim.fn.executable('ruff') == 1 then vim.lsp.enable('ruff') end
@@ -355,9 +319,7 @@ if vim.fn.executable('ruff') == 1 then vim.lsp.enable('ruff') end
 if vim.fn.executable('pyright') == 1 then vim.lsp.enable('pyright') end
 
 -- if `bash-language-server` is installed, enable it
-if vim.fn.executable('bash-language-server') == 1 then
-  vim.lsp.enable('bashls')
-end
+if vim.fn.executable('bash-language-server') == 1 then vim.lsp.enable('bashls') end
 
 -- }}}
 

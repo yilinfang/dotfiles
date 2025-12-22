@@ -63,9 +63,5 @@ blink.setup(opts)
 
 -- HACK: Override the default LSP capabilities to include `blink.cmp`
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend(
-  'force',
-  capabilities,
-  blink.get_lsp_capabilities({}, false)
-)
+capabilities = vim.tbl_deep_extend('force', capabilities, blink.get_lsp_capabilities({}, false))
 vim.lsp.config('*', { capabilities = capabilities })

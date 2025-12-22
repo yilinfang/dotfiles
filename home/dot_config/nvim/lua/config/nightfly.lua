@@ -13,10 +13,7 @@ vim.g.nightflyWinSeparator = 2
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'nightfly',
-  group = vim.api.nvim_create_augroup(
-    'nightfly_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('nightfly_custom_highlight', { clear = true }),
   callback = function()
     local palette = require('nightfly').palette
     local set_hl = vim.api.nvim_set_hl

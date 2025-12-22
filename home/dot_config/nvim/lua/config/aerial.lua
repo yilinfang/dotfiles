@@ -28,12 +28,7 @@ local opts = {
 }
 aerial.setup(opts)
 
-vim.keymap.set(
-  'n',
-  '<leader>a',
-  '<cmd>AerialToggle!<CR>',
-  { desc = 'Toggle [A]erial' }
-)
+vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>', { desc = 'Toggle [A]erial' })
 vim.keymap.set(
   'n',
   '<leader>sa',

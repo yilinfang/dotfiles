@@ -9,16 +9,11 @@ vim.g.everforest_better_performance = 1
 -- HACK: Fix highlights for other plugins
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'everforest',
-  group = vim.api.nvim_create_augroup(
-    'everforest_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('everforest_custom_highlight', { clear = true }),
   callback = function()
     local config = vim.fn['everforest#get_configuration']()
-    local palette = vim.fn['everforest#get_palette'](
-      config.background or 'medium',
-      config.colors_override or {}
-    )
+    local palette =
+      vim.fn['everforest#get_palette'](config.background or 'medium', config.colors_override or {})
 
     -- HACK: Fix highlights for terminal
     vim.g.terminal_color_8 = palette.grey1

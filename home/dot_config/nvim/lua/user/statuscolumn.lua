@@ -79,10 +79,7 @@ function M.setup()
   timer:start(0, 500, function() mark_cache = {} end)
   vim.api.nvim_create_autocmd('VimLeavePre', {
     desc = 'Clear StatusColumn Timer on Exit',
-    group = vim.api.nvim_create_augroup(
-      'ClearStatusColumnTimer',
-      { clear = true }
-    ),
+    group = vim.api.nvim_create_augroup('ClearStatusColumnTimer', { clear = true }),
     callback = function()
       if timer and not timer:is_closing() then
         timer:stop()

@@ -46,9 +46,4 @@ local opts = {
 neo_tree.setup(opts)
 
 -- Keymaps to toggle neo-tree
-vim.keymap.set(
-  'n',
-  '<leader>e',
-  '<cmd>Neotree toggle<cr>',
-  { desc = 'Toggle File [E]xplorer' }
-)
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Toggle File [E]xplorer' })

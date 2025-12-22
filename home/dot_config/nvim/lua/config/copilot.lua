@@ -41,10 +41,7 @@ end
 -- Create an autocmd to eable copilot when entering a buffer
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*',
-  group = vim.api.nvim_create_augroup(
-    'enable-copilot-buf-enter',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('enable-copilot-buf-enter', { clear = true }),
   callback = function()
     if should_enable_copilot() then
       vim.b.copilot_enabled = true
@@ -57,10 +54,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 -- Disable Copilot in terminal
 vim.api.nvim_create_autocmd('TermOpen', {
   pattern = '*',
-  group = vim.api.nvim_create_augroup(
-    'disable-copilot-term-open',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('disable-copilot-term-open', { clear = true }),
   callback = function() vim.b.copilot_enabled = false end,
 })
 

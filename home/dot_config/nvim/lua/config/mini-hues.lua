@@ -4,10 +4,7 @@
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'miniwinter',
-  group = vim.api.nvim_create_augroup(
-    'miniwinter_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('miniwinter_custom_highlight', { clear = true }),
   callback = function()
     local set_hl = vim.api.nvim_set_hl
 

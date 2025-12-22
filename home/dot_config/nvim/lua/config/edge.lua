@@ -4,10 +4,7 @@
 -- HACK: Fix highlights for other config
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'edge',
-  group = vim.api.nvim_create_augroup(
-    'edge_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('edge_custom_highlight', { clear = true }),
   callback = function()
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl

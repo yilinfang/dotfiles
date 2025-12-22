@@ -13,10 +13,7 @@ catppuccin.setup(opts)
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'catppuccin',
-  group = vim.api.nvim_create_augroup(
-    'catppuccin_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('catppuccin_custom_highlight', { clear = true }),
   callback = function()
     local set_hl = vim.api.nvim_set_hl
 

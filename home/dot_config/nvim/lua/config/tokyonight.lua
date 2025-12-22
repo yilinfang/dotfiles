@@ -16,10 +16,7 @@ tokyonight.setup(opts)
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'tokyonight',
-  group = vim.api.nvim_create_augroup(
-    'tokyonight_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('tokyonight_custom_highlight', { clear = true }),
   callback = function()
     local set_hl = vim.api.nvim_set_hl
 

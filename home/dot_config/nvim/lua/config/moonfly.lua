@@ -13,10 +13,7 @@ vim.g.moonflyWinSeparator = 2
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'moonfly',
-  group = vim.api.nvim_create_augroup(
-    'moonfly_custom_highlight',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('moonfly_custom_highlight', { clear = true }),
   callback = function()
     local set_hl = vim.api.nvim_set_hl
 

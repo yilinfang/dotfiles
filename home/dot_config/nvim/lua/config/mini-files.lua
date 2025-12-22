@@ -25,12 +25,7 @@ vim.keymap.set(
 -- HACK: Create an autocommand group to set bookmarks when the explorer is opened
 -- From: https://github.com/echasnovski/nvim/blob/8d89ed1136e60e68bb9ac0b0565071225376a92e/plugin/20_mini.lua#L242
 vim.api.nvim_create_autocmd('User', {
-  group = vim.api.nvim_create_augroup(
-    'create-bookmarks-on-mini-files-open',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('create-bookmarks-on-mini-files-open', { clear = true }),
   pattern = 'MiniFilesExplorerOpen',
-  callback = function()
-    files.set_bookmark('w', vim.fn.getcwd, { desc = 'Working Directory' })
-  end,
+  callback = function() files.set_bookmark('w', vim.fn.getcwd, { desc = 'Working Directory' }) end,
 })

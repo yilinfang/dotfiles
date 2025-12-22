@@ -90,10 +90,7 @@ end
 -- safe_install(ensure_installed)
 
 vim.api.nvim_create_autocmd('FileType', {
-  group = vim.api.nvim_create_augroup(
-    'DownloadAndEnableTreesitter',
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup('DownloadAndEnableTreesitter', { clear = true }),
   pattern = '*',
   callback = function(ev)
     local ft = ev.match

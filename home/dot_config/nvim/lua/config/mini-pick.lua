@@ -8,42 +8,17 @@ pick.setup({})
 -- NOTE: No need to set `vim.ui.select` here, as `mini.pick` will do it automatically when loaded
 -- vim.ui.select = pick.ui_select -- Use mini.pick as the default UI for vim.ui.select
 -- [[ Buitlin pickers ]]
-vim.keymap.set(
-  'n',
-  '<leader><leader>',
-  '<cmd>Pick buffers<cr>',
-  { desc = "[' '] Search Buffers" }
-)
+vim.keymap.set('n', '<leader><leader>', '<cmd>Pick buffers<cr>', { desc = "[' '] Search Buffers" })
 vim.keymap.set(
   'n',
   '<leader>/',
   "<cmd>Pick buf_lines scope='current'<cr>",
   { desc = '[/] Grep in Current Buffer' }
 )
-vim.keymap.set(
-  'n',
-  '<leader>sh',
-  '<cmd>Pick help<cr>',
-  { desc = '[S]earch [H]elp' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sr',
-  '<cmd>Pick resume<cr>',
-  { desc = '[S]earch [R]esume' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sd',
-  '<cmd>Pick diagnostic<cr>',
-  { desc = '[S]earch [D]iagnostic' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>sk',
-  '<cmd>Pick keymaps<cr>',
-  { desc = '[S]earch [K]eymaps' }
-)
+vim.keymap.set('n', '<leader>sh', '<cmd>Pick help<cr>', { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sr', '<cmd>Pick resume<cr>', { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>sd', '<cmd>Pick diagnostic<cr>', { desc = '[S]earch [D]iagnostic' })
+vim.keymap.set('n', '<leader>sk', '<cmd>Pick keymaps<cr>', { desc = '[S]earch [K]eymaps' })
 vim.keymap.set(
   'n',
   '<leader>st',
@@ -56,12 +31,7 @@ vim.keymap.set(
   '<cmd>Pick oldfiles<cr>',
   { desc = "[S]earch Old Files (['.'] for repeat)" }
 )
-vim.keymap.set(
-  'n',
-  '<leader>sm',
-  '<cmd>Pick marks<cr>',
-  { desc = '[S]earch [M]arks' }
-)
+vim.keymap.set('n', '<leader>sm', '<cmd>Pick marks<cr>', { desc = '[S]earch [M]arks' })
 vim.keymap.set(
   'n',
   '<leader>sj',
@@ -79,12 +49,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
-      vim.keymap.set(
-        mode,
-        keys,
-        func,
-        { buffer = event.buf, desc = 'LSP: ' .. desc }
-      )
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
     local unmap = function(keys, mode)
       mode = mode or 'n'
@@ -94,11 +59,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if extra_ok then
       -- Fuzzy find all references under cursor
       unmap('grr')
-      map(
-        'grr',
-        function() extra.pickers.lsp({ scope = 'references' }) end,
-        '[G]oto [R]eferences'
-      )
+      map('grr', function() extra.pickers.lsp({ scope = 'references' }) end, '[G]oto [R]eferences')
       -- Jump to the implementation of the word under cursor
       unmap('gri')
       map(
@@ -108,11 +69,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       )
       -- Jump to the definition of the word under cursor
       unmap('grd')
-      map(
-        'grd',
-        function() extra.pickers.lsp({ scope = 'definition' }) end,
-        '[G]oto [D]efinition'
-      )
+      map('grd', function() extra.pickers.lsp({ scope = 'definition' }) end, '[G]oto [D]efinition')
       -- Jump to the declaration of the word under cursor
       unmap('grD')
       map(
@@ -142,10 +99,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         '[G]oto [T]ype Definition'
       )
     else
-      vim.notify(
-        'mini.extra not found, LSP pickers will not work.',
-        vim.log.levels.WARN
-      )
+      vim.notify('mini.extra not found, LSP pickers will not work.', vim.log.levels.WARN)
     end
   end,
 })
@@ -237,12 +191,7 @@ end
 
 -- Setup Keymaps with customized pickers
 -- Map <leader>sf to search files
-vim.keymap.set(
-  'n',
-  '<leader>sf',
-  '<cmd>Pick custom_rg_files<cr>',
-  { desc = '[S]earch [F]iles' }
-)
+vim.keymap.set('n', '<leader>sf', '<cmd>Pick custom_rg_files<cr>', { desc = '[S]earch [F]iles' })
 -- Map <leader>sF to search files (including files ignored by git)
 vim.keymap.set(
   'n',
@@ -265,9 +214,4 @@ vim.keymap.set(
   { desc = '[S]earch by [G]rep (including ignored files)' }
 )
 -- Map <leader>ss to pick registry
-vim.keymap.set(
-  'n',
-  '<leader>ss',
-  '<cmd>Pick custom_registry<cr>',
-  { desc = '[S]earch Regi[s]try' }
-)
+vim.keymap.set('n', '<leader>ss', '<cmd>Pick custom_registry<cr>', { desc = '[S]earch Regi[s]try' })
