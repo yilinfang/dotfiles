@@ -523,4 +523,4 @@ require('user.statuscolumn').setup()
 
 -- }}}
 
--- vim:set fdm=marker fmr={{{,}}}:
+-- vi:se fdm=marker fmr={{{,}}}:
