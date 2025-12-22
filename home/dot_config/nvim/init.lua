@@ -304,7 +304,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- [[Setup LSPs]]
+-- [[ Setup LSPs ]]
 -- NOTE: The configurations of LSPs are located in `after/lsp/`
 -- Put the configuration in the `after/lsp` instead of `lsp`
 -- to make sure they overrides the settings from `nvim-lspconfig`
@@ -363,7 +363,7 @@ local add = minideps.add
 -- add({ source = 'rebelot/kanagawa.nvim' })
 -- require('config.kanagawa')
 -- add { source = "bluz71/vim-moonfly-colors" }
--- require "config.config.moonfly"
+-- require "config.moonfly"
 -- add({ source = 'folke/tokyonight.nvim' })
 -- require('config.tokyonight')
 -- add({ source = 'sainnhe/sonokai' })
