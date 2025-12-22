@@ -28,10 +28,9 @@ local opts = {
     no_ignore = false,
     toggle_ignore_flag = '--no-ignore-vcs', -- Only ignore .gitignore
   },
-  -- NOTE: Disabled for now since it is not working as expected
-  -- complete_path = {
-  --   cmd = vim.env.FZF_CTRL_T_COMMAND or 'fd --hidden --no-ignore-vcs', -- Use fzf's ctrl-t command if set
-  -- },
+  complete_path = {
+    cmd = vim.env.FZF_CTRL_T_COMMAND or 'fd --hidden --no-ignore-vcs', -- Use fzf's ctrl-t command if set
+  },
   previewers = {
     builtin = {
       treesitter = { enabled = false }, -- HACK: Disable treesitter since it is buggy
@@ -93,13 +92,12 @@ vim.keymap.set(
   '<cmd>FzfLua builtin<cr>',
   { desc = '[S]earch Builtin [P]ickers' }
 )
--- NOTE: Disabled for now since it is not working as expected
--- vim.keymap.set(
---   'i',
---   '<C-t>',
---   [[<cmd>FzfLua complete_path winopts.title="\ Path\ "<cr>]],
---   { desc = 'Fuzzy complete path' }
--- )
+vim.keymap.set(
+  'i',
+  '<C-t>',
+  [[<cmd>FzfLua complete_path winopts.title="\ Path\ "<cr>]],
+  { desc = 'Fuzzy complete path' }
+)
 
 -- [[ LSP pickers ]]
 -- NOTE: Only available when LSP is attached
