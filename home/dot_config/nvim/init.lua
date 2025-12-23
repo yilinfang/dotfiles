@@ -48,7 +48,6 @@ end
 -- General options
 vim.o.autoread = true
 vim.o.breakindent = true
-vim.o.completeopt = 'menuone,noselect,fuzzy'
 vim.o.confirm = true
 vim.o.cursorline = true
 vim.o.ignorecase = true
@@ -68,6 +67,10 @@ vim.o.timeoutlen = 300
 vim.o.undofile = true
 vim.o.updatetime = 250
 vim.o.wrap = false
+
+-- Built-in completion
+vim.o.complete = '.,w,b,kspell' -- Use less sources
+vim.o.completeopt = 'menuone,noselect,fuzzy,nosort' -- Use custom behavior
 
 -- List chars
 vim.o.list = true
