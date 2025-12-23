@@ -13,5 +13,10 @@
     "prefix": "ctime",
     "body": "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
     "description": "Insert current time (HH:MM:SS)"
+  },
+  "Modeline for folding": {
+    "prefix": "mlf",
+    "body": "vi:se fdm=marker fmr={{{,}}}:",
+    "description": "Insert modeline for folding"
   }
 }
