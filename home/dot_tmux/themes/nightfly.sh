@@ -5,14 +5,14 @@
 # Define colors
 # From: https://github.com/bluz71/vim-nightfly-colors/blob/master/lua/nightfly/init.lua
 # Group Default
-FG_DEFAULT="#acb4c2"
-BG_DEFAULT="#081e2c"
+FG_DEFAULT="#9fa8b6"
+BG_DEFAULT="#092236"
 # Group Highlight 1
 FG_HIGHLIGHT_1="#092236"
 BG_HIGHLIGHT_1="#82aaff"
 # Group Highlight 2
 FG_HIGHLIGHT_2="#82aaff"
-BG_HIGHLIGHT_2="#2c3043"
+BG_HIGHLIGHT_2="#34415a"
 
 tmux set -g mode-style "fg=${FG_HIGHLIGHT_1},bg=${BG_HIGHLIGHT_1}"
 

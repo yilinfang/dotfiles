@@ -5,14 +5,14 @@
 # Define colors
 # From: https://github.com/bluz71/vim-moonfly-colors/blob/master/lua/moonfly/init.lua
 # Group Default
-FG_DEFAULT="#b2b2b2"
-BG_DEFAULT="#131313"
+FG_DEFAULT="#9c9c9c"
+BG_DEFAULT="#1c1c1c"
 # Group Highlight 1
 FG_HIGHLIGHT_1="#1c1c1c"
 BG_HIGHLIGHT_1="#80a0ff"
 # Group Highlight 2
 FG_HIGHLIGHT_2="#80a0ff"
-BG_HIGHLIGHT_2="#2e2e2e"
+BG_HIGHLIGHT_2="#353946"
 
 tmux set -g mode-style "fg=${FG_HIGHLIGHT_1},bg=${BG_HIGHLIGHT_1}"
 
