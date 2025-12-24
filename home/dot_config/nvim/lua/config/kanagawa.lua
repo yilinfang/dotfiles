@@ -1,7 +1,7 @@
 -- lua/config/kanagawa.lua
 -- Configuration for kanagawa.nvim
 
-local kanagawa = require('kanagawa')
+local kanagawa = require("kanagawa")
 local opts = {
   -- Disable some preset styles
   commentStyle = { italic = false },
@@ -13,17 +13,17 @@ local opts = {
       Boolean = { bold = false },
     }
   end,
-  theme = 'wave',
+  theme = "wave",
   background = {
-    dark = 'wave',
-    light = 'lotus',
+    dark = "wave",
+    light = "lotus",
   },
 }
 kanagawa.setup(opts)
 
-vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = 'kanagawa',
-  group = vim.api.nvim_create_augroup('kanagawa_custom_highlight', { clear = true }),
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "kanagawa",
+  group = vim.api.nvim_create_augroup("kanagawa_custom_highlight", { clear = true }),
   callback = function()
     local set_hl = vim.api.nvim_set_hl
 
@@ -32,12 +32,12 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg })
 
     -- HACK: Use terminal color 8 (BrightBlack) for Copilot suggestions
-    set_hl(0, 'CopilotSuggestion', { fg = vim.g.terminal_color_8 })
+    set_hl(0, "CopilotSuggestion", { fg = vim.g.terminal_color_8 })
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
-    local curlineNr_hl = vim.api.nvim_get_hl(0, { name = 'CursorLineNr' })
-    set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
+    local curlineNr_hl = vim.api.nvim_get_hl(0, { name = "CursorLineNr" })
+    set_hl(0, "StatusColumnMark", { fg = curlineNr_hl.fg })
   end,
 })
 
-vim.cmd.colorscheme('kanagawa')
+vim.cmd.colorscheme("kanagawa")

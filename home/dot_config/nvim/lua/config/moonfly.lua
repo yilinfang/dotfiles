@@ -12,9 +12,9 @@ vim.g.moonflyUnderlineMatchParen = true
 vim.g.moonflyVirtualTextColor = true
 vim.g.moonflyWinSeparator = 2
 
-vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = 'moonfly',
-  group = vim.api.nvim_create_augroup('moonfly_custom_highlight', { clear = true }),
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "moonfly",
+  group = vim.api.nvim_create_augroup("moonfly_custom_highlight", { clear = true }),
   callback = function()
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl
@@ -22,14 +22,14 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- HACK: Fix colors for Copilot Suggestions
     set_hl(
       0,
-      'CopilotSuggestion',
+      "CopilotSuggestion",
       { fg = vim.g.terminal_color_8, italic = not vim.g.moonflyItalics }
     )
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua
-    local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })
-    set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
+    local curlineNr_hl = get_hl(0, { name = "CursorLineNr" })
+    set_hl(0, "StatusColumnMark", { fg = curlineNr_hl.fg })
   end,
 })
 
-vim.cmd.colorscheme('moonfly')
+vim.cmd.colorscheme("moonfly")

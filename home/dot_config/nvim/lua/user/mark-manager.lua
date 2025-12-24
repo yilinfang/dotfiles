@@ -32,33 +32,43 @@ function M.delete_line_marks()
   -- Delete found marks
   if #marks_to_delete > 0 then
     for _, mark_char in ipairs(marks_to_delete) do
-      vim.cmd('delm ' .. mark_char)
+      vim.cmd("delm " .. mark_char)
     end
-    vim.notify('Deleted marks: ' .. table.concat(marks_to_delete, ', '))
+    vim.notify("Deleted marks: " .. table.concat(marks_to_delete, ", "))
   else
-    vim.notify('No marks found on current line')
+    vim.notify("No marks found on current line")
   end
 end
 
 -- Delete local marks for current buffer
 -- Not includes global marks (A-Z)
-function M.delete_local_marks() vim.cmd('delm!') end
+function M.delete_local_marks()
+  vim.cmd("delm!")
+end
 
 -- Delete global marks
-function M.delete_global_marks() vim.cmd('delm A-Z') end
+function M.delete_global_marks()
+  vim.cmd("delm A-Z")
+end
 
 function M.setup()
   -- Register the commands
-  vim.api.nvim_create_user_command('DeleteLineMarks', function() M.delete_line_marks() end, {
-    desc = 'Remove marks in the current line (including global marks)',
+  vim.api.nvim_create_user_command("DeleteLineMarks", function()
+    M.delete_line_marks()
+  end, {
+    desc = "Remove marks in the current line (including global marks)",
   })
 
-  vim.api.nvim_create_user_command('DeleteLocalMarks', function() M.delete_local_marks() end, {
-    desc = 'Remove local marks in the current buffer (excluding global marks)',
+  vim.api.nvim_create_user_command("DeleteLocalMarks", function()
+    M.delete_local_marks()
+  end, {
+    desc = "Remove local marks in the current buffer (excluding global marks)",
   })
 
-  vim.api.nvim_create_user_command('DeleteGlobalMarks', function() M.delete_global_marks() end, {
-    desc = 'Remove all global marks (A-Z)',
+  vim.api.nvim_create_user_command("DeleteGlobalMarks", function()
+    M.delete_global_marks()
+  end, {
+    desc = "Remove all global marks (A-Z)",
   })
 end
 

@@ -15,7 +15,7 @@
 --   callback = function() vim.b.miniindentscope_disable = true end,
 -- })
 
-local indentscope = require('mini.indentscope')
+local indentscope = require("mini.indentscope")
 local opts = {
   draw = {
     animation = indentscope.gen_animation.none(),

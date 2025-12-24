@@ -2,20 +2,20 @@
 -- Configuration of `edge` colorscheme
 
 -- HACK: Fix highlights for other config
-vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = 'edge',
-  group = vim.api.nvim_create_augroup('edge_custom_highlight', { clear = true }),
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "edge",
+  group = vim.api.nvim_create_augroup("edge_custom_highlight", { clear = true }),
   callback = function()
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl
 
     -- HACK: Fix colors for `copilot.vim` and with Comment highlight but italic
-    local comment_hl = get_hl(0, { name = 'Comment' })
-    set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg, italic = true })
+    local comment_hl = get_hl(0, { name = "Comment" })
+    set_hl(0, "CopilotSuggestion", { fg = comment_hl.fg, italic = true })
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
-    local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })
-    set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
+    local curlineNr_hl = get_hl(0, { name = "CursorLineNr" })
+    set_hl(0, "StatusColumnMark", { fg = curlineNr_hl.fg })
   end,
 })
 

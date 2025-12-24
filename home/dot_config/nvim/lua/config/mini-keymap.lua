@@ -2,4 +2,4 @@
 -- Configuration for `mini.keymap`
 -- NOTE: Deprecated
 
-require('mini.keymap').setup({})
+require("mini.keymap").setup({})

@@ -40,18 +40,18 @@ local function statuscolumn()
   local lnum_actual = vim.v.lnum
 
   -- First column: marks
-  local mark_col = ' '
+  local mark_col = " "
   if vim.v.virtnum == 0 then -- Only show marks on real lines
     local mark = get_mark(bufnr, lnum_actual)
     if mark then
       -- Check if StatusColumnMark highlight group exists
-      local highlight = ''
-      if vim.fn.hlID('StatusColumnMark') == 0 then
-        highlight = '%#LineNr#' -- Fallback highlight group
+      local highlight = ""
+      if vim.fn.hlID("StatusColumnMark") == 0 then
+        highlight = "%#LineNr#" -- Fallback highlight group
       else
-        highlight = '%#StatusColumnMark#'
+        highlight = "%#StatusColumnMark#"
       end
-      mark_col = highlight .. mark .. '%*'
+      mark_col = highlight .. mark .. "%*"
     end
   end
 
@@ -66,20 +66,22 @@ local function statuscolumn()
       lnum_display = vim.v.lnum
     end
   else
-    lnum_display = ''
+    lnum_display = ""
   end
 
   -- Format: [mark] [space] [right-aligned line number] [signs via %s]
-  return mark_col .. ' ' .. '%=' .. lnum_display .. '%s'
+  return mark_col .. " " .. "%=" .. lnum_display .. "%s"
 end
 
 function M.setup()
   -- Clear cache every 200ms
   local timer = assert((vim.uv or vim.loop).new_timer())
-  timer:start(0, 500, function() mark_cache = {} end)
-  vim.api.nvim_create_autocmd('VimLeavePre', {
-    desc = 'Clear StatusColumn Timer on Exit',
-    group = vim.api.nvim_create_augroup('ClearStatusColumnTimer', { clear = true }),
+  timer:start(0, 500, function()
+    mark_cache = {}
+  end)
+  vim.api.nvim_create_autocmd("VimLeavePre", {
+    desc = "Clear StatusColumn Timer on Exit",
+    group = vim.api.nvim_create_augroup("ClearStatusColumnTimer", { clear = true }),
     callback = function()
       if timer and not timer:is_closing() then
         timer:stop()
@@ -88,7 +90,7 @@ function M.setup()
     end,
   })
   -- Only show sign with highest priority
-  vim.o.signcolumn = 'yes:1'
+  vim.o.signcolumn = "yes:1"
   -- HACK: Minmal number of columns for line numbers
   --  Set to 1 to only use essential columns for line numbers.
   --  For example, if line number less than 100, it will only use 2 columns.
@@ -97,7 +99,7 @@ function M.setup()
   -- Register the function globally
   _G.custom_statuscolumn = statuscolumn
   -- Apply the custom status column function
-  vim.o.statuscolumn = '%!v:lua.custom_statuscolumn()'
+  vim.o.statuscolumn = "%!v:lua.custom_statuscolumn()"
 end
 
 return M

@@ -6,22 +6,22 @@ return {
   settings = {
     Lua = {
       completion = {
-        callSnippet = 'Replace',
+        callSnippet = "Replace",
       },
       format = { enable = false }, -- Disable formatting since we use `stylua`
       hint = {
         enable = true,
-        arrayIndex = 'Disable',
+        arrayIndex = "Disable",
       },
       runtime = {
-        version = 'LuaJIT',
+        version = "LuaJIT",
       },
       telemetry = { enable = false },
       workspace = {
         checkThirdParty = false,
         library = {
           vim.env.VIMRUNTIME,
-          '${3rd}/luv/library',
+          "${3rd}/luv/library",
         },
       },
     },
