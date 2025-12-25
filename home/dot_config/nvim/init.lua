@@ -87,6 +87,11 @@ vim.o.smartindent = true
 vim.o.softtabstop = 8
 vim.o.tabstop = 8
 
+-- Fold
+vim.o.foldmethod = "manual" -- Use manual fold method by default
+vim.o.foldlevel = 99 -- Open all folds by default
+vim.o.foldtext = "" -- Use default fold text
+
 -- }}}
 
 -- KEYMAPS {{{
