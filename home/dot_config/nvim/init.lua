@@ -375,14 +375,14 @@ local add = minideps.add
 -- require('config.mini-hues')
 -- add({ source = 'rebelot/kanagawa.nvim' })
 -- require('config.kanagawa')
-add({ source = "bluz71/vim-moonfly-colors" })
-require("config.moonfly")
+-- add({ source = "bluz71/vim-moonfly-colors" })
+-- require("config.moonfly")
 -- add({ source = 'folke/tokyonight.nvim' })
 -- require('config.tokyonight')
--- add({ source = 'sainnhe/sonokai' })
--- require('config.sonokai')
 -- add({ source = 'sainnhe/edge' })
 -- require('config.edge')
+add({ source = "sainnhe/sonokai" })
+require("config.sonokai")
 
 -- Setup mini.icons before other plugins to ensure icons are available
 -- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`

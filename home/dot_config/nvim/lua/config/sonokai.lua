@@ -1,6 +1,29 @@
 -- lua/config/sonokai.lua
 -- Configuration of `sonokai` colorscheme
 
+-- Force enable the truecolor support
+vim.o.termguicolors = true
+
+-- Config `sonokai`
+vim.g.sonokai_style = "default"
+-- I don't like italic font variants
+vim.g.sonokai_disable_italic_comment = 1
+vim.g.sonokai_enable_italic = 0
+vim.g.sonokai_cursor = "auto"
+vim.g.sonokai_transparent_background = 0
+vim.g.sonokai_dim_inactive_windows = 0
+vim.g.sonokai_menu_selection_background = "green"
+vim.g.sonokai_spell_foreground = "none"
+vim.g.sonokai_show_eob = 1
+vim.g.sonokai_float_style = "blend"
+vim.g.sonokai_diagnostic_text_highlight = 0
+vim.g.sonokai_diagnostic_line_highlight = 0
+vim.g.sonokai_diagnostic_virtual_text = "colored"
+vim.g.sonokai_current_word = "grey background"
+vim.g.sonokai_inlay_hints_background = "none"
+vim.g.sonokai_disable_terminal_colors = 0
+vim.g.sonokai_better_performance = 1
+
 -- HACK: Fix highlights for other plugins
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "sonokai",
@@ -9,9 +32,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl
 
-    -- HACK: Fix colors for `copilot.vim` with Comment highlight but italic
+    -- HACK: Fix colors for `copilot.vim` with Comment highlight but inverted italic setting
     local comment_hl = get_hl(0, { name = "Comment" })
-    set_hl(0, "CopilotSuggestion", { fg = comment_hl.fg, italic = true })
+    set_hl(0, "CopilotSuggestion", { fg = comment_hl.fg, italic = not comment_hl.italic })
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
     local curlineNr_hl = get_hl(0, { name = "CursorLineNr" })
@@ -19,33 +42,4 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
-vim.cmd([[
-
-" Enable true color support if terminal supports it
-if has('termguicolors')
-  set termguicolors
-endif
-" Configuration for `sonokai` colorscheme
-let g:sonokai_style = 'default'
-" I don't like italic font variants
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_enable_italic = 0
-let g:sonokai_cursor = 'auto'
-let g:sonokai_transparent_background = 0
-let g:sonokai_dim_inactive_windows = 0
-let g:sonokai_menu_selection_background = 'green'
-let g:sonokai_spell_foreground = 'none'
-let g:sonokai_show_eob = 1
-let g:sonokai_float_style = 'blend'
-let g:sonokai_diagnostic_text_highlight = 0
-let g:sonokai_diagnostic_line_highlight = 0
-let g:sonokai_diagnostic_virtual_text = 'colored'
-let g:sonokai_current_word = 'grey background'
-let g:sonokai_inlay_hints_background = 'none'
-" I rarely use terminal in Neovim
-let g:sonokai_disable_terminal_colors = 1
-let g:sonokai_better_performance = 1
-" Enable the colorscheme
-colorscheme sonokai
-
-]])
+vim.cmd.colorscheme("sonokai")

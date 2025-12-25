@@ -40,11 +40,11 @@ adjust-underline-position = 4
 
 # theme = kanagawa-wave
 # theme = kanagawa-dragon
-theme = moonfly
+# theme = moonfly
 # theme = tokyonight-night
 # theme = ayu-mirage
-# theme = sonokai
 # theme = edge
+theme = sonokai
 
 # ------------------------------------------------------------------------------
 # WINDOW
