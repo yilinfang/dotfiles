@@ -200,7 +200,7 @@ symbol = "󰏗 "
 [python]
 symbol = " "
 # HACK: Show the virtualenv name only
-format = 'via [${symbol}${virtualenv}]($style)'
+format = 'via [${symbol}${virtualenv}]($style) '
 # HACK: Only show the module when there is a virtualenv
 detect_extensions = []
 detect_files = []
