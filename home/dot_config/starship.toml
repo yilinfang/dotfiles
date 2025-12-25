@@ -30,8 +30,6 @@ symbol = " "
 ignore_base = false
 
 [directory]
-# HACK: Use bold blue style for directory
-style = "bold blue"
 read_only = " 󰌾"
 
 [git_branch]
