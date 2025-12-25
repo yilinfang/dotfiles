@@ -14,3 +14,18 @@ prepend_previewers = [
   # Fallback
   { name = "*", run = "file" },
 ]
+
+[opener]
+# Create a dummpy opener that does nothing
+dummy = [
+  { run = ':', block = true, for = "unix", desc = "Dummy Opener" },
+  # NOTE: Windows version has not been tested, use it at your own risk!
+  { run = "cmd /c exit 0", block = true, for = "windows", desc = "Dummy Opener" },
+]
+
+[open]
+# HACK: Prevent accidental opening files
+prepend_rules = [
+  { mime = "text/*", use = "edit" },
+  { name = "*", use = "dummy" },
+]
