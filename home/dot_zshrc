@@ -115,11 +115,11 @@ fi
 
 # Replace ls with eza
 if command -v eza >/dev/null 2>&1; then
-    alias ls='eza --color=always --icons=always --group-directories-first'
-    alias la='ls -a'
-    alias ll='ls -l --total-size'
+    alias bls='eza --color=always --icons=always --group-directories-first'
+    alias la='bls -a'
+    alias ll='bls -l --total-size'
     alias lla='ll -a'
-    alias lt='ls -l --tree --level=2 --total-size --git'
+    alias lt='bls -l --tree --level=2 --total-size --git'
     alias lta='lt -a'
     alias l='lla'
 fi
