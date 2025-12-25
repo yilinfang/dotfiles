@@ -20,7 +20,7 @@
 .config/kitty/
 .config/kitty/**
 .config/mise/config.toml
-.config/starship.toml
+# .config/starship.toml
 .gitconfig
 .zprofile
 .zshrc

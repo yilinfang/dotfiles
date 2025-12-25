@@ -173,11 +173,6 @@ update_terminal_info() {
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
 
-# Initalize starship if installed
-if command -v starship &>/dev/null; then
-    eval "$(starship init zsh)"
-fi
-
 if [ -f "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh" ]; then
     source "$HOME/.chezmoi/dotfiles/scripts/init/init.zsh"
 fi
