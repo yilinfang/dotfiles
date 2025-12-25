@@ -6,7 +6,7 @@ delta = "latest"
 difftastic = { version = "latest", exe = "difft" }
 fd = "latest"
 fzf = "latest"
-"github:gokcehan/lf" = "latest"
+# "github:gokcehan/lf" = "latest"
 lazygit = "latest"
 lua-language-server = "latest"
 neovim = "0.11.4"
@@ -25,6 +25,7 @@ shfmt = "latest"
 starship = "latest"
 stylua = "latest"
 taplo = "latest"
+yazi = "latest"
 zoxide = "latest"
 
 [settings]

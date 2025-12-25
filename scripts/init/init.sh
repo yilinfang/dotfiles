@@ -57,30 +57,30 @@ fi
 # 	alias zj='zellij'
 # fi
 
-# # Use y for yazi
-# if command -v yazi &>/dev/null; then
-# 	function y() {
-# 		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-# 		yazi "$@" --cwd-file="$tmp"
-# 		IFS= read -r -d '' cwd <"$tmp"
-# 		[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-# 		rm -f -- "$tmp"
-# 	}
-# fi
-
-# Create wrapper for lf
-if command -v lf &>/dev/null; then
-	function lf() {
-		local last_dir
-		last_dir=$(
-			LF_OLD_PWD="$PWD" \
-				command lf -print-last-dir "$@"
-		)
-		if [ -n "$last_dir" ] && [ -d "$last_dir" ]; then
-			builtin cd -- "$last_dir" || return
-		fi
+# Use y for yazi wrapper
+if command -v yazi &>/dev/null; then
+	function y() {
+		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+		yazi "$@" --cwd-file="$tmp"
+		IFS= read -r -d '' cwd <"$tmp"
+		[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+		rm -f -- "$tmp"
 	}
 fi
+
+# # Create wrapper for lf
+# if command -v lf &>/dev/null; then
+# 	function lf() {
+# 		local last_dir
+# 		last_dir=$(
+# 			LF_OLD_PWD="$PWD" \
+# 				command lf -print-last-dir "$@"
+# 		)
+# 		if [ -n "$last_dir" ] && [ -d "$last_dir" ]; then
+# 			builtin cd -- "$last_dir" || return
+# 		fi
+# 	}
+# fi
 
 # Initialize fzf if installed
 if command -v fzf &>/dev/null; then
