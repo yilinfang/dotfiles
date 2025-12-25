@@ -498,4 +498,4 @@ require("user.statuscolumn").setup()
 
 -- }}}
 
--- vi:se fdm=marker fmr={{{,}}}:
+-- vi:se fdm=marker fmr={{{,}}} fdl=0:
