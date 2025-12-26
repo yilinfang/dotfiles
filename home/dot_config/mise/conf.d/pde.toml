@@ -6,6 +6,7 @@ delta = "latest"
 difftastic = { version = "latest", exe = "difft" }
 fd = "latest"
 fzf = "latest"
+"github:yilinfang/fw" = "latest"
 # "github:gokcehan/lf" = "latest"
 lazygit = "latest"
 lua-language-server = "latest"
