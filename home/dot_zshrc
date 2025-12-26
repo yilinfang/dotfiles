@@ -113,7 +113,7 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-# Replace ls with eza
+# 'bls' a better 'ls' using 'eza' if available
 if command -v eza >/dev/null 2>&1; then
     alias bls='eza --color=always --icons=always --group-directories-first'
     alias la='bls -a'
