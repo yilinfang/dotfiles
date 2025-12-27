@@ -11,7 +11,7 @@ BG_DEFAULT="#33353f"
 FG_HIGHLIGHT_1="#2c2e34"
 BG_HIGHLIGHT_1="#85d3f2"
 # Group Highlight 2
-FG_HIGHLIGHT_2="#e2e2e3"
+FG_HIGHLIGHT_2="#85d3f2"
 BG_HIGHLIGHT_2="#414550"
 
 tmux set -g mode-style "fg=${FG_HIGHLIGHT_1},bg=${BG_HIGHLIGHT_1}"
