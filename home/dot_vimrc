@@ -1,3 +1,5 @@
+" Use space as leader key
+let g:mapleader = "\<Space>"
 set nocompatible
 filetype on
 filetype plugin on
@@ -14,12 +16,12 @@ set smarttab
 set nowrap
 set showcmd
 set noshowmatch
-set list
-set listchars=tab:▸\ ,trail:·,nbsp:␣
-" Enable termguicolors if terminal supports it
-if has("termguicolors")
+if has("termguicolors") " Enable termguicolors if terminal supports it
   set termguicolors
 endif
+colorscheme torte
+nnoremap <leader>/ :noh<CR>
+vnoremap <leader>y "+y
 " Resize splits if window got resized
 augroup resize_splits
   autocmd!
