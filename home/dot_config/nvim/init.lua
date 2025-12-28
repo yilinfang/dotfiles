@@ -16,7 +16,7 @@ Very thanks to:
 
 -- Leadey key
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = " "
 
 -- Disable some providers
 vim.g.loaded_node_provider = 0
@@ -50,6 +50,8 @@ vim.o.autoread = true
 vim.o.breakindent = true
 vim.o.confirm = true
 vim.o.cursorline = true
+vim.o.cursorlineopt = "screenline,number"
+vim.o.fillchars = "fold:╌"
 vim.o.ignorecase = true
 vim.o.inccommand = "split"
 vim.o.linebreak = true
