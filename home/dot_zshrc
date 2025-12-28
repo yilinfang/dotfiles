@@ -119,7 +119,7 @@ if command -v eza >/dev/null 2>&1; then
     alias la='bls -a'
     alias ll='bls -l'
     alias lla='ll -a'
-    alias lt='bls -l --tree --level=2 --git'
+    alias lt='bls -l --total-size --tree --level=2 --git'
     alias lta='lt -a'
     alias l='lla'
 fi
