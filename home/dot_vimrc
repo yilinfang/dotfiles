@@ -16,19 +16,12 @@ set showcmd
 set noshowmatch
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
+" Enable termguicolors if terminal supports it
+if has("termguicolors")
+  set termguicolors
+endif
 " Resize splits if window got resized
 augroup resize_splits
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
-" Enable termguicolors if terminal supports it
-if has("termguicolors")
-  set termguicolors
-endif
-" Check if the unokai colorscheme file exists in the runtime path
-if !empty(globpath(&rtp, "colors/unokai.vim"))
-  colorscheme unokai
-else
-  " Fallback torte
-  colorscheme torte
-endif
