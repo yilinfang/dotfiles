@@ -34,9 +34,13 @@ local function get_mark(bufnr, lnum)
 end
 
 local function statuscolumn()
-  local nu = vim.wo.number
-  local rnu = vim.wo.relativenumber
-  local bufnr = vim.api.nvim_get_current_buf()
+  local winid = vim.g.statusline_winid
+  if not winid or winid == 0 then
+    winid = vim.api.nvim_get_current_win()
+  end
+  local nu = vim.wo[winid].number
+  local rnu = vim.wo[winid].relativenumber
+  local bufnr = vim.api.nvim_win_get_buf(winid)
   local lnum_actual = vim.v.lnum
 
   -- First column: marks
