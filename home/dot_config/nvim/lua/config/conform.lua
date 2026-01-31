@@ -22,6 +22,7 @@ if vim.fn.executable('fish_indent') == 1 then formatters_by_ft.fish = { 'fish_in
 if vim.fn.executable('prettier') == 1 then
   formatters_by_ft.markdown = { 'prettier' }
   formatters_by_ft.json = { 'prettier' }
+  formatters_by_ft.jsonc = { 'prettier' }
   formatters_by_ft.yaml = { 'prettier' }
   formatters_by_ft.html = { 'prettier' }
   formatters_by_ft.javascript = { 'prettier' }
