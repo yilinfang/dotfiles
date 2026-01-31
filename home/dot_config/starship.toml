@@ -1,0 +1,51 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Modfied from the "Nerd Font Symbols" preset
+# You can get it with `starship preset nerd-font-symbols -o starship.toml`
+
+# HACK: Disable the blank line at the start of the prompt
+#  Temporary fix for #560
+add_newline = false
+
+# HACK: Disable some modules
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$python\
+$conda\
+$cmd_duration\
+$line_break\
+$character"""
+
+
+[conda]
+symbol = " "
+# HACK: Show even when base environment is activated
+ignore_base = false
+
+[directory]
+read_only = " 󰌾"
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[hostname]
+ssh_symbol = " "
+
+[python]
+symbol = " "
+# HACK: Show the virtualenv name only
+format = 'via [${symbol}${virtualenv}]($style) '
+# HACK: Only show the module when there is a virtualenv
+detect_extensions = []
+detect_files = []
+detect_folders = []

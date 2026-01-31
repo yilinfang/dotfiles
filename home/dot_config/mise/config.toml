@@ -1,0 +1,6 @@
+[tools]
+gh = "latest"
+"npm:@bitwarden/cli" = "latest"
+
+[settings]
+python.compile = false

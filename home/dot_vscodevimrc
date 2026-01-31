@@ -1,0 +1,12 @@
+" Disable marks
+nnoremap m <Nop>
+nnoremap ' <Nop>
+nnoremap ` <Nop>
+" Map j/k to gj/gk to deal with fold better
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
+" Mak K to gh
+nnoremap <S-k> gh
+vnoremap <S-k> gh
