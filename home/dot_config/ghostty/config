@@ -1,0 +1,24 @@
+# MacOS
+config-file = ?optional/macos
+
+# Linux
+config-file = ?optional/linux
+
+# Theme
+theme = carbonfox-patched
+
+# Window
+window-width = 90
+window-height = 30
+window-padding-balance = true
+window-padding-color = extend
+
+# Fix alt+arrow
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = alt+f=esc:f
+keybind = alt+b=esc:b
+
+# Misc
+copy-on-select = clipboard
+shell-integration-features = ssh-env,ssh-terminfo
