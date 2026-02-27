@@ -381,10 +381,10 @@ local add = minideps.add
 -- require('config.tokyonight')
 -- add({ source = 'sainnhe/edge' })
 -- require('config.edge')
--- add({ source = "sainnhe/sonokai" })
--- require("config.sonokai")
-add({ source = 'EdenEast/nightfox.nvim' })
-require('config.carbonfox')
+add({ source = 'sainnhe/sonokai' })
+require('config.sonokai')
+-- add({ source = 'EdenEast/nightfox.nvim' })
+-- require('config.carbonfox')
 
 -- Setup mini.icons before other plugins to ensure icons are available
 -- NOTE: There is no need to use `add` for the modules in the `mini.nvim` as they are already added as `mini.nvim`

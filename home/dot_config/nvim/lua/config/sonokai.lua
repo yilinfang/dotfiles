@@ -32,9 +32,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl
 
-    -- HACK: Fix colors for `copilot.vim` with Comment highlight but inverted italic setting
-    local comment_hl = get_hl(0, { name = 'Comment' })
-    set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg, italic = not comment_hl.italic })
+    -- -- HACK: Fix colors for `copilot.vim` with Comment highlight but inverted italic setting
+    -- local comment_hl = get_hl(0, { name = 'Comment' })
+    -- set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg, italic = not comment_hl.italic })
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
     local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })

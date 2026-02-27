@@ -5,7 +5,7 @@ config-file = ?optional/macos
 config-file = ?optional/linux
 
 # Theme
-theme = carbonfox-patched
+theme = sonokai
 
 # Window
 window-width = 90
