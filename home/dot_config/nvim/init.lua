@@ -325,8 +325,11 @@ if vim.fn.executable('lua-language-server') == 1 then vim.lsp.enable('lua_ls') e
 -- If `ruff` is installed, enable it
 if vim.fn.executable('ruff') == 1 then vim.lsp.enable('ruff') end
 
--- If `pyright` is installed, enable it
-if vim.fn.executable('pyright') == 1 then vim.lsp.enable('pyright') end
+-- -- If `pyright` is installed, enable it
+-- if vim.fn.executable('pyright') == 1 then vim.lsp.enable('pyright') end
+
+-- If `basedpyright` is installed, enable it
+if vim.fn.executable('basedpyright') == 1 then vim.lsp.enable('basedpyright') end
 
 -- if `bash-language-server` is installed, enable it
 if vim.fn.executable('bash-language-server') == 1 then vim.lsp.enable('bashls') end

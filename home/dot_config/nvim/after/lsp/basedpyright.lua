@@ -21,8 +21,6 @@ local M = {
   settings = {
     basedpyright = {
       disableOrganizeImports = true, -- Using `Ruff`'s import organizer
-    },
-    python = {
       analysis = {
         diagnosticMode = 'workspace',
         -- HACK: Set typeCheckingMode to `off` to match more closely to the Pylance default
