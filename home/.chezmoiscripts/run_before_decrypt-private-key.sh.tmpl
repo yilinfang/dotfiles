@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script is used to decrypt the private key before using it
+# This script will be run when 'chezmoi apply' is executed
+
+set -euo pipefail
+
+# Ensure 'age' is installed
+if ! command -v age &>/dev/null; then
+	echo "Error: 'age' is not installed. Please install it to proceed."
+	exit 1
+fi
+
+KEY_PATH="{{- .keyPath -}}"
+ENCRYPTED_KEY_PATH="$KEY_PATH.age"
+
+# Ensure the encrypted key file exists
+if [[ ! -f "$ENCRYPTED_KEY_PATH" ]]; then
+	echo "Error: Encrypted key file '$ENCRYPTED_KEY_PATH' does not exist."
+	exit 1
+fi
+
+# Skip decryption if the encrypted key file hasn't changed AND decrypted key exists
+CHECKSUM_FILE="$ENCRYPTED_KEY_PATH.checksum"
+CURRENT_CHECKSUM=$(sha256sum "$ENCRYPTED_KEY_PATH" | awk '{print $1}')
+
+if [[ -f "$KEY_PATH" ]] && [[ -f "$CHECKSUM_FILE" ]]; then
+	STORED_CHECKSUM=$(cat "$CHECKSUM_FILE")
+	if [[ "$CURRENT_CHECKSUM" == "$STORED_CHECKSUM" ]]; then
+		exit 0
+	fi
+fi
+
+# Decrypt the private key
+age -d -o "$KEY_PATH" "$ENCRYPTED_KEY_PATH"
+chmod 600 "$KEY_PATH"
+
+# Store the checksum for next run
+echo "$CURRENT_CHECKSUM" >"$CHECKSUM_FILE"

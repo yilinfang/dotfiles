@@ -1,0 +1,11 @@
+return {
+  ["conform.nvim"] = "e969e302bced7ffb9a0a0323629f31feb0ca35a6",
+  ["fzf-lua"] = "29ee11c06e1b8c354cc5a3212e6d24c9b8ed4f22",
+  ["gitsigns.nvim"] = "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
+  ["mini.nvim"] = "a95dc67ecff78de138543a20c20f29f47111b122",
+  ["nightfox.nvim"] = "ba47d4b4c5ec308718641ba7402c143836f35aa9",
+  ["nvim-lint"] = "606b823a57b027502a9ae00978ebf4f5d5158098",
+  ["nvim-lspconfig"] = "f2193125da0bff2e4eae8e0a45e343ec9bca4c72",
+  ["vim-fugitive"] = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
+  ["vim-sleuth"] = "be69bff86754b1aa5adcbb527d7fcd1635a84080"
+}
