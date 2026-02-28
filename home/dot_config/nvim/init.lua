@@ -501,6 +501,7 @@ add({ source = 'tpope/vim-sleuth' })
 -- Load my own plugins
 require('custom.mark-manager').setup()
 require('custom.statuscolumn').setup()
+require('custom.code-agents').setup()
 
 -- }}}
 
