@@ -3,8 +3,10 @@ local M = {}
 
 function M.copy_selection_ref()
   local filepath = vim.fn.expand('%:p')
-  local start_line = vim.fn.line("'<")
-  local end_line = vim.fn.line("'>")
+  local line1 = vim.fn.line('v')
+  local line2 = vim.fn.line('.')
+  local start_line = math.min(line1, line2)
+  local end_line = math.max(line1, line2)
 
   local ref
   if start_line == end_line then
