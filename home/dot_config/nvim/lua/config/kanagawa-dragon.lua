@@ -1,5 +1,5 @@
--- lua/config/kanagawa.lua
--- Configuration for kanagawa.nvim
+-- lua/config/kanagawa-dragon.lua
+-- Configuration for kanagawa.nvim's dragon variant
 
 local kanagawa = require('kanagawa')
 local opts = {
@@ -13,9 +13,9 @@ local opts = {
       Boolean = { bold = false },
     }
   end,
-  theme = 'wave',
+  theme = 'dragon',
   background = {
-    dark = 'wave',
+    dark = 'dragon',
     light = 'lotus',
   },
 }
@@ -31,8 +31,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- local comment_hl = vim.api.nvim_get_hl(0, { name = 'Comment' })
     -- set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg })
 
-    -- HACK: Use terminal color 8 (BrightBlack) for Copilot suggestions
-    set_hl(0, 'CopilotSuggestion', { fg = vim.g.terminal_color_8 })
+    -- -- HACK: Use terminal color 8 (BrightBlack) for Copilot suggestions
+    -- set_hl(0, 'CopilotSuggestion', { fg = vim.g.terminal_color_8 })
 
     -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
     local curlineNr_hl = vim.api.nvim_get_hl(0, { name = 'CursorLineNr' })
