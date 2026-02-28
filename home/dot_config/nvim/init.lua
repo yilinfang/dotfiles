@@ -499,8 +499,8 @@ add({ source = 'tpope/vim-sleuth' })
 -- USER MODULES {{{
 
 -- Load my own plugins
-require('user.mark-manager').setup()
-require('user.statuscolumn').setup()
+require('custom.mark-manager').setup()
+require('custom.statuscolumn').setup()
 
 -- }}}
 

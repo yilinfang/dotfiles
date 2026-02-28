@@ -1,4 +1,4 @@
--- lua/user/statuscolumn.lua
+-- lua/custom/statuscolumn.lua
 -- Customized statuscolumn
 
 local M = {}

@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       { fg = vim.g.terminal_color_8, italic = not vim.g.moonflyItalics }
     )
 
-    -- HACK: Fix colors for lua/user/statuscolumn.lua
+    -- HACK: Fix colors for lua/custom/statuscolumn.lua
     local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })
     set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
   end,

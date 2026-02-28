@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     local get_hl = vim.api.nvim_get_hl
     local set_hl = vim.api.nvim_set_hl
 
-    -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
+    -- HACK: Fix colors for lua/custom/statuscolumn.lua with CursorLineNr highlight
     local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })
     set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
   end,

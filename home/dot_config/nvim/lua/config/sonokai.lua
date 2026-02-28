@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- local comment_hl = get_hl(0, { name = 'Comment' })
     -- set_hl(0, 'CopilotSuggestion', { fg = comment_hl.fg, italic = not comment_hl.italic })
 
-    -- HACK: Fix colors for lua/user/statuscolumn.lua with CursorLineNr highlight
+    -- HACK: Fix colors for lua/custom/statuscolumn.lua with CursorLineNr highlight
     local curlineNr_hl = get_hl(0, { name = 'CursorLineNr' })
     set_hl(0, 'StatusColumnMark', { fg = curlineNr_hl.fg })
   end,
