@@ -19,7 +19,7 @@ define merge_files
 endef
 
 
-.PHONY: ensure_mise install pde_install claude opencode codex antigravity
+.PHONY: ensure_mise install pde_install claude opencode codex antigravity zellij
 
 ensure_mise:
 	@if [ ! -f $(MISE_BIN) ]; then \
@@ -129,3 +129,32 @@ antigravity:
 	npx -y antigravity-awesome-skills@latest
 	@test -d ~/.gemini/antigravity/skills || { echo "Error: skills directory not found"; exit 1; }
 	@echo "Skills installed in ~/.gemini/antigravity/skills"
+
+zellij:
+	@if command -v zellij >/dev/null 2>&1; then \
+		SESSIONS=$$(zellij ls 2>/dev/null); \
+		if [ -n "$$SESSIONS" ]; then \
+			echo "Warning: active zellij sessions detected:"; \
+			echo "$$SESSIONS"; \
+			echo "Upgrading zellij may break compatibility with these sessions (session layouts from older versions may not load)."; \
+			read -r -p "Upgrade zellij anyway? [y/N] " resp; \
+			case "$$resp" in \
+				[yY][eE][sS]|[yY]) \
+					echo "Upgrading zellij..."; \
+					ZELLIJ_VERSION=$$($(MISE_BIN) latest zellij); \
+					$(MISE_BIN) use -g zellij@$$ZELLIJ_VERSION; \
+					;; \
+				*) \
+					echo "Skipping zellij upgrade."; \
+					;; \
+			esac; \
+		else \
+			echo "Upgrading zellij (no active sessions)..."; \
+			ZELLIJ_VERSION=$$($(MISE_BIN) latest zellij); \
+			$(MISE_BIN) use -g zellij@$$ZELLIJ_VERSION; \
+		fi; \
+	else \
+		echo "Installing zellij..."; \
+		ZELLIJ_VERSION=$$($(MISE_BIN) latest zellij); \
+		$(MISE_BIN) use -g zellij@$$ZELLIJ_VERSION; \
+	fi
