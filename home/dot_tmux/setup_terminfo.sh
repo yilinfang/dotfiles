@@ -6,7 +6,7 @@ set -euo pipefail
 
 TERMINFO_DIR="$HOME/.terminfo"
 TERMINFO_FOR_INSTALL="tmux-256color"
-NCURSES_URL="https://invisible-island.net/archives/ncurses/ncurses-6.6.tar.gz"
+NCURSES_URL="https://invisible-island.net/datafiles/release/ncurses.tar.gz"
 
 # Make sure the terminfo directory exists
 mkdir -p "$TERMINFO_DIR"
