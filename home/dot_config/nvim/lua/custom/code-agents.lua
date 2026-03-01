@@ -1,8 +1,8 @@
 -- lua/custom/code-agents.lua
 local M = {}
 
-function M.copy_selection_ref()
-  local filepath = vim.fn.expand('%:p')
+function M.copy_selection_ref(relative)
+  local filepath = relative and vim.fn.expand('%:.') or vim.fn.expand('%:p')
   local line1 = vim.fn.line('v')
   local line2 = vim.fn.line('.')
   local start_line = math.min(line1, line2)
@@ -21,10 +21,14 @@ end
 
 function M.setup()
   vim.keymap.set('v', '<leader>cr', function()
-    M.copy_selection_ref()
-    -- NOTE: Exit visual mode after copying
+    M.copy_selection_ref(true)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
-  end, { desc = 'Copy code reference for coding agents' })
+  end, { desc = '[C]opy relative code [r]eference for coding agents' })
+
+  vim.keymap.set('v', '<leader>cR', function()
+    M.copy_selection_ref(false)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+  end, { desc = 'Copy absolute code [r]eference for coding agents' })
 end
 
 return M
