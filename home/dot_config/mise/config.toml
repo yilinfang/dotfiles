@@ -3,7 +3,7 @@ bun = "latest"
 gh = "latest"
 "npm:@bitwarden/cli" = "latest"
 "npm:@openai/codex" = "latest"
-zellij = "0.43.1"
+# zellij = "0.43.1"
 
 [settings]
 python.compile = false
