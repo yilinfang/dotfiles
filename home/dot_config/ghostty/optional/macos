@@ -12,3 +12,5 @@ adjust-underline-position = 2
 # Misc
 macos-option-as-alt = true
 quit-after-last-window-closed = true
+macos-auto-secure-input = false
+macos-secure-input-indication = false
