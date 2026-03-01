@@ -20,12 +20,11 @@ function M.copy_selection_ref()
 end
 
 function M.setup()
-  vim.keymap.set(
-    'v',
-    '<leader>cr',
-    function() M.copy_selection_ref() end,
-    { desc = 'Copy code reference for coding agents' }
-  )
+  vim.keymap.set('v', '<leader>cr', function()
+    M.copy_selection_ref()
+    -- NOTE: Exit visual mode after copying
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+  end, { desc = 'Copy code reference for coding agents' })
 end
 
 return M
