@@ -5,7 +5,7 @@ config-file = ?optional/macos
 config-file = ?optional/linux
 
 # Theme
-theme = sonokai
+theme = "iTerm2 Tango Dark"
 
 # Window
 window-width = 90
