@@ -124,8 +124,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Fuzzy find All Code Actions
     map('gra', '<cmd>FzfLua lsp_code_actions<cr>', '[G]oto Code [A]ctions')
     -- Fuzzy find all the symbols in current document
-    map('gO', '<cmd>FzfLua lsp_document_symbols<cr>', 'Open Document Symbols')
+    map('grO', '<cmd>FzfLua lsp_document_symbols<cr>', 'Open Document Symbols')
     -- Fuzzy find all the symbols in current workspace
-    map('gW', '<cmd>FzfLua lsp_live_workspace_symbols<cr>', 'Open Workspace Symbols')
+    map('grW', '<cmd>FzfLua lsp_live_workspace_symbols<cr>', 'Open Workspace Symbols')
   end,
 })

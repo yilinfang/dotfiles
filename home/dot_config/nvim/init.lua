@@ -249,6 +249,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --  For example, in C this would take you to the header.
     map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+    -- Jump to the type of the word under your cursor.
+    --  Useful when you're not sure what type a variable is and you want to see
+    --  the definition of its *type*, not where it was *defined*.
+    map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
+
     -- Fuzzy find all the symbols in your current document.
     --  Symbols are things like variables, functions, types, etc.
     map('gO', vim.lsp.buf.document_symbol, 'Open Document Symbols')
@@ -256,11 +261,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Fuzzy find all the symbols in your current workspace.
     --  Similar to document symbols, except searches over your entire project.
     map('gW', vim.lsp.buf.workspace_symbol, 'Open Workspace Symbols')
-
-    -- Jump to the type of the word under your cursor.
-    --  Useful when you're not sure what type a variable is and you want to see
-    --  the definition of its *type*, not where it was *defined*.
-    map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
 
     -- The following two autocommands are used to highlight references of the
     -- word under your cursor when your cursor rests there for a little while.
