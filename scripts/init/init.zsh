@@ -18,11 +18,6 @@ if command -v opencode &>/dev/null; then
 	alias oc='opencode'
 fi
 
-# Use cdx for codex
-if command -v codex &>/dev/null; then
-	alias cdx='codex'
-fi
-
 # Create wrappers for claude
 if command -v claude &>/dev/null; then
 	# Use cld for claude
@@ -79,12 +74,17 @@ if command -v mise &>/dev/null; then
 	# export MISE_PYTHON_COMPILE=false  # Always download pre-compiled python binaries
 fi
 
-# If micro is installed, set it as the default editor
-if command -v micro &>/dev/null; then
-	export EDITOR=micro
-	export VISUAL=micro
-	alias e='micro'
+# Use cdx for codex
+if command -v codex &>/dev/null; then
+	alias cdx='codex'
 fi
+
+# # If micro is installed, set it as the default editor
+# if command -v micro &>/dev/null; then
+# 	export EDITOR=micro
+# 	export VISUAL=micro
+# 	alias e='micro'
+# fi
 
 # If nvim is installed, set it as the default editor
 if command -v nvim &>/dev/null; then
@@ -115,10 +115,10 @@ if command -v lazygit &>/dev/null; then
 	alias lg='lazygit'
 fi
 
-# Use zj for zellij
-if command -v zellij &>/dev/null; then
-	alias zj='zellij'
-fi
+# # Use zj for zellij
+# if command -v zellij &>/dev/null; then
+# 	alias zj='zellij'
+# fi
 
 # Use y for yazi wrapper
 if command -v yazi &>/dev/null; then
