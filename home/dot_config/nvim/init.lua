@@ -101,6 +101,7 @@ vim.o.foldtext = '' -- Use default fold text
 -- vim.keymap.set('i', '<C-[>', '<Esc>', { desc = 'Exit insert mode' })
 -- vim.keymap.set('n', '<C-q>', '<C-v>', { desc = 'Enter visual block mode' })
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
+vim.keymap.set('n', '<leader>r', '<cmd>e!<CR>', { desc = 'Reload current buffer' })
 -- vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
 vim.keymap.set(
   'n',
