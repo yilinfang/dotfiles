@@ -1,5 +1,6 @@
 -- lua/config/mini-snippets.lua
 -- Configuration for `mini.snippets`
+-- NOTE: Deprecated but kept for reference
 
 local snippets = require('mini.snippets')
 local gen_loader = snippets.gen_loader

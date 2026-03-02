@@ -24,9 +24,9 @@ local opts = {
       enabled = false, -- Disable ghost text
     },
   },
-  snippets = {
-    preset = 'mini_snippets',
-  },
+  -- snippets = {
+  --   preset = 'mini_snippets',
+  -- },
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
     providers = {

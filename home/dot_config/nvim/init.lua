@@ -420,8 +420,8 @@ require('config.mini-statusline')
 -- -- NOTE: Needed by `mini.snippets`
 -- add({ source = 'rafamadriz/friendly-snippets' })
 
--- Setup `mini.snippets`
-require('config.mini-snippets')
+-- -- Setup `mini.snippets`
+-- require('config.mini-snippets')
 
 -- -- Setup `mini.completion`
 -- require('config.mini-completion')
