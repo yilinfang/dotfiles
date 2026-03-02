@@ -170,11 +170,11 @@ treesitter:
 		else \
 			echo "npx check failed or npm/npx unavailable; building from source..."; \
 			bash scripts/build-treesitter-cli.sh; \
-		fi; \
-		if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
-			echo "tree-sitter is available"; \
-		else \
-			echo "Error: tree-sitter is still unavailable after installation." >&2; \
-			exit 1; \
+			if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
+				echo "tree-sitter is available"; \
+			else \
+				echo "Error: tree-sitter is still unavailable after installation." >&2; \
+				exit 1; \
+			fi; \
 		fi; \
 	fi
