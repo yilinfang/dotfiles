@@ -13,6 +13,7 @@ local langs = {
   'json',
   'lua',
   'luadoc',
+  'make',
   'markdown',
   'markdown_inline',
   'ninja',
