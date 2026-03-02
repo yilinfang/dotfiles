@@ -1,4 +1,5 @@
 return {
+  ["blink.cmp"] = "4b18c32adef2898f95cdef6192cbd5796c1a332d",
   ["conform.nvim"] = "40dcec5555f960b0a04340d76eabdf4efe78599d",
   ["fzf-lua"] = "b56cd2ffbce57bfd9133a645bd02cd86895a7e3f",
   ["gitsigns.nvim"] = "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",

@@ -1,6 +1,5 @@
 -- lua/config/blink.lua
 -- Configuration for `blink.cmp`
--- NOTE: Deprecated but kept for reference
 
 local blink = require('blink.cmp')
 local opts = {

@@ -423,15 +423,15 @@ require('config.mini-statusline')
 -- Setup `mini.snippets`
 require('config.mini-snippets')
 
--- Setup `mini.completion`
-require('config.mini-completion')
+-- -- Setup `mini.completion`
+-- require('config.mini-completion')
 
--- -- Setup `blink.cmp`
--- add({
---   source = 'saghen/blink.cmp',
---   checkout = vim.g.BLINK_CMP_VERSION or 'v1.7.0',
--- })
--- require('config.blink')
+-- Setup `blink.cmp`
+add({
+  source = 'saghen/blink.cmp',
+  checkout = vim.g.BLINK_CMP_VERSION or 'v1.9.1',
+})
+require('config.blink')
 
 -- -- Setup `neo-tree.nvim`
 -- add({
