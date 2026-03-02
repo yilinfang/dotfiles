@@ -18,7 +18,8 @@ echo "Installing isolated Rust toolchain..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --no-modify-path
 
 echo "Installing tree-sitter-cli using locked dependencies..."
-cargo install --locked tree-sitter-cli
+CARGO_INSTALL_PKG="tree-sitter-cli${TREE_SITTER_VERSION:+@${TREE_SITTER_VERSION}}"
+cargo install --locked "${CARGO_INSTALL_PKG}"
 
 echo "Copying binary to ${INSTALL_DIR}..."
 install -m 0755 "${CARGO_HOME}/bin/${BIN_NAME}" "${INSTALL_DIR}/${BIN_NAME}"

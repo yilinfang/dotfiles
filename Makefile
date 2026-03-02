@@ -159,6 +159,8 @@ zellij:
 		$(MISE_BIN) use -g zellij@$$ZELLIJ_VERSION; \
 	fi
 
+TREE_SITTER_VERSION ?= 0.26.6
+
 treesitter:
 	@if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
 		echo "tree-sitter is already available"; \
@@ -166,10 +168,10 @@ treesitter:
 		echo "Checking npm/npx tree-sitter-cli health..."; \
 		if command -v npm >/dev/null 2>&1 && command -v npx >/dev/null 2>&1 && npx tree-sitter-cli --version >/dev/null 2>&1; then \
 			echo "npx check passed; installing via mise..."; \
-			mise use -g npm:tree-sitter-cli; \
+			mise use -g npm:tree-sitter-cli$(if $(TREE_SITTER_VERSION),@$(TREE_SITTER_VERSION)); \
 		else \
 			echo "npx check failed or npm/npx unavailable; building from source..."; \
-			bash scripts/build-treesitter-cli.sh; \
+			TREE_SITTER_VERSION=$(TREE_SITTER_VERSION) bash scripts/build-treesitter-cli.sh; \
 			if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
 				echo "tree-sitter is available"; \
 			else \
