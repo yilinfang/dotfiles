@@ -19,7 +19,7 @@ define merge_files
 endef
 
 
-.PHONY: ensure_mise install pde_install claude opencode codex antigravity zellij
+.PHONY: ensure_mise install pde_install claude opencode codex antigravity zellij treesitter
 
 ensure_mise:
 	@if [ ! -f $(MISE_BIN) ]; then \
@@ -157,4 +157,24 @@ zellij:
 		echo "Installing zellij..."; \
 		ZELLIJ_VERSION=$$($(MISE_BIN) latest zellij); \
 		$(MISE_BIN) use -g zellij@$$ZELLIJ_VERSION; \
+	fi
+
+treesitter:
+	@if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
+		echo "tree-sitter is already available"; \
+	else \
+		echo "Checking npm/npx tree-sitter-cli health..."; \
+		if command -v npm >/dev/null 2>&1 && command -v npx >/dev/null 2>&1 && npx tree-sitter-cli --version >/dev/null 2>&1; then \
+			echo "npx check passed; installing via mise..."; \
+			mise use -g npm:tree-sitter-cli; \
+		else \
+			echo "npx check failed or npm/npx unavailable; building from source..."; \
+			bash scripts/build-treesitter-cli.sh; \
+		fi; \
+		if command -v tree-sitter >/dev/null 2>&1 && tree-sitter --version >/dev/null 2>&1; then \
+			echo "tree-sitter is available"; \
+		else \
+			echo "Error: tree-sitter is still unavailable after installation." >&2; \
+			exit 1; \
+		fi; \
 	fi

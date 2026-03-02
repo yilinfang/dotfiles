@@ -2,7 +2,7 @@
 age = "latest"
 # "aqua:micro-editor/micro" = "latest"
 bat = "latest"
-"cargo:tree-sitter-cli" = { version = "v0.26.6", locked = true }
+# "cargo:tree-sitter-cli" = { version = "v0.26.6", locked = true }
 chezmoi = "latest"
 delta = "latest"
 difftastic = { version = "latest", exe = "difft" }
@@ -22,7 +22,7 @@ node = "lts"
 python = "3.13"
 ripgrep = "latest"
 ruff = "latest"
-rust = "1.88.0"
+# rust = "1.88.0"
 shellcheck = "latest"
 shfmt = "latest"
 starship = "latest"
