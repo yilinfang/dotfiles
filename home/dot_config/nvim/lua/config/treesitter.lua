@@ -20,7 +20,7 @@ local langs = {
   'rst',
   'rust',
   'toml',
-  'txs',
+  'tsx',
   'typescript',
   'vim',
   'vimdoc',
