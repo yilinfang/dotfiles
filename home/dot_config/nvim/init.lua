@@ -453,13 +453,13 @@ require('config.fzf')
 add({ source = 'neovim/nvim-lspconfig' })
 
 -- NOTE: Disable treesitter until it is not experienmental in Neovim
--- -- Setup `nvim-treesitter`
--- add({
---   source = 'nvim-treesitter/nvim-treesitter',
---   -- Perform action after every checkout
---   hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
--- })
--- require('config.treesitter')
+-- Setup `nvim-treesitter`
+add({
+  source = 'nvim-treesitter/nvim-treesitter',
+  -- Update tree-sitter parser after plugin is updated
+  hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+})
+require('config.treesitter')
 
 -- -- Setup `aerial.nvim`
 -- add({ source = 'stevearc/aerial.nvim' })
