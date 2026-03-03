@@ -36,7 +36,10 @@ end
 local isnt_installed = function(lang) return not is_available(lang) end
 local to_install = vim.tbl_filter(isnt_installed, langs)
 local has_cc = vim.fn.executable('cc') == 1
-if has_cc and #to_install > 0 then require('nvim-treesitter').install(to_install) end
+local has_tree_sitter = vim.fn.executable('tree-sitter') == 1
+if has_cc and has_tree_sitter and #to_install > 0 then
+  require('nvim-treesitter').install(to_install)
+end
 
 -- Enable tree-sitter after opening a file for a target language
 local available_langs = vim.tbl_filter(is_available, langs)

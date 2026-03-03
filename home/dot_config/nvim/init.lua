@@ -452,15 +452,12 @@ require('config.fzf')
 -- Useful preset configurations for LSP servers
 add({ source = 'neovim/nvim-lspconfig' })
 
--- HACK: Only setup `nvim-treesitter` when `tree-sitter` is available
-if vim.fn.executable('tree-sitter') == 1 then
-  add({
-    source = 'nvim-treesitter/nvim-treesitter',
-    -- Update tree-sitter parser after plugin is updated
-    hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-  })
-  require('config.treesitter')
-end
+add({
+  source = 'nvim-treesitter/nvim-treesitter',
+  -- Update tree-sitter parser after plugin is updated
+  hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+})
+require('config.treesitter')
 
 -- -- Setup `aerial.nvim`
 -- add({ source = 'stevearc/aerial.nvim' })
