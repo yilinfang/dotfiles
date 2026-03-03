@@ -1,5 +1,6 @@
 -- lua/custom/statuscolumn.lua
 -- Customized statuscolumn
+-- NOTE: Deprecated but kept for reference
 
 local M = {}
 local mark_cache = {}
@@ -75,20 +76,28 @@ local function statuscolumn()
   return mark_col .. ' ' .. '%=' .. lnum_display .. '%s'
 end
 
+local function clear_cache()
+  mark_cache = {}
+end
+
+local sc_ns = vim.api.nvim_create_namespace('statuscolumn')
+
 function M.setup()
-  -- Clear cache every 200ms
-  local timer = assert((vim.uv or vim.loop).new_timer())
-  timer:start(0, 500, function() mark_cache = {} end)
-  vim.api.nvim_create_autocmd('VimLeavePre', {
-    desc = 'Clear StatusColumn Timer on Exit',
-    group = vim.api.nvim_create_augroup('ClearStatusColumnTimer', { clear = true }),
-    callback = function()
-      if timer and not timer:is_closing() then
-        timer:stop()
-        timer:close()
-      end
-    end,
+  -- Clear cache when marks change via `m` commands
+  vim.on_key(function(_, typed)
+    if typed:sub(1, 1) ~= 'm' then return end
+    vim.schedule(function()
+      clear_cache()
+      vim.api.nvim__redraw({ statuscolumn = true })
+    end)
+  end, sc_ns)
+
+  -- Clear cache on buffer switch
+  vim.api.nvim_create_autocmd('BufEnter', {
+    group = vim.api.nvim_create_augroup('StatusColumnMarks', { clear = true }),
+    callback = clear_cache,
   })
+
   -- Only show sign with highest priority
   vim.o.signcolumn = 'yes:1'
   -- HACK: Minmal number of columns for line numbers
