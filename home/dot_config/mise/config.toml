@@ -1,0 +1,9 @@
+[tools]
+bun = "latest"
+gh = "latest"
+"npm:@bitwarden/cli" = "latest"
+"npm:@openai/codex" = "latest"
+"npm:tree-sitter-cli" = "0.26.6"
+
+[settings]
+python.compile = false
