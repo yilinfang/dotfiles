@@ -28,18 +28,26 @@ local langs = {
   'yaml',
 }
 
--- Install missing parsers
-local isnt_installed = function(lang)
-  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
+-- A parser is available when a built-in or installed parser file exists in runtimepath.
+local is_available = function(lang)
+  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) > 0
 end
+
+local isnt_installed = function(lang) return not is_available(lang) end
 local to_install = vim.tbl_filter(isnt_installed, langs)
-if #to_install > 0 then require('nvim-treesitter').install(to_install) end
+local has_cc = vim.fn.executable('cc') == 1
+if has_cc and #to_install > 0 then require('nvim-treesitter').install(to_install) end
 
 -- Enable tree-sitter after opening a file for a target language
+local available_langs = vim.tbl_filter(is_available, langs)
 local filetypes = {}
-for _, lang in ipairs(langs) do
+local filetype_set = {}
+for _, lang in ipairs(available_langs) do
   for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
-    table.insert(filetypes, ft)
+    if not filetype_set[ft] then
+      filetype_set[ft] = true
+      table.insert(filetypes, ft)
+    end
   end
 end
 local ts_start = function(ev) vim.treesitter.start(ev.buf) end
