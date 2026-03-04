@@ -378,40 +378,106 @@ require('lazy').setup({
       config = function() require('config.moonfly') end,
     },
     {
-      'nvim-mini/mini.nvim',
-      lazy = false,
-      config = function()
-        -- Setup mini.icons before other plugins to ensure icons are available
-        require('config.mini-icons')
-
-        -- Setup `mini.extras` before other mini plugins to ensure extra features are available
-        require('config.mini-extra')
-
-        -- Setup other useful `mini.nvim` modules
-        require('config.mini-ai')
-        require('config.mini-bufremove')
-        require('config.mini-comment')
-        require('config.mini-files')
-        require('config.mini-hipatterns')
-        require('config.mini-indentscope')
-        require('config.mini-move')
-        require('config.mini-pairs')
-        require('config.mini-splitjoin')
-        require('config.mini-surround')
-        require('config.mini-tabline')
-        require('config.mini-trailspace')
-
-        -- Setup `mini.statusline`
-        -- NOTE: `mini.icons` and `gitsigns.nvim` (can be `mini.git` and `mini.diff`) must be loaded before `mini.statusline`
-        require('config.mini-git')
-        require('config.mini-diff')
-        require('config.mini-statusline')
-      end,
+      'nvim-mini/mini.icons',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-icons') end,
     },
-    -- {
-    --   'lewis6991/gitsigns.nvim',
-    --   config = function() require('config.gitsigns') end,
-    -- },
+    {
+      'nvim-mini/mini.extra',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-extra') end,
+    },
+    {
+      'nvim-mini/mini.ai',
+      lazy = true,
+      event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.extra' },
+      config = function() require('config.mini-extra') end,
+    },
+    {
+      'nvim-mini/mini.bufremove',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-bufremove') end,
+    },
+    {
+      'nvim-mini/mini.comment',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-comment') end,
+    },
+    {
+      'nvim-mini/mini.files',
+      lazy = true,
+      event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.icons' },
+      config = function() require('config.mini-files') end,
+    },
+    {
+      'nvim-mini/mini.hipatterns',
+      lazy = true,
+      event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.extra' },
+      config = function() require('config.mini-hipatterns') end,
+    },
+    {
+      'nvim-mini/mini.indentscope',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-indentscope') end,
+    },
+    {
+      'nvim-mini/mini.move',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-move') end,
+    },
+    {
+      'nvim-mini/mini.pairs',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-pairs') end,
+    },
+    {
+      'nvim-mini/mini.splitjoin',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-splitjoin') end,
+    },
+    {
+      'nvim-mini/mini.surround',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-surround') end,
+    },
+    {
+      'nvim-mini/mini.tabline',
+      lazy = true,
+      event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.icons' },
+      config = function() require('config.mini-tabline') end,
+    },
+    {
+      'nvim-mini/mini.trailspace',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.mini-trailspace') end,
+    },
+    {
+      'lewis6991/gitsigns.nvim',
+      lazy = true,
+      event = 'VeryLazy',
+      config = function() require('config.gitsigns') end,
+    },
+    {
+      'nvim-mini/mini.statusline',
+      lazy = true,
+      event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.icons', 'lewis6991/gitsigns.nvim' },
+      config = function() require('config.mini-statusline') end,
+    },
     {
       'saghen/blink.cmp',
       lazy = true,
@@ -424,7 +490,7 @@ require('lazy').setup({
       'ibhagwan/fzf-lua',
       lazy = true,
       event = 'VeryLazy',
-      dependencies = { 'nvim-mini/mini.nvim' }, -- Icons support or `nvim-mini/mini.icons`
+      dependencies = { 'nvim-mini/mini.icons' }, -- Icon support
       config = function() require('config.fzf') end,
     },
     {
@@ -452,9 +518,11 @@ require('lazy').setup({
       event = 'VeryLazy',
       config = function() require('config.conform') end,
     },
-    -- {
-    --   'tpope/vim-fugitive',
-    -- },
+    {
+      'tpope/vim-fugitive',
+      lazy = true,
+      event = 'VeryLazy',
+    },
     {
       'tpope/vim-sleuth',
       lazy = true,
