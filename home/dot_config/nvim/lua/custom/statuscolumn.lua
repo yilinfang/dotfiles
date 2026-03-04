@@ -4,12 +4,20 @@
 local M = {}
 local mark_cache = {}
 
-function M.clear_cache() mark_cache = {} end
+function M.clear_cache(bufnr)
+  if bufnr then
+    mark_cache[bufnr] = nil
+  else
+    mark_cache = {}
+  end
+end
 
-function M.redraw()
-  M.clear_cache()
+function M.redraw(bufnr)
+  M.clear_cache(bufnr)
   -- NOTE: EXPERIMENTAL: this API may change in the future.
-  vim.api.nvim__redraw({ statuscolumn = true, flush = true })
+  local opts = { statuscolumn = true, flush = true }
+  if bufnr then opts.buf = bufnr end
+  vim.api.nvim__redraw(opts)
 end
 
 local function get_mark(bufnr, lnum)
@@ -97,6 +105,20 @@ function M.setup()
       end
     end,
   })
+  local ns = vim.api.nvim_create_namespace('custom/statuscolumn')
+  -- Redraw screen whem marks are changed via `m` commands
+  -- Borrowed from https://github.com/lewis6991/dotfiles/blob/aa2a337808e7208f00aa91208e2c62ce7f2a1420/config/nvim/lua/gizmos/marksigns.lua
+  vim.on_key(function(_, typed)
+    if typed:sub(1, 1) ~= 'm' then return end
+    local mark = typed:sub(2)
+    vim.schedule(function()
+      if mark:match('[A-Z]') then
+        M.redraw()
+      else
+        M.redraw(vim.api.nvim_get_current_buf())
+      end
+    end)
+  end, ns)
   -- Only show sign with highest priority
   vim.o.signcolumn = 'yes:1'
   -- HACK: Minmal number of columns for line numbers

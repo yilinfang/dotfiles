@@ -53,14 +53,14 @@ function M.setup()
   -- Register the commands
   vim.api.nvim_create_user_command('DeleteLineMarks', function()
     M.delete_line_marks()
-    if ok then sc.redraw() end
+    if ok then sc.redraw(vim.api.nvim_get_current_buf()) end
   end, {
     desc = 'Remove marks in the current line (including global marks)',
   })
 
   vim.api.nvim_create_user_command('DeleteLocalMarks', function()
     M.delete_local_marks()
-    if ok then sc.redraw() end
+    if ok then sc.redraw(vim.api.nvim_get_current_buf()) end
   end, {
     desc = 'Remove local marks in the current buffer (excluding global marks)',
   })
