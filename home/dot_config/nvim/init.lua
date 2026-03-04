@@ -432,6 +432,7 @@ require('lazy').setup({
       'ibhagwan/fzf-lua',
       lazy = true,
       event = 'VeryLazy',
+      dependencies = { 'nvim-mini/mini.nvim' }, -- Icons support or `nvim-mini/mini.icons`
       config = function() require('config.fzf') end,
     },
     {
