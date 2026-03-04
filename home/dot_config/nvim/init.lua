@@ -439,6 +439,7 @@ require('lazy').setup({
       'neovim/nvim-lspconfig',
       lazy = true,
       event = 'VeryLazy',
+      dependencies = 'saghen/blink.cmp',
     },
     {
       'nvim-treesitter/nvim-treesitter',
