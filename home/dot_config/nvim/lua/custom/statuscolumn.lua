@@ -4,6 +4,14 @@
 local M = {}
 local mark_cache = {}
 
+function M.clear_cache() mark_cache = {} end
+
+function M.redraw()
+  M.clear_cache()
+  -- NOTE: EXPERIMENTAL: this API may change in the future.
+  vim.api.nvim__redraw({ statuscolumn = true, flush = true })
+end
+
 local function get_mark(bufnr, lnum)
   -- Build cache for entire buffer if not cached
   if not mark_cache[bufnr] then
@@ -74,10 +82,6 @@ local function statuscolumn()
   -- Format: [mark] [space] [right-aligned line number] [signs via %s]
   return mark_col .. ' ' .. '%=' .. lnum_display .. '%s'
 end
-
-local function clear_cache() mark_cache = {} end
-
-local sc_ns = vim.api.nvim_create_namespace('statuscolumn')
 
 function M.setup()
   -- Clear cache every 500ms
