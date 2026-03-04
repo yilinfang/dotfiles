@@ -525,8 +525,8 @@ require('lazy').setup({
     },
     {
       'tpope/vim-sleuth',
-      lazy = true,
-      event = 'VeryLazy',
+      -- HACK: vim-sleuth won't work if lazy loaded
+      lazy = false,
     },
   },
   -- Configure any other settings here. See the documentation for more details.
