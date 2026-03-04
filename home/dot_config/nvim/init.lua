@@ -374,133 +374,96 @@ require('lazy').setup({
       'bluz71/vim-moonfly-colors',
       name = 'moonfly',
       lazy = false,
-      priority = 1000,
+      priority = 1000, -- NOTE: load theme first
       config = function() require('config.moonfly') end,
     },
     {
       'nvim-mini/mini.icons',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-icons') end,
     },
     {
       'nvim-mini/mini.extra',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-extra') end,
     },
     {
       'nvim-mini/mini.ai',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.extra' },
       config = function() require('config.mini-extra') end,
     },
     {
       'nvim-mini/mini.bufremove',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-bufremove') end,
     },
     {
       'nvim-mini/mini.comment',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-comment') end,
     },
     {
       'nvim-mini/mini.files',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.icons' },
       config = function() require('config.mini-files') end,
     },
     {
       'nvim-mini/mini.hipatterns',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.extra' },
       config = function() require('config.mini-hipatterns') end,
     },
     {
       'nvim-mini/mini.indentscope',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-indentscope') end,
     },
     {
       'nvim-mini/mini.move',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-move') end,
     },
     {
       'nvim-mini/mini.pairs',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-pairs') end,
     },
     {
       'nvim-mini/mini.splitjoin',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-splitjoin') end,
     },
     {
       'nvim-mini/mini.surround',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-surround') end,
     },
     {
       'nvim-mini/mini.tabline',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.icons' },
       config = function() require('config.mini-tabline') end,
     },
     {
       'nvim-mini/mini.trailspace',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.mini-trailspace') end,
     },
     {
       'lewis6991/gitsigns.nvim',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.gitsigns') end,
     },
     {
       'nvim-mini/mini.statusline',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.icons', 'lewis6991/gitsigns.nvim' },
       config = function() require('config.mini-statusline') end,
     },
     {
       'saghen/blink.cmp',
-      lazy = true,
-      event = 'VeryLazy',
       -- use a release tag to download pre-built binaries
       version = '1.*',
       config = function() require('config.blink') end,
     },
     {
       'ibhagwan/fzf-lua',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = { 'nvim-mini/mini.icons' }, -- Icon support
       config = function() require('config.fzf') end,
     },
     {
       'neovim/nvim-lspconfig',
-      lazy = true,
-      event = 'VeryLazy',
       dependencies = 'saghen/blink.cmp',
     },
     {
       'nvim-treesitter/nvim-treesitter',
+      -- nvim-treesitter doesn't support lazy loading
       lazy = false,
       -- Update tree-sitter parsre after plugin is updated
       build = ':TSUpdate',
@@ -508,20 +471,14 @@ require('lazy').setup({
     },
     {
       'mfussenegger/nvim-lint',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.lint') end,
     },
     {
       'stevearc/conform.nvim',
-      lazy = true,
-      event = 'VeryLazy',
       config = function() require('config.conform') end,
     },
     {
       'tpope/vim-fugitive',
-      lazy = true,
-      event = 'VeryLazy',
     },
     {
       'tpope/vim-sleuth',
