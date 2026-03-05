@@ -1,5 +1,6 @@
 -- lua/custom/statuscolumn.lua
 -- Customized statuscolumn
+-- NOTE: Deprecated but kept for reference
 
 local M = {}
 local mark_cache = {}

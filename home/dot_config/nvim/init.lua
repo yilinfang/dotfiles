@@ -93,6 +93,15 @@ vim.o.foldmethod = 'manual' -- Use manual fold method by default
 vim.o.foldlevel = 99 -- Open all folds by default
 vim.o.foldtext = '' -- Use default fold text
 
+-- Signcolumn & Statuscolumn
+vim.o.signcolumn = 'yes:1'
+-- HACK: Minmal number of columns for line numbers
+--  Set to 1 to only use essential columns for line numbers.
+--  For example, if line number less than 100, it will only use 2 columns.
+--  If line number is 100 or more, it will use 3 columns or more.
+vim.o.numberwidth = 1
+vim.o.statuscolumn = ' %=%l%s'
+
 -- }}}
 
 -- KEYMAPS {{{
@@ -339,7 +348,6 @@ if vim.fn.executable('bash-language-server') == 1 then vim.lsp.enable('bashls') 
 -- USER MODULES {{{
 
 -- Load my own plugins
-require('custom.statuscolumn').setup()
 require('custom.mark-manager').setup()
 require('custom.code-agents').setup()
 
