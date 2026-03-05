@@ -378,12 +378,19 @@ require('lazy').setup({
   -- add your plugins here
   spec = {
     -- NOTE: Be careful with the order of setting up plugins!!!
+    -- {
+    --   'bluz71/vim-moonfly-colors',
+    --   name = 'moonfly',
+    --   lazy = false,
+    --   priority = 1000, -- NOTE: load theme first
+    --   config = function() require('config.moonfly') end,
+    -- },
     {
-      'bluz71/vim-moonfly-colors',
-      name = 'moonfly',
+      'rebelot/kanagawa.nvim',
       lazy = false,
       priority = 1000, -- NOTE: load theme first
-      config = function() require('config.moonfly') end,
+      -- config = function() require('config.kanagawa-dragon') end,
+      config = function() require('config.kanagawa-wave') end,
     },
     {
       'nvim-mini/mini.icons',
