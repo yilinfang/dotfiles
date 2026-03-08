@@ -3,9 +3,12 @@ bun = "latest"
 gh = "latest"
 "npm:@bitwarden/cli" = "latest"
 "npm:@openai/codex" = "latest"
-"npm:tree-sitter-cli" = "0.26.6"
 python = "3.13"
+taplo = "latest"
 uv = "latest"
+shfmt = "latest"
+shellcheck = "latest"
+"npm:prettier" = "latest"
 
 [settings]
 python.compile = false
