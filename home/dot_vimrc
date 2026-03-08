@@ -1,44 +1,33 @@
-" Use space as leader key
-let g:mapleader = "\<Space>"
+" Options
 set nocompatible
+filetype indent on
+syntax off
 filetype on
 filetype plugin on
-filetype indent on
-syntax on
-set number
-set mouse=a
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
 set autoindent
-set smarttab
-set nowrap
-set showcmd
-set noshowmatch
-set list
-set listchars=tab:▸\ ,trail:·,nbsp:␣
+set autoread
+set hidden
+set mouse=a
+set laststatus=0
+" Keymaps
+" Use space as leader key
+let g:mapleader = "\<Space>"
 nnoremap <leader>/ :noh<CR>
 nnoremap <leader>r :e!<CR>
 vnoremap <leader>y "+y<CR>
-" Disable macro record/play and dot repeat
-nnoremap q <Nop>
-nnoremap Q <Nop>
-nnoremap @ <Nop>
-nnoremap . <Nop>
+" Autogroups
 " Resize splits if window got resized
 augroup resize_splits
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
-" Enable termguicolors if terminal supports it
-if has("termguicolors")
+if has('nvim')
+  set background=dark
   set termguicolors
-endif
-set background=dark
-" Enable wildcharm with torte as a backup
-if !empty(globpath(&runtimepath, "colors/wildcharm.vim"))
-  colorscheme wildcharm
-else
-  colorscheme torte
+  colorscheme retrobox
+  " Disable treesitter in Neovim
+  augroup DisableTreesitter
+    autocmd!
+    autocmd BufEnter * lua vim.treesitter.stop()
+  augroup END
 endif
