@@ -4,11 +4,11 @@ vim.g.maplocalleader = ' '
 
 -- [[ Options ]]
 vim.cmd('syntax off')
-vim.opt.number = true
-vim.opt.mouse = 'a'
-vim.opt.background = 'dark'
-vim.opt.termguicolors = true
-vim.cmd.colorscheme('retrobox')
+vim.o.number = true
+vim.o.mouse = 'a'
+vim.o.background = 'dark'
+vim.o.termguicolors = true
+vim.cmd('colorscheme retrobox')
 
 -- [[ Keymaps ]]
 vim.keymap.set('n', '<leader>/', '<cmd>noh<CR>')
