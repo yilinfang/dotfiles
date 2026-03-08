@@ -1,32 +1,34 @@
-vim.cmd([[
+-- Set space as leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-" Options
-syntax off
-set number
-set mouse=a
-set background=dark
-set termguicolors
-colorscheme retrobox
-" Keymaps
-" Use space as leader key
-let g:mapleader = "\<Space>"
-nnoremap <leader>/ :noh<CR>
-nnoremap <leader>r :e!<CR>
-vnoremap <leader>y "+y<CR>
-" Autogroups
-" Resize splits if window got resized
-augroup resize_splits
-  autocmd!
-  autocmd VimResized * wincmd =
-augroup END
-" Disable treesitter in Neovim
-augroup DisableTreesitter
-  autocmd!
-  autocmd BufEnter * lua vim.treesitter.stop()
-augroup END
+-- [[ Options ]]
+vim.cmd('syntax off')
+vim.opt.number = true
+vim.opt.mouse = 'a'
+vim.opt.background = 'dark'
+vim.opt.termguicolors = true
+vim.cmd.colorscheme('retrobox')
 
-]])
+-- [[ Keymaps ]]
+vim.keymap.set('n', '<leader>/', '<cmd>noh<CR>')
+vim.keymap.set('n', '<leader>r', '<cmd>e!<CR>')
+vim.keymap.set('v', '<leader>y', '"+y<CR>')
 
+-- [[ Autocmds ]]
+-- Resize splits on window resize
+vim.api.nvim_create_autocmd('VimResized', {
+  group = vim.api.nvim_create_augroup('resize_splits', { clear = true }),
+  callback = function() vim.cmd('wincmd =') end,
+})
+-- Disable treesitter
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = vim.api.nvim_create_augroup('DisableTreesitter', { clear = true }),
+  callback = function() vim.treesitter.stop() end,
+})
+
+-- [[ Custom Modules ]]
+-- Copy code reference
 local function copy_selection_ref(relative)
   local filepath = relative and vim.fn.expand('%:.') or vim.fn.expand('%:p')
   local line1 = vim.fn.line('v')
@@ -40,17 +42,13 @@ local function copy_selection_ref(relative)
     ref = string.format('%s:%d-%d', filepath, start_line, end_line)
   end
   vim.fn.setreg('+', ref)
-  vim.schedule(function()
-    vim.notify('Copied: ' .. ref, vim.log.levels.INFO)
-  end)
+  vim.schedule(function() vim.notify('Copied: ' .. ref, vim.log.levels.INFO) end)
 end
-
 vim.keymap.set('v', '<leader>cr', function()
   copy_selection_ref(true)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
-end, { desc = '[C]opy relative code [r]eference for coding agents' })
-
+end)
 vim.keymap.set('v', '<leader>cR', function()
   copy_selection_ref(false)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
-end, { desc = 'Copy absolute code [r]eference for coding agents' })
+end)
