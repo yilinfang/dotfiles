@@ -1,19 +1,8 @@
 " Options
 set nocompatible
-filetype indent on
-syntax off
-filetype on
-filetype plugin on
-set autoindent
-set autoread
-set hidden
+set number
 set mouse=a
-set laststatus=0
 set background=dark
-if has('nvim')
-  set termguicolors
-  colorscheme retrobox
-endif
 " Keymaps
 " Use space as leader key
 let g:mapleader = "\<Space>"
@@ -26,10 +15,3 @@ augroup resize_splits
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
-if has('nvim')
-  " Disable treesitter in Neovim
-  augroup DisableTreesitter
-    autocmd!
-    autocmd BufEnter * lua vim.treesitter.stop()
-  augroup END
-endif
