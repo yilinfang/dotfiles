@@ -9,6 +9,11 @@ set autoread
 set hidden
 set mouse=a
 set laststatus=0
+set background=dark
+if has('nvim')
+  set termguicolors
+  colorscheme retrobox
+endif
 " Keymaps
 " Use space as leader key
 let g:mapleader = "\<Space>"
@@ -22,9 +27,6 @@ augroup resize_splits
   autocmd VimResized * wincmd =
 augroup END
 if has('nvim')
-  set background=dark
-  set termguicolors
-  colorscheme retrobox
   " Disable treesitter in Neovim
   augroup DisableTreesitter
     autocmd!
