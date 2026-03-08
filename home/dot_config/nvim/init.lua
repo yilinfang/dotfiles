@@ -40,7 +40,9 @@ local function copy_selection_ref(relative)
     ref = string.format('%s:%d-%d', filepath, start_line, end_line)
   end
   vim.fn.setreg('+', ref)
-  vim.notify('Copied: ' .. ref, vim.log.levels.INFO)
+  vim.schedule(function()
+    vim.notify('Copied: ' .. ref, vim.log.levels.INFO)
+  end)
 end
 
 vim.keymap.set('v', '<leader>cr', function()
