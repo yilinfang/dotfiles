@@ -3,24 +3,18 @@
 # init.zsh
 # This script initializes the Zsh shell environment
 
-# Add $HOME/.local/bin to PATH if not already present
-if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
+# Add $HOME/.local/bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-# Add vim to PATH if not already present
-if [[ ":$PATH:" != *":$HOME/vim/bin:"* ]]; then
-	export PATH="$HOME/vim/bin:$PATH"
-fi
+# Add vim to PATH
+export PATH="$HOME/vim/bin:$PATH"
+
+# Add opencode to PATH if not already present
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # Set vim as default editor
 export EDITOR=vim
 export VISUAL=vim
-
-# Add opencode to PATH if not already present
-if [[ ":$PATH:" != *":$HOME/.opencode/bin:"* ]]; then
-	export PATH="$HOME/.opencode/bin:$PATH"
-fi
 
 # Use oc for opencode
 if command -v opencode &>/dev/null; then
