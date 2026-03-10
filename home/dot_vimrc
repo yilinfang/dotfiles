@@ -13,6 +13,10 @@ syntax on
 set number
 set mouse=a
 set autoread
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 set autoindent
 set smartindent
 set list
