@@ -60,7 +60,12 @@ else
 	echo "Warning: zdiff3 conflict style is not supported in Git versions older than 2.35.0. Using diff3 instead."
 fi
 
-# Merge tool (only if nvim is available)
+# Merge tool (prefer nvim over vim when both are available)
+if command -v vim &>/dev/null; then
+	git config --global merge.tool vimdiff
+	git config --global mergetool.prompt false
+fi
+
 if command -v nvim &>/dev/null; then
 	git config --global merge.tool nvim
 	git config --global mergetool.prompt false

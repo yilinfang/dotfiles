@@ -8,6 +8,15 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
 	export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Add vim to PATH if not already present
+if [[ ":$PATH:" != *":$HOME/vim/bin:"* ]]; then
+	export PATH="$HOME/vim/bin:$PATH"
+fi
+
+# Set vim as default editor
+export EDITOR=vim
+export VISUAL=vim
+
 # Add opencode to PATH if not already present
 if [[ ":$PATH:" != *":$HOME/.opencode/bin:"* ]]; then
 	export PATH="$HOME/.opencode/bin:$PATH"
@@ -86,13 +95,13 @@ fi
 # 	alias e='micro'
 # fi
 
-# If nvim is installed, set it as the default editor
-if command -v nvim &>/dev/null; then
-	export EDITOR=nvim
-	export VISUAL=nvim
-	alias n='nvim'
-	alias vim='nvim'
-fi
+# # If nvim is installed, set it as the default editor
+# if command -v nvim &>/dev/null; then
+# 	export EDITOR=nvim
+# 	export VISUAL=nvim
+# 	alias n='nvim'
+# 	alias vim='nvim'
+# fi
 
 # If rg is installed
 if command -v rg &>/dev/null; then

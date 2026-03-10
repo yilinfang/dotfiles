@@ -1,17 +1,72 @@
-" Options
-set nocompatible
-set number
-set mouse=a
-set background=dark
-" Keymaps
+" Only support Vim 9+
+if v:version < 900
+  finish
+endif
+
 " Use space as leader key
 let g:mapleader = "\<Space>"
+
+" Options
+set nocompatible
+filetype plugin indent on
+syntax on
+set number
+set mouse=a
+set autoread
+set autoindent
+set smartindent
+set list
+set listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:␣
+set termguicolors
+set background=dark
+colorscheme wildcharm
+
+" Keymaps
 nnoremap <leader>/ :noh<CR>
 nnoremap <leader>r :e!<CR>
 vnoremap <leader>y "+y<CR>
+
 " Autogroups
 " Resize splits if window got resized
 augroup resize_splits
   autocmd!
   autocmd VimResized * wincmd =
 augroup END
+
+" Load plugins
+" Copy code reference
+function! s:CopySelectionRef(relative)
+  let l:filepath = a:relative ? expand('%:.') : expand('%:p')
+  let l:line1 = line("'<")
+  let l:line2 = line("'>")
+  let l:start_line = min([l:line1, l:line2])
+  let l:end_line = max([l:line1, l:line2])
+  if l:start_line == l:end_line
+    let l:ref = printf('%s:%d', l:filepath, l:start_line)
+  else
+    let l:ref = printf('%s:%d-%d', l:filepath, l:start_line, l:end_line)
+  endif
+  call setreg('+', l:ref)
+  echomsg 'Copied: ' . l:ref
+endfunction
+
+xnoremap <leader>cr :<C-u>call <SID>CopySelectionRef(1)<CR>
+xnoremap <leader>cR :<C-u>call <SID>CopySelectionRef(0)<CR>
+
+" Check if vim-plug is installed
+" You can install it via:
+"  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let data_dir = '$HOME/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  finish
+endif
+
+" Load third-party plugins
+call plug#begin()
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-sleuth'
+call plug#end()
