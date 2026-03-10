@@ -33,7 +33,16 @@ augroup resize_splits
   autocmd VimResized * wincmd =
 augroup END
 
-" Load plugins
+" Load offical packages
+" osc52 support when inside SSH or tmux
+if exists('$SSH_CONNECTION') || exists('$TMUX')
+  packadd osc52
+  let g:osc52_force_avail = v:true
+  let g:osc52_disable_paste = v:true
+  set clipmethod^=osc52
+endif
+
+" Load my own plugins
 " Copy code reference
 function! s:CopySelectionRef(relative)
   let l:filepath = a:relative ? expand('%:.') : expand('%:p')
@@ -68,5 +77,6 @@ call plug#begin()
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-sleuth'
+  " No need for vim-sleuth since vim-ployglot achieves same funcionality
+  " Plug 'tpope/vim-sleuth'
 call plug#end()
