@@ -9,8 +9,8 @@ local appShortcuts = {
 	{ "B", "Brave Browser" },
 	{ "P", "Bitwarden" },
 	{ "W", "WeChat" },
-	{ "C", "Visual Studio Code" },
-	-- { "C", "Cursor" },
+	-- { "C", "Visual Studio Code" },
+	{ "C", "Cursor" },
 	-- { "C", "Antigravity" },
 	-- { "F", "Firefox" },
 	-- { "F", "LibreWolf" },
@@ -78,8 +78,8 @@ hs.hotkey.bind(mods, "return", function()
 	if frontApp:name() == "Finder" then
 		notifyAndLaunchApp("OpenInTerminal-Lite")
 	else
-		notifyAndLaunchApp("iTerm")
+		-- notifyAndLaunchApp("iTerm")
 		-- notifyAndLaunchApp("kitty")
-		-- notifyAndLaunchApp("Ghostty")
+		notifyAndLaunchApp("Ghostty")
 	end
 end)
