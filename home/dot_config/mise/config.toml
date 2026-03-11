@@ -9,6 +9,7 @@ uv = "latest"
 shfmt = "latest"
 shellcheck = "latest"
 "npm:prettier" = "latest"
+ruff = "latest"
 
 [settings]
 python.compile = false
