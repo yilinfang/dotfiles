@@ -22,8 +22,14 @@ set smartindent
 set list
 set listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:␣
 set termguicolors
-set background=dark
-colorscheme wildcharm
+" HACK: Fix vim's background color erase
+" Source: https://sunaku.github.io/vim-256color-bce.html
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
 " Keymaps
 nnoremap <leader>/ :noh<CR>
@@ -78,9 +84,16 @@ endif
 call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/seoul256.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   " No need for vim-sleuth since vim-ployglot achieves same funcionality
   " Plug 'tpope/vim-sleuth'
 call plug#end()
+
+" Config third-party plugins
+" seoul256
+let g:seoul256_background = 233
+colorscheme seoul256
+set background=dark
