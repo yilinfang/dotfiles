@@ -5,6 +5,7 @@ local blink = require("blink.cmp")
 local opts = {
   keymap = {
     preset = "default",
+    ["<CR>"] = { "accept", "fallback" },
     -- NOTE: Replace <C-Space> with <C-\>
     ["<C-space>"] = false,
     ["<C-\\>"] = { "show", "show_documentation", "hide_documentation" },
@@ -14,7 +15,7 @@ local opts = {
   },
   completion = {
     list = {
-      selection = { preselect = true, auto_insert = false },
+      selection = { preselect = false, auto_insert = false },
     },
     documentation = {
       auto_show = true,
