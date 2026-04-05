@@ -1,4 +1,4 @@
 -- lua/config/mini-surround.lua
 -- Configuration for `mini.surround`
 
-require('mini.surround').setup({})
+require("mini.surround").setup({})

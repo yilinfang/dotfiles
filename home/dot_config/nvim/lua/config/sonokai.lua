@@ -5,22 +5,22 @@
 vim.o.termguicolors = true
 
 -- Config `sonokai`
-vim.g.sonokai_style = 'default'
+vim.g.sonokai_style = "default"
 -- I don't like italic font variants
 vim.g.sonokai_disable_italic_comment = 1
 vim.g.sonokai_enable_italic = 0
-vim.g.sonokai_cursor = 'auto'
+vim.g.sonokai_cursor = "auto"
 vim.g.sonokai_transparent_background = 0
 vim.g.sonokai_dim_inactive_windows = 0
-vim.g.sonokai_menu_selection_background = 'green'
-vim.g.sonokai_spell_foreground = 'none'
+vim.g.sonokai_menu_selection_background = "green"
+vim.g.sonokai_spell_foreground = "none"
 vim.g.sonokai_show_eob = 1
-vim.g.sonokai_float_style = 'blend'
+vim.g.sonokai_float_style = "blend"
 vim.g.sonokai_diagnostic_text_highlight = 0
 vim.g.sonokai_diagnostic_line_highlight = 0
-vim.g.sonokai_diagnostic_virtual_text = 'colored'
-vim.g.sonokai_current_word = 'grey background'
-vim.g.sonokai_inlay_hints_background = 'none'
+vim.g.sonokai_diagnostic_virtual_text = "colored"
+vim.g.sonokai_current_word = "grey background"
+vim.g.sonokai_inlay_hints_background = "none"
 vim.g.sonokai_disable_terminal_colors = 0
 vim.g.sonokai_better_performance = 1
 
@@ -42,4 +42,4 @@ vim.g.sonokai_better_performance = 1
 --   end,
 -- })
 
-vim.cmd.colorscheme('sonokai')
+vim.cmd.colorscheme("sonokai")

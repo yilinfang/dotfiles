@@ -4,24 +4,24 @@
 
 local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
   or {
-    'fzf',
-    'help',
-    'netrw',
-    'neo-tree',
-    'minifiles',
-    'tutor',
-    'man',
-    'qf',
-    '', -- Unknown filetype
+    "fzf",
+    "help",
+    "netrw",
+    "neo-tree",
+    "minifiles",
+    "tutor",
+    "man",
+    "qf",
+    "", -- Unknown filetype
   }
 
 local copilot_disabled_buftypes = vim.g.copilot_disabled_buftypes
   or {
-    'help',
-    'nofile',
-    'prompt',
-    'quickfix',
-    'acwrite',
+    "help",
+    "nofile",
+    "prompt",
+    "quickfix",
+    "acwrite",
   }
 
 local function should_enable_copilot()
@@ -39,9 +39,9 @@ local function should_enable_copilot()
 end
 
 -- Create an autocmd to eable copilot when entering a buffer
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*',
-  group = vim.api.nvim_create_augroup('enable-copilot-buf-enter', { clear = true }),
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("enable-copilot-buf-enter", { clear = true }),
   callback = function()
     if should_enable_copilot() then
       vim.b.copilot_enabled = true
@@ -52,21 +52,21 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 -- Disable Copilot in terminal
-vim.api.nvim_create_autocmd('TermOpen', {
-  pattern = '*',
-  group = vim.api.nvim_create_augroup('disable-copilot-term-open', { clear = true }),
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("disable-copilot-term-open", { clear = true }),
   callback = function() vim.b.copilot_enabled = false end,
 })
 
 -- HACK: Map <leader>tc to toggle copilot
-vim.keymap.set('n', '<leader>tc', function()
+vim.keymap.set("n", "<leader>tc", function()
   vim.b.copilot_enabled = not vim.b.copilot_enabled
   if vim.b.copilot_enabled then
-    vim.notify('Copilot: enabled', vim.log.levels.INFO)
+    vim.notify("Copilot: enabled", vim.log.levels.INFO)
   else
-    vim.notify('Copilot: disabled', vim.log.levels.INFO)
+    vim.notify("Copilot: disabled", vim.log.levels.INFO)
   end
-end, { desc = 'Toggle Copilot' })
+end, { desc = "Toggle Copilot" })
 
 vim.cmd([[
 

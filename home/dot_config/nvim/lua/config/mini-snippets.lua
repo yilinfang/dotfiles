@@ -2,9 +2,9 @@
 -- Configuration for `mini.snippets`
 -- NOTE: Deprecated but kept for reference
 
-local snippets = require('mini.snippets')
+local snippets = require("mini.snippets")
 local gen_loader = snippets.gen_loader
-local snippets_path = vim.fn.stdpath('config') .. '/snippets/'
+local snippets_path = vim.fn.stdpath("config") .. "/snippets/"
 local lang_patterns = {
   -- NOTE: Add language patterns as needed
   -- markdown_inline = { 'markdown.json' },
@@ -12,7 +12,7 @@ local lang_patterns = {
 local opts = {
   snippets = {
     -- Load custom global snippets
-    gen_loader.from_file(snippets_path .. 'global.json'),
+    gen_loader.from_file(snippets_path .. "global.json"),
 
     -- Load language-specific snippets, put them in `snippets/` subdirectories
     -- of your `runtimepath` directories(e.g., in `$XDG_CONFIG_HOME/nvim/snippets/`).
@@ -22,7 +22,7 @@ local opts = {
   mappings = {
     -- NOTE: Disable default mapping for expanding snippets since I don't like
     -- the default behavior.
-    expand = '',
+    expand = "",
   },
 }
 snippets.setup(opts)
@@ -31,15 +31,15 @@ snippets.setup(opts)
 -- snippets.start_lsp_server()
 
 -- HACK: Remapping snippet expansion to Ctrl+j with custom behavior
-vim.keymap.set('i', '<C-j>', function()
+vim.keymap.set("i", "<C-j>", function()
   snippets.expand({
     match = function(s)
       return snippets.default_match(s, {
         -- NOTE: Only insert the snippet if there's an exact match
-        pattern_exact_boundary = '.?',
-        pattern_fuzzy = '',
+        pattern_exact_boundary = ".?",
+        pattern_fuzzy = "",
       })
     end,
     select = false,
   })
-end, { desc = 'Match and force expand the best match (if any)' })
+end, { desc = "Match and force expand the best match (if any)" })

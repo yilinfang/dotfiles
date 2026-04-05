@@ -1,7 +1,7 @@
 -- lua/config/mini-icons.lua
 -- Configuration for `mini.icons`
 
-local icons = require('mini.icons')
+local icons = require("mini.icons")
 local opts = {}
 icons.setup(opts)
 

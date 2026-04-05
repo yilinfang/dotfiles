@@ -59,18 +59,18 @@ local function statuscolumn()
   local lnum_actual = vim.v.lnum
 
   -- First column: marks
-  local mark_col = ' '
+  local mark_col = " "
   if vim.v.virtnum == 0 then -- Only show marks on real lines
     local mark = get_mark(bufnr, lnum_actual)
     if mark then
       -- Check if StatusColumnMark highlight group exists
-      local highlight = ''
-      if vim.fn.hlID('StatusColumnMark') == 0 then
-        highlight = '%#ErrorMsg#' -- Fallback highlight group
+      local highlight = ""
+      if vim.fn.hlID("StatusColumnMark") == 0 then
+        highlight = "%#ErrorMsg#" -- Fallback highlight group
       else
-        highlight = '%#StatusColumnMark#'
+        highlight = "%#StatusColumnMark#"
       end
-      mark_col = highlight .. mark .. '%*'
+      mark_col = highlight .. mark .. "%*"
     end
   end
 
@@ -85,20 +85,20 @@ local function statuscolumn()
       lnum_display = vim.v.lnum
     end
   else
-    lnum_display = ''
+    lnum_display = ""
   end
 
   -- Format: [mark] [space] [right-aligned line number] [signs via %s]
-  return mark_col .. ' ' .. '%=' .. lnum_display .. '%s'
+  return mark_col .. " " .. "%=" .. lnum_display .. "%s"
 end
 
 function M.setup()
   -- Clear cache every 500ms
   local timer = assert((vim.uv or vim.loop).new_timer())
   timer:start(0, 500, function() mark_cache = {} end)
-  vim.api.nvim_create_autocmd('VimLeavePre', {
-    desc = 'Clear StatusColumn Timer on Exit',
-    group = vim.api.nvim_create_augroup('ClearStatusColumnTimer', { clear = true }),
+  vim.api.nvim_create_autocmd("VimLeavePre", {
+    desc = "Clear StatusColumn Timer on Exit",
+    group = vim.api.nvim_create_augroup("ClearStatusColumnTimer", { clear = true }),
     callback = function()
       if timer and not timer:is_closing() then
         timer:stop()
@@ -106,14 +106,14 @@ function M.setup()
       end
     end,
   })
-  local ns = vim.api.nvim_create_namespace('custom/statuscolumn')
+  local ns = vim.api.nvim_create_namespace("custom/statuscolumn")
   -- Redraw screen whem marks are changed via `m` commands
   -- Borrowed from https://github.com/lewis6991/dotfiles/blob/aa2a337808e7208f00aa91208e2c62ce7f2a1420/config/nvim/lua/gizmos/marksigns.lua
   vim.on_key(function(_, typed)
-    if typed:sub(1, 1) ~= 'm' then return end
+    if typed:sub(1, 1) ~= "m" then return end
     local mark = typed:sub(2)
     vim.schedule(function()
-      if mark:match('[A-Z]') then
+      if mark:match("[A-Z]") then
         M.redraw()
       else
         M.redraw(vim.api.nvim_get_current_buf())
@@ -121,7 +121,7 @@ function M.setup()
     end)
   end, ns)
   -- Only show sign with highest priority
-  vim.o.signcolumn = 'yes:1'
+  vim.o.signcolumn = "yes:1"
   -- HACK: Minmal number of columns for line numbers
   --  Set to 1 to only use essential columns for line numbers.
   --  For example, if line number less than 100, it will only use 2 columns.
@@ -130,7 +130,7 @@ function M.setup()
   -- Register the function globally
   _G.custom_statuscolumn = statuscolumn
   -- Apply the custom status column function
-  vim.o.statuscolumn = '%!v:lua.custom_statuscolumn()'
+  vim.o.statuscolumn = "%!v:lua.custom_statuscolumn()"
 end
 
 return M

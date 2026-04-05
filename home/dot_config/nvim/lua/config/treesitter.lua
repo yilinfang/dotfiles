@@ -3,42 +3,42 @@
 
 -- Enabled languages
 local langs = {
-  'bash',
-  'c',
-  'cpp',
-  'diff',
-  'go',
-  'html',
-  'javascript',
-  'json',
-  'lua',
-  'luadoc',
-  'make',
-  'markdown',
-  'markdown_inline',
-  'ninja',
-  'python',
-  'rst',
-  'rust',
-  'toml',
-  'tsx',
-  'typescript',
-  'vim',
-  'vimdoc',
-  'yaml',
+  "bash",
+  "c",
+  "cpp",
+  "diff",
+  "go",
+  "html",
+  "javascript",
+  "json",
+  "lua",
+  "luadoc",
+  "make",
+  "markdown",
+  "markdown_inline",
+  "ninja",
+  "python",
+  "rst",
+  "rust",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "yaml",
 }
 
 -- A parser is available when a built-in or installed parser file exists in runtimepath.
 local is_available = function(lang)
-  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) > 0
+  return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) > 0
 end
 
 local isnt_installed = function(lang) return not is_available(lang) end
 local to_install = vim.tbl_filter(isnt_installed, langs)
-local has_cc = vim.fn.executable('cc') == 1
-local has_tree_sitter = vim.fn.executable('tree-sitter') == 1
+local has_cc = vim.fn.executable("cc") == 1
+local has_tree_sitter = vim.fn.executable("tree-sitter") == 1
 if has_cc and has_tree_sitter and #to_install > 0 then
-  require('nvim-treesitter').install(to_install)
+  require("nvim-treesitter").install(to_install)
 end
 
 -- Enable tree-sitter after opening a file for a target language
@@ -54,9 +54,9 @@ for _, lang in ipairs(available_langs) do
   end
 end
 local ts_start = function(ev) vim.treesitter.start(ev.buf) end
-vim.api.nvim_create_autocmd('FileType', {
-  group = vim.api.nvim_create_augroup('start-treesitter', { clear = true }),
-  desc = 'Start treesitter',
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("start-treesitter", { clear = true }),
+  desc = "Start treesitter",
   pattern = filetypes,
   callback = ts_start,
 })

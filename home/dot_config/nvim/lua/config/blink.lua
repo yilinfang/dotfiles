@@ -1,16 +1,16 @@
 -- lua/config/blink.lua
 -- Configuration for `blink.cmp`
 
-local blink = require('blink.cmp')
+local blink = require("blink.cmp")
 local opts = {
   keymap = {
-    preset = 'default',
+    preset = "default",
     -- NOTE: Replace <C-Space> with <C-\>
-    ['<C-space>'] = false,
-    ['<C-\\>'] = { 'show', 'show_documentation', 'hide_documentation' },
+    ["<C-space>"] = false,
+    ["<C-\\>"] = { "show", "show_documentation", "hide_documentation" },
   },
   appearance = {
-    nerd_font_variant = 'mono', -- "normal" or "mono" depending on your font
+    nerd_font_variant = "mono", -- "normal" or "mono" depending on your font
   },
   completion = {
     list = {
@@ -28,7 +28,7 @@ local opts = {
   --   preset = 'mini_snippets',
   -- },
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = { "lsp", "path", "snippets", "buffer" },
     providers = {
       path = {
         opts = {
@@ -38,13 +38,13 @@ local opts = {
       },
     },
   },
-  fuzzy = { implementation = 'prefer_rust_with_warning' },
+  fuzzy = { implementation = "prefer_rust_with_warning" },
   cmdline = {
     keymap = {
-      preset = 'cmdline',
+      preset = "cmdline",
       -- NOTE: Replace <C-Space> with <C-\>
-      ['<C-space>'] = false,
-      ['<C-\\>'] = { 'show', 'fallback' },
+      ["<C-space>"] = false,
+      ["<C-\\>"] = { "show", "fallback" },
     },
     completion = {
       list = {
@@ -62,5 +62,5 @@ blink.setup(opts)
 
 -- HACK: Override the default LSP capabilities to include `blink.cmp`
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend('force', capabilities, blink.get_lsp_capabilities({}, false))
-vim.lsp.config('*', { capabilities = capabilities })
+capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities({}, false))
+vim.lsp.config("*", { capabilities = capabilities })

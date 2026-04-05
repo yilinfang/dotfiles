@@ -1,7 +1,7 @@
 -- lua/config/kanagawa-dragon.lua
 -- Configuration for kanagawa.nvim's dragon variant
 
-local kanagawa = require('kanagawa')
+local kanagawa = require("kanagawa")
 local opts = {
   -- Disable some preset styles
   commentStyle = { italic = false },
@@ -14,10 +14,10 @@ local opts = {
   --     Boolean = { bold = false },
   --   }
   -- end,
-  theme = 'dragon',
+  theme = "dragon",
   background = {
-    dark = 'dragon',
-    light = 'lotus',
+    dark = "dragon",
+    light = "lotus",
   },
 }
 kanagawa.setup(opts)
@@ -41,4 +41,4 @@ kanagawa.setup(opts)
 --   end,
 -- })
 
-vim.cmd.colorscheme('kanagawa')
+vim.cmd.colorscheme("kanagawa")

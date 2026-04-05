@@ -4,24 +4,24 @@
 
 local copilot_disabled_filetypes = vim.g.copilot_disabled_filetypes
   or {
-    'fzf',
-    'help',
-    'netrw',
-    'neo-tree',
-    'minifiles',
-    'tutor',
-    'man',
-    'qf',
-    '', -- Unknown filetype
+    "fzf",
+    "help",
+    "netrw",
+    "neo-tree",
+    "minifiles",
+    "tutor",
+    "man",
+    "qf",
+    "", -- Unknown filetype
   }
 
 local copilot_disabled_buftypes = vim.g.copilot_disabled_buftypes
   or {
-    'help',
-    'nofile',
-    'prompt',
-    'quickfix',
-    'acwrite',
+    "help",
+    "nofile",
+    "prompt",
+    "quickfix",
+    "acwrite",
   }
 
 local opts = {
@@ -33,12 +33,12 @@ local opts = {
     auto_trigger = true,
     hide_during_completion = true,
     keymap = {
-      accept = '<M-y>',
-      accept_word = '<M-w>',
-      accept_line = '<M-l>',
-      next = '<M-n>',
-      prev = '<M-p>',
-      dismiss = '<M-d>',
+      accept = "<M-y>",
+      accept_word = "<M-w>",
+      accept_line = "<M-l>",
+      next = "<M-n>",
+      prev = "<M-p>",
+      dismiss = "<M-d>",
     },
   },
   nes = {
@@ -46,7 +46,7 @@ local opts = {
   },
   filetypes = {
     -- NOTE: Enabled by default since we are handling disabling via `should_attach`
-    ['*'] = true,
+    ["*"] = true,
   },
   should_attach = function(_, _)
     local bo = vim.bo
@@ -65,13 +65,13 @@ local opts = {
   end,
 }
 
-local copilot = require('copilot')
+local copilot = require("copilot")
 copilot.setup(opts)
 
 -- Use `<leader>tc` to toggle copilot
 vim.keymap.set(
-  'n',
-  '<leader>tc',
+  "n",
+  "<leader>tc",
   [[<cmd>Copilot! toggle<CR>]],
-  { noremap = true, silent = true, desc = 'Toggle Copilot' }
+  { noremap = true, silent = true, desc = "Toggle Copilot" }
 )

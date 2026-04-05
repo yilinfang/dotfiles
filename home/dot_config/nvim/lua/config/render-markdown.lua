@@ -2,7 +2,7 @@
 -- Configuration for `render-markdown.nvim`
 -- NOTE: Deprecated but kept for reference
 
-local rm = require('render-markdown')
+local rm = require("render-markdown")
 local opts = {
   -- NOTE: Get completions from render-markdown.nvim
   completions = { lsp = { enabled = true } },
@@ -10,4 +10,4 @@ local opts = {
 rm.setup(opts)
 
 -- HACK: Map <leader>tm to toggle render-markdown
-vim.keymap.set('n', '<leader>tm', function() rm.toggle() end, { desc = 'Toggle RenderMarkdown' })
+vim.keymap.set("n", "<leader>tm", function() rm.toggle() end, { desc = "Toggle RenderMarkdown" })
