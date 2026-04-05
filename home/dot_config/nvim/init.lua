@@ -385,19 +385,25 @@ require("lazy").setup({
     --   priority = 1000, -- NOTE: load theme first
     --   config = function() require('config.moonfly') end,
     -- },
-    {
-      "rebelot/kanagawa.nvim",
-      lazy = false,
-      priority = 1000, -- NOTE: load theme first
-      config = function() require("config.kanagawa-wave") end,
-      -- config = function() require('config.kanagawa-dragon') end,
-    },
     -- {
+    --   "rebelot/kanagawa.nvim",
+    --   lazy = false,
+    --   priority = 1000, -- NOTE: load theme first
+    --   config = function() require("config.kanagawa-wave") end,
+    --   -- config = function() require('config.kanagawa-dragon') end,
+    -- },
+    -- -- {
     --   'sainnhe/sonokai',
     --   lazy = false,
     --   priority = 1000, -- NOTE: load theme first
     --   config = function() require('config.sonokai') end,
     -- },
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000, -- NOTE: load theme first
+      config = function() require("config.tokyonight") end,
+    },
     {
       "nvim-mini/mini.icons",
       config = function() require("config.mini-icons") end,
