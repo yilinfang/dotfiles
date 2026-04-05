@@ -1,0 +1,24 @@
+[tools]
+age = "latest"
+# "aqua:micro-editor/micro" = "latest"
+bat = "latest"
+chezmoi = "latest"
+delta = "latest"
+difftastic = { version = "latest", exe = "difft" }
+fd = "latest"
+fzf = "latest"
+lazygit = "latest"
+neovim = "0.11.7"
+node = "lts"
+"npm:czg" = "latest"
+python = "3.13"
+ripgrep = "latest"
+ruff = "latest"
+starship = "latest"
+tmux = "3.6a"
+yazi = "latest"
+# zellij = "latest"
+zoxide = "latest"
+
+[settings]
+disable_backends = ["asdf"]
