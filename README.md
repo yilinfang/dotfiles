@@ -1,4 +1,4 @@
-# dotfiles-public
+# dotfiles
 
 Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
@@ -10,7 +10,7 @@ _This happens when I accidentally commit some sensitive data._
 ### Install tools
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles-public/refs/heads/main/scripts/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install.sh)
 ```
 
 ### Install dotfiles
@@ -22,7 +22,7 @@ rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Install dotfiles
-chezmoi init --apply https://github.com/yilinfang/dotfiles-public.git -S ~/.chezmoi/dotfiles
+chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 # Setup shell
 chezmoi cd
 bash scripts/pde/setup-shell.sh
@@ -39,7 +39,7 @@ rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Install dotfiles
-mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles-public.git -S ~/.chezmoi/dotfiles
+mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 # Setup shell
 mise exec chezmoi -- chezmoi cd
 bash scripts/pde/setup-shell.sh
@@ -54,7 +54,7 @@ rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Download dotfiles via git
-git clone https://github.com/yilinfang/dotfiles-public.git ~/.chezmoi/dotfiles
+git clone https://github.com/yilinfang/dotfiles.git ~/.chezmoi/dotfiles
 # Install dotfiles
 cd ~/.chezmoi/dotfiles
 make install
@@ -65,7 +65,7 @@ make install
 Install only essential config files (.vimrc, .tmux.conf) directly to your home directory.
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles-public/refs/heads/main/scripts/install_quick.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install_quick.sh)
 ```
 
 _NOTE: Existing files will be backed up with a `.backup_YYYYMMDD_HHMMSS` suffix._

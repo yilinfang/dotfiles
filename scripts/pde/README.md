@@ -4,11 +4,11 @@
 
 ```bash
 # Install
-bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles-public/refs/heads/main/scripts/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/yilinfang/dotfiles/refs/heads/main/scripts/install.sh)
 rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi
-IS_PDE=true chezmoi init --apply https://github.com/yilinfang/dotfiles-public.git -S ~/.chezmoi/dotfiles
+IS_PDE=true chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 chezmoi cd
 cd scripts/pde
 bash ./setup-shell.sh
@@ -31,7 +31,7 @@ rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Install dotfiles
-IS_PDE=true mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles-public.git -S ~/.chezmoi/dotfiles
+IS_PDE=true mise exec age chezmoi -- chezmoi init --apply https://github.com/yilinfang/dotfiles.git -S ~/.chezmoi/dotfiles
 # Setup shell
 mise exec chezmoi -- chezmoi cd
 cd scripts/pde
@@ -51,7 +51,7 @@ rm -rf ~/.config/chezmoi
 rm -rf ~/.local/share/chezmoi
 rm -rf ~/.chezmoi/dotfiles
 # Download dotfiles via git
-git clone https://github.com/yilinfang/dotfiles-public.git ~/.chezmoi/dotfiles
+git clone https://github.com/yilinfang/dotfiles.git ~/.chezmoi/dotfiles
 # Install dotfiles
 cd ~/.chezmoi/dotfiles
 make install

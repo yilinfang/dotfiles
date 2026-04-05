@@ -4,7 +4,7 @@
 set -e
 
 # Configuration
-REPO="yilinfang/dotfiles-public"
+REPO="yilinfang/dotfiles"
 BRANCH="${BRANCH:-main}"
 BASE_URL="https://raw.githubusercontent.com/${REPO}/${BRANCH}/"
 
