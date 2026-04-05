@@ -338,7 +338,7 @@ if vim.fn.executable("ruff") == 1 then vim.lsp.enable("ruff") end
 -- if vim.fn.executable('pyright') == 1 then vim.lsp.enable('pyright') end
 
 -- If `basedpyright` is installed, enable it
-if vim.fn.executable("basedpyright") == 1 then vim.lsp.enable("basedpyright") end
+if vim.fn.executable("basedpyright-langserver") == 1 then vim.lsp.enable("basedpyright") end
 
 -- if `bash-language-server` is installed, enable it
 if vim.fn.executable("bash-language-server") == 1 then vim.lsp.enable("bashls") end
@@ -409,7 +409,7 @@ require("lazy").setup({
     {
       "nvim-mini/mini.ai",
       dependencies = { "nvim-mini/mini.extra" },
-      config = function() require("config.mini-extra") end,
+      config = function() require("config.mini-ai") end,
     },
     {
       "nvim-mini/mini.bufremove",
