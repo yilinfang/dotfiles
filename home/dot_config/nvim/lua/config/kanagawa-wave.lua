@@ -3,6 +3,7 @@
 
 local kanagawa = require("kanagawa")
 local opts = {
+  compile = true, -- Enable compiling the colorscheme
   -- Disable some preset styles
   commentStyle = { italic = false },
   -- keywordStyle = { italic = false },
