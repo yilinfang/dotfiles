@@ -1,0 +1,19 @@
+[tools]
+bun = "latest"
+gh = "latest"
+jq = "latest"
+lua-language-server = "latest"
+"npm:@bitwarden/cli" = "latest"
+"npm:@openai/codex" = "latest"
+"npm:bash-language-server" = "latest"
+"npm:prettier" = "latest"
+"pipx:basedpyright" = "latest"
+ruff = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+stylua = "latest"
+taplo = "latest"
+uv = "latest"
+
+[settings]
+python.compile = false

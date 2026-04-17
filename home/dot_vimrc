@@ -1,0 +1,44 @@
+" Use space as leader key
+let g:mapleader = "\<Space>"
+set nocompatible
+filetype plugin indent on
+syntax on
+set number
+set mouse=a
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set autoindent
+set smarttab
+set hidden
+set nowrap
+set showcmd
+set noshowmatch
+set list
+set listchars=tab:▸\ ,trail:·,nbsp:␣
+set laststatus=2
+vnoremap <leader>y "+y
+nnoremap <leader>/ :noh<CR>
+nnoremap <leader>r :r!<CR>
+" Disable macro record/play
+nnoremap q <Nop>
+nnoremap Q <Nop>
+nnoremap @ <Nop>
+" Resize splits if window got resized
+augroup resize_splits
+  autocmd!
+  autocmd VimResized * wincmd =
+augroup END
+" Enable termguicolors if terminal supports it
+if has("termguicolors")
+  set termguicolors
+endif
+" Force use dark background
+set background=dark
+" Enable wildcharm with torte as a backup
+if !empty(globpath(&runtimepath, "colors/wildcharm.vim"))
+  colorscheme wildcharm
+else
+  colorscheme torte
+endif

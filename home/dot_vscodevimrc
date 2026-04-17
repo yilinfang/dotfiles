@@ -1,0 +1,19 @@
+" Use space as leader key
+let g:mapleader = "\<Space>"
+nnoremap <leader>/ :noh<CR>
+" Disable marks
+nnoremap m <Nop>
+nnoremap ' <Nop>
+nnoremap ` <Nop>
+" Map j/k to gj/gk to deal with fold better
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
+" Mak K to gh
+nnoremap <S-k> gh
+vnoremap <S-k> gh
+" Disable macro record/play
+nnoremap q <Nop>
+nnoremap Q <Nop>
+nnoremap @ <Nop>
