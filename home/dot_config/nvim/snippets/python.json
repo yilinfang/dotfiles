@@ -1,0 +1,7 @@
+{
+  "Function main() and block if __name__ == '__main__'": {
+    "prefix": "main",
+    "body": ["def main():", "\t$0", "if __name__ == '__main__':", "\tmain()"],
+    "description": "Create the function main() and the block if __name__ == '__main__'"
+  }
+}
