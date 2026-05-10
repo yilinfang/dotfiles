@@ -14,7 +14,7 @@ python = "3.13"
 ripgrep = "latest"
 ruff = "latest"
 starship = "latest"
-tmux = "3.6a"
+# tmux = "3.6a"
 yazi = "latest"
 zoxide = "latest"
 
